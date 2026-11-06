@@ -12,7 +12,7 @@ $$
 K_X \equiv 0, \qquad H^0(X,\mathcal O_X)=k.
 $$
 
-Write $p=\operatorname{char}k$. The following results hold:
+Write $p=\mathrm{char}(k)$. The following results hold:
 
 | Characteristic | Conclusion | Paper |
 | --- | --- | --- |
@@ -26,7 +26,7 @@ $$
 60K_X\sim 0.
 $$
 
-Thus its order in $\operatorname{Pic}(X)$ divides $60$; see the
+Thus its order in $\mathrm{Pic}(X)$ divides $60$; see the
 [uniform bound in eff](papers/eff/main.tex#L145).
 
 ### Examples
@@ -37,12 +37,12 @@ imperfect field $k$ of the indicated characteristic.
 | Example | Characteristic | Property | Construction |
 | --- | --- | --- | --- |
 | 1 | $p=5$ | $X$ is geometrically non-reduced. | [red](papers/red/main.tex#L1089) |
-| 2 | $p=5$ | $\operatorname{ord}(K_X)=5$. | [eff](papers/eff/main.tex#L2704) |
+| 2 | $p=5$ | $\mathrm{ord}(K_X)=5$. | [eff](papers/eff/main.tex#L2704) |
 | 3 | $p=11$ | $X$ is geometrically non-normal. | [geonormal](papers/geonormal/counterexample.tex) |
 | 4 | $p=19$ | $X$ is not smooth over $k$. | [geonormal](papers/geonormal/sharpness.tex) |
 
-Here $\operatorname{ord}(K_X)$ is the order of $\mathcal O_X(K_X)$ in
-$\operatorname{Pic}(X)$. Examples 1, 3, and 4 show that the respective characteristic
+Here $\mathrm{ord}(K_X)$ is the order of $\mathcal O_X(K_X)$ in
+$\mathrm{Pic}(X)$. Examples 1, 3, and 4 show that the respective characteristic
 bounds above are optimal. Example 2 shows that the factor $5$ is necessary in the
 uniform canonical bound.
 
