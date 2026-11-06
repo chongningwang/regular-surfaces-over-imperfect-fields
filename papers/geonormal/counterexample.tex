@@ -1,0 +1,308 @@
+\section{Counterexample in characteristic $11$}\label{sec:p11}
+In this section we show that Theorem~\ref{thm:main} fails for $p = 11$.
+Let $k = \FF_{11}(c)$ with $c$ transcendental over $\FF_{11}$; it is $F$-finite with $p$-basis $\{c\}$.
+Let $\gamma$ be the $11$th root of $c$ in an algebraic closure, and $k' = k(\gamma)$, a purely inseparable extension of degree $11$.
+Let $B = \PP^1_k$ with affine coordinate $u$, and put $K = k(u)$ and $K' = k'(u)$.
+
+\begin{proposition}\label{prop:p11}
+There are a regular projective surface $X$ over $k$ and a morphism $f\from X\to B$ whose generic fibre is a smooth curve of genus one, such that $H^0(X,\O_X) = k$ and $\omega_X\cong\O_X$, but $X_{k'}$ is not normal.
+In particular $X$ is not geometrically normal.
+The same holds with $k$ replaced by a separable closure $k^{\rm s}$ of $k$ and $k'$ by $k^{\rm s}(\gamma)$.
+\end{proposition}
+
+Thus the bound $p\geq 13$ in Theorem~\ref{thm:main} is optimal.
+Verification scripts for the polynomial identities are described in Appendix~\ref{app:scripts-p11}.
+
+\subsection{The curve}
+
+Let $E$ be the elliptic curve $y^2 = x^3+u^5$ over $K$, and let $\omega_E = dx/2y$.
+Let $\partial$ be the $K$-derivation of $K(E)$ with $\partial x = 2y$ and $\partial y = 3x^2$, which is well defined because $\partial(y^2-x^3-u^5) = 0$.
+Then $df = \partial(f)\,\omega_E$ for $f\in K(E)$, since both sides are $K$-derivations of $K(E)$ which agree on $x$ and $y$.
+Using $y^2 = x^3+u^5$, one computes
+\begin{equation}\label{eq:p11-derivatives}
+\begin{aligned}
+  \partial x &= 2y, & \partial^2x &= 6x^2, & \partial^3x &= 2xy, & \partial^4x &= 10x^3+4u^5,\\
+  \partial^5x &= 5x^2y, & \partial^6x &= 2x^4+9u^5x, & \partial^7x &= 5x^3y+7u^5y, & \partial^8x &= x^5+7u^5x^2,\\
+  \partial^9x &= 10x^4y+6u^5xy, & \partial^{10}x &= u^{10}.
+\end{aligned}
+\end{equation}
+Since $\partial^{11}$ is a derivation, $\partial^{11}x = \partial(u^{10}) = 0$ and $2y\,\partial^{11}y = \partial^{11}(x^3+u^5) = 0$, we have $\partial^{11} = 0$.
+
+The ring $K'(E) = K(E)\otimes_kk' = k'(u,x,y)$ is a field, because $K(E)$ is separable over $k$.
+We extend $\partial$ $k'$-linearly to $K'(E)$, let $\partial_\gamma$ be the derivation of $K'(E) = K(E)[T]/(T^{11}-c)$ which vanishes on $K(E)$ and maps $\gamma$ to $1$, and put
+\[
+  \delta = u^{-1}\partial+\partial_\gamma.
+\]
+
+\begin{lemma}\label{lem:p11-quotient}
+Let $Y$ be a scheme over $\FF_{11}$, let $D$ be a derivation of $\O_Y$ with $D^{11} = 0$, and let $g\in\Gamma(Y,\O_Y)$ with $D(g) = 1$.
+Then the sheaf $\O_Y^D$ of $D$-constants is the structure sheaf of a scheme $Y^D$ with the same underlying space as $Y$, and $\O_Y = \bigoplus_{i=0}^{10}\O_{Y^D}g^i$.
+In particular $\O_Y\cong\O_{Y^D}[T]/(T^{11}-g^{11})$.
+\end{lemma}
+
+\begin{proof}
+The derivation $D$ defines an $\alpha_{11}$-action.
+Writing $s$ for the coordinate on $\alpha_{11}$, the coaction sends $g$ to $g+s$ because $D(g) = 1$, so every stabilizer is contained in $s = 0$ and the action is free.
+By \cite[Proposition~1.1 and Section~2]{Sch07K}, the quotient $Y^D$ exists with the same underlying space as $Y$ and structure sheaf $\O_Y^D$, and $Y\to Y^D$ is an $\alpha_{11}$-torsor.
+The invariant function $g^{11}$ descends to $Y^D$, so
+\[
+  T = \operatorname{\mathbf{Spec}}_{Y^D}
+  \bigl(\O_{Y^D}[t]/(t^{11}-g^{11})\bigr)
+\]
+is another $\alpha_{11}$-torsor over $Y^D$.
+The function $g$ defines an equivariant morphism $Y\to T$, which is an isomorphism because both schemes are torsors.
+The asserted decomposition follows from the basis $1,t,\ldots,t^{10}$ of $\O_T$ over $\O_{Y^D}$.
+\end{proof}
+
+\begin{lemma}\label{lem:p11-curve}
+\begin{enumerate}
+\item The derivation $\delta$ commutes with $\partial$, vanishes on $K$, and satisfies $\delta(\gamma) = 1$ and $\delta^{11} = 0$.
+\item The field $L = \{f\in K'(E)\mid\delta f = 0\}$ contains $K$, and $K'(E) = \bigoplus_{i=0}^{10}L\gamma^i$.
+  Moreover $L$ is the function field of a smooth projective geometrically integral curve $X_K$ of genus one over $K$, and there is an isomorphism $X_K\otimes_KK'\cong E\otimes_KK'$ inducing $L\otimes_KK' = K'(E)$.
+\item We have $\partial(L)\subseteq L$, and there is a regular nowhere vanishing $\eta\in H^0(X_K,\Omega^1_{X_K/K})$ whose image in $\Omega^1_{K'(E)/K'}$ is $\omega_E$; explicitly, $\eta = df/\partial(f)$ for every $f\in L$ with $\partial(f)\neq 0$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(1) The derivations $\partial$ and $\partial_\gamma$ commute and vanish on $u$, so $u^{-1}\partial$, $\partial_\gamma$ and $\partial$ commute pairwise.
+Hence $\delta^{11} = u^{-11}\partial^{11}+\partial_\gamma^{11}$, which vanishes, because $\partial^{11} = 0$ and $\partial_\gamma^{11}$ vanishes on $K(E)$ and on $\gamma^j$ for $0\leq j\leq 10$.
+The remaining assertions are clear.
+
+(2) The derivation $\partial$ is dual to $\omega_E$, which is regular and nowhere vanishing on $E$, so $\partial$ is a derivation of $\O_E$.
+Hence $\delta$ is a derivation of the structure sheaf of $Y = E\otimes_KK' = E\otimes_kk'$, and Lemma~\ref{lem:p11-quotient} with $g = \gamma$ gives a scheme $X_K = Y^\delta$ over $K$ with $\O_Y = \O_{X_K}[T]/(T^{11}-c) = \O_{X_K}\otimes_KK'$.
+Since properness, smoothness and geometric integrality descend along $K\to K'$, the scheme $X_K$ is a smooth projective geometrically integral curve of genus one.
+Its function field is $K'(E)^\delta = L$, and $K'(E) = \bigoplus_iL\gamma^i$ by Lemma~\ref{lem:p11-quotient} at the generic point.
+
+(3) As $\partial$ commutes with $\delta$, it preserves $L$.
+If $\partial$ vanished on $L$, it would vanish on $L(\gamma) = K'(E)$; so there is $f\in L$ with $\partial(f)\neq 0$.
+The image of $df\in\Omega^1_{L/K}$ in $\Omega^1_{K'(E)/K'}$ is $\partial(f)\,\omega_E$, and $\partial(f)\in L$; so $\eta = df/\partial(f)$ maps to $\omega_E$, and it does not depend on $f$ because $\Omega^1_{L/K}\to\Omega^1_{K'(E)/K'}$ is injective.
+Since $\Omega^1_{X_K/K}\otimes_KK' = \Omega^1_{Y/K'}$ and $\omega_E$ is regular and nowhere vanishing on $Y$, so is $\eta$ on $X_K$.
+\end{proof}
+
+\subsection{Explicit equations}
+
+Put
+\[
+  a = \frac{x^{11}}{u^{18}},\qquad b = \frac{y^{11}}{u^{27}},\qquad\xi = \frac ab\qquad\text{and}\qquad\theta = \sum_{i=0}^{10}\Bigl(-\frac{\gamma}{u}\Bigr)^i\frac{\partial^ix}{i!}.
+\]
+
+\begin{lemma}\label{lem:p11-equations}
+The elements $a$, $b$ and $\theta$ lie in $L$, and $b^2 = a^3+u$.
+Moreover $\theta^{11} = Q$, where
+\begin{equation}\label{eq:p11-Q}
+\begin{aligned}
+  Q ={}&-c^{10}+c^9a^4b+5c^9uab-2c^8u^2a^5-3c^8u^3a^2+3c^7u^4a^3b+2c^7u^5b-4c^6u^6a^4\\
+  &+4c^6u^7a+5c^5u^8a^2b+5c^4u^{10}a^3+2c^4u^{11}-4c^3u^{12}ab+3c^2u^{14}a^2-2cu^{16}b+u^{18}a.
+\end{aligned}
+\end{equation}
+The field $K(a,b)$ is the function field of the elliptic curve $E'\colon b^2 = a^3+u$ over $K$, and $L = K(a,b)(\theta)$ is an extension of degree $11$ of $K(a,b)$.
+\end{lemma}
+
+\begin{proof}
+Since $\partial$ kills $11$th powers and $\partial_\gamma$ kills $K(E)$, we have $\delta(a) = \delta(b) = 0$.
+Raising $y^2 = x^3+u^5$ to the $11$th power and dividing by $u^{54}$ gives $b^2 = a^3+u$.
+Using $\partial(u) = 0$, $\partial_\gamma(\gamma) = 1$ and $\partial^{11}x = 0$, we find
+\[
+  \delta(\theta) = \sum_{i=0}^{9}\frac{(-\gamma)^i}{i!\,u^{i+1}}\,\partial^{i+1}x-\sum_{i=1}^{10}\frac{(-\gamma)^{i-1}}{(i-1)!\,u^{i}}\,\partial^{i}x = 0.
+\]
+Since the Frobenius is additive and $(i!)^{11} = i!$ in $\FF_{11}$,
+\[
+  \theta^{11} = \sum_{i=0}^{10}\frac{(-c)^i}{i!\,u^{11i}}\,(\partial^ix)^{11}.
+\]
+If $\partial^ix = P_i(u,x,y)$ with $P_i$ as in \eqref{eq:p11-derivatives}, then $(\partial^ix)^{11} = P_i(u^{11},u^{18}a,u^{27}b)$, and substituting gives \eqref{eq:p11-Q}.
+For instance, since $10!\equiv -1$ and $9!\equiv 1$ modulo $11$, the terms with $i = 10$ and $i = 9$ contribute $-c^{10}$ and $c^9a^4b+5c^9uab$.
+
+We have $K'(a,b) = K'(x^{11},y^{11})$, and $K'(E) = K'(x^{11},y^{11})(x)$ because $y = y^{11}/(x^3+u^5)^5$.
+As $[K'(E):K'(x^{11})] = 22$, $[K'(E):K'(x^{11},y^{11})]\leq 11$ and $[K'(x^{11},y^{11}):K'(x^{11})]\leq 2$, both inequalities are equalities.
+The field $K(a,b)$ is separable over $k$, so $K(a,b)\otimes_kk' = K'(a,b)$ is a field, and $[K'(E):K(a,b)] = 121$.
+Since $K(a,b)\subseteq L$ and $[K'(E):L] = 11$ by Lemma~\ref{lem:p11-curve}(2), we get $[L:K(a,b)] = 11$.
+
+Let $\O_0$ be the local ring of the plane $\Spec k[a,b]$ at the generic point of the curve $u = b^2-a^3 = 0$.
+It is a discrete valuation ring with uniformizer $u$ and residue field $k(s)$, where $s = b/a$, and $a\mapsto s^2$, $b\mapsto s^3$.
+By \eqref{eq:p11-Q}, $Q\in\O_0$ has residue $c^9s^{11}-c^{10}$, which does not lie in $k(s)^{11} = k^{11}(s^{11})$ because $c^9\notin k^{11}$.
+If $\theta$ were in $K(a,b)$, it would lie in the normal ring $\O_0$, and the residue of $Q = \theta^{11}$ would be an $11$th power.
+Hence $\theta\notin K(a,b)$, and $L = K(a,b)(\theta)$ because $[L:K(a,b)]$ is prime.
+\end{proof}
+
+\paragraph{Gradient identities.}
+Put $\widetilde Q(c,a,b) = Q(b^2-a^3,a,b,c)$, $u = b^2-a^3$ and $h = 5\widetilde Q_c$.
+Then
+\begin{equation}\label{eq:p11-gradient}
+  \widetilde Q_c = -2h,\qquad
+  \widetilde Q_a = ubh,\qquad
+  \widetilde Q_b = 3uah.
+\end{equation}
+These identities follow from weighted homogeneity and the truncated exponential defining $\theta$.
+For weights $(6,2,3,11)$ on $(u,a,b,c)$, the polynomial $Q$ is homogeneous of degree $110$.
+The substitution $u = b^2-a^3$ preserves these weights, so Euler's identity in characteristic $11$ gives
+\[
+  2a\widetilde Q_a+3b\widetilde Q_b = 0.
+\]
+Write $P_i = \partial^i x$ and $\Phi(P) = P(u^{11},u^{18}a,u^{27}b)$, and put $\partial' = 2b\partial_a+3a^2\partial_b$.
+Since $\partial'u = 0$, we have $\Phi(\partial P) = u^9\partial'\Phi(P)$.
+Differentiating the truncated sum for $Q$ in $c$, and using $P_{11} = 0$, therefore gives
+\[
+  (\partial\theta)^{11}
+  = \sum_{i=0}^{9}\frac{(-c)^i}{i!\,u^{11i}}\Phi(P_{i+1})
+  = -u^{11}\widetilde Q_c
+  = u^9\partial'\widetilde Q.
+\]
+Consequently $2b\widetilde Q_a+3a^2\widetilde Q_b = -u^2\widetilde Q_c$.
+Combining this with Euler's identity and cancelling $u$ in $\FF_{11}[c,a,b]$ proves \eqref{eq:p11-gradient}.
+The coefficient of $c^0$ in $h$ is $u^{16}b$, so $h\neq 0$.
+Thus $h$ is a greatest common divisor of the three derivatives, and their normalized quotients generate the unit ideal because $5\widetilde Q_c/h = 1$.
+The same identities give
+\begin{equation}\label{eq:p11-differentials}
+  \partial'Q = 2u^2h,\qquad
+  (\partial\theta)^{11} = 2u^{11}h.
+\end{equation}
+Reducing $h = 5\widetilde Q_c$ modulo $u$ and using $\overline Q = c^9s^{11}-c^{10}$ gives
+\begin{equation}\label{eq:p11-h-residue}
+  \overline h = c^8s^{11}+5c^9\neq 0
+\end{equation}
+in the residue field $k(s)$.
+
+\subsection{The fibre over $u = 0$}
+
+Let $R = \O_{B,0}$, and let $\mathcal W$ be the closure of $b^2 = a^3+u$ in $\PP^2_R$.
+Its affine part $\Spec R[a,b]/(b^2-a^3-u)$ is a localization of the plane $\Spec A$, where $A = k[a,b]$.
+Near the point $O$ at infinity of the special fibre, the functions $\xi = a/b$ and $\zeta = 1/b$ satisfy $\zeta = \xi^3+u\zeta^3$.
+Hence $\mathcal W$ is smooth over $k$, the point $O$ is $k$-rational with local coordinates $u$ and $\xi$, and $\zeta = \xi^3\varepsilon$ for the unit $\varepsilon = (1-u\zeta^2)^{-1}$ of $\O_{\mathcal W,O}$.
+The special fibre $\mathcal W_0$ is the cuspidal cubic $b^2 = a^3$, and the local ring of $\mathcal W$ at its generic point is $\O_0$.
+Let $\mathcal Z$ be the normalization of $\mathcal W$ in $L$.
+It is finite over $\mathcal W$, proper over $R$ with generic fibre $X_K$, and $\mathcal Z\to\mathcal W$ is a homeomorphism because $L/K(a,b)$ is purely inseparable.
+
+\begin{lemma}\label{lem:p11-regular}
+The scheme $\mathcal Z$ is regular, and its special fibre $\mathcal Z_0$ is integral.
+The element $u$ is a uniformizer of the local ring $\O_{\mathcal Z,z_0}$ at the generic point $z_0$ of $\mathcal Z_0$, whose residue field is $k(s)(\bar\theta)$, where $\bar\theta$ is the residue of $\theta$ and $\bar\theta^{11} = c^9s^{11}-c^{10}$.
+In particular $\mathcal Z$ is the minimal regular model of $X_K$ over $R$.
+\end{lemma}
+
+\begin{proof}
+We first show that the normalization $N$ of $A$ in $L$ is regular; the affine part of $\mathcal Z$ is a localization of $\Spec N$.
+Every element of $L$ has its $11$th power in $\Frac(A)$, so $N = L\cap A^{1/11}$, where $A^{1/11} = k^{1/11}[a^{1/11},b^{1/11}]$.
+This is a regular ring with $p$-basis $\{c^{1/11},a^{1/11},b^{1/11}\}$ over $\FF_{11}$, so the module $\mathcal T = \Der_{\FF_{11}}(A^{1/11})$ is free on the dual basis.
+Then $\theta = \widetilde Q(c^{1/11},a^{1/11},b^{1/11})\in A^{1/11}$, since both sides are $11$th roots of $Q$.
+Let $\mathcal F = \{D\in\mathcal T\mid D(\theta) = 0\}$; it is saturated in $\mathcal T$ and closed under brackets and $p$th powers, so it is a foliation on $\Spec A^{1/11}$.
+The derivations of $\Frac(A)^{1/11}$ which vanish on $L = \Frac(A)(\theta)$ are those which vanish on $\theta$, and $L$ is the field of their constants by Jacobson's correspondence \cite{Jac44}; hence $N = (A^{1/11})^{\mathcal F}$.
+By \eqref{eq:p11-gradient}, the quotients $\widetilde Q_c/h$, $\widetilde Q_a/h$ and $\widetilde Q_b/h$ generate the unit ideal of $\FF_{11}[c,a,b]$.
+For $D\in\mathcal T$ the chain rule gives $D(\theta) = h^{1/11}\lambda(D)$, where
+\[
+  \lambda(D) = \sum_{z\in\{c,a,b\}}(\widetilde Q_z/h)(c^{1/11},a^{1/11},b^{1/11})\,D(z^{1/11}),
+\]
+and the $A^{1/11}$-linear map $\lambda\from\mathcal T\to A^{1/11}$ is surjective.
+Hence $\mathcal F = \ker\lambda$ is a direct summand of $\mathcal T$ of rank two, that is, a subbundle of $\mathcal T$, and $N$ is regular by \cite[Proposition~2.4]{Eke87}.
+
+Next we consider the point $O$.
+Every monomial $u^ma^ib^j$ in \eqref{eq:p11-Q} satisfies $2i+3j\leq 11$, with equality only for $c^9a^4b$.
+Near $O$ we have $a^ib^j = \xi^i\zeta^{-i-j} = \xi^{-2i-3j}\varepsilon^{-i-j}$, so $\theta_\infty = \xi\theta$ satisfies $\theta_\infty^{11} = \xi^{11}Q\in\O_{\mathcal W,O}$, and $\xi^{11}Q$ has value $c^9$ at $O$.
+Since $c^9\notin k^{11}$, the ring $\O_{\mathcal W,O}[T]/(T^{11}-\xi^{11}Q)$ is flat over $\O_{\mathcal W,O}$ with closed fibre the field $k(c^{9/11})$, hence a regular local ring \cite[Tag~\stackstag{031E}]{Stacks}.
+Being finite over $\O_{\mathcal W,O}$ with fraction field $L$ and normal, it is the local ring of $\mathcal Z$ at the point over $O$.
+As the special fibre $\mathcal W_0$ lies in the union of the affine part and $\{O\}$, and the generic fibre $X_K$ is smooth, $\mathcal Z$ is regular.
+
+Since $\mathcal Z\to\mathcal W$ is a homeomorphism, $\mathcal Z_0$ is irreducible.
+The ring $\O_{\mathcal Z,z_0}$ is the integral closure of $\O_0$ in $L$, a discrete valuation ring finite over $\O_0$, so its ramification index $e$ and residue degree $f$ over $\O_0$ satisfy $ef = [L:K(a,b)] = 11$.
+Its residue field contains $k(s)$ and $\bar\theta$, where $\bar\theta^{11} = c^9s^{11}-c^{10}$ is not an $11$th power in $k(s)$ by the proof of Lemma~\ref{lem:p11-equations}.
+Hence $f = 11$ and $e = 1$, so $u$ is a uniformizer, the residue field is $k(s)(\bar\theta)$, and the special fibre $\mathcal Z_0 = \div(u)$ is integral.
+Finally, $\mathcal Z_0^2 = 0$, so $\mathcal Z_0$ is not an exceptional curve, and $\mathcal Z$ is the minimal regular model \cite[Section~9.3]{Liu02}.
+\end{proof}
+
+\begin{lemma}\label{lem:p11-omega-zero}
+The rational section $u^{-1}\eta$ of $\omega_{\mathcal Z/R}$ generates $\omega_{\mathcal Z/R}$; equivalently, $\div_{\mathcal Z}(\eta) = \mathcal Z_0$.
+\end{lemma}
+
+\begin{proof}
+Since $\mathcal Z$ is regular, $\omega_{\mathcal Z/R}$ is invertible, and since $\eta$ is regular and nowhere vanishing on $X_K$, it suffices to show that $\eta/\tau$ has valuation one at $z_0$ for a generator $\tau$ of $\omega_{\mathcal Z/R}$ at $z_0$.
+The ring $\O_0[T]/(T^{11}-Q)$ is local with residue field $k(s)[T]/(T^{11}-c^9s^{11}+c^{10})$, so it is a discrete valuation ring, equal to $\O_{\mathcal Z,z_0}$.
+Thus near $z_0$ the scheme $\mathcal Z$ is the hypersurface $g = 0$, where $g = T^{11}-Q$, in $\mathcal P = \Spec A[T]$, which is smooth over $R$ at the point over $z_0$.
+There $b$ is a unit, and $\Omega^1_{\mathcal P/R}$ is free on $da$ and $dT$, because $2b\,db = 3a^2\,da$ in $\Omega^1_{\mathcal P/R}$.
+By the adjunction formula \cite[Section~6.4]{Liu02}, $\omega_{\mathcal Z/R}$ is generated at $z_0$ by the rational differential $\tau$ on $X_K$ determined by $dg\wedge\tau = da\wedge dT$ on the generic fibre of $\mathcal P$.
+Here $dg = -Q_a\,da-Q_b\,db = -\frac{\partial'Q}{2b}\,da$, as $11T^{10} = 0$, where $Q_a$ and $Q_b$ are the partial derivatives of $Q(u,a,b)$ with $u$ fixed and $\partial'Q = 2bQ_a+3a^2Q_b$; so $\tau = -2b\,d\theta/\partial'Q$.
+On the other hand $\partial(\theta)\in L$ is nonzero and $\eta = d\theta/\partial(\theta)$ by Lemma~\ref{lem:p11-curve}(3), so
+\[
+  \frac{\eta}{\tau} = -\frac{\partial'Q}{2b\,\partial(\theta)}.
+\]
+Let $v$ be the valuation of $\O_{\mathcal Z,z_0}$; by Lemma~\ref{lem:p11-regular}, it restricts to the valuation of $\O_0$ on $K(a,b)$.
+The residue \eqref{eq:p11-h-residue} shows that $h$ is a unit at $z_0$.
+By \eqref{eq:p11-differentials}, we obtain $v(\partial'Q) = 2$ and $v(\partial(\theta)) = 1$.
+Since $v(b) = 0$, we have $v(\eta/\tau) = 1$.
+\end{proof}
+
+\begin{lemma}\label{lem:p11-other-fibres}
+Let $P\neq 0$ be a closed point of $B$, let $R_P = \O_{B,P}$, and let $X_{(P)}$ be the minimal regular model of $X_K$ over $R_P$.
+Then $\omega_{X_{(P)}/R_P}$ is generated by $\eta$ if $P\neq\infty$, and by $u\eta$ if $P = \infty$.
+\end{lemma}
+
+\begin{proof}
+If $P\neq\infty$, let $\mathcal E_P$ be the closure of $y^2 = x^3+u^5$ in $\PP^2_{R_P}$, and put $\omega_P = \omega_E$, $\partial_P = \partial$ and $D_P = u\delta = \partial_P+u\partial_\gamma$.
+If $P = \infty$, let $w = u^{-1}$, $x' = w^2x$ and $y' = w^3y$, let $\mathcal E_P$ be the closure of $y'^2 = x'^3+w$ in $\PP^2_{R_P}$, and put $\omega_P = dx'/2y' = u\,\omega_E$, $\partial_P = w\partial$ and $D_P = \delta = \partial_P+\partial_\gamma$; thus $\partial_P(x') = 2y'$ and $\partial_P(y') = 3x'^2$.
+In both cases $\mathcal E_P$ is regular with irreducible special fibre, $\omega_{\mathcal E_P/R_P}$ is generated by $\omega_P$ \cite[9.1]{LLR04}, and $\partial_P$ is a derivation of $\O_{\mathcal E_P}$, as one checks on the two standard affine charts.
+Hence $D_P$ is an $R_P$-linear derivation of the structure sheaf of $Y_P = \mathcal E_P\otimes_kk'$, with $D_P^{11} = 0$ by Lemma~\ref{lem:p11-curve}(1), and $\varepsilon_P = D_P(\gamma)\in\{u,1\}$ is a unit of $R_P$.
+Lemma~\ref{lem:p11-quotient} with $g = \gamma/\varepsilon_P$ gives a scheme $Y_P^{D_P}$ with
+\[
+  \O_{Y_P} = \O_{Y_P^{D_P}}[T]/(T^{11}-c\,\varepsilon_P^{-11})\cong\O_{Y_P^{D_P}}\otimes_kk',
+\]
+the last isomorphism mapping $T$ to $\gamma/\varepsilon_P$.
+So $Y_P^{D_P}$ is proper and flat over $R_P$ with generic fibre $X_K$, as $K'(E)^{D_P} = L$, and $Y_P^{D_P}\otimes_kk'\cong Y_P$, compatibly with $L\otimes_KK' = K'(E)$.
+The scheme $Y_P$ is regular: for $P\neq\infty$ it is smooth over the regular ring $R_P\otimes_kk'$, a localization of $k'[u]$; for $P = \infty$ its affine part is a localization of $k'[x',y']$, and it is smooth over $k'$ near the point at infinity.
+By faithfully flat descent \cite[Tag~\stackstag{00OF}]{Stacks}, $Y_P^{D_P}$ is regular.
+Its special fibre is irreducible, being homeomorphic to that of $\mathcal E_P$, so it contains no exceptional curve and $Y_P^{D_P} = X_{(P)}$.
+Finally, $\omega_{X_{(P)}/R_P}\otimes_kk'\cong\omega_{Y_P/R_P\otimes_kk'}$ \cite[Theorem~6.4.9]{Liu02}, and this isomorphism maps $\eta$ to $\omega_E$ by Lemma~\ref{lem:p11-curve}(3).
+As $\omega_P$ generates $\omega_{Y_P/R_P\otimes_kk'}$, the section $(\omega_P/\omega_E)\,\eta$, which is $\eta$ or $u\eta$, generates $\omega_{X_{(P)}/R_P}$.
+\end{proof}
+
+\subsection{Geometric non-normality}
+
+\begin{lemma}\label{lem:p11-nonnormal}
+The ring $\O_{\mathcal Z,z_0}\otimes_kk'$ is not normal.
+\end{lemma}
+
+\begin{proof}
+Put $t = y/x$, $r = x/t^2$ and $\beta = t^5/u^4$ in $K'(E)$.
+A direct computation using $y^2 = x^3+u^5$ gives
+\[
+  \xi = \frac{u^9}{t^{11}},\quad u = \xi^5\beta^{11},\quad t = \xi^4\beta^9,\quad a = \xi^{-2}r^{11},\quad b = \xi^{-3}r^{11}\quad\text{and}\quad r^3-r^2+\xi\beta = 0.
+\]
+The function $t$ on $E_{K'}$ has degree three, with poles at the origin and at the two points with $x = 0$, and $K'(t) = k'(\xi,\beta)$.
+So $K'(E) = K'(t,x) = k'(\xi,\beta,r)$ is a cubic extension of $k'(\xi,\beta)$ in which $r$ has minimal polynomial $T^3-T^2+\xi\beta$, and the subring $C = k'[\xi,\beta,r]$ is isomorphic to $k'[\xi,\beta][T]/(T^3-T^2+\xi\beta)$.
+Let $\O'$ be the localization of $C$ at the height-one prime ideal $(\beta,r-1)$.
+Since $r$ is a unit of $\O'$ and $r-1 = -\xi\beta/r^2$, the ring $\O'$ is a discrete valuation ring with uniformizer $\beta$ and residue field $k'(\xi)$; let $v'$ be its valuation.
+Then $v'(u) = 11$, $v'(a) = v'(b) = 0$, and $a$ has residue $\xi^{-2}$, which is transcendental over $k$.
+So the centre of $v'|_{K(a,b)}$ on $\Spec k[a,b]$ is a non-closed point of the curve $u = 0$, that is, its generic point, and $v'|_{K(a,b)}$ is $11$ times the valuation of $\O_0$.
+
+Let $\O = \O_{\mathcal Z,z_0}$ with valuation $v$.
+By Lemma~\ref{lem:p11-regular}, $v$ restricts to the valuation of $\O_0$, and since $L/K(a,b)$ is purely inseparable, $v$ is its only extension to $L$; hence $v'|_L = 11v$ and $\O\subseteq\O'$.
+For every $h\in\O'$, we have $h^{11}\in L$ and $v(h^{11}) = v'(h)\geq 0$, so $h^{11}\in\O$ and $h$ is integral over $\O$.
+Since $\O'$ is normal and contains $\O[\gamma]$, it is the normalization of $\O\otimes_kk' = \O[\gamma]$ in $K'(E) = L(\gamma)$.
+
+The derivation $\delta$ vanishes on $L$ and satisfies $\delta(\gamma) = 1$ by Lemma~\ref{lem:p11-curve}.
+Using $\partial(t) = (3x^3-2y^2)/x^2 = (x^3-2u^5)/x^2$, we compute
+\[
+  \delta(\beta) = 5u^{-5}t^4\partial(t) = \frac{5r}{\xi\beta}+\frac{1}{r^2}.
+\]
+The element $\beta\delta(\beta) = 5r/\xi+\beta/r^2$ has nonzero residue $5/\xi$ in $k'(\xi)$, so $v'(\delta(\beta)) = -1$.
+Thus $\delta$ does not preserve $\O'$, and Lemma~\ref{lem:normality-derivation} shows that $\O\otimes_kk'$ is not normal.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\textup{\ref{prop:p11}}]
+Let $f\from X\to B$ be the minimal regular model of $X_K$ over $B$ \cite[Section~9.3]{Liu02}; it is a regular proper surface over $k$, hence projective \cite[Remark~9.3.5]{Liu02}.
+Over $R$ it is $\mathcal Z$ by Lemma~\ref{lem:p11-regular}.
+By Lemmas~\ref{lem:p11-omega-zero} and~\ref{lem:p11-other-fibres}, the rational section $\eta$ of $\omega_{X/B}$ has divisor $f^*(0)+f^*(\infty)$.
+Hence $\omega_{X/B}\cong f^*\O_B(2)$, and $\omega_X\cong\omega_{X/B}\otimes f^*\omega_B\cong\O_X$ \cite[Theorem~6.4.9]{Liu02}.
+Since $X$ is normal and $X_K$ is geometrically integral, $f_*\O_X = \O_B$, so $H^0(X,\O_X) = k$.
+By Lemma~\ref{lem:p11-nonnormal}, $X_{k'}$ is not normal at the point over $z_0$, and $X$ is not geometrically normal \cite[Tag~\stackstag{038O}]{Stacks}.
+
+The separable closure $k^{\rm s}$ also has $p$-basis $\{c\}$, and $c^9\notin(k^{\rm s})^{11}$.
+These are the only properties of $k$ used above, so the same construction and proofs apply over $k^{\rm s}$.
+\end{proof}
+
+\begin{remark}\label{rem:p11}
+\begin{enumerate}
+\item The Jacobian of $X_K$ is $E$.
+  Indeed, both have $j$-invariant $0$ and become isomorphic over $K'$, and the twists of $E$ are classified by $K^*/K^{*6}$; if $D\in K^*$ is a sixth power $z^6$ in $K'$, then $z^{11}\in K$ and $D = (D^2)^6/(z^{11})^6$ is a sixth power in $K$.
+  So $E$ has reduction type $\mathrm{II}^*$ at the $k$-rational point $u = 0$, as in configuration~\textup{(b)} of Remark~\ref{rem:small-primes}.
+\item The valuation $v'$ in the proof of Lemma~\ref{lem:p11-nonnormal} satisfies $v'(u) = 11$; accordingly, the fibre over $u = 0$ of the normalization of $X_{k'}$ is irreducible of multiplicity $11$.
+\item For orientation, although we do not use it: $X_K$ is the twist of $E$ by the $\alpha_{11}$-torsor defined by $c/u^{11}$, where $\alpha_{11}$ acts on the supersingular curve $E$ through the translations given by $\partial$.
+  The construction is analogous to the $\mu_p$-twists used in \cite[Example~6.2]{WZ26} for $p = 5$ and $p = 7$.
+\end{enumerate}
+\end{remark}

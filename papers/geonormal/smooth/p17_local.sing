@@ -1,0 +1,20 @@
+// Independent local algebra checks for Proposition prop:p17-sing in singularities.tex.
+// This representative is a check, not a classification of all analytic types.
+ring R = 17,(x,y,z),ds;
+poly f = z2-(y2+x3)^2-x7*y;
+ideal J = f,diff(f,x),diff(f,y),diff(f,z);
+"Tjurina number of the representative (expected 19):";
+vdim(std(J));
+
+// Schroer, Corollary 5.4: regular descent would make one partial redundant.
+"Remainders of f_x, f_y, f_z modulo f and the other two partials:";
+reduce(diff(f,x),std(ideal(f,diff(f,y),diff(f,z))));
+reduce(diff(f,y),std(ideal(f,diff(f,x),diff(f,z))));
+reduce(diff(f,z),std(ideal(f,diff(f,x),diff(f,y))));
+
+// Normalized double cover of the plane blowup: y=x*v, z=x^2*w.
+ring C = 17,(x,v,w),ds;
+poly F = w2-(v2+x)^2-x4*v;
+"Tjurina number on the normalized plane blowup (expected 8, type A_8):";
+vdim(std(ideal(F,diff(F,x),diff(F,v),diff(F,w))));
+quit;

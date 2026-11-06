@@ -1,0 +1,20 @@
+// Independent local algebra checks for the unified example.
+ring R5 = 5,(s,u,v),ds;
+poly f5 = v2-u3-s5;
+"p=5 standard E8 point: Tjurina number (expected 10):";
+vdim(std(ideal(f5,diff(f5,s),diff(f5,u),diff(f5,v))));
+
+proc target(int p)
+{
+    ring R = p,(U,V,z),ds;
+    poly f = U*V-z^p;
+    return(vdim(std(ideal(f,diff(f,U),diff(f,V),diff(f,z)))));
+}
+"Tjurina numbers of the target A_(p-1) points (expected 5,7,11,13,17,19):";
+target(5);
+target(7);
+target(11);
+target(13);
+target(17);
+target(19);
+quit;

@@ -1,0 +1,402 @@
+\section{Conventions and preliminaries}\label{sec:setup}
+\subsection{Conventions}\label{subsec:conventions}
+\begin{itemize}
+\item Throughout, let $k$ be the base field, of characteristic $p>0$.
+\item Surfaces and curves are integral and of finite type over $k$, unless stated otherwise.
+\item For a line bundle $\mathcal L$ on a proper curve over a field $F$, we write $\deg_F(\mathcal L)$ for its degree over $F$.
+  For a Cartier divisor $D$ on a surface $X$ and an integral curve $C\subset X$ proper over $F$, we put $(D\cdot C)_F := \deg_F(\O_X(D)|_C)$ and write $(D^2)_F$ for self-intersection.
+  Unless indicated otherwise, intersection numbers on a surface over $F$ are computed over $F$, and intersections with vertical curves on a model over a discrete valuation ring are computed over its residue field.
+  We omit the subscript when the field is clear.
+\item If a curve $C$ is proper over a finite extension $\ell/k$, then $\deg_k(\mathcal L) = [\ell:k]\deg_\ell(\mathcal L)$ for every line bundle $\mathcal L$ on $C$.
+  For an integral proper curve $C\subset X$ over $k$, with normalization $\nu\from C^\nu\to C$ and $\ell = H^0(C^\nu,\O_{C^\nu})$, we also write $(D\cdot C)_\ell := \deg_\ell\bigl(\nu^*(\O_X(D)|_C)\bigr)$, so
+  \[
+    (D\cdot C)_k = [\ell:k](D\cdot C)_\ell.
+  \]
+\item On a normal projective surface we use Mumford's rational intersection pairing of Weil divisors, computed over the base field of the surface.
+\item We write $\sim$ for linear equivalence and $\equiv$ for numerical equivalence.
+\item For a $\QQ$-factorial normal projective surface $Z$, we write $N^1(Z)_\QQ$ for the $\QQ$-vector space of Weil divisors with rational coefficients modulo numerical equivalence, and $\rho(Z) = \dim N^1(Z)_\QQ$.
+\item The intersection form on $N^1(Z)_\QQ$ is \emph{isotropic} if $D^2 = 0$ for some nonzero $D\in N^1(Z)_\QQ$, and \emph{anisotropic} otherwise.
+\item A \emph{negative curve} on a surface is a curve with negative self-intersection.
+\item A \emph{fibration} is a proper morphism $f\from W\to B$ of schemes with $f_*\O_W = \O_B$.
+\item For a scheme $W$ over $k$ and a field extension $k'/k$ we write $W_{k'} = W\times_k\Spec k'$.
+\item If $W$ is geometrically integral over $k$, its \emph{geometric normalization} is the normalization of $W_{\bar k}$.
+\item A locally Noetherian scheme $W$ over a field $k$ is \emph{geometrically regular} at a point $w$ if, for every finite extension $k'/k$, the scheme $W_{k'}$ is regular at every point over $w$ \cite[D\'efinition~6.7.6]{EGA}.
+  If $W_{\bar k}$ is locally Noetherian, for instance if $W$ is locally of finite type over $k$, then $W$ is geometrically regular if and only if $W_{\bar k}$ is regular, by \cite[Proposition~5.13.7]{EGA} and faithfully flat descent of regularity \cite[Tag~\stackstag{07NG}]{Stacks}; cf.\ \cite[Proposition~6.7.7]{EGA}.
+\item We write $F^e_W$ for the $e$-th power of the absolute Frobenius morphism of an $\FF_p$-scheme $W$.
+\item For a finite surjective morphism $g\from W_1\to W_2$ of normal Noetherian integral schemes and a Weil divisor $D$ on $W_2$, the pullback $g^*D$ is defined as the closure of the pullback of $D$ restricted to the regular locus of $W_2$; the complement of the regular locus has codimension at least two, and so does its preimage.
+This pullback is compatible with composition, because this may be checked at points of codimension one, where all Weil divisors are Cartier.
+\item For a local ring $(R,\mathfrak m,\kappa)$, we write $\widehat R$ for its $\mathfrak m$-adic completion.
+\item
+  For a point $z$ of a scheme $Z$, we write $\O^{\rm sh}_{Z,z}$ for the \emph{strict henselization} of $\O_{Z,z}$ with respect to a separable closure of $\kappa(z)$.
+  The ring $\O^{\rm sh}_{Z,z}$ is a filtered colimit of \'etale $\O_{Z,z}$-algebras, and the map $\O_{Z,z}\to\O^{\rm sh}_{Z,z}$ is flat and local \cite[Tag~\stackstag{03QL}]{Stacks}.
+\end{itemize}
+
+\subsection{Purely inseparable base change}\label{subsec:canonical-base-change}
+We record the behavior of canonical divisors under base change; cf.\ \cite{Tan18BC} and \cite[Theorems~1.1 and~1.2]{PW22}.
+For our application, we need the case where the scheme $X/k$ is not necessarily of finite type, which is due to \cite{NT24}. For simplicity, we only consider the case where $X$ is geometrically integral.
+\begin{lemma}\label{lem:canonical-base-change}
+Let $A$ be an excellent Gorenstein Noetherian $k$-algebra of finite Krull dimension.
+Let $X\to\Spec A$ be a flat Gorenstein morphism of finite type, with $X$ normal and geometrically integral over $k$.
+For a finite field extension $k'/k$, put $A' = A\otimes_k k'$ and $X_{A'} = X\times_A\Spec A'$.
+Let $\nu\from X'\to X_{A'}$ be the normalization of the integral scheme $X_{A'} = X_{k'}$.
+Then the divisorial conductor of $\nu$ is $(p-1)C_{k'}$ for an effective integral Weil divisor $C_{k'}$, and
+\begin{equation}\label{eq:canonical-base-change}
+  \omega_{X'/A'}\cong\O_{X'}\bigl(-(p-1)C_{k'}\bigr)\otimes\nu^*\omega_{X_{A'}/A'},
+\end{equation}
+where $\omega_{X'/A'}$ denotes the relative canonical sheaf, a rank-one reflexive sheaf, and $C_{k'} = 0$ if and only if $X_{A'}$ is normal.
+\end{lemma}
+
+\begin{proof}
+The normalization $\nu$ is finite since $A$ is excellent.
+The ring $A'$ is Gorenstein by base change, and $X_{A'}$ is Gorenstein because $X_{A'}\to\Spec A'$ is Gorenstein \cite[Tags~\stackstag{0C03} and~\stackstag{0BJL}]{Stacks}.
+Since $X$ is of finite type over the excellent ring $A$, it is Noetherian and Japanese, so \cite[Corollary~5.10]{NT24} shows that the divisorial conductor of $\nu$ is $(p-1)C_{k'}$ for an effective integral Weil divisor $C_{k'}$.
+Since $\omega_{X_{A'}/A'}$ is invertible, finite duality gives \eqref{eq:canonical-base-change} in codimension one, and both sides are reflexive on $X'$, so the isomorphism extends globally.
+Finally, $C_{k'} = 0$ precisely when $X_{A'}$ is normal in codimension one; since $X_{A'}$ is Gorenstein and hence $S_2$, this is equivalent to normality by Serre's criterion.
+\end{proof}
+
+For extensions of height one, the vanishing of this conductor divisor admits the following local criterion, which can be seen as an algebraic version of Ji--Waldron's description of normalized base changes by foliations \cite[Sections~3 and~4]{JW21}.
+\begin{lemma}\label{lem:normality-derivation}
+Let $A$ be a normal $k$-domain, and let $k'/k$ be finite with $k'^p\subseteq k$.
+Suppose that $B := A\otimes_k k'$ is a domain, with normalization $\widetilde B$.
+For $D\in\Der_k(k')$, write $D_B = \mathrm{id}_A\otimes D$ and use the same notation for its extension to $\Frac(B)$.
+Then $B$ is normal if and only if $D_B$ preserves $\widetilde B$ for every $D\in\Der_k(k')$.
+\end{lemma}
+
+\begin{proof}
+The forward implication is immediate.
+For the converse, put $L = \Frac(A)$ and $K = L\otimes_k k' = \Frac(B)$.
+Choose a $p$-basis $\gamma_1,\ldots,\gamma_r$ of $k'/k$ and let $\delta_i$ be the $L$-derivation of $K$ with $\delta_i(\gamma_j) = \delta_{ij}$.
+The commuting derivations $\delta_i$ satisfy $\delta_i^p = 0$ and preserve $\widetilde B$ by hypothesis.
+They therefore define an action of $G = \alpha_p^r$ on $\Spec\widetilde B$ \cite[Section~4]{ST23}.
+Writing $t_1,\ldots,t_r$ for the coordinates on $G$, its coaction on $k'$ sends $\gamma_i$ to $\gamma_i+t_i$, so the inclusion $k'\hookrightarrow\widetilde B$ is equivariant.
+Since $\Spec k'\to\Spec k$ is a $G$-torsor, faithfully flat descent for algebras gives
+\[
+  \widetilde B\cong (\widetilde B)^G\otimes_k k'.
+\]
+The common kernel of the $\delta_i$ in $K$ is $L$, so $(\widetilde B)^G = \widetilde B\cap L$.
+Every element of this intersection is integral over $A$, since $B$ is integral over $A$.
+Normality of $A$ therefore gives $(\widetilde B)^G = A$, and the displayed isomorphism is the natural map $B\to\widetilde B$.
+Hence $B$ is normal.
+\end{proof}
+
+
+\subsection{Killing a cohomology class by a generic $\alpha_p$-torsor}\label{subsec:generic-alpha-p-torsor}
+\begin{lemma}\label{lem:generic-alpha-p-torsor}
+Let $X/k$ be a regular projective geometrically integral variety with $H^1(X,\O_X)\neq 0$.
+Suppose that $H^1((X_{k^{1/p^e}})^\nu,\O) = 0$ for some $e\geq 1$.
+Then over $K = k(a)$, with $a$ transcendental over $k$, there is an $\alpha_p$-torsor $\pi\from V\to X_K$, where $V$ is a regular projective geometrically non-reduced variety with $H^0(V,\O_V) = K$ and $\omega_V\cong\pi^*\omega_{X_K}$.
+\end{lemma}
+
+\begin{proof}
+Put $\ell = k^{1/p^e}$ and $T = (X_\ell)^\nu$.
+Then $H^0(T,\O_T) = \ell$.
+The absolute Frobenius $F_X^e$ factors through $T\to X$.
+Since $H^1(T,\O_T) = 0$, we have $(F_X^*)^e = 0$ on $H^1(X,\O_X)$.
+Choose $\eta\neq 0$ in $H^1(X,\O_X)$ and let $r\geq 1$ be minimal with $(F_X^*)^r\eta = 0$.
+Then $\xi := (F_X^*)^{r-1}\eta$ is nonzero and satisfies $F_X^*(\xi) = 0$.
+Choose a finite affine open cover $\{U_i = \Spec A_i\}$ and a \v{C}ech cocycle $(g_{ij})$ representing $\xi$.
+Since $F_X^*(\xi) = 0$, the cocycle $(g_{ij}^p)$ is a coboundary, so there are $f_i\in A_i$ with $g_{ij}^p = f_i-f_j$.
+Write $\xi_K = \xi\otimes 1\in H^1(X_K,\O_{X_K})$.
+
+Glue
+\[
+  V_i = \Spec\bigl((A_i\otimes_kK)[t_i]/(t_i^p-f_i-a)\bigr)
+\]
+by $t_i = t_j+g_{ij}$.
+These transitions preserve the equations because $g_{ij}^p = f_i-f_j$, and they satisfy the cocycle condition.
+Translations $t_i\mapsto t_i+\varepsilon$ define an $\alpha_p$-torsor $\pi\from V\to X_K$.
+Since $g_{ij} = t_i-t_j$ on $V$, we have $\pi^*\xi_K = 0$ in $H^1(V,\O_V)$.
+Each $V_i$ is regular, since its coordinate ring is a localization of the regular ring
+\[
+  A_i[a,t_i]/(t_i^p-f_i-a)\cong A_i[t_i].
+\]
+Hence $V$ is regular.
+Since $\pi$ is a universal homeomorphism and $X_K$ is integral, $V$ is integral.
+The morphism $\pi$ is finite, so $V$ is projective over $K$.
+
+To show that $H^0(V,\O_V) = K$, let $s\in H^0(V,\O_V)$ be nonzero, and represent $s|_{V_i}$ by a polynomial $s_i(t_i)\in (A_i\otimes_kK)[t_i]$ of degree $<p$.
+The transitions preserve degree, so let $m$ be the common degree of the $s_i$.
+Their leading coefficients glue to an element $b\in H^0(X_K,\O_{X_K}) = K$.
+If $m>0$, write their two leading terms as $bt_i^m+c_it_i^{m-1}$, where $b\in K^\times$ and $c_i\in A_i\otimes_kK$.
+Comparing coefficients of $t_j^{m-1}$ in $s_i(t_j+g_{ij}) = s_j(t_j)$ gives $c_j-c_i = mbg_{ij}$, so $mb\xi_K = 0$ in $H^1(X_K,\O_{X_K})$.
+This contradicts $\xi_K\neq 0$.
+Thus the $s_i$ have degree zero and glue to an element of $K$, so $H^0(V,\O_V) = K$.
+
+Let $W_i$ be the inverse image of $U_i$ under $T\to X$.
+Since $H^1(T,\O_T) = 0$, the pulled-back cocycle has the form $g_{ij} = h_i-h_j$ with $h_i\in H^0(W_i,\O_T)$.
+The functions $f_i-h_i^p$ glue to a constant $\lambda\in H^0(T,\mathcal O_T) = \ell$.
+Put $L = \ell(a)$ and $T_L = T\times_\ell L$.
+Consider the Cartesian square
+\[
+  \begin{array}{ccc}
+    V\times_{X_K}T_L &\longrightarrow& V\\
+    \downarrow &&\downarrow\pi\\
+    T_L &\longrightarrow& X_K.
+  \end{array}
+\]
+The coordinates $z_i = t_i-h_i$ give an isomorphism
+\[
+  V\times_{X_K}T_L\cong T_L\times_L\Spec L[z]/(z^p-a-\lambda).
+\]
+Put $L' = L((a+\lambda)^{1/p})$ and $T_{L'} = T\times_\ell L'$.
+Then the projection $V\times_{X_K}T_{L'}\to T_{L'}$ is a trivial $\alpha_p$-torsor.
+Since $T_{L'}\to X_{L'}$ is birational, $V_{L'}$ is generically nonreduced.
+Hence $V$ is not geometrically reduced over $K$.
+
+Put $B_i = H^0(V_i,\O_{V_i})$.
+Let $\varphi_i\from B_i\to A_i\otimes_kK$ be the coefficient functional $\sum_{r<p}b_rt_i^r\mapsto b_{p-1}$.
+For $0\leq r<p$, the multiple $t_i^{p-1-r}\varphi_i$ extracts the coefficient of $t_i^r$.
+These multiples form the dual basis to $1,t_i,\ldots,t_i^{p-1}$, so $\varphi_i$ generates $\operatorname{Hom}_{A_i\otimes_kK}(B_i,A_i\otimes_kK)$ as a $B_i$-module.
+The translations $t_i = t_j+g_{ij}$ preserve the coefficient of degree $p-1$, so these generators glue to trivialize $\omega_{V/X_K}$.
+Finite duality then gives $\omega_V\cong\pi^*\omega_{X_K}$.
+\end{proof}
+
+\subsection{Tangent cones}\label{subsec:tangent-cones}
+Let $X$ be a variety over $k$, let $x\in X$ be a closed point at which $X$ is regular, with $\kappa(x)$ purely inseparable over $k$, and let $\bar x\in X_{\bar k}$ be the geometric point over $x$.
+Let $\mathfrak m_{\bar x}$ be the maximal ideal of $\O_{X_{\bar k},\bar x}$, and let $T = (\mathfrak m_{\bar x}/\mathfrak m_{\bar x}^2)^\vee$ be the Zariski tangent space of $X_{\bar k}$ at $\bar x$.
+Write $C = \Spec\bigl(\bigoplus_{j\geq 0}\mathfrak m_{\bar x}^j/\mathfrak m_{\bar x}^{j+1}\bigr)\subseteq T$ for the tangent cone and $I_C$ for its homogeneous ideal.
+The tangent cone $C$ has the same dimension as $X$, and $C = T$ if $\bar x$ is regular.
+If $\bar x$ is a singular point, let $e$ be the lowest degree of a nonzero form in $I_C$.
+We define the space of \emph{vertical directions} to be
+\[
+  L = \{v\in T : v(f) = 0\text{ for all }f\in\mathfrak m_x\},
+\]
+where $\mathfrak m_x$ is the maximal ideal of $\O_{X,x}$, mapped to $\mathfrak m_{\bar x}/\mathfrak m_{\bar x}^2$ by the projection $\pi\from X_{\bar k}\to X$.
+Equivalently, $L$ is the Zariski tangent space at $\bar x$ of the one-point fibre $\pi^{-1}(x) = \Spec(\kappa(x)\otimes_k\overline k)$.
+
+\begin{lemma}\label{lem:tangent-cone}
+In this situation, the following hold.
+\begin{enumerate}[label=\textup{(\arabic*)}]
+\item $\dim L = \dim_{\kappa(x)}\Omega_{\kappa(x)/k}$ and $\dim T\leq\dim X+\dim L$; in particular, $\dim T\leq\dim X+1$ if $\kappa(x)/k$ is simple.
+\item If $y_1,\dots,y_N$ is a basis of $\mathfrak m_{\bar x}/\mathfrak m_{\bar x}^2$ such that $y_1,\dots,y_u$ span the image of $\mathfrak m_x$, so that $L = \{v\in T : v(y_1) = \dots = v(y_u) = 0\}$, then $I_C$ is stable under $\partial/\partial y_j$ for $j>u$.
+\item Suppose that $e<p$, and let $y_1,\dots,y_N$ be as in \textup{(2)}.
+  Then every form of degree $e$ in $I_C$ is a polynomial in $y_1,\dots,y_u$ alone, so it does not involve the coordinates along $L$.
+  In particular, if $I_C$ is generated by one form, then $C$ is the preimage of a cone in $T/L$ under the projection $T\to T/L$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Put $\kappa = \kappa(x)$.
+For (1), the description of $L$ as the tangent space of the fibre gives $L^\vee\cong\Omega_{\kappa/k}\otimes_\kappa\bar k$.
+Since $\mathfrak m_x$ is generated by $\dim X$ elements and $L$ is the annihilator of its image in the cotangent space, $\dim T-\dim L\leq\dim X$.
+
+For (2), put $A = \O_{X,x}$ and $B = A\otimes_k\kappa$.
+The ring $B$ is finite over $A$, and $B/\mathfrak m_xB = \kappa\otimes_k\kappa$ is local with residue field $\kappa$ because $\kappa/k$ is purely inseparable.
+Hence $B$ is local with residue field $\kappa$, and it is the local ring of $X_\kappa$ at the unique point over $x$, which is $\kappa$-rational.
+Let $\mathfrak m$ be the maximal ideal of $B$, let $\Sigma\subseteq\mathfrak m/\mathfrak m^2$ be the $\kappa$-span of the image of $\mathfrak m_x$, and write the associated graded ring $\operatorname{gr}_{\mathfrak m}B$ as $S/I^*$ with $S = \Sym_\kappa(\mathfrak m/\mathfrak m^2)$, where $I^*$ is the ideal of initial forms.
+The maximal ideal of $\O_{X_{\bar k},\bar x}$ is generated by $\mathfrak m$, and $\operatorname{gr}_{\mathfrak m_{\bar x}}\O_{X_{\bar k},\bar x} = \operatorname{gr}_{\mathfrak m}B\otimes_\kappa\overline k$.
+Hence $T = (\mathfrak m/\mathfrak m^2)^\vee\otimes_\kappa\overline k$, $I_C = I^*\otimes_\kappa\overline k$, and $L$ is the annihilator of $\Sigma$.
+
+For $b\in\kappa$ with a lift $\tilde b\in A$, put $w_b = \tilde b\otimes 1-1\otimes b$, which lies in $\mathfrak m$.
+Let $\delta\in\Der_k(\kappa)$.
+Then $D = \mathrm{id}_A\otimes\delta$ is a derivation of $B$ which vanishes on $\mathfrak m_x$ and satisfies $D(w_b) = -1\otimes\delta(b)$, so $D(\mathfrak m^j)\subseteq\mathfrak m^{j-1}$ for $j\geq 1$.
+The induced maps $\mathfrak m^j/\mathfrak m^{j+1}\to\mathfrak m^{j-1}/\mathfrak m^j$ form a derivation of degree $-1$ of $S/I^*$, which is $\kappa$-linear because $f\,D(1\otimes c)\in\mathfrak m^j$ for $f\in\mathfrak m^j$ and $c\in\kappa$.
+Hence it is induced by the $\kappa$-linear derivation $\partial_\lambda$ of $S$ with $\partial_\lambda(y) = \lambda(y)$ for $y\in\mathfrak m/\mathfrak m^2$, where $\lambda$ is the functional $f\mapsto D(f)\bmod\mathfrak m$ on $\mathfrak m/\mathfrak m^2$, and therefore $\partial_\lambda(I^*)\subseteq I^*$.
+The functional $\lambda$ vanishes on $\Sigma$, and $\lambda(w_b) = -\delta(b)$.
+
+The cotangent-space identification for the fibre $\Spec(\kappa\otimes_k\kappa)$ gives an isomorphism $\Omega_{\kappa/k}\cong(\mathfrak m/\mathfrak m^2)/\Sigma$, sending $db$ to the class of $w_b$.
+Under this identification, $\lambda$ corresponds to $-\delta$, so these functionals exhaust the dual of $(\mathfrak m/\mathfrak m^2)/\Sigma$ as $\delta$ varies.
+Thus $I^*$ is stable under $\partial_\lambda$ for every functional $\lambda$ on $\mathfrak m/\mathfrak m^2$ vanishing on $\Sigma$.
+
+Choose a basis $y_1,\dots,y_N$ of $\mathfrak m/\mathfrak m^2$ such that $y_1,\dots,y_u$ span $\Sigma$.
+Then $L = \{v\in T : v(y_1) = \dots = v(y_u) = 0\}$, and $I^*$ is stable under $\partial/\partial y_j$ for $j>u$.
+The derivations $\partial/\partial y_j$ with $j>u$ are the derivatives along a basis of $L$, so this condition does not depend on the choice of coordinates.
+
+For (3), let $Q\in I^*$ be homogeneous of degree $e<p$.
+For $j>u$ we have $\partial Q/\partial y_j\in I^*_{e-1} = 0$, and every exponent occurring in $Q$ is at most $e<p$, so $Q$ is a polynomial in $y_1,\dots,y_u$.
+The forms of degree $e$ in $I_C$ are the $\overline k$-linear combinations of such $Q$, and $\overline k[y_1,\dots,y_u]$ is the coordinate ring of $T/L$ for every choice of coordinates as in (2), which proves the first assertion of (3).
+If $I_C$ is generated by one form, then this form has degree $e$, so $C$ is the preimage of the cone in $T/L$ defined by the same form.
+\end{proof}
+
+
+\subsection{Birational contractions}\label{subsec:birational-surfaces}
+% Let $\varepsilon\from Y'\to Y$ be the blowup of a codimension-two closed point $P$ on a regular Noetherian integral scheme $Y$ of dimension two, with exceptional curve $E$.
+% Then $Y'$ is regular, $E\cong\PP^1_{\kappa(P)}$ and $\O_E(E)\cong\O_{\PP^1_{\kappa(P)}}(-1)$ \cite[Tags~\stackstag{0AGQ} and~\stackstag{0AGR}]{Stacks}.
+% If $Y$ admits a dualizing sheaf $\omega_Y$, adjunction gives the induced dualizing sheaf on $Y'$ as
+% \begin{equation}\label{eq:blowup-canonical}
+%   \omega_{Y'}\cong\varepsilon^*\omega_Y\otimes\O_{Y'}(E).
+% \end{equation}
+% The same formula holds for the relative dualizing sheaves of regular flat models of curves over a discrete valuation ring.
+% If $Y$ is a projective surface over $k$, then, with compatible canonical divisors,
+% \begin{equation}\label{eq:blowup-intersections}
+%   K_{Y'} = \varepsilon^*K_Y+E,\qquad
+%   (K_{Y'}\cdot E)_k = (E^2)_k = -[\kappa(P):k],\qquad
+%   (K_{Y'}^2)_k = (K_Y^2)_k-[\kappa(P):k].
+% \end{equation}
+% Moreover, if $-K_{Y'}$ is nef, then $-K_Y$ is nef: for a curve $C\subset Y$ with strict transform $\widetilde C$, the projection formula gives
+% \[
+%   -K_Y\cdot C = (-K_{Y'}+E)\cdot\widetilde C\geq 0.
+% \]
+
+% Let $\mu\from T\to S$ be the minimal resolution of a normal projective surface over an algebraically closed field.
+% Choose canonical divisors with $\mu_*K_T = K_S$.
+% Minimality makes $K_T$ relatively nef by \cite[Theorem~10.5]{Kol13}, and the negative definite exceptional intersection matrix gives
+% \begin{equation}\label{eq:minimal-resolution-canonical}
+%   K_T = \mu^*K_S-Z,\qquad Z\geq 0,
+% \end{equation}
+% with $Z$ an exceptional $\QQ$-divisor \cite[Claim~10.3.5]{Kol13}.
+% Here $\mu^*K_S$ is Mumford's numerical pullback, characterized by $\mu_*(\mu^*K_S) = K_S$ and $(\mu^*K_S)\cdot E = 0$ for every exceptional curve $E$.
+% If $K_S$ is Cartier, then this is the ordinary pullback and $Z$ is integral.
+
+\begin{definition}\label{def:minus-one-curve}
+Let $X$ be a regular integral scheme of dimension two, proper and flat over $S$, where $S$ is either the spectrum of a field or a Dedekind scheme of dimension one.
+A \emph{vertical curve} on $X$ is an integral closed subscheme $C\subset X$ of dimension one contained in a fibre $X_s$ over a closed point $s\in S$.
+We call such a curve $C$ a \emph{$(-1)$-curve} if
+\[
+  (K_{X/S}\cdot C)_{k_C} = (C^2)_{k_C} = -1,
+\]
+where $K_{X/S}$ is a relative canonical divisor and $k_C = H^0(C,\O_C)$.
+For such a curve $C$, adjunction gives $H^1(C,\O_C) = 0$.
+By Castelnuovo's criterion \cite[Theorem~9.3.8 and Proposition~9.3.10]{Liu02}, these are exactly the vertical curves that can be contracted to a regular point.
+\end{definition}
+
+We record standard facts about contracting negative curves, including the residue-field details needed below.
+
+\begin{lemma}\label{lem:contraction}
+Let $k$ be a separably closed field of characteristic $p>3$, and let $X$ be a regular projective surface over $k$ with $K_X\equiv 0$.
+Let $C\subset X$ be a negative curve, and put $\ell = H^0(C,\O_C)$.
+\begin{enumerate}
+\item $C\cong\PP^1_\ell$, $(C^2)_\ell = -2$, and $\O_C(C)\cong\O_{\PP^1_\ell}(-2)$.
+\item There is a birational morphism $f\from X\to X'$ onto a normal projective surface which contracts exactly $C$, to a point $P$ with $\kappa(P) = \ell$.
+  Moreover $R^1f_*\O_X = 0$ and $\rho(X') = \rho(X)-1$.
+\item The surface $X'$ is Gorenstein, and $f^*\omega_{X'}\cong\omega_X$.
+\item $2D$ is Cartier for every Weil divisor $D$ on $X'$.
+\item There is an isomorphism of rings $\widehat\O_{X',P}\cong \ell[[u,v,w]]/(uv-w^2)$; in particular $X'$ is a local complete intersection over $k$.
+  \textup{(}This isomorphism need not be an isomorphism of $k$-algebras.\textup{)}
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(1) The curve $C$ is a Cartier divisor on the regular surface $X$, hence Gorenstein.
+Put $g = \dim_\ell H^1(C,\O_C)$.
+Adjunction gives
+\[
+  (C^2)_\ell = ((K_X+C)\cdot C)_\ell = 2(g-1)<0,
+\]
+so $g = 0$ and $(C^2)_\ell = -2$.
+By \cite[Lemma~10.6(3)]{Kol13}, $C$ is a conic or $\PP^1$ over $\ell$.
+Since $\ell$ is separably closed and $p\neq 2$, an integral conic over $\ell$ is smooth and split, so $C\cong\PP^1_\ell$.
+The normal bundle has degree $(C^2)_\ell = -2$, hence is $\O_{\PP^1_\ell}(-2)$, proving (1).
+
+(2) The negative curve $C$ spans a $(K_X+C)$-negative extremal ray.
+Applying \cite[Theorem~4.4]{Tan18} with boundary $C$ gives a projective birational morphism $f\from X\to X'$ contracting exactly $C$, with $X'$ normal and projective and $\rho(X') = \rho(X)-1$.
+Since $K_X\cdot C = 0$ and $-C$ is $f$-nef, \cite[Theorem~10.4]{Kol13} gives $R^1f_*\O_X(-jC) = 0$ for every $j\geq 0$.
+Thus $P$ is a rational singularity, and \cite[Proposition~10.9(4)]{Kol13} gives $\kappa(P) = \ell$.
+
+(3) The numerical discrepancy of $C$ is zero because $K_X\cdot C = 0$.
+Hence $X'$ is Gorenstein and $f$ is crepant by \cite[Theorem~2.29(2)]{Kol13}.
+
+(4) The intersection matrix over $\ell$ is $(-2)$, so \cite[Proposition~10.9(3)]{Kol13} shows that $2D$ is Cartier at $P$ for every Weil divisor $D$ on $X'$.
+Since $X'$ is regular away from $P$, the divisor $2D$ is Cartier everywhere.
+
+(5) Put $R = \O_{X',P}$ and $I_j = (f_*\O_X(-jC))_P$.
+Pushing forward $0\to\O_X(-C)\to\O_X\to\O_C\to0$ and taking the stalk at $P$ gives $I_1 = \ker(R\to H^0(C,\O_C)=\kappa(P)) = \mathfrak m_P$.
+Similarly, since $R^1f_*\O_X(-jC) = 0$ for all $j\geq 0$, we have $I_j/I_{j+1}\cong H^0(\PP^1_\ell,\O(2j))$, compatibly with multiplication.
+The multiplication map $H^0(\PP^1_\ell,\O(2))^{\otimes_\ell j}\to H^0(\PP^1_\ell,\O(2j))$ is surjective, since every monomial of degree $2j$ is a product of $j$ quadratic monomials.
+Hence every class in $I_j/I_{j+1}$ is a sum of products of $j$ classes from $I_1/I_2$, so $I_j = I_1^j+I_{j+1} = \mathfrak m_P^j+I_{j+1}$.
+Iterating this equality gives $I_j = \mathfrak m_P^j+I_n$ for all $n\geq j$.
+By formal functions, $\widehat R\cong\varprojlim_n R/I_n$; taking limits gives $I_j\widehat R = \mathfrak m_P^j\widehat R$ and hence
+\[
+  \operatorname{gr}_{\mathfrak m_P}\widehat R
+  \cong \bigoplus_{j\geq 0}H^0(\PP^1_\ell,\O(2j))
+  \cong \ell[u,v,w]/(uv-w^2).
+\]
+The displayed graded ring gives $\length_R(R/\mathfrak m_P^n) = \sum_{j=0}^{n-1}(2j+1) = n^2$ for $n\geq 1$.
+After choosing a coefficient field identified with $\ell$, \cite[Lemma~23.4]{Lip69} therefore gives a quadratic hypersurface presentation $\widehat R\cong\ell[[u,v,w]]/(g)$.
+Comparing associated graded rings, we may choose the variables $u,v,w$ and rescale $g$ so that $g-(uv-w^2)\in(u,v,w)^3$.
+Since $p\neq 2$, the quadratic form $uv-w^2$ is nondegenerate.
+The formal Morse lemma \cite[Lemma~10.43]{Kol23}, applied with coefficient ring $\ell$ and maximal ideal $(0)$, therefore gives $\widehat R\cong\ell[[u,v,w]]/(uv-w^2)$ as rings.
+The hypersurface presentation and regularity of $X'$ away from $P$ imply that $X'$ is a local complete intersection over $k$ \cite[Tag~\stackstag{09Q6}]{Stacks}.
+\end{proof}
+
+
+\subsection{Even lattices}\label{subsec:even-lattices}
+An \emph{integral lattice} is a finitely generated free abelian group $N$ equipped with a nondegenerate symmetric bilinear pairing $(\ ,\ )\from N\times N\to\ZZ$.
+It is \emph{even} if $(v,v)\in 2\ZZ$ for every $v\in N$.
+For a $\ZZ$-basis $e_1,\ldots,e_r$ of $N$, the matrix $G = ((e_i,e_j))_{1\leq i,j\leq r}$ is called a \emph{Gram matrix} of $N$.
+Its determinant $\det N := \det G$, called the \emph{Gram determinant}, is independent of the chosen $\ZZ$-basis.
+The lattice $N$ is \emph{unimodular} if $\lvert\det N\rvert = 1$, equivalently if the pairing induces an isomorphism $N\cong\Hom_\ZZ(N,\ZZ)$.
+For a lattice over $\ZZ_\ell$, unimodularity means that its Gram determinant is a unit in $\ZZ_\ell$.
+The pairing induces a quadratic form $q(v) = (v,v)$ on $N\otimes\QQ$.
+An nonzero element $v\in N\otimes\QQ$ is called \emph{anisotropic} if $q(v)\neq 0$, and \emph{isotropic} if $q(v) = 0$.
+The quadratic form $q$ (or the corresponding pairing) is called \emph{anisotropic} if it has no isotropic elements, and \emph{isotropic} otherwise. %ref: ~/math/students/Merkurev/QuadForm
+
+
+
+\begin{lemma}\label{lem:lattice-dichotomy}
+Let $p$ be an odd prime and let $N$ be an even integral lattice of signature $(1,r-1)$ with $\lvert\det N\rvert = p^a$ for an integer $a\geq 0$.
+Then $r$ is even, and $N\otimes\QQ$ is anisotropic if and only if $r = 2$ and $a$ is odd.
+In this case $p\equiv 1\pmod 4$.
+\end{lemma}
+
+\begin{proof}
+Since $N$ is even of odd determinant, the induced bilinear form on $N/2N$ with values in $\FF_2$ is nondegenerate and alternating, so $r$ is even.
+In particularly, $r\ge2$.
+Then the quadratic form on $N\otimes\QQ$ is indefinite by the signature.
+If $r\geq 5$, then this implies that the form is isotropic by Meyer's theorem \cite[Chapter~IV, Section~3.2, Corollary~2 to Theorem~8]{Ser73}.
+
+Suppose that $r = 4$.
+By the Hasse--Minkowski theorem \cite[Chapter~IV, Section~3.2, Theorem~8]{Ser73}, to show that $N\otimes\QQ$ is isotropic, it suffices to show that $N\otimes\RR$ is isotropic and that $N\otimes\QQ_\ell$ is isotropic for every prime $\ell$.
+
+At $\ell = 2$, $\det N$ is a unit in $\ZZ_2$ because $\lvert\det N\rvert = p^a$ and $p$ is odd, so $N\otimes\ZZ_2$ is \emph{unimodular}.
+Since it is also even, it is an orthogonal sum of two binary lattices with Gram matrices \cite[Hilfssatz~5]{Cas62}
+\[
+  B_1 = \begin{pmatrix}2a_1&1\\1&2b_1\end{pmatrix},\qquad
+  B_2 = \begin{pmatrix}2a_2&1\\1&2b_2\end{pmatrix},
+\]
+where $a_1,b_1,a_2,b_2\in\ZZ_2$.
+Since $\det B_1\equiv\det B_2\equiv -1\pmod 4$ and squares of $2$-adic units are $1$ modulo $4$, we have $\det N\equiv 1\pmod 4$.
+Since $\det N = -p^a$, we get $p\equiv -1\pmod 4$ and that $a$ is odd.
+In these coordinates, the quadratic form satisfies $q = 2Q$, where
+\[
+  Q(x_1,x_2,x_3,x_4) = a_1x_1^2+x_1x_2+b_1x_2^2+a_2x_3^2+x_3x_4+b_2x_4^2.
+\]
+The polynomial $Q$ has coefficients in $\ZZ_2$ and has the same zeros as $q$ over $\QQ_2$.
+The values of $Q$ at $(1,0,0,0)$, $(0,0,1,0)$ and $(1,0,1,0)$ are $a_1$, $a_2$ and $a_1+a_2$, respectively.
+So modulo $2$, the form $Q$ has a zero at one of these points.
+The gradient of $Q$ modulo $2$ is $(x_2,x_1,x_4,x_3)$, so this zero is nonsingular and lifts by Hensel's lemma to a nonzero isotropic vector over $\QQ_2$.
+
+At the real place, $N\otimes\RR$ has signature $(1,3)$ and is therefore isotropic.
+At an odd prime $\ell\neq p$, the determinant is a unit in $\ZZ_\ell$, so the reduction of the lattice is a nondegenerate quaternary form over $\FF_\ell$.
+Since $\ell$ is odd, \cite[Chapter~IV, Section~1.4, Theorem~1]{Ser73} gives coordinates in which this reduction is $\bar q = \sum_{i=1}^4 c_ix_i^2$ with $c_i\in\FF_\ell^\times$.
+The sets $\{c_1x^2:x\in\FF_\ell\}$ and $\{-c_3-c_2y^2:y\in\FF_\ell\}$ each have $(\ell+1)/2$ elements, so they intersect.
+Thus $\bar q(x,y,1,0) = 0$ for some $x,y\in\FF_\ell$, and the partial derivative with respect to $x_3$ at this zero is $2c_3\neq 0$.
+Hensel's lemma therefore lifts this zero to a nonzero isotropic vector over $\QQ_\ell$.
+At $\ell = p$, an anisotropic quaternary quadratic form has square discriminant \cite[Chapter~IV, Section~2.2, Theorem~6(iii)]{Ser73}, whereas $\det N$ has $p$-adic valuation $a$, which is odd, a contradiction.
+
+Suppose $r = 2$.
+Choose an orthogonal basis of $N\otimes\QQ$ and write $q(x,y) = ux^2+vy^2$ with $u,v\in\QQ^\times$.
+A nonzero zero must have $y\neq 0$, and $q(x,y) = 0$ is then equivalent to $(x/y)^2 = -v/u$.
+Thus $N\otimes\QQ$ is isotropic if and only if $-v/u$ is a rational square, or equivalently if $-uv$ is a rational square.
+A change of basis multiplies the Gram determinant by a rational square, so $uv$ and $\det N$ have the same square class, and the criterion is equivalent to $-\det N$ being a rational square.
+The signature $(1,1)$ gives $\det N<0$, so $-\det N = p^a$ is a rational square if and only if $a$ is even.
+Therefore, under the assumption that $N \otimes \mathbb Q$ is anisotropic, $a$ is odd.
+Since $N$ is even, its Gram matrix in an integral basis has the form $\begin{pmatrix}2b&c\\c&2d\end{pmatrix}$ with $b,c,d\in\ZZ$.
+Its determinant $4bd-c^2$ is odd, so $c$ is odd and $\det N\equiv -1\pmod 4$.
+Since $\det N = -p^a$, this gives $p^a\equiv 1\pmod 4$.
+As $a$ is odd, $p^a\equiv p\pmod 4$, hence $p\equiv 1\pmod 4$.
+\end{proof}
+
+
+\subsection{Genus-one fibrations}
+\begin{lemma}\label{lem:fibration}
+Let $X$ be a regular projective surface over $k$ with $H^0(X,\O_X) = k$, $K_X\equiv 0$ and $\chi(\O_X) = 2$.
+If the intersection form on $N^1(X)_\QQ$ is isotropic, then there is a fibration $f\from X\to B$ onto a regular projective curve.
+\end{lemma}
+
+\begin{proof}
+Choose an ample divisor $A$ and a divisor $D$ with $D^2 = 0$ and $A\cdot D>0$.
+Riemann--Roch gives $h^0(D)+h^0(K_X-D)\geq\chi(\O_X(D)) = \chi(\mathcal O_X) = 2$.
+Hence $h^0(D)\geq 2$.
+
+Suppose that $D$ is not nef, and let $C$ be a curve with $D\cdot C<0$.
+Then $C$ is a component of every member of $\lvert D\rvert$, so $C^2<0$.
+As in the proof of Lemma~\ref{lem:contraction}(1), with $h = [H^0(C,\O_C):k]$ we have $(C^2)_k = -2h$, and $(D\cdot C)_k\in h\ZZ$.
+Hence $r_C(D) := D+\frac{(D\cdot C)_k}{h}C$ is a $\ZZ$-divisor with $(r_C(D)^2)_k = 0$.
+The reflection $r_C$ is an isometry of $N^1(X)_\QQ$ preserving the component of the positive cone containing $A$; hence $A\cdot r_C(D)>0$, while $A\cdot r_C(D)<A\cdot D$.
+By Riemann--Roch again, $h^0(r_C(D))\geq 2$.
+Since the positive integer $A\cdot D$ decreases, after finitely many reflections we obtain a nef divisor $D$ with $D^2 = 0$ and $h^0(D)\geq 2$.
+
+It follows that $\kappa(X,D) = 1$, so the nef divisor $D$ is semiample (cf.\ \cite[Lemma~2.7]{Tan20}).
+The Stein factorization of the morphism defined by a sufficiently divisible multiple of $D$ gives a fibration $f\from X\to B$ onto a regular projective curve.
+\end{proof}

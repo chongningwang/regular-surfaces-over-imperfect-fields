@@ -1,0 +1,218 @@
+\section{Local fundamental groups and exceptional lattices}\label{sec:local}
+In this section all punctured local schemes are formed after strict henselization.
+
+For a closed point $z$ of a normal surface $Z$, write $U_z^\circ = \Spec\O^{\rm sh}_{Z,z}\setminus\{z\}$ and let $\pi_1^{\rm et}(U_z^\circ)$ denote its \'etale fundamental group.
+We recall the following standard comparison lemma.
+
+\begin{lemma}\label{lem:transport}
+Let $k$ be a separably closed field, let $X$ be a normal surface over $k$, and let $\nu\from S\to (X_{\bar k})_{\rm red}$ be the normalization, with induced morphism $\phi\from S\to X$.
+Let $s\in S$ be a closed point with image $x\in X$.
+Then $\phi$ is a universal homeomorphism and induces a universal homeomorphism $U_s^\circ\to U_x^\circ$, hence an isomorphism $\pi_1^{\rm et}(U_s^\circ)\cong\pi_1^{\rm et}(U_x^\circ)$.
+If $X$ is regular at $x$, then $\pi_1^{\rm et}(U_s^\circ) = 1$.
+\end{lemma}
+
+\begin{proof}
+Since $\bar k/k$ is purely inseparable, $\phi$ is a universal homeomorphism by \cite[Lemma~2.2(2)]{Tan18BC}.
+The scheme $S\times_X\Spec\O^{\rm sh}_{X,x}$ is strictly henselian and ind-\'etale over $S$, hence isomorphic to $\Spec\O^{\rm sh}_{S,s}$.
+Removing the closed points gives a universal homeomorphism $U_s^\circ\to U_x^\circ$, so topological invariance gives the asserted isomorphism \cite[Tag~\stackstag{04DY}]{Stacks}.
+The regular-point case follows from \cite[Corollary~2.4]{Sch08}.
+\end{proof}
+
+We next construct a regular double cover of the singularity produced by the contraction in Lemma~\ref{lem:contraction}.
+
+\begin{lemma}\label{lem:A1-cover}
+Let $k$ be a separably closed field of characteristic $p>3$, let $X$ be a regular projective surface over $k$ with $K_X\equiv 0$, and let $f\from X\to X'$ be the contraction of a negative curve $C$ as in Lemma~\ref{lem:contraction}.
+Let $S$ be the normalization of $(X'_{\bar k})_{\rm red}$ and let $s\in S$ lie over $P = f(C)$.
+Then $\pi_1^{\rm et}(U_P^\circ)\cong\pi_1^{\rm et}(U_s^\circ)\cong\ZZ/2$.
+\end{lemma}
+
+\begin{proof}
+Put $k_C = H^0(C,\O_C)$ and $A = \O^{\rm sh}_{X',P}$, a strictly henselian local ring with residue field $k_C$.
+Define $T$ by the Cartesian square
+\[
+  \begin{tikzcd}
+    T \arrow[r] \arrow[d,"g"'] & X \arrow[d,"f"]\\
+    \Spec A \arrow[r] & X'.
+  \end{tikzcd}
+\]
+The projection $T\to X$ is ind-\'etale, so $T$ is regular \cite[Tags~\stackstag{07EP} and~\stackstag{0H7S}]{Stacks}, with exceptional curve $C\cong\PP^1_{k_C}$.
+
+We first construct a double cover of $T$.
+Put $T_0 = T\times_A k_C$.
+By proper base change \cite[Exp.~XII, Corollaire~5.5(iii)]{SGA4}, $H^2_{\rm et}(T,\mu_2)\cong H^2_{\rm et}(T_0,\mu_2)$.
+Since $C = (T_0)_{\rm red}$, restriction induces $H^2_{\rm et}(T_0,\mu_2)\cong H^2_{\rm et}(C,\mu_2)$.
+After the purely inseparable extension $\overline{k_C}/k_C$, the standard cohomology calculation for $C_{\overline{k_C}}\cong\PP^1_{\overline{k_C}}$ gives $H^2_{\rm et}(C,\mu_2)\cong\ZZ/2$ \cite[Tag~\stackstag{03RQ}]{Stacks}.
+The Kummer sequence induces an exact sequence \cite[Tag~\stackstag{03PL}]{Stacks}
+\begin{equation}\label{eq:kummer-exact-sequence}
+  \Pic(T)\xrightarrow{(-)^{\otimes 2}}\Pic(T)
+  \xrightarrow{\delta_T}H^2_{\rm et}(T,\mu_2).
+\end{equation}
+For a line bundle $\mathcal L$ on $T$, functoriality of the Kummer sequence shows that the image of $\delta_T(\mathcal L)$ under $H^2_{\rm et}(T,\mu_2)\xrightarrow{\sim}H^2_{\rm et}(C,\mu_2)\cong\ZZ/2$ is $\deg_{k_C}(\mathcal L|_C)\bmod 2$.
+Since $\deg_{k_C}(\O_T(C)|_C) = -2$, exactness of \eqref{eq:kummer-exact-sequence} gives a line bundle $M$ on $T$ with $M^{\otimes 2}\cong\O_T(C)$.
+Let
+\[
+  \varpi\from V = \operatorname{\mathbf{Spec}}_T(\O_T\oplus M^{-1})\to T
+\]
+be the double cover obtained locally by adjoining a square root of a local equation $t = 0$ for $C$.
+At a closed point $x\in C$, regularity of $T$ and $C$ allows us to choose regular parameters $t,u$ in $\O_{T,x}$.
+The local ring of $V$ above $x$ has dimension two and maximal ideal $(z,u)$, since $t = z^2$, so it is regular.
+Over $T\setminus C$, the derivative $2z$ is invertible, so the cover is \'etale and $V$ is regular there.
+The cover is integral because $t$ has order one along $C$.
+The ramification curve $D = \varpi^{-1}(C)_{\rm red}$ satisfies $D\cong C$ and $2D = \varpi^*C$.
+Thus $\O_V(D)|_D\cong\varpi^*M|_D$ has degree $-1$ over $k_C$, giving $\O_D(-jD)\cong\O_{\PP^1_{k_C}}(j)$ for $j\geq 0$.
+
+We next show that $B = H^0(V,\O_V)$, the normalization of $A$ in the function field of $V$, is regular.
+Since $B$ is finite over the henselian ring $A$ and is a domain, it is local and henselian.
+The closed fibre of $V\to\Spec B$ is supported on $D$.
+Since $-C$ is ample over $\Spec A$ and $2D = \varpi^*C$, the divisor $-D$ is ample over $\Spec B$.
+Relative Serre vanishing and descending induction in the exact sequences
+\[
+  0\to\O_V(-(j+1)D)\to\O_V(-jD)\to\O_D(-jD)\to 0
+\]
+give $H^1(V,\O_V(-jD)) = 0$ for all $j\geq 0$, since $H^1(D,\O_D(-jD)) = 0$.
+By taking cohomology of the above sequence with $j = 0$, the restriction $B\to H^0(D,\O_D) = k_C$ is surjective, so the residue field of $B$ is $k_C$.
+By the same argument as in the proof of Lemma~\ref{lem:contraction}\,(5), we have
+\[
+  \operatorname{gr}_{\mathfrak m_B}\widehat B
+  \cong\bigoplus_{j\geq 0}H^0(\PP^1_{k_C},\O(j))
+  \cong k_C[u,v].
+\]
+Hence $B$ is a regular local ring of dimension two and is strictly henselian.
+
+Finally, we compute the local fundamental groups.
+Over $U_P^\circ$, the finite morphism $\Spec B\to\Spec A$ is the \'etale double cover $V\setminus D\to T\setminus C$.
+Put $U_B^\circ = \Spec B\setminus\{\mathfrak m_B\}$.
+Then $U_B^\circ\to U_P^\circ$ is a connected \'etale double cover.
+By purity \cite[Exp.~X, Corollaire~3.3]{SGA1}, $\pi_1^{\rm et}(U_B^\circ)\cong\pi_1^{\rm et}(\Spec B) = 1$, since $B$ is strictly henselian.
+It follows that $\pi_1^{\rm et}(U_P^\circ)\cong\ZZ/2$.
+Lemma~\ref{lem:transport} gives $\pi_1^{\rm et}(U_s^\circ)\cong\pi_1^{\rm et}(U_P^\circ)$.
+\end{proof}
+
+The next lemma relates the local fundamental group to the exceptional curves and their intersection matrix, without assuming that the singularity is rational.
+It is an \'etale analogue of Mumford's computation of the first homology of the link of a complex normal surface singularity \cite[Part~I, pp.~10--11]{Mum61}.
+In particular, it restricts the possible intersection matrices in the regular-point case of Lemma~\ref{lem:transport} and in the setting of Lemma~\ref{lem:A1-cover}.
+
+\begin{lemma}\label{lem:kummer}
+Let $S$ be a normal surface over an algebraically closed field of characteristic $p$, let $s\in S$ be a closed point, let $A\supseteq\O^{\rm sh}_{S,s}$ be a normal local domain finite over $\O^{\rm sh}_{S,s}$, and let $g\from T\to\Spec A$ be a resolution of singularities.
+Let $E = E_1\cup\dots\cup E_r$ be the reduced exceptional curve of $g$, let $M = (E_i\cdot E_j)_{\kappa(s)}$, and let $U_s^\circ = \Spec A\setminus\{\mathfrak m_A\}$.
+The following hold for every positive integer $n$ prime to $p$.
+\begin{enumerate}[label=\textup{(\arabic*)}]
+\item There is an exact sequence of \'etale cohomology groups
+\begin{equation}\label{eq:kummer-lattice-sequence}
+  0\to H^1_{\rm et}(E,\mu_n)\to H^1_{\rm et}(U_s^\circ,\mu_n)\to\ker\bigl(M\otimes\ZZ/n\from(\ZZ/n)^r\to(\ZZ/n)^r\bigr)\to 0.
+\end{equation}
+An invertible sheaf $\mathcal L$ on $T$ has an $n$-th root in $\Pic(T)$ if and only if $n\mid\deg(\mathcal L|_{E_i})$ for every $i$.
+\item If $\pi_1^{\rm et}(U_s^\circ) = 1$, then $H^1_{\rm et}(E,\mu_n) = 0$, every $E_i$ has geometric genus zero, and $\lvert\det M\rvert$ is a power of $p$.
+\item If $p\neq 2$, $\pi_1^{\rm et}(U_s^\circ)\cong\ZZ/2$ and $H^1_{\rm et}(E,\mu_4) = 0$, then $\lvert\det M\rvert = 2p^e$ for some $e\geq 0$.
+The vanishing assumption holds if $E$ is a tree of smooth rational curves meeting transversally.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+For \textup{(1)}, the ring $A$ is strictly henselian with residue field $\kappa(s)$.
+Hensel's lemma shows that every unit of $A$ is an $n$-th power, so $A^*$ is $n$-divisible.
+Normality gives $H^0(T,\O_T) = H^0(U_s^\circ,\O_{U_s^\circ}) = A$.
+As in the proof of Lemma~\ref{lem:A1-cover}, we have $H^i_{\rm et}(T,\mu_n)\cong H^i_{\rm et}(E,\mu_n)$ for $i = 1,2$.
+Let $\pi\from\widetilde E\to E$ be the normalization, with components $\widetilde E_i$ over the $E_i$.
+Since $\pi$ is finite and the cokernel of $\mu_n\to\pi_*\mu_n$ is supported at finitely many points, the normalization sequence gives a surjection $H^1_{\rm et}(E,\mu_n)\to H^1_{\rm et}(\widetilde E,\mu_n)$ and an isomorphism $H^2_{\rm et}(E,\mu_n)\cong H^2_{\rm et}(\widetilde E,\mu_n)\cong(\ZZ/n)^r$ \cite[Tag~\stackstag{03RQ}]{Stacks}.
+For $Y = T$ or $Y = U_s^\circ$, we have $H^0(Y,\O_Y)^* = A^*$, so the Kummer sequence gives
+\[
+  0\to A^*/(A^*)^n\to H^1_{\rm et}(Y,\mu_n)\to\Pic(Y)[n]\to 0.
+\]
+Since $A^*$ is $n$-divisible, the quotient $A^*/(A^*)^n$ vanishes, and we obtain
+\begin{equation}\label{eq:kummer-identifications}
+  \begin{aligned}
+    \Pic(T)[n] &\cong H^1_{\rm et}(T,\mu_n)\cong H^1_{\rm et}(E,\mu_n),\\
+    \Pic(U_s^\circ)[n] &\cong H^1_{\rm et}(U_s^\circ,\mu_n).
+  \end{aligned}
+\end{equation}
+The Kummer boundary map $\Pic(T)\to H^2_{\rm et}(T,\mu_n)$ has kernel $n\Pic(T)$, so it induces an injection $\Pic(T)/n\embed H^2_{\rm et}(T,\mu_n)\cong(\ZZ/n)^r$.
+Since the Kummer boundary map commutes with pullback, the image of $[\mathcal L]$ has $i$-th coordinate $\deg(\mathcal L|_{E_i})\bmod n$.
+Thus $\mathcal L$ has an $n$-th root if and only if all these coordinates vanish.
+This proves the assertion about $n$-th roots of line bundles.
+
+Every line bundle on $U_s^\circ$ is represented by a divisor whose closure is Cartier on $T$, since $T$ is regular.
+Thus the restriction map $\operatorname{res}\from\Pic(T)\to\Pic(U_s^\circ)$ is surjective.
+For $[\mathcal L]\in\ker(\operatorname{res})$, a trivialization of $\mathcal L|_{U_s^\circ}$ defines a rational section of $\mathcal L$ whose divisor is supported on $E$.
+Thus $\ker(\operatorname{res})$ consists of the classes $\O_T(\sum_i a_iE_i)$ with $a_1,\ldots,a_r\in\ZZ$.
+If $\O_T(\sum_i a_iE_i)$ is trivial, then the negative definiteness of $M$ forces all $a_i = 0$.
+We therefore have an exact sequence
+\[
+  0\to\ZZ^r\to\Pic(T)\xrightarrow{\operatorname{res}}\Pic(U_s^\circ)\to 0,
+\]
+whose first map sends $(a_i)_i$ to $\O_T(\sum_i a_iE_i)$.
+The long exact sequence for $\operatorname{Tor}^{\ZZ}_i(-,\ZZ/n)$ gives $0\to\Pic(T)[n]\to\Pic(U_s^\circ)[n]\to\ker\bigl((\ZZ/n)^r\to\Pic(T)/n\bigr)\to 0$.
+The map $(\ZZ/n)^r\to\Pic(T)/n$ sends the reduction of $(a_i)_i\in\ZZ^r$ to $[\O_T(\sum_i a_iE_i)]$.
+For each $i$, the degree of this line bundle on $E_i$ is
+\[
+  \deg\bigl(\O_T(\textstyle\sum_j a_jE_j)|_{E_i}\bigr)
+  = \sum_j(E_i\cdot E_j)a_j.
+\]
+The composite $(\ZZ/n)^r\to\Pic(T)/n\embed(\ZZ/n)^r$ is therefore $M\otimes\ZZ/n$.
+Composing with the injection constructed above preserves the kernel.
+Together with the Kummer identifications in \eqref{eq:kummer-identifications}, this proves \eqref{eq:kummer-lattice-sequence}.
+
+To prove \textup{(2)} and \textup{(3)}, first note that choosing a primitive $n$-th root of unity in the ground field identifies $\mu_n$ with the constant sheaf $\ZZ/n$ on $U_s^\circ$.
+As $U_s^\circ$ is connected, we have $H^1_{\rm et}(U_s^\circ,\mu_n)\cong\operatorname{Hom}(\pi_1^{\rm et}(U_s^\circ),\ZZ/n)$.
+
+For \textup{(2)}, the exact sequence \eqref{eq:kummer-lattice-sequence} gives $H^1_{\rm et}(E,\mu_n) = 0$ and $\ker(M\otimes\ZZ/n) = 0$ for every such $n$.
+For a prime $\ell\neq p$, the normalization surjection then gives $H^1_{\rm et}(\widetilde E_i,\mu_\ell) = 0$, so each $E_i$ has geometric genus zero.
+Moreover, $\ker(M\otimes\ZZ/\ell) = 0$ implies $\ell\nmid\det M$, proving that $\lvert\det M\rvert$ is a power of $p$.
+
+For \textup{(3)}, if $\ell\neq p$ is an odd prime, then $\ker(M\otimes\ZZ/\ell)$ is a quotient of $\operatorname{Hom}(\ZZ/2,\ZZ/\ell) = 0$, so $\ell\nmid\det M$.
+As $H^1_{\rm et}(E,\mu_4) = 0$, the group $\ker(M\otimes\ZZ/4)\cong\operatorname{Hom}(\ZZ/2,\ZZ/4)$ has order two.
+Writing $d_1,\dots,d_r$ for the invariant factors of $M$, we have $\ker(M\otimes\ZZ/4)\cong\bigoplus_i\ZZ/\gcd(d_i,4)$.
+Thus exactly one $d_i$ is even and it is not divisible by four, so $\det M$ has $2$-adic valuation one, proving the determinant formula.
+If $E$ is a tree of smooth rational curves meeting transversally, then $\Pic(E)\cong\ZZ^r$ and $H^0(E,\O_E)^* = \kappa(s)^*$.
+The latter group is $4$-divisible, so the Kummer sequence gives $H^1_{\rm et}(E,\mu_4)\cong\Pic(E)[4] = 0$.
+\end{proof}
+
+\begin{corollary}\label{lem:pi1-lattice}
+Let $k$, $W$ and $\phi\from S\to W$ be as in Lemma~\ref{lem:transport}, let $s\in S$ be a singular point with image $w\in W$, and let $g\from T\to\Spec\O^{\rm sh}_{S,s}$ be a resolution with reduced exceptional curve $E = E_1\cup\dots\cup E_r$ and intersection matrix $M = (E_i\cdot E_j)$.
+\begin{enumerate}
+\item If $W$ is regular at $w$, then $H^1_{\rm et}(E,\mu_n) = 0$ for every integer $n$ prime to $p$, every $E_i$ has geometric genus zero, and $\lvert\det M\rvert = p^e$ for some $e\geq 0$.
+\item If $s$ is a rational singularity and $g$ is minimal, then $E$ is a tree of smooth rational curves meeting transversally.
+  If moreover $W = X'$ and $w = P$ are as in Lemma~\ref{lem:A1-cover}, then $\lvert\det M\rvert = 2p^e$ for some $e\geq 0$.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+Apply Lemma~\ref{lem:kummer} with $A = \O^{\rm sh}_{S,s}$.
+Part~\textup{(1)} follows from Lemmas~\ref{lem:transport} and~\ref{lem:kummer}(2).
+In \textup{(2)}, the description of $E$ follows from rationality \cite{Lip69}, and the determinant assertion follows from Lemmas~\ref{lem:A1-cover} and~\ref{lem:kummer}(3).
+\end{proof}
+
+
+Let $s$ be a rational double point on a normal surface $S$ over an algebraically closed field $k$ of characteristic $p$, and put $A = \O^{\rm sh}_{S,s}$.
+Let $T\to\Spec A$ be the minimal resolution, with exceptional curves $E_1,\dots,E_r$ and intersection matrix $M$.
+Table~\ref{tab:rdp-invariants} records the equations and the absolute determinants $\lvert\det M\rvert$.
+The determinants follow from the ADE intersection matrices and are valid in every characteristic.
+If $p>5$, then $\widehat A\cong k[[x,y,z]]/(f)$ with $f$ as in the table \cite[Section~3]{Art77}.
+
+\begin{table}[htbp]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}lll@{}}
+\hline
+Type & Equation $f$ & $\lvert\det M\rvert$ \\
+\hline
+$\mathrm A_n$, $n\geq 1$ & $x^{n+1}+yz$ & $n+1$ \\
+$\mathrm D_n$, $n\geq 4$ & $z^2+x^2y+y^{n-1}$ & $4$ \\
+$\mathrm E_6$ & $z^2+x^3+y^4$ & $3$ \\
+$\mathrm E_7$ & $z^2+x^3+xy^3$ & $2$ \\
+$\mathrm E_8$ & $z^2+x^3+y^5$ & $1$ \\
+\hline
+\end{tabular}
+\caption{Equations for $p>5$ and exceptional-lattice determinants of rational double points.}
+\label{tab:rdp-invariants}
+\end{table}
+
+Combining Lemma~\ref{lem:transport} and Corollary~\ref{lem:pi1-lattice}(1) with the known local fundamental groups of rational double points gives the following restriction.
+Hirokado \cite[Theorem~3.4]{Hir04} proved a special case; the general form below is due to Schr\"oer.
+
+\begin{corollary}[{\cite[Theorem~6.1]{Sch08}}]\label{lem:geometric-rdp}
+Let $X$ be a regular surface over a field $k$ of characteristic $p>5$.
+Then every rational double point of $X_{\bar k}$ has type $\mathrm A_{p^e-1}$ for some integer $e\geq 1$.
+\end{corollary}

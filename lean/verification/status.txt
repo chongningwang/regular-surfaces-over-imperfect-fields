@@ -1,0 +1,8 @@
+PASS: 44 Lean source files; main theorem audited.
+All project declarations audited: 4231.
+Axioms: Classical.choice, Quot.sound, propext.
+Statement fingerprint matches the pinned value (43 constants, 2700237008541851014).
+Main result: exists_theorem61_omega_rationalBase (Red61/Theorem61.lean), VERIFIED unconditionally. Over the prescribed k = FractionRing (MvPolynomial (Fin 2) (ZMod 5)) it gives a proper, integral, Noetherian, regular surface of dimension two with the prescribed global constants, not geometrically reduced.
+The sheaf omega is defined as Hom(f* (exterior square of absolute base differentials), exterior fourth power of absolute surface differentials). It is isomorphic to the structure sheaf and has Euler degree zero on every proper integral curve. The absolute differential sheaf is locally free of rank four (IsLocallyFreeOfRank).
+The default build contains exactly the import closure of Red61.Theorem61.
+Identification of omega with the Serre dualizing sheaf and comparison with divisor classes are NOT verified in this project.

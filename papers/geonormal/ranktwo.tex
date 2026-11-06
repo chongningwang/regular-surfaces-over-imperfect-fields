@@ -1,0 +1,337 @@
+\section{The anisotropic case and geometric normality}\label{sec:anisotropic}
+Proposition~\ref{prop:dichotomy} gives two alternatives: $X$ admits a genus-one fibration, or $\rho(X) = 2$, the intersection form on $N^1(X)_\QQ$ is anisotropic, and $X$ contains a negative curve.
+In this section, we deal with the latter case.
+For $p\geq 13$, we first construct a contraction $X\to X'$ with $\rho(X') = 1$ and $X'$ not geometrically normal (Subsection~\ref{sec:rank-two}).
+We then derive a contradiction by studying the exceptional curves on the minimal resolution of the normalization of $X'_{\bar k}$ (Subsection~\ref{sec:rank-one}).
+
+\subsection{Reduction to Picard number one}\label{sec:rank-two}
+
+Throughout this subsection, Assumption~\ref{ass:nonnormal} holds, and we use the notation $S$ and $\phi$ from Section~\ref{sec:torsors}.
+
+\begin{lemma}\label{lem:second-curve}
+Let $k$ be an $F$-finite separably closed field of characteristic $p\geq 7$, and let $X$ be a regular projective geometrically integral surface over $k$ with $H^0(X,\O_X) = k$ and $K_X\equiv 0$ which is not geometrically normal.
+Assume that $\rho(X) = 2$ and that the intersection form on $N^1(X)_\QQ$ is anisotropic.
+Let $C\subset X$ be a negative curve with contraction $X\to X'$ as in Lemma~\textup{\ref{lem:contraction}}, and assume that $X'$ is geometrically normal.
+Then there is a negative curve $\Gamma\neq C$ on $X$ whose contraction $X_\Gamma$ is not geometrically normal.
+\end{lemma}
+
+\begin{proof}
+The morphism $X_{\bar k}\to X'_{\bar k}$ is an isomorphism away from $C_{\bar k}$, and $X'_{\bar k}$ is normal.
+Hence $X_{\bar k}$ is normal away from $C_{\bar k}$.
+Since $X_{\bar k}$ is Gorenstein, hence $S_2$, its non-normal locus is a nonempty union of curves, so it equals $C_{\bar k}$ as a set.
+Let $\overline C$ be the reduced curve $\phi^{-1}(C)$ in $S$; it is irreducible because $\phi$ is a homeomorphism.
+By Proposition~\ref{prop:cohomology}(2), $D = \delta\overline C$ for an integer $\delta\geq 1$, so
+\[
+  K_S\equiv-(p-1)\delta\,\overline C.
+\]
+The surface $S$ is $\QQ$-factorial with $\rho(S) = 2$, and $\phi^*$ is an isometry $N^1(X)_\QQ\cong N^1(S)_\QQ$ for the intersection pairings over $k$ and $\bar k$, respectively; in particular the intersection form on $N^1(S)_\QQ$ is anisotropic.
+As $\phi^*C$ is a positive multiple of $\overline C$, we have $\overline C^2<0$.
+
+Let $V = N^1(S)_\RR$, a plane, and let $\overline{\NE}(S)\subset V$ be the closed cone of curves.
+It contains an ample class in its interior and contains no line.
+Every curve other than $\overline C$ has nonnegative intersection with $\overline C$, while $\overline C^2<0$; hence $\RR_{\geq 0}[\overline C]$ is one of the two boundary rays of $\overline{\NE}(S)$.
+Let $R_2$ be the other boundary ray, and let $r_2$ span it.
+Write an ample class as $h = \alpha[\overline C]+\beta r_2$ with $\alpha,\beta>0$.
+Then $0<h\cdot\overline C = \alpha\overline C^2+\beta\,r_2\cdot\overline C$, so $r_2\cdot\overline C>0$ and
+\[
+  K_S\cdot r_2 = -(p-1)\delta\,\overline C\cdot r_2<0.
+\]
+Since $S$ is a normal projective surface over $\overline k$ with $K_S$ $\QQ$-Cartier, the cone theorem \cite[Theorem~3.13 and Proposition~3.15]{Tan14} shows that $R_2$ is spanned by the class of a rational curve $\Gamma_S$.
+Its class is rational and nonzero, so $\Gamma_S^2\neq 0$ by anisotropy.
+If $\Gamma_S^2>0$, then $[\Gamma_S]$ would lie in the open positive cone, which is contained in the interior of $\overline{\NE}(S)$; this contradicts $[\Gamma_S]\in R_2$.
+Hence $\Gamma_S^2<0$, and $\Gamma_S\neq\overline C$ because $R_2\neq\RR_{\geq 0}[\overline C]$.
+
+Let $\Gamma = \phi(\Gamma_S)$, a curve on $X$ different from $C$.
+As $\phi^*\Gamma$ is a positive multiple of $\Gamma_S$, we get $\Gamma^2<0$.
+Let $X\to X_\Gamma$ be the contraction of $\Gamma$ given by Lemma~\ref{lem:contraction}.
+It is an isomorphism over the complement of the image of $\Gamma$, and this complement contains the image of $C\setminus\Gamma$, which is nonempty.
+Since $X_{\bar k}$ is not normal at any point of $C_{\bar k}$, the surface $(X_\Gamma)_{\bar k}$ is not normal.
+\end{proof}
+
+\begin{corollary}\label{cor:rank-two}
+Let $k$ be an $F$-finite separably closed field of characteristic $p\geq 13$, and let $X$ be a regular projective geometrically integral surface over $k$ with $H^0(X,\O_X) = k$ and $K_X\equiv 0$ which is not geometrically normal.
+Assume that $\rho(X) = 2$ and that the intersection form on $N^1(X)_\QQ$ is anisotropic.
+Then $X$ contains a negative curve whose contraction is not geometrically normal.
+\end{corollary}
+
+\begin{proof}
+By Proposition~\ref{prop:dichotomy}(2), there is a negative curve $C$.
+If its contraction is not geometrically normal, we are done; otherwise Lemma~\ref{lem:second-curve} gives the required curve.
+\end{proof}
+
+\subsection{Exclusion of the contracted surface}\label{sec:rank-one}
+
+Throughout this subsection, $k$ is an $F$-finite separably closed field of characteristic $p\geq 7$, and $X$ is a regular projective geometrically integral surface over $k$ with $H^0(X,\O_X) = k$ and $K_X\equiv 0$ which is not geometrically normal; we assume moreover that $\rho(X) = 2$, that the intersection form on $N^1(X)_\QQ$ is anisotropic, and that $\Gamma\subset X$ is a negative curve whose contraction $h\from X\to X'$ of Lemma~\ref{lem:contraction} is not geometrically normal.
+By Corollary~\ref{cor:rank-two}, such a curve exists if $p\geq 13$.
+Let $P = h(\Gamma)$.
+We write $\nu'\from S'\to X'_{\bar k}$ for the normalization and $\phi'\from S'\to X'$ for its composite with the projection.
+Let $s_0\in S'$ be the unique point over $P$, and let $\mu\from T'\to S'$ be the minimal resolution.
+Let $Y'$ be the normalization of $X'_{k^{1/p}}$ and $C_1' = C_{k^{1/p}}$ the divisor obtained by applying \eqref{eq:canonical-base-change} to $X'$, and write the divisorial conductor of $S'\to X'_{\bar k}$ as $(p-1)D'$.
+
+\begin{lemma}\label{lem:rank-one-setup}
+\begin{enumerate}
+\item The surface $X'$ is normal, projective and geometrically integral, with $H^0(X',\O_{X'}) = k$, $\rho(X') = 1$ and $\omega_{X'}\cong\O_{X'}$; it is a local complete intersection, regular away from $P$, and $2D$ is Cartier for every Weil divisor $D$ on $X'$.
+\item $C_1'\neq 0$ and $K_{Y'}\sim-(p-1)C_1'$, and there is an ample Cartier divisor $D_1'$ on $X'$ whose pullback to $Y'$ is $2pC_1'$.
+\item $S'$ is a rational surface with rational singularities; it is $\QQ$-factorial with $\rho(S') = 1$; $D'$ is a nonzero effective $\ZZ$-divisor with $-K_{S'}\sim(p-1)D'$; and $-K_{S'}$ is ample.
+\item Let $H$ be the pullback of $D_1'$ to $T'$ and $H_{S'}$ its pullback to $S'$, and define $\lambda\in\QQ$ by $-K_{S'}\equiv\lambda H_{S'}$.
+  Then $H$ is nef and big, $H\cdot E = 0$ for every $\mu$-exceptional curve $E$, $H$ is positive on every other curve,
+  \[
+    H^2\in 2p\ZZ_{>0},\qquad\lambda\geq r := \frac{p-1}{2p},
+  \]
+  and
+  \begin{equation}\label{eq:KT}
+    -K_{T'}\equiv\lambda H+Z
+  \end{equation}
+  with $Z$ an effective $\mu$-exceptional $\QQ$-divisor.
+\item The point $s_0$ is a singular point of $S'$.
+  The exceptional curves of $\mu$ are smooth rational curves meeting transversally, and the absolute value of the determinant of their intersection matrix is $2p^e$ for some $e\geq 0$.
+  Moreover $\pi_1^{\rm et}(U_{s_0}^\circ)\cong\ZZ/2$, and the connected double cover of $U_{s_0}^\circ$ is simply connected.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(1) This follows from Lemma~\ref{lem:contraction}.
+Since $h^*\omega_{X'}\cong\omega_X\cong\O_X$ and $h_*\O_X = \O_{X'}$, the projection formula gives $\omega_{X'}\cong\O_{X'}$.
+The surface $X'_{\bar k}$ is the image of the integral surface $X_{\bar k}$, hence irreducible, and it is Cohen--Macaulay and generically reduced, hence integral.
+
+(2) By \cite[Proposition~2.10(3)]{Tan21}, $X'_{k^{1/p}}$ is not normal, so $C_1'\neq 0$.
+Equation~\eqref{eq:canonical-base-change} gives $K_{Y'}\sim-(p-1)C_1'$.
+The ramification indices of $Y'\to X'$ likewise divide $p$, so $pC_1'$ descends to an effective nonzero Weil divisor on $X'$.
+By Lemma~\ref{lem:contraction}(4), its double is a Cartier divisor $D_1'$ whose pullback to $Y'$ is $2pC_1'$.
+As $\rho(X') = 1$, $D_1'$ is numerically a positive multiple of an ample divisor, hence ample by the Nakai--Moishezon criterion.
+
+(3) The surface $S'$ is birational to the normalization $S$ of $X_{\bar k}$, which is rational by Proposition~\ref{prop:cohomology}(3).
+By \cite[Proposition~2.4 and Lemma~2.5]{Tan18BC}, the surface $S'$ is $\QQ$-factorial and $\rho(S') = \rho(X') = 1$.
+As in the proof of Proposition~\ref{prop:cohomology}(2), applying \eqref{eq:canonical-base-change} after a finite extension shows that $D'$ is a nonzero effective $\ZZ$-divisor and that $-K_{S'}\sim(p-1)D'$.
+Since $D'$ is nonzero and effective, $-K_{S'}$ is numerically a positive multiple of an ample divisor, hence ample.
+The argument of Proposition~\ref{prop:cohomology}(3) shows that $S'$ has rational singularities.
+
+(4) The morphism $T'\to X'_{\bar k}$ is birational and contracts exactly the $\mu$-exceptional curves, since $S'\to X'_{\bar k}$ is finite; this gives the first assertions.
+Intersection numbers of Cartier divisors are preserved by the pullbacks $T'\to X'$ and $Y'\to X'$, so
+\[
+  (H^2)_{\bar k} = ((D_1')^2)_k = ((2pC_1')^2)_{k^{1/p}} = 2p\,\bigl((2pC_1')\cdot C_1'\bigr)_{k^{1/p}},
+\]
+where $\bigl((2pC_1')\cdot C_1'\bigr)_{k^{1/p}}$ is a positive integer, as in the proof of Proposition~\ref{prop:ample-conductor}.
+Comparing conductor ideals as in the proof of Proposition~\ref{prop:ample-conductor} gives $D'\geq\mu_1'^*C_1'$, where $\mu_1'\from S'\to Y'$ is the natural morphism, and $H_{S'} = 2p\,\mu_1'^*C_1'$.
+Hence
+\[
+  \lambda = \frac{(p-1)\,D'\cdot H_{S'}}{H^2}\geq\frac{(p-1)\,\mu_1'^*C_1'\cdot H_{S'}}{H^2} = \frac{p-1}{2p}.
+\]
+By \cite[Theorem~10.5 and Claim~10.3.5]{Kol13}, $K_{T'} = \mu^*K_{S'}-Z$ with $Z\geq 0$ exceptional, which gives \eqref{eq:KT}.
+
+(5) By Lemmas~\ref{lem:transport} and~\ref{lem:A1-cover}, $\pi_1^{\rm et}(U_s^\circ) = 1$ for $s\neq s_0$, while $\pi_1^{\rm et}(U_{s_0}^\circ)\cong\ZZ/2$ and the connected double cover of $U_{s_0}^\circ$ is simply connected.
+If $s_0$ were a regular point, $U_{s_0}^\circ$ would be simply connected by purity \cite[Exp.~X, Corollaire~3.3]{SGA1}; so $s_0$ is singular.
+The remaining assertions follow from Corollary~\ref{lem:pi1-lattice}, because the intersection matrix is the direct sum of the matrices at the singular points.
+\end{proof}
+
+\begin{lemma}\label{lem:ruling}
+Assume $p\geq 13$.
+Let $\varphi\from T'\to\PP^1$ be a morphism whose general fibre $F$ is isomorphic to $\PP^1$, and put $a = H\cdot F$.
+Then exactly one $\mu$-exceptional curve $A$ is not contained in a fibre of $\varphi$, and it satisfies $A\cdot F = 1$.
+Moreover $a\leq 2$, unless either $p\in\{13,17\}$, $a = 3$ and $H^2 = 2p$, or $p = 13$, $a = 4$, $H^2 = 26$ and $A^2 = -2$.
+\end{lemma}
+
+\begin{proof}
+Since $H$ is nef and big and $F$ is a nonzero nef class with $F^2 = 0$, the Hodge index theorem gives $a\geq 1$.
+Intersecting \eqref{eq:KT} with $F$ gives
+\begin{equation}\label{eq:EF}
+  2 = -K_{T'}\cdot F = \lambda a+Z\cdot F.
+\end{equation}
+As $Z\cdot F\geq 0$ and $\lambda\geq r$, we get $a\leq 2/r = 4p/(p-1)<5$, so $a\leq 4$.
+
+Call a $\mu$-exceptional curve horizontal if it is not contained in a fibre.
+At least one horizontal curve exists: otherwise a general fibre $F$ is disjoint from the exceptional locus, so its image in $S'$ has self-intersection $F^2 = 0$, whereas every curve on $S'$ has positive self-intersection since $\rho(S') = 1$.
+Let $A_1,\dots,A_m$ be the horizontal curves, and put $d_i = A_i\cdot F\geq 1$ and $w_i = -A_i^2\geq 2$.
+Let $\beta_i$ be the coefficient of $A_i$ in $Z$; since the vertical exceptional curves do not meet $F$, we have $Z\cdot F = \sum_i\beta_id_i$.
+
+\emph{Lower bound for $\beta_i$.}
+The curve $A_i$ is a smooth rational curve by Lemma~\ref{lem:rank-one-setup}(5), and $H\cdot A_i = 0$, so \eqref{eq:KT} and adjunction give $Z\cdot A_i = -K_{T'}\cdot A_i = 2-w_i$.
+On the other hand $Z\cdot A_i\geq-\beta_iw_i$, because $Z-\beta_iA_i$ is effective and does not contain $A_i$.
+Hence
+\[
+  \beta_i\geq 1-\frac{2}{w_i}.
+\]
+
+\emph{Lower bound for $w_i$.}
+The class $w_iF+d_iA_i$ has square $2w_id_i^2-w_id_i^2 = w_id_i^2>0$ and satisfies $H\cdot(w_iF+d_iA_i) = w_ia$.
+By the Hodge index theorem, $w_i^2a^2\geq H^2\cdot w_id_i^2$, that is, $w_i\geq H^2d_i^2/a^2$.
+Since $w_i$ is an integer and $H^2\geq 2p$,
+\[
+  w_i\geq\Bigl\lceil\frac{2p\,d_i^2}{a^2}\Bigr\rceil.
+\]
+
+\emph{Case analysis.}
+If $a = 4$, then $Z\cdot F = 2-4\lambda\leq 2-4r = 2/p<1/3$, so $\beta_i<1/3$ and hence $w_i = 2$ for all $i$.
+As $w_i\geq\lceil p\,d_i^2/8\rceil$, this forces $d_i = 1$ and $p = 13$, and the inequality $w_i\geq H^2d_i^2/a^2$ gives $H^2\leq 32$, so $H^2 = 26$.
+If there were two horizontal curves $A_1\neq A_2$, the class $D = 2F+A_1+A_2$ would satisfy $D^2 = 4+2A_1\cdot A_2\geq 4$ and $H\cdot D = 8$, and the Hodge index theorem would give $64 = (H\cdot D)^2\geq H^2D^2\geq 104$, which is impossible.
+If $a = 3$ and $p\geq 19$, then $w_i\geq\lceil 2p/9\rceil\geq 5$, so $\beta_i\geq 3/5$, while $Z\cdot F\leq 2-3r = (p+3)/(2p)<3/5$ since $p>15$; this is impossible.
+If $a = 3$ and $p\in\{13,17\}$, then $w_i\geq\lceil 2p/9\rceil\geq 3$, so $\beta_i\geq 1/3$ and $\tfrac13\sum_id_i\leq Z\cdot F\leq 2-3r = (p+3)/(2p)<2/3$; hence $\sum_id_i = 1$, that is, there is exactly one horizontal curve $A_1$, and $d_1 = 1$.
+If moreover $H^2\geq 4p$, then $w_1\geq\lceil 4p/9\rceil\geq 6$, so $\beta_1\geq 2/3>Z\cdot F$, which is impossible; hence $H^2 = 2p$.
+If $a = 2$, then $w_i\geq\lceil p/2\rceil\geq 7$, so $\beta_i\geq 5/7$ and $\tfrac57\sum_id_i\leq Z\cdot F\leq 2-2r = 1+1/p<10/7$; hence $\sum_id_i = 1$.
+If $a = 1$, then $w_i\geq 2p$, so $\beta_i\geq 1-1/p$ and $(1-1/p)\sum_id_i\leq 2-r = (3p+1)/(2p)<2(1-1/p)$; hence $\sum_id_i = 1$.
+In all remaining cases there is exactly one horizontal curve, with $d = 1$, and either $a\leq 2$, or $p\in\{13,17\}$, $a = 3$ and $H^2 = 2p$, or $p = 13$, $a = 4$, $H^2 = 26$ and $A^2 = -2$.
+\end{proof}
+
+\begin{proposition}\label{prop:rank-one}
+Assume $p\geq 7$.
+Then $T'$ admits no morphism $\varphi\from T'\to\PP^1$ with general fibre $\PP^1$ for which the conclusion of Lemma~\textup{\ref{lem:ruling}} holds.
+In particular, the situation of this subsection does not occur if $p\geq 13$.
+\end{proposition}
+
+\begin{proof}
+Suppose that $\varphi$ is such a morphism, with general fibre $F$.
+Let $A$ be the horizontal exceptional curve, a section of $\varphi$, and put $b = -A^2\geq 2$ and $a = H\cdot F$.
+
+\emph{Step 1: shape of the fibres.}
+Since $S'$ is $\QQ$-factorial with $\rho(S') = 1$, $\rho(T')$ is one plus the number of $\mu$-exceptional curves, that is, $2+v$, where $v$ is the number of vertical exceptional curves.
+On the other hand $\rho(T') = 2+\sum_{F_0}(n_{F_0}-1)$, the sum over the fibres $F_0$ with $n_{F_0}$ components.
+No fibre consists of exceptional curves only, since $H\cdot F = a>0$.
+Hence $n_{F_0}-1$ is at least the number of exceptional curves in $F_0$, and comparing the two formulas shows that every fibre has exactly one component which is not exceptional.
+Let $F_0 = mG+\sum_jm_jE_j$ be a reducible fibre, with $G$ the non-exceptional component.
+A reducible fibre of a ruled surface contains a $(-1)$-curve, and the $E_j$ have self-intersection at most $-2$; so $G$ is a $(-1)$-curve.
+Since $H\cdot G$ is a positive integer, $a = H\cdot F_0 = m\,H\cdot G$ is divisible by $m$.
+Adjunction gives
+\[
+  -2 = K_{T'}\cdot F_0 = -m+\sum_jm_j(-E_j^2-2),
+\]
+so $m\geq 2$.
+Since $A\cdot F_0 = 1$, the section $A$ meets exactly one component of $F_0$, transversally, and this component has multiplicity one; as $m\geq 2$, it is one of the $E_j$.
+
+Until Step~7 we assume $a\leq 2$.
+As $m\geq 2$ divides $a\leq 2$, we get $m = a = 2$, and then $E_j^2 = -2$ for all $j$.
+The equations $F_0\cdot G = 0$ and $F_0\cdot E_j = 0$ say that the multiplicities of the neighbours of $G$ add up to $2$ and that twice the multiplicity of each $E_j$ is the sum of the multiplicities of its neighbours.
+It follows that either $G$ meets two curves $u,v$ of multiplicity one, each meeting nothing else, or $G$ is the end of a chain $c_1,\dots,c_l$ of curves of multiplicity two, with $c_1$ meeting $G$ and $c_l$ meeting two curves $u,v$ of multiplicity one, which meet nothing else.
+Removing $G$ leaves the configuration $A_1\sqcup A_1$ or $D_n$ with $n = l+2\geq 3$, where $D_3 = A_3$.
+The components of multiplicity one are $u$ and $v$, so by the above $A$ meets exactly one of them, and no other component of $F_0$; we label them so that $A$ meets $u$.
+
+\emph{Step 2: at most one reducible fibre.}
+Let $t$ be the number of reducible fibres, and let $\Phi_1,\dots,\Phi_t$ be the corresponding configurations of type $A_1\sqcup A_1$ or $D_{n_i}$.
+Each has determinant $4$, and the diagonal entry of the inverse of its (positive definite) negated intersection matrix at the curve met by $A$ is $q_i = 1/2$ for $A_1\sqcup A_1$ and $q_i = n_i/4$ for $D_{n_i}$.
+Taking the Schur complement at $A$, the absolute value of the determinant of all exceptional curves is
+\[
+  4^t\Bigl(b-\sum_iq_i\Bigr) = 4^{t-1}\Bigl(4b-\sum_i4q_i\Bigr),\qquad 4q_i\in\ZZ.
+\]
+By Lemma~\ref{lem:rank-one-setup}(5) it equals $2p^e$ with $p$ odd, so $t\leq 1$.
+
+\emph{Step 3: the numerical invariants.}
+Suppose $t = 0$.
+Then $\varphi$ is a $\PP^1$-bundle, $T'\cong\mathbb F_b$, and $A$ is the negative section and the only exceptional curve; so $b = 2p^e$.
+Suppose $t = 1$, with reducible fibre $F_0$.
+Contracting $G$, then successively $c_1,\dots,c_l$ (each becomes a $(-1)$-curve after the previous contraction), and finally $v$, turns $F_0$ into a smooth fibre, and none of these curves meets $A$.
+Hence $T'$ is obtained from $\mathbb F_b$, in which $A$ is the negative section, by blowing up $n$ points on a fibre $f_0$ ($n = 2$ for $A_1\sqcup A_1$): first a point $x_1\in f_0\setminus A$, then the intersection point of the strict transform of $f_0$ with the first exceptional curve, and then each time a general point of the last exceptional curve.
+Let $E_i^{\rm tot}$ be the total transform of the $i$-th exceptional curve and $\pi\from T'\to\mathbb F_b$ the blowdown, and write $H = \pi^*(\alpha A+\beta f)-\sum_ic_iE_i^{\rm tot}$.
+Then $H\cdot A = 0$ and $H\cdot F = a$ give $H = a\,\pi^*(A+bf)-\sum_ic_iE_i^{\rm tot}$.
+The curves $u = \pi^*f_0-E_1^{\rm tot}-E_2^{\rm tot}$, $v = E_1^{\rm tot}-E_2^{\rm tot}$ and $E_i^{\rm tot}-E_{i+1}^{\rm tot}$ for $2\leq i<n$ are exceptional, so $H$ is orthogonal to them; hence $c_1 = c_2 = \dots = c_n = a/2 = 1$.
+Using $-K_{T'} = \pi^*(2A+(b+2)f)-\sum_iE_i^{\rm tot}$ we obtain
+\begin{equation}\label{eq:91}
+  H^2 = 4b-n,\qquad -K_{T'}\cdot H = 2b+4-n.
+\end{equation}
+In both cases, $-K_{T'}\cdot H = -K_{S'}\cdot H_{S'} = (p-1)\,D'\cdot H_{S'}$ with $D'\cdot H_{S'}\in\ZZ$, because $D'$ is a $\ZZ$-divisor and $H_{S'}$ is Cartier.
+So $-K_{T'}\cdot H$ is divisible by $p-1$, and it is positive because $-K_{S'}$ is ample.
+
+\emph{Step 4: $t = 0$.}
+Here $H\equiv a(A+bf)$ and $-K_{T'}\cdot H = a(b+2) = a(2p^e+2)\equiv 4a\pmod{p-1}$.
+So $(p-1)\mid 4a$ with $a\leq 2$, which is impossible for $p\geq 7$.
+
+\emph{Step 5: $A_1\sqcup A_1$.}
+The exceptional curves form the chain $A,u$, with determinant $2b-1$, and the isolated curve $v$, with determinant $2$; so $2(2b-1) = 2p^e$.
+By \eqref{eq:91}, $-K_{T'}\cdot H = 2b+2 = p^e+3\equiv 4\pmod{p-1}$, which is impossible for $p\geq 7$.
+
+\emph{Step 6: $D_n$.}
+Label the configuration as follows: $u$ and $v$ are the two tips of multiplicity one, $c = c_l$ is the curve meeting them, and $w_j = c_{l-j}$ for $1\leq j\leq n-3$ form the long arm, so that $w_{n-3} = c_1$.
+All exceptional curves form one connected configuration, of determinant $4b-n = 2p^e$; so they lie over one singular point, which is $s_0$ by Lemma~\ref{lem:rank-one-setup}(5), and $n$ is even, hence $n\geq 4$.
+Let $T_0 = T'\times_{S'}\Spec\O^{\rm sh}_{S',s_0}$, and let $\mathcal B = v+w_1+w_3+\dots+w_{n-3}$.
+These components are disjoint, every component of $\mathcal B$ has even self-intersection, and every other exceptional curve meets $\mathcal B$ in an even number of points: $c$ meets $v$ and $w_1$, each $w_{2j}$ meets $w_{2j-1}$ and $w_{2j+1}$, and $A$ and $u$ meet no component of $\mathcal B$.
+Hence $\O_{T_0}(\mathcal B)$ has even degree on every exceptional curve, so Lemma~\ref{lem:kummer}(1) gives $\O_{T_0}(\mathcal B)\cong N^{\otimes 2}$ for a line bundle $N$.
+The double cover $\varpi\from V_0 = \operatorname{\mathbf{Spec}}(\O_{T_0}\oplus N^{-1})\to T_0$ defined by the section of $N^{\otimes 2}$ vanishing on $\mathcal B$ is branched exactly along the smooth divisor $\mathcal B$, so $V_0$ is regular.
+Over $U_{s_0}^\circ$ it is the $\mu_2$-torsor attached to the nonzero class $\mathcal B$ in Lemma~\ref{lem:kummer}(1), hence the connected double cover.
+Let $B_0 = H^0(V_0,\O_{V_0})$; it is a strictly henselian normal local ring, and $V_0\to\Spec B_0$ is a resolution whose punctured spectrum is the connected double cover of $U_{s_0}^\circ$.
+
+The exceptional curves of $V_0$ are as follows.
+Each component of $\mathcal B$ lifts to a smooth rational curve $R$ with $2R = \varpi^*(\text{component})$, so $R^2 = -1$.
+The curves $A$ and $u$ meet no branch curve, so each splits into two disjoint copies, $A',A''$ and $u',u''$, with $A'^2 = A''^2 = -b$ and $u'^2 = u''^2 = -2$.
+The curve $c$ and every $w_{2j}$ meet $\mathcal B$ in two points, so their preimages $\tilde c$ and $\tilde w_{2j}$ are smooth rational curves of self-intersection $-4$.
+Contracting the $(-1)$-curves $R$ raises the self-intersections of $\tilde c$ and of each $\tilde w_{2j}$ to $-2$, since each of these meets exactly two of the curves $R$.
+The resulting minimal configuration is a tree of smooth rational curves meeting transversally: a central $(-2)$-curve $\tilde c$ with two arms $u',A'$ and $u'',A''$ of self-intersections $(-2,-b)$, and a third arm of $(n-4)/2$ curves $\tilde w_2,\tilde w_4,\dots$ of self-intersection $-2$.
+Put $Q = 2b-1$ and $q = (n-2)/2$.
+Each short arm has determinant $Q$ and inverse entry $b/Q$ at its end next to $\tilde c$, and the third arm has determinant $q$ and inverse entry $(q-1)/q$ there.
+Hence the absolute value of the determinant is
+\[
+  Q^2q\Bigl(2-\frac{2b}{Q}-\frac{q-1}{q}\Bigr) = Q(Q-q) = (2b-1)\,\frac{4b-n}{2} = (2b-1)\,p^e.
+\]
+The punctured spectrum of $B_0$ is simply connected by Lemma~\ref{lem:rank-one-setup}(5), so Lemma~\ref{lem:kummer}(2) shows that $(2b-1)p^e$ is a power of $p$.
+Write $2b-1 = p^f$.
+Then $n = 2(Q-p^e)+2 = 2p^f-2p^e+2\geq 4$, so $f>e$.
+By \eqref{eq:91},
+\[
+  -K_{T'}\cdot H = 2b+4-n = 2p^e-p^f+3\leq(2-p)p^e+3\leq 5-p<0,
+\]
+contradicting the positivity in Step~3.
+
+\emph{Step 7: $a\geq 3$.}
+By Lemma~\ref{lem:ruling}, either $p\in\{13,17\}$, $a = 3$ and $H^2 = 2p$, or $p = 13$, $a = 4$, $H^2 = 26$ and $b = 2$.
+As at the end of Step~3, $-K_{T'}\cdot H$ is a positive multiple of $p-1$.
+By \eqref{eq:KT} and \eqref{eq:EF}, $-K_{T'}\cdot H = \lambda H^2$ with $\lambda\leq 2/a\leq 2/3$, so $-K_{T'}\cdot H\leq 4p/3<2(p-1)$; hence $-K_{T'}\cdot H = p-1$.
+
+We claim that every reducible fibre of $\varphi$ contains a $(-1)$-curve which does not meet $A$.
+More generally, let $F_1$ be a reducible fibre of a morphism with general fibre $\PP^1$ from a smooth projective surface to $\PP^1$, and let $A_1$ be a section; we show by induction on the number of components of $F_1$ that $F_1$ contains a $(-1)$-curve not meeting $A_1$.
+The section $A_1$ meets exactly one component $u_1$ of $F_1$, and $u_1$ has multiplicity one.
+Every $(-1)$-curve in $F_1$ other than $u_1$ is disjoint from $A_1$, and $F_1$ contains a $(-1)$-curve; so we may suppose that $u_1$ is the only one.
+Then $F_1\cdot u_1 = 0$ shows that $u_1$ meets exactly one other component $C$, transversally, and that $C$ has multiplicity one.
+Let $\sigma$ be the contraction of $u_1$.
+If $\sigma(F_1)$ is irreducible, then it is a smooth fibre $\sigma(C)$, so $C^2 = \sigma(C)^2-1 = -1$, a contradiction.
+Otherwise, by induction, $\sigma(F_1)$ contains a $(-1)$-curve not meeting $\sigma(A_1)$; it does not pass through the point $\sigma(u_1)\in\sigma(A_1)$, so its strict transform is a $(-1)$-curve in $F_1$ other than $u_1$, again a contradiction.
+
+Contracting such curves successively, we obtain a birational morphism from $T'$ to a $\PP^1$-bundle over $\PP^1$ which is an isomorphism near $A$.
+As $A^2 = -b$, this bundle is $\mathbb F_b$ with negative section $A$, and the morphism $\pi\from T'\to\mathbb F_b$ is a composite of $N$ blowups at points not on the images of $A$.
+Let $E_i^{\rm tot}$ be the total transform of the $i$-th exceptional curve, and put $c_i = H\cdot E_i^{\rm tot}\in\ZZ$.
+As in Step~3, $H = a\,\pi^*(A+bf)-\sum_ic_iE_i^{\rm tot}$ and $-K_{T'} = \pi^*(2A+(b+2)f)-\sum_iE_i^{\rm tot}$, so
+\begin{equation}\label{eq:blowup}
+  H^2 = a^2b-\sum_ic_i^2\quad\text{and}\quad -K_{T'}\cdot H = a(b+2)-\sum_ic_i.
+\end{equation}
+Fix $i$, let $F_0 = mG+\sum_jm_jE_j$ be the fibre of $\varphi$ containing $E_i^{\rm tot}$, as in Step~1, and let $e_i$ be the coefficient of $G$ in $E_i^{\rm tot}$.
+Since $H$ vanishes on the $E_j$ and $H\cdot G = a/m$, we have $c_i = e_ia/m$.
+Let the $i'$-th centre be the last one lying over the $i$-th centre, possibly $i' = i$.
+No later centre lies on the $i'$-th exceptional curve, so its strict transform is a $(-1)$-curve on $T'$ contained in $E_i^{\rm tot}$; it is not $\mu$-exceptional, as $\mu$ is minimal, so it is $G$, and $e_i\geq 1$.
+Moreover $F_0 = \pi^*f_0$ for a fibre $f_0$ of $\mathbb F_b$, and the $i$-th centre lies on the total transform of $f_0$ on the surface being blown up; hence $F_0-E_i^{\rm tot}$ is effective.
+If $e_i = m$, this divisor would be supported on the $E_j$, on which $K_{T'}$ is nonnegative by adjunction, whereas $K_{T'}\cdot(F_0-E_i^{\rm tot}) = -2+1 = -1$.
+Hence
+\[
+  1\leq e_i\leq m-1.
+\]
+Finally, the exceptional curve of a blowup at a point of a fibre has as multiplicity the sum of the multiplicities of the components of the fibre through that point, and there are at most two of them, as the reduced fibres are trees of smooth rational curves meeting transversally.
+Hence the first three exceptional curves over a fibre $f_0$ of $\mathbb F_b$ have multiplicity at most $1$, $2$ and $3$, respectively; so if at most $\ell\in\{1,2,3\}$ centres lie over $f_0$, then the components of $\pi^*f_0$ have multiplicity at most $\ell$.
+
+Suppose that $a = 4$, so that $p = 13$ and $b = 2$.
+Then \eqref{eq:blowup} gives $\sum_ic_i = 4$ and $\sum_ic_i^2 = 6$.
+As the $c_i$ are positive integers, $\sum_ic_i(c_i-1) = 2$ shows that one $c_i$ equals $2$ and the others equal $1$, so $N = 3$.
+Choose $i$ with $c_i = 1$; then $m = 4$ for the fibre containing $E_i^{\rm tot}$, since $e_i$ and $a/m$ are positive integers with product $1$.
+But at most three centres lie over the image of this fibre in $\mathbb F_b$, so its components have multiplicity at most $3$, a contradiction.
+
+Suppose that $a = 3$.
+Since $m\geq 2$ divides $a$ by Step~1, $m = 3$ for every reducible fibre; hence $c_i = e_i\in\{1,2\}$ and $c_i^2 = 3c_i-2$ for all $i$.
+Now \eqref{eq:blowup} gives
+\[
+  p-3 = 3(-K_{T'}\cdot H)-H^2 = 18-3\sum_ic_i+\sum_ic_i^2 = 18-2N,
+\]
+so $N = (21-p)/2$.
+Every reducible fibre contains the component $G$ of multiplicity $3$, so at least three centres lie over its image in $\mathbb F_b$.
+If $p = 17$, then $N = 2$, so there is no reducible fibre and $N = 0$, a contradiction.
+If $p = 13$, then $N = 4$, and all centres lie over the image $f_0$ of a single reducible fibre $F_0 = 3G+\sum_jm_jE_j$ with four components $E_j$.
+By the adjunction formula of Step~1, $\sum_jm_j(-E_j^2-2) = 1$; so one of the $E_j$, which we call $x$, has multiplicity one and $x^2 = -3$, and the others are $(-2)$-curves.
+The equations $F_0\cdot C = 0$ say that the multiplicities of the neighbours of a component $C$ add up to $-C^2$ times the multiplicity of $C$.
+In particular, a component of multiplicity one which meets a component of multiplicity three is $x$, and it meets nothing else.
+Put $y_0 = G$.
+If $y_0,\dots,y_l$ is a chain of components of multiplicity three, each meeting the next, then the neighbours of $y_l$ other than $y_{l-1}$ (if $l\geq 1$) have multiplicities adding up to $3$, as $G^2 = -1$ and $y_l^2 = -2$ for $l\geq 1$, and they are not three curves of multiplicity one; so they are either a single curve $y_{l+1}$ of multiplicity three, or $x$ and a curve $z$ of multiplicity two.
+In the second case, as $z$ is a $(-2)$-curve, it has exactly one further neighbour $t$, of multiplicity one; then $t\neq x$ is a $(-2)$-curve, so it meets nothing else.
+Since $F_0$ has finitely many components, the second case occurs for some $l$, and then $y_0,\dots,y_l,x,z,t$ are all the components of $F_0$, as $F_0$ is connected.
+As there are five of them, $l = 1$ and $F_0 = 3G+3y_1+x+2z+t$, where $y_1$ meets $G$, $x$ and $z$, and $z$ meets $t$.
+The curve $A$ meets $x$ or $t$, the components of multiplicity one.
+Contracting $G$, $y_1$, $z$, and then the one of $x$ and $t$ which does not meet $A$, turns $F_0$ into a smooth fibre; each of these curves is a $(-1)$-curve when it is contracted, and none of them meets $A$, so we may assume that $\pi$ is the composite of these contractions.
+If $A$ meets $t$, then $t = \pi^*f_0-E_1^{\rm tot}-E_2^{\rm tot}$, $x = E_1^{\rm tot}-E_2^{\rm tot}-E_3^{\rm tot}$, $z = E_2^{\rm tot}-E_3^{\rm tot}$, $y_1 = E_3^{\rm tot}-E_4^{\rm tot}$ and $G = E_4^{\rm tot}$, so $H\cdot G = 1$ and $H\cdot x = H\cdot z = H\cdot y_1 = 0$ give $(c_i) = (2,1,1,1)$.
+If $A$ meets $x$, then $x = \pi^*f_0-E_1^{\rm tot}-E_2^{\rm tot}-E_3^{\rm tot}$, $t = E_1^{\rm tot}-E_2^{\rm tot}$, $z = E_2^{\rm tot}-E_3^{\rm tot}$, $y_1 = E_3^{\rm tot}-E_4^{\rm tot}$ and $G = E_4^{\rm tot}$, which gives $(c_i) = (1,1,1,1)$.
+Hence $\sum_ic_i^2\in\{4,7\}$, whereas $\sum_ic_i^2 = 9b-26\equiv 1\pmod 9$ by \eqref{eq:blowup}; this is impossible.
+
+Finally, if $p\geq 13$, then $T'\not\cong\PP^2$, because $\PP^2$ contains no curve of negative self-intersection while $\mu$ has exceptional curves by Lemma~\ref{lem:rank-one-setup}(5).
+A smooth projective rational surface other than $\PP^2$ admits a birational morphism to a Hirzebruch surface, hence a morphism to $\PP^1$ with general fibre $\PP^1$, and Lemma~\ref{lem:ruling} applies to it.
+\end{proof}

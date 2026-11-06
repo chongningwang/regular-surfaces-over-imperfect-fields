@@ -1,0 +1,49 @@
+\section{Verification scripts}\label{app:verification-scripts}
+
+The complete source, running instructions and recorded outputs are supplied in the companion archive \texttt{verification-scripts.zip}, with the directory structure \texttt{smooth/} and \texttt{p11/} preserved.
+The Python dependencies are SymPy, NetworkX and NumPy.
+The local algebra checks use \textsc{Singular} \cite{Singular}.
+Run \texttt{python3 path/to/script.py} or \texttt{Singular -q path/to/script.sing} from the extracted archive, with the appropriate path.
+The script \texttt{smooth/p13.py} requires the \texttt{fork} multiprocessing method.
+
+\subsection{Enumeration of exceptional configurations}\label{app:scripts-enumeration}
+
+The script \texttt{smooth/configs.py} enumerates the positive definite matrices $A = (-E_i\cdot E_j)$ of size $r = 8+d$ satisfying Lemmas~\ref{lem:smooth-numerical} and~\ref{lem:smooth-config}.
+With $z_i$ the multiplicities of the exceptional curves and $a_i = K_T\cdot E_i$, the search imposes
+\[
+  Az = a,\qquad z_i\in\ZZ_{>0},\qquad z\cdot a = d,\qquad 1\leq d\leq 4.
+\]
+The prime values of the determinant in its output are
+\[
+\begin{array}{c|c|c}
+d & r & \text{prime values of }\det A\\ \hline
+1 & 9 & \varnothing\\
+2 & 10 & 5,\ 17\\
+3 & 11 & 5\\
+4 & 12 & 13,\ 53,\ 113
+\end{array}
+\]
+In particular the only primes at least $29$ occur for $d = 4$, as used in Proposition~\ref{prop:smooth-enum}.
+The script \texttt{smooth/crosscheck.py} independently enumerates the configurations with transversal pairwise intersections and no triple points, running over all trees with $r$ vertices.
+Its determinant sets agree with the \texttt{simple-tree dets} lines of \texttt{configs.py}.
+The general search also covers tangencies and triple points.
+
+\subsection{Characteristics 13 and 17}\label{app:scripts-small-primes}
+
+The scripts \texttt{smooth/p13.py} and \texttt{smooth/p17.py} use the same search and retain matrices with $\det A\in\{p,p^3\}$.
+For $1\leq d\leq 3$, they give no configuration for $p = 13$ and exactly one for $p = 17$, with $d = 2$ and $r = 10$.
+These are the outputs used in Proposition~\ref{prop:small-primes-sing}.
+The script \texttt{smooth/p17\_local.sing} checks one representative of the surviving graph.
+The proof of the proposition gives the obstruction for every analytic type with that graph.
+
+\subsection{The characteristic-11 counterexample}\label{app:scripts-p11}
+
+The script \texttt{p11/p11\_checks.py} checks the derivative table, the invariant equation, the residues and orders along $u = 0$, the value at infinity and the coordinate identities for geometric nonnormality in Section~\ref{sec:p11}.
+The script \texttt{p11/ekedahl.sing} independently checks the normalized gradient certificate.
+The identities \eqref{eq:p11-gradient} and \eqref{eq:p11-differentials} are derived directly in Section~\ref{sec:p11}.
+
+\subsection{Examples and the lift to characteristic zero}\label{app:scripts-examples}
+
+The scripts \texttt{smooth/small\_primes\_checks.py} and \texttt{smooth/small\_primes\_local.sing} check the equations and local calculations in Example~\ref{ex:small-primes}.
+The script \texttt{smooth/small\_primes\_lift\_checks.py} checks the two blowup charts and their unit derivatives over $\ZZ[c]_{(19)}$ in Proposition~\ref{prop:small-primes-lift}.
+The script \texttt{smooth/nonrational\_checks.py} checks the equations and discrepancy calculation in Example~\ref{ex:nonrational-small-primes} and imports \texttt{small\_primes\_checks.py}.

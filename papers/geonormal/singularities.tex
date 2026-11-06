@@ -1,0 +1,134 @@
+\section{Classification of geometric singularities for \texorpdfstring{$p = 13,17,19$}{p=13,17,19}}\label{sec:small-primes-sing}\label{subsec:small-primes-sing}
+
+We now determine the geometric singularities in the three remaining prime characteristics $p\geq 13$.
+
+\begin{proposition}\label{prop:small-primes-sing}\label{prop:p13-sing}\label{prop:p17-sing}\label{prop:p19-sing}\label{rem:smooth-remaining}
+Let $k$ be a field of characteristic $p\in\{13,17,19\}$, and let $X$ be a regular projective surface over $k$ with $H^0(X,\O_X) = k$ and $K_X\equiv 0$.
+Then $X_{\bar k}$ is normal and is either smooth or has exactly one singular point, which is a rational double point of type $\mathrm A_{p-1}$.
+In the latter case its minimal resolution is a K3 surface and $\omega_X\cong\O_X$.
+In particular $X_{\bar k}$ is strongly $F$-regular.
+\end{proposition}
+
+\begin{proof}
+We may assume that $k$ is $F$-finite and separably closed.
+The surface $V = X_{\bar k}$ is normal by Theorem~\ref{thm:main}.
+We use the notation of Section~\ref{sec:smooth}: let $\mu\from T\to V$ be the minimal resolution and write $K_T = \mu^*K_V-Z$ with $Z\geq 0$.
+
+Suppose first that $Z = 0$.
+By Lemma~\ref{lem:smooth-structure}(1) and \cite{BM77}, $T$ is a K3, Enriques, abelian or bielliptic surface, and every singular point of $V$ is a rational double point.
+The $\mu$-exceptional curves span a negative definite sublattice of $\NS(T)$ orthogonal to the pullback of an ample class, so there are at most $\rho(T)-1\leq b_2(T)-1\leq 21$ of them.
+By Lemma~\ref{lem:geometric-rdp}, every singular point of $V$ has type $\mathrm A_{p^e-1}$ for some $e\geq 1$.
+The bound $p^e-1\leq 21$ forces $e = 1$, since $p\geq 13$.
+There is at most one such point because $2(p-1)>21$.
+If $V$ is singular, then $b_2(T)\geq\rho(T)\geq p\geq 13$, so $T$ is a K3 surface.
+Then $K_T\sim 0$ and $\omega_V\cong\O_V$.
+Flat base change gives $h^0(X,\omega_X) = 1$; since $\omega_X$ is numerically trivial, its nonzero section has no zeros, so $\omega_X\cong\O_X$.
+Rational double points of type $\mathrm A$ are strongly $F$-regular in every characteristic \cite[Theorem~1.1]{Har98}.
+Thus all assertions hold when $Z = 0$.
+
+Suppose now that $Z\neq 0$.
+By Proposition~\ref{prop:smooth-Zpos}, $p\equiv 1\pmod 4$, so $p\in\{13,17\}$.
+By Lemma~\ref{lem:smooth-structure}(2) and Proposition~\ref{prop:smooth-Zpos}, $T$ is rational, $H^1(V,\O_V) = 0$, $\omega_V\cong\O_V$ and $\rho(X) = 2$.
+By Lemma~\ref{lem:smooth-numerical}, $V$ has a unique singular point $P$, which is non-rational, and its exceptional fibre consists of $r = 8+d\leq 12$ curves $E_1,\dots,E_r$, where $d = -Z^2\in\{1,2,3,4\}$.
+
+Put $A = (-E_i\cdot E_j)$, $z_i = \operatorname{mult}_{E_i}Z$, $a_i = K_T\cdot E_i$ and $w_i = -E_i^2$.
+By Lemma~\ref{lem:smooth-config}, $\det A$ is an odd power of $p$, the incidence graph is a tree, and its intersection numbers satisfy the conditions used in the enumeration.
+By Proposition~\ref{prop:smooth-det},
+\[
+  \det A\leq 2^8\cdot 3^d\leq 20736<13^5\leq p^5,
+\]
+so $\det A\in\{p,p^3\}$.
+
+By Lemma~\ref{lem:smooth-tangent}, $1\leq d\leq 3$.
+
+The scripts \texttt{smooth/p13.py} and \texttt{smooth/p17.py} in Appendix~\ref{app:scripts-small-primes} run the enumeration of Proposition~\ref{prop:smooth-enum} and keep the matrices with $\det A\in\{p,p^3\}$.
+Among the configurations with $r = 8+d$ and $1\leq d\leq 3$, there are none for $p = 13$, so this case is impossible.
+For $p = 17$ there is exactly one configuration up to isomorphism, with $d = 2$ and $r = 10$.
+Its exceptional curves are $F_1,\dots,F_6$, $G_1$, $G'_1$, $G_6$ and $G'_6$, with $G_1^2 = G_6^2 = -3$ and all other self-intersections $-2$.
+The intersecting pairs are $\{F_i,F_{i+1}\}$ for $1\leq i\leq 5$ and $\{F_1,G_1\}$, $\{F_1,G'_1\}$, $\{F_6,G_6\}$ and $\{F_6,G'_6\}$, and $Z = G_1+G'_1+G_6+G'_6+2F_1+\dots+2F_6$.
+Its curves are smooth and rational because $w_i = a_i+2$, that is $p_a(E_i) = 0$, for all $i$, and they meet transversally because distinct curves have intersection number $0$ or $1$.
+We have $K_T\sim -Z$, since $K_T = \mu^*K_V-Z$ and $\omega_V\cong\O_V$.
+
+Put $F = \overline k$.
+Since $T$ is rational, $H^1(V,\O_V) = 0$ and $\omega_V\cong\O_V$, the Leray spectral sequence gives $p_g(P) = 1$.
+Thus $P$ is an elliptic singularity in the sense of \cite[Definition~5.1]{Tan25}.
+By \cite[Lemma~5.2]{Tan25}, $Z$ is its fundamental cycle, and direct computation gives
+\[
+  Z^2 = -2,\qquad Z\cdot G_1 = Z\cdot G_6 = -1,
+  \qquad Z\cdot C = 0
+\]
+for each of the other eight exceptional curves $C$.
+
+We first recover the part of the local equation needed for the argument.
+Write $R = \widehat\O_{V,P}$ and $I_j = (\mu_*\O_T(-jZ))_P^{\wedge}$.
+For the local constructions below, replace $\mu$ by its base change to $\Spec R$ and retain the notation $T$ and $Z$.
+By \cite[Notation~5.15, Lemmas~5.12 and~5.21, and Theorem~5.23]{Tan25}, $I_1$ is the maximal ideal of $R$, and the associated graded algebra for the $I_j$ is generated by elements $\bar x,\bar y$ of degree $1$ and $\bar z$ of degree $2$.
+Its degree-$j$ part has dimension $2j$ for $j\geq 1$; in particular the monomials in $\bar x,\bar y,\bar z$ of weighted degree less than $4$ are linearly independent, where the weights are $(1,1,2)$.
+Choose lifts $x,y\in I_1$ and $z\in I_2$.
+The sections $x,y$ generate $\O_T(-Z)$ near the exceptional fibre, by \cite[Theorem~5.7]{Tan25} and Nakayama's lemma.
+Consequently $(x,y)$ is a reduction of the maximal ideal, and $\length R/(x,y) = 2$, since $R$ is Cohen--Macaulay of multiplicity $2$ \cite[Theorem~5.23]{Tan25}.
+It follows that $R$ is free of rank two over $A = F[[x,y]]$.
+The independence of $\bar z$ from $\bar x^2,\bar x\bar y,\bar y^2$ gives $z\notin(x,y)R$, so $1,z$ form an $A$-basis by Nakayama's lemma.
+Write its relation as $z^2 = a(x,y)z+b(x,y)$.
+The independence of the monomials of weighted degree less than $4$ gives $a\in(x,y)^2$ and $b\in(x,y)^4$.
+Replacing $z$ by $z-a/2$, we therefore obtain
+\[
+  R\cong F[[x,y,z]]/(z^2-h(x,y)),\qquad h\in(x,y)^4,
+\]
+and the class of $z$ in $I_2/I_3$ is still independent of $\bar x^2,\bar x\bar y,\bar y^2$.
+
+Let $B$ be the blowup of $\Spec A$ at the origin, and let $W$ be its normalization in $\Frac R$.
+The generation of $\O_T(-Z)$ by $x,y$ gives a factorization $T\to W\to B$ in the completed local setting.
+The morphism $g\from T\to W$ contracts precisely the curves of degree zero for $\O_T(-Z)$, namely the chain
+\[
+  G'_1,F_1,\ldots,F_6,G'_6.
+\]
+Hence $W$ has a single rational double point $Q$ of type $\mathrm A_8$ \cite{Art77}.
+The two remaining exceptional curves on $W$ are the images $\overline G_1,\overline G_6$ of $G_1,G_6$, and they meet only at $Q$.
+The pullback $\overline Z$ of the exceptional divisor of $B$ is Cartier, satisfies $g^*\overline Z = Z$, and equals $\overline G_1+\overline G_6$.
+In particular the ideals $I_j$ are determined by order at least $j$ along these two curves.
+
+Let $h_j$ denote the homogeneous degree-$j$ part of $h$.
+We have $h_4\neq 0$.
+Indeed, otherwise $z^2=h\in(x,y)^5$ would give order at least $3$ for $z$ along both $\overline G_1$ and $\overline G_6$, since $x,y$ have order at least $1$ there; hence $z\in I_3$, a contradiction.
+On the chart $y=xv$ of $B$, putting $w=z/x^2$ gives the equation
+\[
+  w^2 = h_4(1,v)+xh_5(1,v)+x^2h_6(1,v)+\cdots.
+\]
+This double cover is normal: $h$ is reduced by the normality of $R$, and $h_4\neq 0$ means that removing the factor $x^4$ from its pullback leaves a reduced branch divisor.
+Thus this is a chart of $W$.
+Each of $\overline G_1$ and $\overline G_6$ maps with degree one to the exceptional projective line of $B$, since $-Z\cdot G_1 = -Z\cdot G_6 = 1$.
+The exceptional double cover therefore splits, so $h_4$ is the square of a homogeneous quadratic.
+Its zeros are exactly the points where the two components meet.
+Since the components meet only at $Q$, a linear change of $x,y$ and a scaling of $z$ give $h_4 = y^4$, with $Q$ at $x=v=w=0$.
+
+Put $P(v) = h_5(1,v)$ and $S(v) = h_6(1,v)$.
+The equation of $W$ at $Q$ is
+\[
+  w^2 = v^4+xP(v)+x^2S(v)+O(x^3).
+\]
+Since $Q$ is singular, $P(0) = 0$.
+The quadratic part at an $\mathrm A_8$ point has rank two, so $P'(0) = 0$ and $b := S(0)\neq 0$.
+Write $P(v) = av^2+O(v^3)$.
+Completing the square in $x$ by the formal Morse lemma gives a remaining series in $v$ whose degree-four coefficient is
+\[
+  1-\frac{a^2}{4b}.
+\]
+More explicitly, the critical section is $x = -a v^2/(2b)+O(v^3)$, and substitution gives this coefficient.
+If it were nonzero, $Q$ would be of type $\mathrm A_3$, rather than $\mathrm A_8$.
+Therefore $a^2 = 4b$ and $a\neq 0$.
+We have proved that
+\[
+  h = y^4+ax^3y^2+cx^2y^3+dxy^4+ey^5+O((x,y)^6),
+  \qquad a\neq 0.
+\]
+
+Put $f = z^2-h$.
+Since $V$ descends to the regular surface $X$, \cite[Corollary~5.4]{Sch08} implies that one of $f_x,f_y,f_z$ belongs to the ideal generated by $f$ and the other two partial derivatives.
+This is impossible for $f_z = 2z$, since $f,f_x,f_y$ have order at least two.
+Modulo $z$, the remaining possibilities are $h_x\in(h,h_y)$ and $h_y\in(h,h_x)$ in $F[[x,y]]$.
+The latter is impossible because $h_y$ has order three, whereas $h$ and $h_x$ have order four.
+For the former, the degree-four part of every element of $(h,h_y)$ of order at least four lies in the span of $xy^3$ and $y^4$.
+But the degree-four part of $h_x$ contains $3ax^2y^2$ with $3a\neq 0$.
+Thus neither possibility occurs, so $Z\neq 0$ is impossible.
+\end{proof}

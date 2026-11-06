@@ -1,0 +1,242 @@
+\section{Smoothness for \texorpdfstring{$p\geq 23$}{p >= 23}}\label{sec:smooth}
+We now prove that the surfaces of Theorem~\ref{thm:main} are smooth over $k$ for $p\geq 23$.
+If $X$ admits a genus-one fibration, Proposition~\ref{prop:genus-one} shows that $X$ is smooth except possibly at nodes of multiplicative fibres over points which are not $k$-rational, which occur only for $p\leq 23$, and at which $X_{\bar k}$ has singularities of type $\mathrm A_{p-1}$.
+In general, we study the minimal resolution of the normal surface $X_{\bar k}$.
+By Lemma~\ref{lem:geometric-rdp}, its rational double points have type $\mathrm A_{p^e-1}$ with $e\geq 1$.
+We restrict the remaining exceptional configurations using the Picard lattice of $X$, a bound for the determinant of the exceptional lattice, and an analysis of the tangent cone of the non-rational singular point.
+
+Throughout this section, $k$ is an $F$-finite separably closed field of characteristic $p\geq 13$, and $X$ is a regular projective surface over $k$ with $H^0(X,\O_X) = k$ and $K_X\equiv 0$.
+Put $V = X_{\bar k}$ and write $\phi\from V\to X$ for the projection.
+By Theorem~\ref{thm:main}, the surface $V$ is normal.
+It is Gorenstein, because $X$ is regular and $\omega_V$ is the pullback of $\omega_X$; so $K_V$ is Cartier and $K_V\equiv 0$.
+It is also a local complete intersection over $\overline k$: a closed immersion of the regular scheme $X$ into a smooth $k$-scheme is a regular immersion, and this property is preserved by the base change to $\overline k$.
+As $V$ is normal, the geometric normalization of $X$ is $V$ itself, so Corollary~\ref{lem:pi1-lattice}(1) applies, with $W = X$ and $S = V$, at every singular point of $V$.
+Moreover, $X$ is smooth over $k$ if and only if $V$ is smooth, because smoothness is compatible with, and descends along, the extension $\overline k/k$.
+Let $\mu\from T\to V$ be the minimal resolution, and write
+\[
+  K_T = \mu^*K_V-Z
+\]
+with $Z$ a $\mu$-exceptional divisor.
+By \cite[Theorem~10.5 and Claim~10.3.5]{Kol13}, $Z\geq 0$, and $Z$ is a $\ZZ$-divisor because $K_V$ is Cartier.
+In particular $K_T\equiv -Z$.
+
+\begin{lemma}\label{lem:smooth-structure}
+\begin{enumerate}
+\item If $Z = 0$, then $T$ is a smooth projective surface with $K_T\equiv 0$, and every singular point of $V$ is a rational double point whose exceptional curves are smooth rational curves of self-intersection $-2$.
+\item If $Z\neq 0$, then $T$ is rational, $H^1(X,\O_X) = 0$, $\omega_X\cong\O_X$ and $\chi(\O_X) = 2$.
+  Moreover exactly one singular point $y_0$ of $V$ is not rational; it has geometric genus $p_g(y_0) = 1$, and all other singular points of $V$ are rational double points.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(1) If $Z = 0$, then $K_T\equiv 0$.
+Every $\mu$-exceptional curve $E$ satisfies $K_T\cdot E = 0$ and $E^2<0$, so adjunction gives $p_a(E) = 0$ and $E^2 = -2$.
+Two exceptional curves meet in at most one point, transversally, since otherwise their sum would have nonnegative square; hence the exceptional configurations are negative definite configurations of $(-2)$-curves, that is, Dynkin diagrams of types $\mathrm A$, $\mathrm D$ and $\mathrm E$, and the singular points are rational double points \cite{Art77}.
+
+(2) Since $Z$ is effective and nonzero, $h^0(T,nK_T) = h^0(T,-nZ) = 0$ for $n\geq 1$, so $T$ has Kodaira dimension $-\infty$ and is ruled over a smooth projective curve $C$ \cite{Mum69}.
+If $C$ had positive genus, then every rational curve on $T$ would be contracted to a point of $C$, by L\"uroth's theorem.
+By Corollary~\ref{lem:pi1-lattice}(1), all $\mu$-exceptional curves are rational, so $Z$ would be vertical, and a general fibre $F\cong\PP^1$ would satisfy $-2 = K_T\cdot F = -Z\cdot F = 0$, which is absurd.
+Hence $T$ is rational, and $H^1(T,\O_T) = H^2(T,\O_T) = 0$.
+The Leray spectral sequence for $\mu$ gives $H^1(V,\O_V) = 0$ and $h^2(V,\O_V) = \sum_yp_g(y)$.
+By Serre duality $h^2(V,\O_V) = h^0(V,\omega_V)$, and $h^0(V,\omega_V)\leq 1$, because a nonzero section of $\omega_V$ has an effective numerically trivial divisor, which is zero; in that case $\omega_V\cong\O_V$.
+If $h^0(V,\omega_V) = 0$, then all singular points of $V$ are rational, hence rational double points since $V$ is Gorenstein \cite{Art77}, so the minimal resolution is crepant and $Z = 0$, a contradiction.
+Therefore $\omega_V\cong\O_V$ and $\sum_yp_g(y) = 1$, which gives the assertion about the singular points, since rational Gorenstein singularities are rational double points.
+By flat base change, $h^0(X,\omega_X) = 1$ and $H^1(X,\O_X) = 0$; as above $\omega_X\cong\O_X$, and $\chi(\O_X) = 1-0+1 = 2$.
+\end{proof}
+
+\begin{proposition}\label{prop:smooth-Z0}
+If $p\geq 23$ and $Z = 0$, then $X$ is smooth over $k$.
+\end{proposition}
+
+\begin{proof}
+By Lemma~\ref{lem:smooth-structure}(1) and the classification of surfaces \cite{BM77}, $T$ is a K3, Enriques, abelian or bielliptic surface, so $b_2(T)\leq 22$.
+The $\mu$-exceptional curves span a negative definite sublattice of $\NS(T)$, so there are at most $\rho(T)-1\leq 21$ of them.
+By Lemma~\ref{lem:geometric-rdp}, a singular point of $V$ would have type $\mathrm A_{p^e-1}$ for some $e\geq 1$, requiring at least $p-1\geq 22$ exceptional curves, a contradiction.
+Hence $V$ is smooth, and so is $X$.
+\end{proof}
+
+\begin{proposition}\label{prop:smooth-Zpos}
+If $Z\neq 0$, then $\rho(X) = 2$, the intersection form on $N^1(X)_\QQ$ is anisotropic, $\det\Pic(X) = -p^{2a+1}$ for some $a\geq 0$, and $p\equiv 1\pmod 4$.
+\end{proposition}
+
+\begin{proof}
+By Lemma~\ref{lem:smooth-structure}(2), $\omega_X\cong\O_X$, $H^1(X,\O_X) = 0$ and $\chi(\O_X) = 2$.
+Every numerically trivial line bundle $\mathcal L$ on $X$ is trivial: its pullback to the rational surface $T$ is numerically trivial, hence trivial, so $\mathcal L_{\bar k} = \mu_*\mu^*\mathcal L_{\bar k}$ is trivial, and a nonzero section of $\mathcal L$ has an effective numerically trivial divisor.
+The proofs of Proposition~\ref{prop:cohomology}(6)--(7) now apply verbatim, with $S$ replaced by $V$: $T$ is rational, each exceptional lattice has determinant $\pm$ a power of $p$ by Corollary~\ref{lem:pi1-lattice}(1), and $V$ is the geometric normalization of $X$.
+So $\Pic(X)$ is an even lattice of signature $(1,\rho(X)-1)$ and determinant $\pm p^a$.
+By Lemma~\ref{lem:lattice-dichotomy}, either the assertion holds or the intersection form on $N^1(X)_\QQ$ is isotropic.
+In the latter case, Lemma~\ref{lem:fibration} gives a fibration $f\from X\to B$ onto a regular projective curve, whose generic fibre is a smooth curve of genus one by the argument in the proof of Proposition~\ref{prop:dichotomy}.
+Then Assumption~\ref{ass:genus-one} holds, and by Proposition~\ref{prop:genus-one} every singular point of $V$ is a rational double point of type $\mathrm A_{p-1}$; this contradicts the existence of the non-rational singular point $y_0$ of Lemma~\ref{lem:smooth-structure}(2).
+\end{proof}
+
+\begin{lemma}\label{lem:smooth-numerical}
+Suppose that $Z\neq 0$, let $y_0$ be as in Lemma~\ref{lem:smooth-structure}(2), and let $d = -Z^2$.
+Then $y_0$ is the only singular point of $V$ and $1\leq d\leq 4$.
+The exceptional locus of $\mu$ is $\operatorname{Supp}Z = E_1\cup\dots\cup E_r$, where $r = 8+d$.
+Moreover, if $Z = \sum_iz_iE_i$, $a_i = K_T\cdot E_i$ and $w_i = -E_i^2$, then $z_i\geq 1$, $a_i\geq 0$ and
+\[
+  w_i = a_i+2-2p_a(E_i)\geq 1,\qquad
+  w_iz_i-a_i = \sum_{j\neq i}z_j\,E_i\cdot E_j,\qquad
+  \sum_iz_ia_i = d.
+\]
+\end{lemma}
+
+\begin{proof}
+By Lemma~\ref{lem:smooth-structure}(2), the singular points of $V$ other than $y_0$ are rational double points, whose minimal resolutions are crepant; so $Z$ is supported over $y_0$.
+If some exceptional curve over $y_0$ were not contained in $\operatorname{Supp}Z$, then, the exceptional fibre over $y_0$ being connected, some such curve $E$ would meet $\operatorname{Supp}Z$; then $K_T\cdot E = -Z\cdot E<0$ and $E$ would be a $(-1)$-curve, contradicting minimality.
+Hence $\operatorname{Supp}Z$ is the exceptional fibre over $y_0$, and $z_i\geq 1$.
+Since $\mu$ is minimal, $a_i\geq 0$; adjunction gives $w_i = a_i+2-2p_a(E_i)$, and $w_i\geq 1$ because the intersection matrix of the $E_i$ is negative definite, which also gives $d\geq 1$.
+Since $K_T\equiv -Z$, the middle identity is $Z\cdot E_i = -a_i$, and the last one is $K_T\cdot Z = -Z^2$.
+
+Let $U\subseteq V$ be an affine open neighbourhood of $y_0$ containing no other singular point of $V$.
+Since $\omega_V\cong\O_V$ and $p_g(y_0) = 1$, the point $y_0\in U$ is an elliptic singularity in the sense of \cite[Definition~5.1]{Tan25}, and $\mu^{-1}(U)\to U$ is its minimal resolution.
+If $d\geq 3$, then by \cite[Lemma~5.2, Notation~5.15 and the proof of Theorem~5.19]{Tan25}, applied to $U$, the powers of the maximal ideal of $\widehat\O_{V,y_0}$ are the completions of the ideals $\mu_*\O_T(-jZ)$, and the associated graded ring is $\bigoplus_{j\geq 0}H^0(Z,\O_Z(-jZ))$.
+For $j\geq 1$, the group $H^1(Z,\O_Z(-jZ))$ is a quotient of $H^1(\mu^{-1}(U),\O_T(-jZ))$, because $U$ is affine and the fibres of $\mu$ have dimension at most one; and the latter group vanishes by \cite[Notation~5.15]{Tan25}.
+Since $h^0(Z,\O_Z) = h^1(Z,\O_Z) = 1$ \cite[Lemma~5.2]{Tan25}, the Riemann--Roch theorem on $Z$ shows that the degree-$j$ part has dimension $-jZ^2 = jd$ for $j\geq 1$.
+So $\widehat\O_{V,y_0}$ has embedding dimension $d$ and multiplicity $d$.
+As $V$ is a local complete intersection, $\widehat\O_{V,y_0}$ is the quotient of a regular local ring of dimension $d$ by a regular sequence of $d-2$ elements of the square of its maximal ideal, so its multiplicity is at least $2^{d-2}$; hence $d\leq 4$.
+
+Since $T$ is rational, Noether's formula gives $\rho(T) = 10-K_T^2 = 10+d$.
+The surface $V$ is $\QQ$-factorial and $\rho(V) = \rho(X)$, which is $2$ by Proposition~\ref{prop:smooth-Zpos}.
+For a divisor $D$ on $T$, some multiple $m\mu_*D$ is Cartier, and $mD-\mu^*(m\mu_*D)$ is $\mu$-exceptional; so $N^1(T)_\QQ$ is spanned by $\mu^*N^1(V)_\QQ$ and the classes of the $\mu$-exceptional curves.
+These two parts are orthogonal, the second is negative definite, and $\mu^*$ is injective on $N^1(V)_\QQ$ by the projection formula.
+Hence $\mu$ has exactly $\rho(T)-\rho(V) = 8+d$ exceptional curves.
+At least one lies over $y_0$, so at most eleven could lie over another singular point.
+Such a point would be a rational double point and would require at least $p-1\geq 12$ exceptional curves by Lemma~\ref{lem:geometric-rdp}, a contradiction.
+Thus $y_0$ is the only singular point of $V$ and $r = 8+d$.
+\end{proof}
+
+\begin{proposition}\label{prop:smooth-det}
+Suppose that $Z\neq 0$, and let $E\subset\Pic(T)$ be the sublattice spanned by the classes of the $\mu$-exceptional curves.
+Then $\lvert\det E\rvert$ is a power of $p$, and
+\[
+  p\leq\lvert\det E\rvert\leq 2^8\cdot 3^d\leq 20736.
+\]
+\end{proposition}
+
+\begin{proof}
+By Corollary~\ref{lem:pi1-lattice}(1), $\lvert\det E\rvert$ is a power of $p$.
+By the proof of Proposition~\ref{prop:smooth-Zpos}, the proof of Proposition~\ref{prop:cohomology}(7) applies with $S$ replaced by $V$.
+In the notation of that proof, $\lvert\det\Pic(X)\rvert = [Q:\mu^*\phi^*\Pic(X)]^2\,\lvert\det Q\rvert$, where the index is a power of $p$, and $\lvert\det Q\rvert = \lvert\det E^{\rm sat}\rvert$ divides $\lvert\det E\rvert$.
+Since $\det\Pic(X) = -p^{2a+1}$ by Proposition~\ref{prop:smooth-Zpos}, $\lvert\det Q\rvert$ is an odd power of $p$; hence $p\leq\lvert\det Q\rvert\leq\lvert\det E\rvert$.
+
+By Lemma~\ref{lem:smooth-numerical}, the exceptional curves are $E_1,\dots,E_r$ with $r = 8+d$, and $w_i\leq a_i+2$ and $\sum_ia_i\leq\sum_iz_ia_i = d$.
+Since the matrix $(-E_i\cdot E_j)$ is positive definite, Hadamard's inequality and Bernoulli's inequality $1+a/2\leq(3/2)^a$ for integers $a\geq 0$ give
+\[
+  \lvert\det E\rvert\leq\prod_iw_i\leq\prod_i2\Bigl(1+\frac{a_i}{2}\Bigr)\leq 2^{8+d}\Bigl(\frac32\Bigr)^d = 2^8\cdot 3^d\leq 2^8\cdot 3^4 = 20736.
+\]
+\end{proof}
+
+\begin{lemma}\label{lem:smooth-config}
+Suppose that $Z\neq 0$ and $p\geq 13$, and let $E_1,\dots,E_r$, $z_i$, $a_i$, $w_i$ and $d$ be as in Lemma~\textup{\ref{lem:smooth-numerical}}.
+\begin{enumerate}
+\item We have $r = 8+d$, and the determinant of the matrix $A = (-E_i\cdot E_j)_{1\leq i,j\leq r}$ is an odd power of $p$; if $p\geq 29$, then $\det A = p$.
+\item Every $E_i$ is a rational curve which is unibranch at every point.
+  Let $\Gamma$ be the graph whose vertices are the curves $E_i$ and the points lying on at least two of them, with an edge joining each such point to each $E_i$ through it.
+  Then $\Gamma$ is a tree; in particular, two of the curves $E_i$ meet in at most one point.
+\item A point lies on at most three of the curves $E_i$, and on at most two with $a_i = 0$.
+  If $E_i$ and $E_j$ meet, then $(E_i\cdot E_j)^2<w_iw_j$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(1) By Lemma~\ref{lem:smooth-numerical}, all exceptional curves lie over $y_0$ and $r = 8+d$, so $\det A = \lvert\det E\rvert$ in the notation of Proposition~\ref{prop:smooth-det}.
+By the proof of that proposition, $\lvert\det E\rvert = [E^{\rm sat}:E]^2\,\lvert\det Q\rvert$ with $\lvert\det Q\rvert$ an odd power of $p$, and the index is a power of $p$ because $E^{\rm sat}/E$ embeds in the dual $E^\vee/E$, a group of order $\lvert\det E\rvert$.
+So $\lvert\det E\rvert$ is an odd power of $p$; if $p\geq 29$, it is smaller than $p^3$ because $20736<29^3$, and hence $\det A = p$.
+
+(2) Let $G = E_1\cup\dots\cup E_r$.
+By Corollary~\ref{lem:pi1-lattice}(1), the normalization $\pi\from\widetilde G\to G$ is a disjoint union of $r$ smooth rational curves.
+Since $V = X_{\bar k}$ descends to the regular surface $X$, the group scheme $\Pic^0_{G/\bar k}$ is unipotent and every $E_i$ is unibranch by \cite[Corollaries~2.6 and~2.7]{Sch08}.
+Thus $H^1_{\rm et}(G,\mu_n) = 0$ for every integer $n>1$ prime to $p$.
+For $x\in G$, let $\beta(x) = \lvert\pi^{-1}(x)\rvert$.
+Since $G$ is connected, the normalization exact sequence for $\mu_n$ gives
+\[
+  \sum_x\bigl(\beta(x)-1\bigr) = r-1.
+\]
+As the components are unibranch, $\beta(x)$ is the number of components through $x$, so this identity says that $\Gamma$ has one fewer edge than vertices, including when three components pass through one point.
+The graph $\Gamma$ is connected, so it is a tree.
+
+(3) Suppose that $k$ of the curves pass through a point, and let $D$ be their sum.
+Any two of them meet, so $D^2\geq-\sum w_i+k(k-1)$, the sum running over these $k$ curves; and $\sum w_i\leq\sum(a_i+2)\leq d+2k\leq 4+2k$ by Lemma~\ref{lem:smooth-numerical}.
+As $D^2<0$, we obtain $k(k-1)<4+2k$, that is, $k\leq 3$.
+A curve with $a_i = 0$ has $p_a(E_i) = 0$ and $w_i = 2$, since $w_i\geq 1$; if three such curves pass through a point, then $D^2\geq -6+6 = 0$, which is absurd.
+The last assertion holds because the $2\times 2$ principal minors of the positive definite matrix $A$ are positive.
+\end{proof}
+
+\begin{lemma}\label{lem:smooth-tangent}
+If $Z\neq 0$ and $p\geq 13$, then $d\leq 3$.
+\end{lemma}
+
+\begin{proof}
+Suppose that $d = 4$, and use the notation of Lemmas~\ref{lem:smooth-numerical} and~\ref{lem:smooth-config}.
+Let $x\in X$ be the image of $y_0$.
+Since $k$ is separably closed, $\kappa(x)$ is purely inseparable over $k$, and $y_0$ is the only point of $V$ over $x$, so Lemma~\ref{lem:tangent-cone} applies to $X$ and $x$, with $\bar x = y_0$.
+Let $\mathfrak m_{y_0}$ be the maximal ideal of $\O_{V,y_0}$.
+By the proof of Lemma~\ref{lem:smooth-numerical}, $\O_{V,y_0}$ has embedding dimension $4$ and $\dim\mathfrak m_{y_0}^j/\mathfrak m_{y_0}^{j+1} = 4j$ for $j\geq 1$.
+Write $\operatorname{gr}_{\mathfrak m_{y_0}}\O_{V,y_0} = S/I^*$ with $S = \Sym_{\bar k}(\mathfrak m_{y_0}/\mathfrak m_{y_0}^2)$, so that $I^*$ is the ideal of the tangent cone of $V$ at $y_0$; then $I^*_1 = 0$, $\dim I^*_2 = 2$ and $\dim I^*_3 = 8$.
+
+Let $L$ be the space of vertical directions in the Zariski tangent space of $V$ at $y_0$, as in Lemma~\ref{lem:tangent-cone}, and let $u$ be its codimension, which is at most $2$ by Lemma~\ref{lem:tangent-cone}(1).
+Choose a basis $y_1,\dots,y_4$ of $\mathfrak m_{y_0}/\mathfrak m_{y_0}^2$ such that $L$ consists of the tangent vectors $v$ with $v(y_1) = \dots = v(y_u) = 0$.
+By Lemma~\ref{lem:tangent-cone}(2), $I^*$ is stable under $\partial/\partial y_j$ for $j>u$.
+As $I^*_1 = 0\neq I^*_2$ and $p>2$, Lemma~\ref{lem:tangent-cone}(3) gives $I^*_2\subseteq\overline k[y_1,\dots,y_u]$.
+Since $\dim I^*_2 = 2$, we get $u = 2$ and $I^*_2\subseteq\overline k[y_1,y_2]$.
+
+We claim that the zero set of $I^*$ in $\PP^3_{\bar k} = \Proj S$ is contained in the line $y_1 = y_2 = 0$.
+If the two quadrics spanning $I^*_2$ have no common factor, they have no common zero with $(y_1,y_2)\neq 0$.
+Otherwise, after a linear change of $y_1,y_2$, we have $I^*_2 = \langle y_1^2,y_1y_2\rangle$.
+The space $I^*_2S_1$ has dimension $7$ and is spanned by the monomials divisible by $y_1^2$ or $y_1y_2$, so $I^*_3$ contains an element $G = y_1G_1(y_3,y_4)+G_2(y_2,y_3,y_4)$, with $G_1$ and $G_2$ homogeneous of degrees $2$ and $3$, not both zero.
+Now $\partial G/\partial y_3 = y_1\,\partial G_1/\partial y_3+\partial G_2/\partial y_3$ lies in $I^*_2$, and comparing monomials gives $\partial G_1/\partial y_3 = \partial G_2/\partial y_3 = 0$; similarly for $y_4$.
+Since $p>3$, it follows that $G_1 = 0$ and $G_2 = cy_2^3$ with $c\neq 0$.
+So $y_2^3\in I^*$, and the claim follows.
+
+By \cite[Notation~5.3 and Theorem~5.19]{Tan25}, applied to the affine neighbourhood $U$ of $y_0$ chosen in the proof of Lemma~\ref{lem:smooth-numerical}, the blow-up $\widetilde U$ of $U$ at $y_0$ is normal, and $\mu|_{\mu^{-1}(U)}$ factors through a projective birational morphism $g\from\mu^{-1}(U)\to\widetilde U$ whose exceptional curves are exactly the curves $E_i$ with $a_i = K_T\cdot E_i = 0$.
+The fibre of $\widetilde U$ over $y_0$ is $\Proj(\operatorname{gr}_{\mathfrak m_{y_0}}\O_{V,y_0})$, whose underlying set is the zero set of $I^*$, which is contained in a line by the claim.
+Since $\widetilde U$ is normal, $g$ has connected fibres, so the curves $E_i$ with $a_i>0$ have pairwise distinct images; each of them is an irreducible curve contained in that line, hence equal to it.
+As $d>0$, it follows that exactly one curve $E_h$ has $a_h>0$.
+
+The other curves $E_i$ have $a_i = 0$, so they are $(-2)$-curves, and by Lemma~\ref{lem:smooth-config}(2) and~(3) they meet transversally along a forest.
+As in the proof of Lemma~\ref{lem:smooth-structure}(1), their intersection matrix $-A_0$ is a sum of Dynkin diagrams of types $\mathrm A_n$, $\mathrm D_n$ and $\mathrm E_n$, of total rank $r-1\leq 11$; so the prime factors of $\det A_0$ are at most $11$.
+Write $z_0$ for the vector of the $z_i$ with $i\neq h$ and $e = (E_i\cdot E_h)_{i\neq h}$.
+The identity $Az = a$ of Lemma~\ref{lem:smooth-numerical} gives $A_0z_0 = z_he$ and $w_hz_h-e\cdot z_0 = a_h$, so the Schur complement $w_h-e\cdot A_0^{-1}e$ of $A_0$ in $A$ equals $a_h/z_h$, and
+\[
+  z_h\det A = a_h\det A_0.
+\]
+Since $a_h\leq z_ha_h = 4$ and $p\geq 13$, the right-hand side is prime to $p$, whereas $\det A$ is divisible by $p$ by Lemma~\ref{lem:smooth-config}(1).
+This contradiction proves that $d\neq 4$.
+\end{proof}
+
+\begin{proposition}\label{prop:smooth-enum}
+If $Z\neq 0$ and $p\geq 29$, then $d = 4$.
+\end{proposition}
+
+\begin{proof}
+The proof is a computer enumeration, carried out by \texttt{smooth/configs.py} in Appendix~\ref{app:scripts-enumeration}.
+By Lemmas~\ref{lem:smooth-numerical} and~\ref{lem:smooth-config}, $A$ is a positive definite symmetric integral matrix of size $r = 8+d$ with $1\leq d\leq 4$ and the following properties.
+Its diagonal entries are the $w_i$, where $(w_i,a_i)$ is either $(2,0)$ or one of the ten pairs with $1\leq a_i\leq 4$, $1\leq w_i\leq a_i+2$ and $w_i\equiv a_i\pmod 2$.
+Its off-diagonal entries are the numbers $-E_i\cdot E_j$, which are described by a tree $\Gamma$ and local intersection numbers as in Lemma~\ref{lem:smooth-config}(2) and~(3).
+Finally $Az = a$ for a vector $z$ of positive integers with $z\cdot a = d$.
+The script lists all such matrices.
+It builds $\Gamma$ from a curve with $a_i>0$ by breadth-first search: the balance $w_iz_i-a_i = \sum_{j\neq i}z_j\,E_i\cdot E_j$ of each curve $E_i$ is split between the point joining $E_i$ to its predecessor and the other points on $E_i$, each of which carries one or two new curves by Lemma~\ref{lem:smooth-config}(3).
+Every partial configuration is required to have a positive definite matrix.
+The search is finite, because $r\leq 12$, $z_ia_i\leq 4$, every term $z_j\,E_i\cdot E_j$ is at most $w_iz_i-a_i$, and $(E_i\cdot E_j)^2<w_iw_j\leq(a_i+2)(a_j+2)\leq 16$.
+The script finds that the only primes $p\geq 29$ occurring as $\det A$ are $53$ and $113$, both with $d = 4$ and $r = 12$.
+Every determinant it finds already occurs for a configuration in which any two curves meet transversally and no three pass through one point; the determinants of these configurations are recomputed independently by \texttt{smooth/crosscheck.py} in Appendix~\ref{app:scripts-enumeration}, which runs over all trees with $r$ vertices.
+Since $\det A = p$ by Lemma~\ref{lem:smooth-config}(1), we obtain $d = 4$.
+\end{proof}
+
+\begin{theorem}\label{thm:smooth}
+Let $k$ be a field of characteristic $p\geq 23$, and let $X$ be a regular projective surface over $k$ with $H^0(X,\O_X) = k$ and $K_X\equiv 0$.
+Then $X$ is smooth over $k$.
+\end{theorem}
+
+The proof is computer-assisted, through Proposition~\ref{prop:smooth-enum}, only when $p\equiv 1\pmod 4$ and $p\leq 6912$.
+
+\begin{proof}
+We may assume that $k$ is $F$-finite and separably closed.
+Then the notation of this section applies.
+If $Z = 0$, then $X$ is smooth by Proposition~\ref{prop:smooth-Z0}.
+Suppose that $Z\neq 0$.
+Then $p\equiv 1\pmod 4$ by Proposition~\ref{prop:smooth-Zpos}, so $p\geq 29$, and $d\leq 3$ by Lemma~\ref{lem:smooth-tangent}.
+Hence $p\leq 2^8\cdot 3^3 = 6912$ by Proposition~\ref{prop:smooth-det}, which is a contradiction if $p>6912$.
+In general, Proposition~\ref{prop:smooth-enum} gives $d = 4$, contradicting $d\leq 3$.
+\end{proof}

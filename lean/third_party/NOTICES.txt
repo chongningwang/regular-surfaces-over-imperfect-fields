@@ -1,0 +1,21 @@
+Quotient derivations in Red61/Foliation.lean (the section that was formerly the module
+QuotientDerivation, namespace Red61.QuotientDerivation)
+
+Adapted from OAI.ComplexCancellation.QuotientDerivation in:
+  https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/OAI/Algebra/AffineCancellation/QuotientDerivation.lean
+Public definition bundle inspected:
+  https://prove2.me/theorems/d8184be2-34c1-4b3a-be33-e4ec565fa469
+The bundle was published by Shuze Chen on 2026-10-15.
+Public-contribution license: Apache-2.0, under https://prove2.me/terms .
+A copy of that license is provided in LICENSE-Apache-2.0.txt.
+
+The original generic proof bodies were retained, with project namespace,
+minimal mathlib imports, theorem keywords, and formatting adjusted.
+The source did not contain a separate copyright notice.
+No unrelated platform definition bundles or target stubs were imported.
+
+The former module GlobalSections (now in Red61/AlgebraicGeometry/Modules.lean) uses the
+project's pinned mathlib directly. The former modules RationalConstants (now in
+Red61/Foliation.lean), Constants (now in Red61/Surface/SixChartModel.lean) and GlobalFunctions
+(now in Red61/Surface/Projective.lean) contain new proofs and applications written for this
+project.

@@ -1,0 +1,42 @@
+% SPDX-License-Identifier: CC-BY-4.0
+\documentclass{article}
+\input{macros}
+\title{Geometric singularities of $K$-trivial regular surfaces}
+\author{Chongning Wang}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let $X$ be a regular projective surface over a field $k$ of characteristic $p$ such that $H^0(X,\O_X) = k$ and $K_X\equiv 0$.
+We show that $X$ is geometrically normal if $p\geq 13$ and smooth if $p\geq 23$.
+For $p\in\{13,17,19\}$, the geometric base change $X_{\bar k}$ is either smooth or has exactly one singularity, of type $\mathrm A_{p-1}$.
+Both bounds are optimal: we construct an example in characteristic $11$ that is not geometrically normal and, for every prime $13\le p\leq 19$, an example that is not smooth.
+The proofs were mainly done by AI, and the author is still checking and revising the manuscript.
+\end{abstract}
+\tableofcontents
+\input{intro}
+\input{setup}
+\input{localpi1}
+\input{torsors}
+\input{local-genusone}
+\input{genusone}
+\input{ranktwo}
+\input{completion}
+\input{smoothness}
+\input{singularities}
+\input{counterexample}
+\input{sharpness}
+\input{applications}
+
+\appendix
+\input{verification-scripts}
+
+\bibliographystyle{alpha}
+\bibliography{ref}
+\par\bigskip
+{\footnotesize\noindent
+This work is licensed under the
+\href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0 International License (CC BY 4.0)}.\par}
+\end{document}

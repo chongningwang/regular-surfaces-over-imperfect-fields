@@ -1,0 +1,473 @@
+\section{Genus-one fibrations on $K$-trivial surfaces}\label{sec:genus-one}
+Under the Assumption~\ref{ass:nonnormal}, we have shown that (Proposition~\ref{prop:dichotomy}) either there is a fibration $f\from X\to B$ with smooth generic fiber or $\rho(X) = 2$ and $N^1(X)_{\mathbb Q}$ is anisotropic.
+We deal with the former case in this section.
+
+\begin{assumption}\label{ass:genus-one}
+In this section, $k$ is a separably closed field of characteristic $p\geq 5$, and $X$ is a regular projective geometrically integral surface over $k$ with
+\[
+  H^0(X,\O_X) = k,\qquad H^1(X,\O_X) = 0,\qquad \omega_X\cong\O_X.
+\]
+Moreover $X$ admits a fibration $f\from X\to B$ onto a regular projective curve whose generic fibre $X_K$, where $K = k(B)$, is a smooth curve of genus one.
+\end{assumption}
+
+Corollary~\ref{lem:congruence} gives a lower bound for a nonzero value of the invariant $b$ in Definition~\ref{def:hodge} after the Jacobian acquires good reduction.
+We now obtain an upper bound from the triviality of $\omega_X$ and compare the two bounds.
+The good and multiplicative reduction cases are treated directly, and the additive case is treated after a tame base change.
+
+
+\subsection{Weierstrass equations}\label{subsec:weierstrass}
+
+We recall some standard facts on Weierstrass equations \cite[\S1, (2.6) and Proposition~5.1]{Del75}.
+Let $E$ be an elliptic curve over a field $F$, given by a Weierstrass equation
+\[
+  y^2+a_1xy+a_3y = x^3+a_2x^2+a_4x+a_6,\qquad a_i\in F,
+\]
+with the origin of $E$ at $(0:1:0)$.
+Let $c_4$, $c_6$ and $\Delta$ be the quantities attached to this equation in \cite[(1.4) and (1.5)]{Del75}, where $\Delta$ is its discriminant, so that $1728\Delta = c_4^3-c_6^2$ and $\Delta\neq 0$, and let $\omega_0 = dx/(2y+a_1x+a_3)$ be the invariant differential, a basis of $H^0(E,\omega_{E/F})$.
+Any two Weierstrass equations of $E$ differ by a change of variables $x = u^2x'+r$, $y = u^3y'+su^2x'+t$ with $u\in F^*$ and $r,s,t\in F$, which replaces $(c_4,c_6,\Delta,\omega_0)$ by $(u^{-4}c_4,u^{-6}c_6,u^{-12}\Delta,u\,\omega_0)$; in particular $\Delta\,\omega_0^{\otimes 12}$ and the $j$-invariant $j(E) = c_4^3/\Delta$ of $E$ do not depend on the equation.
+
+Now let $F = \Frac(R)$ for a discrete valuation ring $R$ with valuation $v$.
+A Weierstrass equation is \emph{integral} if all $a_i$ lie in $R$, and \emph{minimal} if it is integral and $v(\Delta)$ is minimal among integral Weierstrass equations.
+Any two minimal Weierstrass equations of $E$ differ by a change of variables with $u\in R^*$, since their discriminants have the same valuation; hence $v(c_4)$, $v(c_6)$ and $v(\Delta)$ do not depend on the choice of the minimal equation.
+
+If $6\in R^*$, an integral Weierstrass equation can be transformed over $R$ into one of the form $y^2 = x^3-\tfrac{1}{48}c_4x-\tfrac{1}{864}c_6$ with the same $c_4$, $c_6$ and $\Delta$ \cite[(2.1) and (2.2)]{Del75}; together with the rescaling rule above, this shows that an integral Weierstrass equation is minimal if and only if $v(c_4)<4$ or $v(c_6)<6$.
+Let $\mathcal E$ be the minimal regular model of $E$ over $R$, and let $\omega_0$ be the invariant differential of a minimal Weierstrass equation of $E$.
+Then $\omega_{\mathcal E/R} = \omega_0\,\O_{\mathcal E}$ \cite[Corollary~9.4.37]{Liu02}, so $H^0(\mathcal E,\omega_{\mathcal E/R}) = \omega_0\,H^0(\mathcal E,\O_{\mathcal E}) = \omega_0R$.
+
+Fix a minimal Weierstrass equation of $E$ over $R$, with quantities $c_4$, $c_6$ and $\Delta$, let $W\subset\PP^2_R$ be its Weierstrass model, and let $\bar\kappa$ be an algebraic closure of the residue field of $R$.
+The geometric closed fibre $W_{\bar\kappa}$ is the cubic defined by the image of the minimal equation over $\bar\kappa$; it is a curve of genus one in the sense of \cite[\S1]{Del75}, and the quantities $c_4$, $c_6$ and $\Delta$ attached to this cubic are the images of $c_4$, $c_6$ and $\Delta$ in $\bar\kappa$.
+Following \cite[\S1]{Del75}, $W_{\bar\kappa}$ is of \emph{elliptic}, \emph{multiplicative} or \emph{additive type} if it is smooth, a nodal cubic or a cuspidal cubic, respectively.
+By \cite[Proposition~5.1]{Del75}, these three cases occur if and only if $v(\Delta) = 0$, if and only if $v(\Delta)>0$ and $v(c_4) = 0$, and if and only if $v(\Delta)>0$ and $v(c_4)>0$, respectively.
+
+With this notation, $E$ has good reduction if and only if $v(\Delta) = 0$.
+If $v(\Delta)>0$, then $E$ has bad reduction, which we call \emph{multiplicative} or \emph{additive} according as $W_{\bar\kappa}$ is of multiplicative or additive type.
+If $E$ has multiplicative reduction and the residue field of $R$ is separably closed, then $E$ has split multiplicative reduction of type $\mathrm I_n$ in the sense of \cite[Section~8]{LLR04}, where $n = -v(j(E))$ by loc.\ cit.; hence $n = v(\Delta)$, as $v(c_4) = 0$.
+
+\subsection{The base and relative differentials}
+
+We work under Assumption~\ref{ass:genus-one} and fix the following notation.
+For a closed point $P\in B$ let $R_P = \O_{B,P}$ be the local ring with maximal ideal $\mathfrak m_P$, let $t_P\in\mathfrak m_P$ be a uniformizer of $R_P$, let $\widehat R_P$ be the $\mathfrak m_P$-adic completion of $R_P$ and $\widehat K_P$ its fraction field, and put $X_{(P)} = X\times_B\Spec R_P$.
+Let $J_K$ be the Jacobian of $X_K$; the curve $X_K$ is a torsor under $J_K$.
+Let $g\from\mathcal J\to B$ be the minimal regular model of $J_K$ over $B$.
+Put
+\[
+  L_X = f_*\omega_{X/B},\qquad L_J = g_*\omega_{\mathcal J/B}.
+\]
+
+\begin{lemma}\label{lem:base}
+\begin{enumerate}
+\item $B\cong\PP^1_k$ and the morphism $f$ is flat.
+\item For every closed point $P\in B$, $X_{(P)}$ and $X_{(P)}\otimes_{R_P}\widehat R_P$ are the minimal regular models of $X_K$ over $R_P$ and of $X_K\otimes_K\widehat K_P$ over $\widehat R_P$.
+\item $L_X\cong\O_{\PP^1}(2)$ and $\omega_{X/B}\cong f^*L_X$.
+  In particular $\omega_{X_{(P)}/R_P}$ is generated by a global section.
+\item $R^1f_*\O_X$ is invertible.
+  For every closed point $P\in B$ we have $a(X_{(P)}) = 0$ and $H^0(X_P,\O_{X_P}) = k(P)$.
+\item For every closed point $P\in B$, the multiplicities of the components of $X_P$ have greatest common divisor one.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(1) We have $H^0(B,\O_B) = k$, and the Leray spectral sequence gives an exact sequence
+\begin{equation}\label{eq:E55O}
+  0\to H^1(B,\O_B)\to H^1(X,\O_X)\to H^0(B,R^1f_*\O_X)\to H^2(B,\O_B) = 0.
+\end{equation}
+As $H^1(X,\O_X) = 0$, we get $H^1(B,\O_B) = 0$.
+Hence $\deg\omega_B = -2$, and $B$ is a conic over $k$ \cite[Lemma~10.6(3)]{Kol13}.
+Since $B$ is regular, $k$ is separably closed and $p\neq 2$, the conic $B$ is smooth and split, so $B\cong\PP^1_k$.
+The morphism $f$ is flat by \cite[III, Proposition~9.7]{Har77}, as $X$ is integral and $B$ is a regular curve.
+
+(2) Since $K_X\equiv 0$, the regular proper model $X_{(P)}$ of the genus-one curve $X_K$ contains no $(-1)$-curve, so it is the minimal regular model.
+The same holds for $X_{(P)}\otimes_{R_P}\widehat R_P$, which is regular by \cite[Tag~\stackstag{0BG6}]{Stacks} and has the same closed fibre.
+
+(3) Since $X$ and $B$ are regular, $f$ is a local complete intersection morphism, and $\omega_{X/B}\cong\omega_X\otimes f^*\omega_B^{-1}\cong f^*\omega_B^{-1}$ \cite[Theorem~6.4.9]{Liu02}.
+By the projection formula and $f_*\O_X = \O_B$, we get $L_X\cong\omega_B^{-1}\cong\O_{\PP^1}(2)$ and $\omega_{X/B}\cong f^*L_X$.
+
+(4) We have $H^0(B,R^1f_*\O_X) = 0$ since $H^1(X,\O_X) = 0$.
+The torsion subsheaf of $R^1f_*\O_X$ has finite support and no nonzero global sections, hence vanishes.
+Thus $R^1f_*\O_X$ is locally free, of rank $h^1(X_K,\O) = 1$.
+By flat base change $H^1(X_{(P)},\O) = (R^1f_*\O_X)_P$ is free, and $X_{(P)}$ is the minimal regular model by \textup{(2)}; so $a(X_{(P)}) = 0$ and $H^0(X_P,\O_{X_P}) = k(P)$ by Lemma~\ref{lem:ab-properties}\,(1).
+
+(5) Write $X_P = mD$, where $m$ is the greatest common divisor of the multiplicities and $D$ is an effective Cartier divisor on $X_{(P)}$, and suppose that $m>1$.
+The ideal $\O_{X_{(P)}}(-(m-1)D)/\O_{X_{(P)}}(-mD)$ of $\O_{X_P}$ is isomorphic to $\O_D(-(m-1)D)\cong\O_D(D)$, because $mD = X_P$ is principal, and its square is zero because $2(m-1)\geq m$.
+By adjunction \cite[Theorem~9.1.37]{Liu02} and $\omega_{X_{(P)}/R_P}\cong\O_{X_{(P)}}$, which holds by \textup{(3)}, we have $\omega_{D/k(P)}\cong\O_D(D)$.
+As $(D^2)_{k(P)} = m^{-1}(D\cdot X_P)_{k(P)} = 0$, the degree of $\omega_{D/k(P)}$ over $k(P)$ is zero, and Riemann--Roch on the projective Gorenstein curve $D$ gives $\chi(\O_D) = -\tfrac12\deg_{k(P)}\omega_{D/k(P)} = 0$ \cite[Theorem~7.3.17 and Corollary~7.3.31]{Liu02}.
+By Serre duality $h^0(D,\omega_{D/k(P)}) = h^1(D,\O_D) = h^0(D,\O_D)>0$.
+Hence $H^0(X_P,\O_{X_P})$ contains nonzero elements of a square-zero ideal, which is impossible since $H^0(X_P,\O_{X_P}) = k(P)$ is a field by \textup{(4)}.
+\end{proof}
+
+Over an algebraically closed field, Lemma~\ref{lem:base}\,(3)--(5) are the case $\omega_X\cong\O_X$, $h^1(\O_X) = 0$ of the canonical bundle formula \cite[Theorem~2 and Proposition~4]{BM77}: there are no wild fibres, hence no multiple fibres.
+We give direct proofs because $X$ need not be smooth and $k$ may be imperfect.
+
+\medskip
+For a closed point $P\in B$, let $v_P$ be the valuation of $R_P$, put $b_P = b(X_{(P)})$, and let $c_{4,P}$, $c_{6,P}$ and $\Delta_P$ be the quantities attached to a minimal Weierstrass equation of $J_K$ over $R_P$.
+
+\begin{lemma}\label{lem:comparison}
+\begin{enumerate}
+\item There is an injective homomorphism $L_J\to L_X$ whose cokernel has length $b_P$ at every closed point $P$.
+  Consequently $\deg L_J+\sum_Pb_P[k(P):k] = 2.$ \item $12\deg L_J = \sum_Pv_P(\Delta_P)[k(P):k]$.
+\end{enumerate}
+\noindent In particular $0\leq\deg L_J\leq 2$, and if $J_K$ has bad reduction at some point, then $\sum_Pb_P[k(P):k]\leq 1$.
+\end{lemma}
+
+\begin{proof}
+(1) The stalks of $L_X$ and $L_J$ at $P$ are $H^0(X_{(P)},\omega)$ and $H^0(\mathcal J\times_B\Spec R_P,\omega)$ by flat base change, and their generic fibres are identified by the dual of the isomorphism $\tau_{X_K}$ of \eqref{eq:tau}.
+By \eqref{eq:hodge} this identification maps $(L_J)_P$ into $(L_X)_P$ with cokernel of length $b_P$.
+Since $\deg L_X = 2$ by Lemma~\ref{lem:base}\,(3), the formula follows.
+
+(2) Let $\Delta_K = \Delta\,\omega_0^{\otimes 12}$, where $\Delta$ and $\omega_0$ are the discriminant and the invariant differential of a Weierstrass equation of $J_K$; the element $\Delta_K$ of $H^0(J_K,\omega_{J_K/K})^{\otimes 12}$ is nonzero and does not depend on the equation.
+By flat base change $H^0(J_K,\omega_{J_K/K})^{\otimes 12}$ is the stalk of $L_J^{\otimes 12}$ at the generic point of $B$, so $\Delta_K$ is a nonzero rational section of $L_J^{\otimes 12}$.
+Fix a closed point $P\in B$.
+Put $\mathcal J_{(P)} = \mathcal J\times_B\Spec R_P$.
+Then $\mathcal J_{(P)}$ is the minimal regular model of $J_K$ over $R_P$.
+By flat base change, $\omega_{\mathcal J_{(P)}/R_P}$ is the pullback of $\omega_{\mathcal J/B}$, and $H^0(\mathcal J_{(P)},\omega_{\mathcal J_{(P)}/R_P}) = (g_*\omega_{\mathcal J/B})_P = (L_J)_P$.
+Choose a minimal Weierstrass equation of $J_K$ over $R_P$, with discriminant $\Delta_P$ and invariant differential $\omega_{0,P}$.
+As recalled above, $\omega_{0,P}$ generates $(L_J)_P$, and $\Delta_K = \Delta_P\,\omega_{0,P}^{\otimes 12}$ since $\Delta_K$ does not depend on the equation.
+Hence $\Delta_K$ lies in $(L_J^{\otimes 12})_P$ and vanishes to order $v_P(\Delta_P)$ at $P$.
+As $P$ is arbitrary, $\Delta_K$ is a global section of $L_J^{\otimes 12}$ with divisor $\sum_Pv_P(\Delta_P)P$, a finite sum since $\Delta_K\neq0$.
+Taking degrees over $k$, where a closed point $P$ has degree $[k(P):k]$, gives $12\deg L_J = \sum_Pv_P(\Delta_P)[k(P):k]$.
+\end{proof}
+
+
+\subsection{Good and multiplicative reduction}
+\begin{lemma}\label{lem:bad-points}
+Assume $p\geq 13$, and let $P\in B$ be a closed point at which $J_K$ has bad reduction.
+If $P$ is not $k$-rational, then $[k(P):k] = p\leq 23$, and $J_K$ has multiplicative reduction at $P$ with $v_P(\Delta_P) = 1$.
+In particular, every point at which $J_K$ has additive reduction is $k$-rational.
+\end{lemma}
+
+\begin{proof}
+By Lemma~\ref{lem:comparison}, $v_P(\Delta_P)[k(P):k]\leq 12\deg L_J\leq 24$.
+If $P$ is not $k$-rational, then $[k(P):k]>0$ is a power of $p$, hence at least $13$.
+Therefore $v_P(\Delta_P) = 1$, and $[k(P):k] = p$ and $p\leq 23$.
+If $v_P(c_{4,P})>0$, then $c_{6,P}^2 = c_{4,P}^3-1728\Delta_P$ would have valuation one, which is odd; hence $v_P(c_{4,P}) = 0$ and the reduction is multiplicative.
+\end{proof}
+
+\begin{lemma}\label{lem:good}
+If $J_K$ has good reduction at a closed point $P$, then $X_P$ is smooth over $k(P)$, and $X$ is smooth over $k$ at every point of $X_P$.
+\end{lemma}
+
+\begin{proof}
+By Subsection~\ref{subsec:good-jacobian-reduction} and Lemma~\ref{lem:base}\,(2), $X_P = rV$ with $V$ integral and smooth over $k_0 = H^0(V,\O_V)$.
+By Lemma~\ref{lem:base}\,(5), $r = 1$.
+Then $k_0 = H^0(X_P,\O_{X_P}) = k(P)$ by Lemma~\ref{lem:base}\,(4), so $X_P$ is smooth over $k(P)$.
+Since $f$ is flat and $B\cong\PP^1_k$ by Lemma~\ref{lem:base}\,(1), $f$ is smooth along $X_P$, and hence $X$ is smooth over $k$ along $X_P$.
+\end{proof}
+
+Let $\O_L$ be a complete discrete valuation ring with fraction field $L$ and residue field $\kappa$, and let $L'/L$ be a finite separable extension.
+The integral closure $\O_{L'}$ of $\O_L$ in $L'$ is a discrete valuation ring finite over $\O_L$, because $\O_L$ is complete and $L'/L$ is separable; let $\mathfrak m_{L'}$ be its maximal ideal and $\kappa'$ its residue field.
+Since $\operatorname{Tr}_{L'/L}(\O_{L'})\subseteq\O_L$ and the trace form of $L'/L$ is nondegenerate, the set $\{\beta\in L' : \operatorname{Tr}_{L'/L}(\beta\O_{L'})\subseteq\O_L\}$ is a fractional ideal of $\O_{L'}$ containing $\O_{L'}$.
+Its inverse $\mathfrak D_{L'/L}$ is therefore an ideal of $\O_{L'}$, the \emph{different} of $L'/L$, and the \emph{different exponent} of $L'/L$ is the integer $\delta_{L'/L}\geq 0$ with $\mathfrak D_{L'/L} = \mathfrak m_{L'}^{\delta_{L'/L}}$.
+
+\begin{lemma}\label{lem:different}
+  Assume that $L'/L$ is cyclic of degree $p$ with ramification index one, and that $\kappa'/\kappa$ is purely inseparable with $[\kappa':\kappa] = p$.
+  Then $\delta_{L'/L}\geq p-1$.
+\end{lemma}
+
+\begin{proof}
+Since the ramification index is one, we have $\O_{L'}\otimes_{\O_L}\kappa = \kappa'$.
+Let $\sigma$ be a generator of the Galois group of $L'/L$, and let $z\in\O_{L'}$ be a lift of a generator of $\kappa'$ over $\kappa$.
+As $[\kappa':\kappa] = p$, the images of $1,z,\dots,z^{p-1}$ form a basis of $\kappa'$ over $\kappa$, so $\O_{L'} = \O_L[z]$ by Nakayama's lemma.
+Let $g(X) = \prod_{j=0}^{p-1}(X-\sigma^jz)\in\O_L[X]$ be the minimal polynomial of $z$ over $L$, and let $g'(X)$ be its derivative.
+By \cite[III, \S6, Corollary~2 to Proposition~11]{Ser79}, the equality $\O_{L'} = \O_L[z]$ implies that $\mathfrak D_{L'/L}$ is generated by $g'(z) = \prod_{j=1}^{p-1}(z-\sigma^jz)$.
+The automorphism $\sigma$ acts trivially on $\kappa'$ because $\kappa'/\kappa$ is purely inseparable, so each factor lies in $\mathfrak m_{L'}$; hence $g'(z)\in\mathfrak m_{L'}^{p-1}$ and $\delta_{L'/L}\geq p-1$.
+\end{proof}
+
+\begin{lemma}\label{lem:trivial-torsor}
+Let $C$ be a smooth projective geometrically connected curve of genus one over $L$ whose Jacobian has multiplicative reduction of type $\mathrm I_n$, and let $\mathcal Y$ be the minimal regular model of $C$ over $\O_L$.
+Assume that $\O_L$ contains $k$, that $\kappa$ is separably closed, and that $\mathcal Y_s$ is not multiple, that is, the multiplicities of its components have greatest common divisor one.
+Then exactly one of the following holds.
+\begin{enumerate}
+\item $a(\mathcal Y)\geq p-1$.
+\item $a(\mathcal Y) = 0$ and $C$ has a rational point.
+  Moreover:
+  \begin{itemize}
+  \item if $n = 1$, then $\mathcal Y_s$ is irreducible and reduced, with a $\kappa$-rational double point, and its normalization is $\PP^1_\kappa$;
+  \item if $n\geq 2$, then $\mathcal Y_s$ is a cycle of $n$ reduced components isomorphic to $\PP^1_\kappa$, and every intersection point of two components is $\kappa$-rational, with the two components meeting transversally there.
+  \end{itemize}
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+The two cases exclude each other, so we assume $a(\mathcal Y)<p-1$ and prove \textup{(2)}.
+Let $M$ be the cyclic extension of $L$ attached to $C$ in \cite[Proposition~8.3(a)]{LLR04}, so that $C(M)\neq\emptyset$, with ramification index $e$ and residue degree $f$.
+The multiplicities of the components of $\mathcal Y_s$ have greatest common divisor $e$ \cite[before Proposition~8.11]{LLR04}, so $e = 1$, and \cite[Proposition~8.11(b)]{LLR04} gives $\delta_{M/L} = a(\mathcal Y)<p-1$.
+As $\kappa$ is separably closed, $f$ is a power of $p$.
+Suppose $f>1$, and let $L'$ be the subextension of $M/L$ of degree $p$.
+The extension $L'/L$ is cyclic with ramification index dividing $e = 1$, so $[\kappa':\kappa] = p$, and $\kappa'/\kappa$ is purely inseparable because $\kappa$ is separably closed.
+Since $\mathfrak D_{M/L} = \mathfrak D_{M/L'}\,\mathfrak D_{L'/L}\O_M$ \cite[III, \S4, Proposition~8]{Ser79}, Lemma~\ref{lem:different} gives $\delta_{M/L}\geq\delta_{L'/L}\geq p-1$, a contradiction.
+Hence $f = 1$ and $M = L$, so $C$ has a rational point and $a(\mathcal Y) = \delta_{M/L} = 0$.
+The description of $\mathcal Y_s$ follows from \cite[Proposition~8.3(b)]{LLR04}.
+\end{proof}
+
+\begin{lemma}\label{lem:multiplicative}
+Let $P\in B$ be a closed point at which $J_K$ has multiplicative reduction, and put $q = [k(P):k]$.
+Then $X$ is smooth over $k$ at every point of $X_P$ that is not a singular point of $X_P$.
+Every singular point $z$ of $X_P$ has $\kappa(z) = k(P)$, and there is an isomorphism
+\[
+  \widehat\O_{X_{\bar k},\bar z}\cong\overline k[[s,Y_1,Y_2]]/(Y_1Y_2-s^q),
+\]
+where $\bar z$ is the point of $X_{\bar k}$ over $z$.
+In particular $X_{\bar k}$ is normal at every point over $X_P$, and $X$ is smooth over $k$ along $X_P$ if $P$ is $k$-rational.
+\end{lemma}
+
+\begin{proof}
+We first apply Lemma~\ref{lem:trivial-torsor} over $\widehat R_P$, then describe $X_P$ and the completed local rings of $X$ at the singular points of $X_P$, and finally pass to $\overline k$.
+Choose an affine coordinate $u$ on $B = \PP^1_k$ with $P\neq\infty$, so that $P$ lies in $\Spec k[u] = B\setminus\{\infty\}$; let $\mathfrak p\subset k[u]$ be the maximal ideal of $P$, so that $R_P = k[u]_{\mathfrak p}$, and let $\bar u\in k(P)$ be the image of $u$.
+Since $k$ is separably closed, the residue field $k(P) = k(\bar u)$ is purely inseparable of degree $q$ over $k$, so $\bar u$ has minimal polynomial $T^q-c$ over $k$ for some $c\in k$.
+Hence $\mathfrak p = (u^q-c)$, and we take $t_P = u^q-c$, which generates $\mathfrak m_P = \mathfrak pR_P$.
+The pullback of $t_P$ to $X_{(P)}$ is still denoted by $t_P$.
+
+\smallskip
+\emph{Step 1: a rational point over $\widehat K_P$.}
+Let $R = \widehat R_P$.
+By Lemma~\ref{lem:base}\,(2), $Y = X_{(P)}\otimes_{R_P}R$ is the minimal regular model of $X_{\widehat K_P}$ over $R$, with closed fibre $Y_s = X_P$.
+By Lemma~\ref{lem:base}\,(4) and Lemma~\ref{lem:ab-properties}\,(3), $a(Y) = 0$, and by Lemma~\ref{lem:base}\,(5) the multiplicities of the components of $Y_s$ have greatest common divisor one.
+The Jacobian $J_K\otimes_K\widehat K_P$ of $X_{\widehat K_P}$ still has multiplicative reduction over $R$, since the minimality criterion $v(c_4)<4$ or $v(c_6)<6$ of Section~\ref{subsec:weierstrass} is unchanged by completion.
+Since $k$ is separably closed, so is $k(P)$, and thus this reduction is split multiplicative of type $\mathrm I_n$ with $n = v_P(\Delta_P)$ by Section~\ref{subsec:weierstrass}.
+Hence Lemma~\ref{lem:trivial-torsor}\,(2) applies to $Y$, and $X_{\widehat K_P}$ has a rational point.
+
+\smallskip
+\emph{Step 2: the fibre $X_P$ and its singular points.}
+Suppose first $n\geq 2$.
+By Lemma~\ref{lem:trivial-torsor}\,(2), $Y_s = X_P$ is a cycle of $n$ reduced components isomorphic to $\PP^1_{k(P)}$, and every intersection point of two components is $k(P)$-rational, with the two components meeting transversally there.
+Every other point of $X_P$ lies on exactly one component, where $X_P$ is smooth over $k(P)$, so the singular points of $X_P$ are the intersection points of components, and they are $k(P)$-rational.
+At such a point $z$, let $Y_1$ and $Y_2$ be local equations of the two components through $z$.
+Since these components meet transversally at $z$, the maximal ideal of $\O_{X,z}$ is $(Y_1,Y_2)$, and since $X_P$ is reduced, $t_P = \lambda Y_1Y_2$ with $\lambda\in\O_{X,z}^*$.
+
+Suppose $n = 1$.
+Since $X_{\widehat K_P}$ has a rational point, the curve $X_{\widehat K_P}$ is isomorphic to its Jacobian, so by uniqueness of minimal regular models, $Y$ is isomorphic to the minimal regular model of the Jacobian.
+Choose a minimal Weierstrass equation $y^2 = x^3-\tfrac{1}{48}c_4x-\tfrac{1}{864}c_6$ over $R$.
+Here $v(c_4) = 0$ and $v(\Delta) = n = 1$, so $v(c_6) = 0$ because $1728\Delta = c_4^3-c_6^2$.
+Replacing $x$ by $x-c_6/(12c_4)$ gives $y^2 = x^3+a_2x^2+a_4x+a_6$ with
+\[
+  a_2 = -\frac{c_6}{4c_4},\qquad a_4 = -\frac{36\Delta}{c_4^2},\qquad a_6 = \frac{c_6\Delta}{c_4^3},
+\]
+so $v(a_2) = 0$ and $v(a_4) = v(a_6) = 1$; thus the reduced cubic is $y^2 = x^2(x+\bar a_2)$ with $\bar a_2\neq 0$, whose unique singular point is the node $x = y = 0$.
+As the equation is congruent to $-a_6$ modulo the square of the maximal ideal $(t_P,x,y)$ of $R[x,y]$ at the node and $v(a_6) = 1$, the equation does not lie in this square, so the Weierstrass model is regular at the node; it is regular elsewhere because its closed fibre is smooth there.
+The closed fibre of the Weierstrass model is irreducible and not a $(-1)$-curve, so the Weierstrass model is the minimal regular model $Y$.
+The closed fibre $X_P = Y_s$ is a nodal cubic, smooth over $k(P)$ away from the node $z$, which is $k(P)$-rational.
+Since $2$ is invertible and the residue of $a_2$ is a nonzero square in the separably closed field $k(P)$, Hensel's lemma gives $\gamma\in R[[x,y]]$ with $\gamma^2 = a_2+x$.
+The elements $Y_1 = y-\gamma x$ and $Y_2 = y+\gamma x$ satisfy $(Y_1,Y_2) = (x,y)$ and $Y_1Y_2 = y^2-x^2(a_2+x)$.
+Writing $a_4 = t_Pa_4'$ and $a_6 = t_Pa_6'$ with $a_4',a_6'\in R^*$, the equation becomes $Y_1Y_2 = t_P(a_4'x+a_6')$, so $t_P = \lambda Y_1Y_2$ with the unit $\lambda = (a_4'x+a_6')^{-1}$.
+
+In both cases, $f$ is flat and $B\cong\PP^1_k$ by Lemma~\ref{lem:base}\,(1), so $X$ is smooth over $k$ at every point of $X_P$ other than the singular points, where $X_P$ is smooth over $k(P)$.
+At a singular point $z$ of $X_P$ we have $\kappa(z) = k(P)$, and the maximal ideal of $\widehat\O_{X,z}$ is generated by $Y_1$ and $Y_2$, and $t_P = \lambda Y_1Y_2$ for a unit $\lambda$.
+The local $R$-algebra map $R[[Y_1,Y_2]]\to\widehat\O_{X,z}$ is surjective, because it is surjective on residue fields and on cotangent spaces.
+The kernel of this map is a height-one prime of the factorial ring $R[[Y_1,Y_2]]$ containing $t_P-\tilde\lambda Y_1Y_2$, for a lift $\tilde\lambda$ of $\lambda$; since this element is a regular parameter, it generates the kernel.
+Hence
+\begin{equation}\label{eq:node}
+  \widehat\O_{X,z}\cong R[[Y_1,Y_2]]/(t_P-\tilde\lambda Y_1Y_2).
+\end{equation}
+
+\smallskip
+\emph{Step 3: base change to $\overline k$.}
+Let $k' = k(\alpha)$ with $\alpha^q = c$ and put $s = u-\alpha$.
+The scheme $B_{k'}$ has a unique point over $P$, namely $s = 0$, and $\widehat R_P\otimes_kk' = k'[[s]]$ with $t_P = s^q$.
+Tensoring \eqref{eq:node} with $k'$ gives the completed local ring of $X_{k'}$ at the unique point over $z$:
+\[
+  k'[[s]][[Y_1,Y_2]]/(s^q-\tilde\lambda Y_1Y_2)\cong k'[[s,Y_1,Y_2]]/(Y_1Y_2-s^q),
+\]
+where we replaced $Y_1$ by $\tilde\lambda Y_1$.
+Completing after base change to $\overline k$ gives the asserted isomorphism.
+The ring $\overline k[[s,Y_1,Y_2]]/(Y_1Y_2-s^q)$ is a two-dimensional hypersurface with an isolated singular point, hence normal by Serre's criterion, so $X_{\bar k}$ is normal at $\bar z$.
+At the other points over $X_P$, the scheme $X_{\bar k}$ is smooth over $\overline k$ by Step~2, hence normal.
+Finally, if $q = 1$, then every singular point $z$ of $X_P$ has $\kappa(z) = k$, so the regular surface $X$ is smooth over $k$ at $z$ \cite[Tag~\stackstag{00TV}]{Stacks}; together with Step~2, $X$ is smooth over $k$ along $X_P$.
+\end{proof}
+
+
+\subsection{Additive reduction: tame base change}
+Let $P\in B(k)$, let $U\subseteq B$ be an affine open neighbourhood of $P$ and $t\in\O(U)$ with divisor $P$ on $U$, and write $R = R_P$ and $Y = X_{(P)}$.
+For an integer $d\geq 1$ prime to $p$ put
+\[
+  B_d = \Spec\O(U)[s]/(s^d-t),\qquad R_d = \O_{B_d,P_d} = R[s]/(s^d-t),\qquad K_d = k(B_d),
+\]
+where $P_d$ is the unique point of $B_d$ over $P$.
+The curve $B_d$ is smooth and geometrically integral over $k$ and finite over $U$, the point $P_d$ is $k$-rational, and $R_d$ is a discrete valuation ring with uniformizer $s$.
+The group $G = \mu_d(k)$, of order $d$, acts on $B_d$ over $U$ by $s\mapsto\zeta s$, and $K_d$ is a cyclic extension of $K$ with group $G$.
+
+Let $Y_d$ be the minimal regular model of $X_K\otimes_KK_d$ over $R_d$.
+For $g\in G$, the twist of $Y_d$ by the automorphism $g$ of $\Spec R_d$ is again a minimal regular model of $X_K\otimes_KK_d$, since $X_K\otimes_KK_d$ is defined over $K$.
+Since a birational map between minimal regular models of a curve of genus one is an isomorphism \cite[Definition~9.3.12 and Corollary~9.3.24]{Liu02}, the action of $G$ on $X_K\otimes_KK_d$ through $K_d$ extends to an action on $Y_d$ over its action on $R_d$.
+
+Let $\mathcal Z$ be the normalization of $f^{-1}(U)\times_UB_d$, and let $\widetilde{\mathcal Z}\to\mathcal Z$ be a resolution of singularities; it is projective over the affine curve $B_d$ \cite[Tag~\stackstag{0C5P}]{Stacks}.
+Contracting successively the $(-1)$-curves in the fibre over $P_d$ gives a regular surface $\mathcal Y_d$, proper and flat over $B_d$, whose localization at $P_d$ is minimal and hence isomorphic to $Y_d$.
+The surface $\mathcal Y_d$ is geometrically integral over $k$: its base change to $\overline k$ is flat over the integral curve $(B_d)_{\bar k}$, with generic fibre $X_K\otimes_K\overline k(B_d)$, which is integral because $X_K$ is geometrically integral.
+
+\begin{lemma}\label{lem:weierstrass}
+Let $R$ be a discrete valuation ring with $6\in R^*$ and uniformizer $\pi$, and let $J$ be an elliptic curve over $\Frac(R)$ with additive reduction.
+Let $c_4$, $c_6$ and $\Delta$ be the quantities attached to a minimal Weierstrass equation, and put $\delta = v(\Delta)$.
+For an integer $d\geq 1$ with $d\in R^*$, let $R' = R[s]/(s^d-\pi)$, and let $\eta_J$ and $\eta_{J'}$ be generators of $H^0(\omega)$ of the minimal regular models of $J$ over $R$ and of $J\otimes\Frac(R')$ over $R'$.
+Then exactly one of the following holds.
+\begin{enumerate}
+\item $3v(c_4)\geq\delta$.
+  Then $\delta\in\{2,3,4,6,8,9,10\}$, and for $d = 12/\gcd(12,\delta)\in\{2,3,4,6\}$ the curve $J\otimes\Frac(R')$ has good reduction, and $\eta_{J'} = s^{w_J}\eta_J$ up to a unit, with $w_J = d\delta/12\leq d-1$.
+\item $3v(c_4)<\delta$.
+  Then $v(c_4) = 2$, $v(c_6) = 3$ and $\delta = n+6$ with $n\geq 1$; for $d = 2$ the curve $J\otimes\Frac(R')$ has multiplicative reduction with $v_{R'}(\Delta') = 2n$ for the discriminant $\Delta'$ of a minimal equation, and $\eta_{J'} = s\eta_J$ up to a unit.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(1) Assume that $3v(c_4)\geq\delta$.
+If $\delta\geq 12$, then $v(c_4)\geq 4$ and $2v(c_6) = v(c_4^3-1728\Delta)\geq 12$, contradicting minimality; so $0<\delta<12$.
+If $3v(c_4)>\delta$, then $2v(c_6) = \delta$, so $\delta$ is even; otherwise $3v(c_4) = \delta$.
+This gives the list.
+Put $u = s^{d\delta/12}\in R'$; the exponent is an integer by the choice of $d$.
+With $v' = v_{R'}$, so that $v' = dv$ on $\Frac(R)$, we have $v'(u^{-4}c_4)\geq d\delta/3-d\delta/3 = 0$, $v'(u^{-6}c_6)\geq d\delta/2-d\delta/2 = 0$ and $v'(u^{-12}\Delta) = 0$, using $2v(c_6)\geq\delta$.
+Hence the rescaled equation, given by $x = u^2x'$ and $y = u^3y'$, has coefficients in $R'$ and unit discriminant, so $J$ has good reduction over $R'$.
+Its invariant differential is $u$ times that of the original equation, and both generate the respective modules $H^0(\omega)$ by Section~\ref{subsec:weierstrass}, as both equations are minimal.
+Thus $w_J = v'(u) = d\delta/12$, which is at most $d-1$ as $\delta<12$.
+
+(2) Assume that $3v(c_4)<\delta$.
+Then $2v(c_6) = v(c_4^3-1728\Delta) = 3v(c_4)$, so $v(c_4) = 2m$ and $v(c_6) = 3m$ with $m\geq 1$, and minimality forces $m = 1$.
+Then $\delta>6$.
+Rescaling with $u = s$ over $R' = R[s]/(s^2-\pi)$ gives quantities $c_4$, $c_6$ and $\Delta$ of valuations $0$, $0$ and $2\delta-12 = 2n$, so the new equation is minimal with multiplicative reduction, and its invariant differential is $s$ times the original one.
+\end{proof}
+
+\begin{lemma}\label{lem:gcd-tame}
+Let $R$ be a discrete valuation ring whose residue field has characteristic $p$, with uniformizer $t$, let $d\geq 1$ be prime to $p$, and let $R' = R[s]/(s^d-t)$.
+Let $Y$ and $Y'$ be the minimal regular models of a smooth genus-one curve $X_{K_R}$ over $K_R = \Frac(R)$ and of $X_{K_R}\otimes_{K_R}\Frac(R')$ over $R'$.
+If $R$ is excellent and the multiplicities of the components of $Y_s$ have greatest common divisor one, then the same holds for $Y'$.
+\end{lemma}
+
+\begin{proof}
+Let $\Gamma$ be a component of $Y_s$ of multiplicity $r$, and let $A = \O_{Y,\Gamma}$, with uniformizer $\varpi$, so that $t = \varpi^rw$ with $w\in A^*$.
+Put $g = \gcd(r,d)$, $r = gr'$ and $d = gd'$.
+In the function field $K(Y)\otimes_{K_R}\Frac(R')$, which is a field because $X_{K_R}$ is geometrically integral, the element $\varepsilon = s^{d'}\varpi^{-r'}$ satisfies $\varepsilon^g = w$.
+The extension generated by $\varepsilon$ is unramified over $A$, because $g$ is prime to $p$ and $w$ is a unit.
+Over it, $s^{d'} = \varepsilon\varpi^{r'}$ with $\gcd(d',r') = 1$, so every valuation $\nu$ extending the valuation of $A$ has ramification index $d'$ and satisfies $\nu(s) = r\nu(\varpi)/d = r/g$.
+Let $N$ be the normalization of $Y\otimes_RR'$, which is finite since $R$ is excellent.
+Its closed fibre is the divisor of $s$, so every component of $N_s$ over $\Gamma$ has multiplicity $r/\gcd(r,d)$.
+If a prime number $\ell$ divided all these multiplicities, it would divide every $r$, which is impossible.
+
+Let $\widetilde N\to N$ be a resolution of singularities.
+The strict transforms of the components of $N_s$ keep their multiplicities, so the multiplicities of $\widetilde N_s$ have greatest common divisor one.
+The morphism $\widetilde N\to Y'$ provided by minimality is a sequence of blowups in closed points \cite[Tag~\stackstag{0C5R}]{Stacks}.
+If $Z_1\to Z_2$ is the blowup of a closed point $z$ of a regular surface over $R'$, then the exceptional curve has multiplicity $\sum_i r_i\operatorname{mult}_z(\Gamma_i)$, where the $\Gamma_i$ are the components of the closed fibre of $Z_2$ with multiplicities $r_i$; hence $Z_1$ and $Z_2$ have the same greatest common divisor.
+Therefore the greatest common divisor for $Y'$ is one.
+\end{proof}
+
+\begin{lemma}\label{lem:hodge-bound}
+In the setting above, let $\eta_X$ and $\eta_J$ be generators of $H^0(\omega)$ of $Y$ and of the minimal regular model of $J_K$ over $R$, and let $\eta_{Y_d}$ and $\eta_{J_d}$ be those of $Y_d$ and of the minimal regular model of $J_K\otimes_KK_d$ over $R_d$.
+Write $\eta_{Y_d} = s^{w_X}\eta_X$ and $\eta_{J_d} = s^{w_J}\eta_J$ up to units.
+Then $w_X\geq 0$ and
+\[
+  b(Y_d) = d\,b_P-w_X+w_J.
+\]
+\end{lemma}
+
+\begin{proof}
+By \eqref{eq:hodge}, $\eta_J = t^{b_P}\eta_X = s^{db_P}\eta_X$, and hence $\eta_{J_d} = s^{db_P-w_X+w_J}\eta_{Y_d}$ up to units.
+Comparing with \eqref{eq:hodge} for $Y_d$ gives the formula.
+
+The scheme $M = Y\otimes_RR_d$ is flat over $R_d$ with integral generic fibre, hence integral, and it is Gorenstein with $\omega_{M/R_d}$ generated by $\eta_X$.
+Let $Z\to M$ be a resolution of singularities of the normalization of $M$; it is an isomorphism over the points of codimension one of the normalization.
+At a point $\xi$ of codimension one of $M$, the semilocal ring $\widetilde A$ of $Z$ over $\xi$ is the normalization of $A = \O_{M,\xi}$, and $\omega_{\widetilde A} = \Hom_A(\widetilde A,\omega_A)$ embeds into $\omega_A$ by evaluation at $1$.
+Since $M$ satisfies $S_2$ and $\omega_{M/R_d}$ is invertible, a rational section of $\omega_{M/R_d}$ is regular if it is regular at all points of codimension one.
+Hence $H^0(Z,\omega_{Z/R_d})\subseteq H^0(M,\omega_{M/R_d}) = R_d\eta_X$.
+The morphism $Z\to Y_d$ given by minimality is a sequence of blowups in closed points \cite[Tag~\stackstag{0C5R}]{Stacks}.
+The canonical bundle formula for these blowups gives $H^0(Y_d,\omega_{Y_d/R_d})\subseteq H^0(Z,\omega_{Z/R_d})\subseteq R_d\eta_X$, that is, $w_X\geq 0$.
+\end{proof}
+
+
+
+\subsection{Additive reduction: descent of smoothness}
+
+\begin{lemma}\label{lem:descent}
+In the setting of the tame base change, assume that $Y_d$ is smooth over $k$ at every point of its closed fibre.
+Then $X$ is smooth over $k$ at every point of $X_P$.
+\end{lemma}
+
+\begin{proof}
+\emph{Step 1: the quotient.}
+The scheme $Y_d$ is projective over $R_d$ \cite[Tag~\stackstag{0C5P}]{Stacks}, so the quotient $W = Y_d/G$ exists \cite[Exp.~V, Proposition~1.8]{SGA1}.
+It is a normal surface, proper over $R$, with generic fibre $(X_K\otimes_KK_d)/G = X_K$, and $Y_d\to W$ is finite.
+Since $\lvert G\rvert$ is invertible, formation of invariants commutes with flat base change; in particular $W_{k'} = (Y_d)_{k'}/G$ for every field extension $k'/k$.
+Let $y$ be a closed point of the closed fibre of $Y_d$, with stabilizer $H\subseteq G$ and image $w\in W$.
+Then $\widehat\O_{W,w} = (\widehat\O_{Y_d,y})^H$, since $G$ permutes the points over $w$ transitively.
+
+\emph{Step 2: local structure.}
+Let $k'$ be a finite purely inseparable extension of $k$ containing a copy of $\kappa(y)$, and let $y'$ and $w'$ be the points over $y$ and $w$.
+Then $\kappa(y') = k'$, and $\O_{(Y_d)_{k'},y'}$ is regular because $Y_d$ is geometrically regular at $y$.
+Hence $\widehat\O_{(Y_d)_{k'},y'}\cong k'[[y_1,y_2]]$.
+The cyclic group $H$ has order prime to $p$, and $k$ contains the $\lvert H\rvert$-th roots of unity, so $H$ acts on $\mathfrak m/\mathfrak m^2$ through two characters $\chi_1,\chi_2$.
+Applying the projectors $\lvert H\rvert^{-1}\sum_{h\in H}\chi_i(h)^{-1}h$ to lifts of an eigenbasis, we may choose $y_1,y_2$ to be eigenvectors with characters $\chi_1,\chi_2$.
+The group $H$ acts faithfully on $k'[[y_1,y_2]]$, because it acts faithfully on the function field, so $(\chi_1,\chi_2)$ is injective.
+We say that $w$ is of the \emph{first kind} if $\chi_1$ or $\chi_2$ is trivial, and of the \emph{second kind} otherwise.
+If $\chi_2$ is trivial, then $\chi_1$ is injective, and $\widehat\O_{W_{k'},w'} = k'[[y_1^{\lvert H\rvert},y_2]]$ is regular; similarly if $\chi_1$ is trivial.
+So if $w$ is of the first kind, since this holds for all sufficiently large $k'$ and regularity descends along flat local homomorphisms \cite[Tag~\stackstag{00OF}]{Stacks}, $W$ is geometrically regular at $w$.
+
+Suppose now that $w$ is of the second kind, and let $h_0$ generate the cyclic group $H$.
+Let $\mathcal F\subseteq Y_d$ be the fixed-point scheme of $H$, defined near $y$ by the ideal generated by all $h^*a-a$.
+Its formation commutes with base change, and near $y'$ the ideal of $\mathcal F_{k'}$ contains $(\chi_1(h_0)-1)y_1$ and $(\chi_2(h_0)-1)y_2$ and is contained in $(y_1,y_2)$.
+So $\O_{\mathcal F,y}\otimes_kk' = k'$, hence $\O_{\mathcal F,y} = k$ and $\kappa(y) = k$.
+Then $\widehat\O_{Y_d,y}\cong k[[y_1,y_2]]$, and applying the projectors in $\O_{Y_d,y}$ we find eigenvectors $y_1,y_2\in\O_{Y_d,y}$ forming a regular system of parameters.
+Let $\mathcal U = \Spec k[Y_1,Y_2]^H$, where $H$ acts on $Y_i$ through $\chi_i$; it is the affine toric surface over $k$ attached to the positive quadrant and the lattice generated by $\ZZ^2$ and the weights of $H$.
+The invariant monomials in $y_1,y_2$ lie in $\O_{Y_d,y}^H = \O_{W,w}$, and they define a morphism $\psi\from V\to\mathcal U$ from an open neighbourhood $V$ of $w$, with $\psi(w)$ the torus-fixed point $0$.
+On completions, $\psi$ induces the isomorphism $k[[Y_1,Y_2]]^H\to k[[y_1,y_2]]^H$.
+Hence $\O_{\mathcal U,0}\to\O_{W,w}$ is flat, because $\widehat\O_{W,w}$ is faithfully flat over $\O_{W,w}$ and flat over $\O_{\mathcal U,0}$, and $\mathfrak m_0\O_{W,w} = \mathfrak m_w$; also $\kappa(w) = \kappa(0) = k$.
+The fibre $\psi^{-1}(0)$ has local ring $\O_{W,w}/\mathfrak m_0\O_{W,w} = \kappa(w)$ at $w$, so $w$ is an isolated point of it; after shrinking $V$, it is the only point of $V$ over $0$.
+The points $w$ of this second kind are isolated points of fixed-point schemes of subgroups of $G$, hence there are finitely many of them.
+
+\emph{Step 3: a smooth model.}
+Let $\rho\from\widetilde{\mathcal U}\to\mathcal U$ be the toric resolution \cite[Section~2.6]{Ful93}; the construction is defined over any field.
+It is proper and birational, it is an isomorphism over $\mathcal U\setminus\{0\}$, and the surface $\widetilde{\mathcal U}$ is covered by affine planes over $k$; in particular $\widetilde{\mathcal U}$ is smooth over $k$.
+Put $\widetilde V = V\times_{\mathcal U}\widetilde{\mathcal U}$.
+Then $\widetilde V\to V$ is proper and birational and an isomorphism over $V\setminus\{w\}$.
+Let $\tilde v\in\widetilde V$ lie over $w$, with image $\tilde u\in\widetilde{\mathcal U}$.
+The homomorphism $\O_{\widetilde{\mathcal U},\tilde u}\to\O_{\widetilde V,\tilde v}$ is flat, with closed fibre a localization of $\O_{W,w}\otimes_{\O_{\mathcal U,0}}\kappa(\tilde u) = \kappa(\tilde u)$, a field.
+The same holds after base change to every finite purely inseparable extension $k'/k$.
+Since $\widetilde{\mathcal U}$ is smooth over $k$, \cite[Tags~\stackstag{031E} and \stackstag{038U}]{Stacks} show that $\widetilde V$ is geometrically regular at $\tilde v$.
+Performing this construction at each of the finitely many points $w$ of the second kind in Step~2 and gluing with the complement, we obtain a regular surface $\widetilde W$, proper over $R$ with generic fibre $X_K$, which is geometrically regular at every point of its closed fibre.
+
+\emph{Step 4: contraction to $Y$.}
+By minimality there is a morphism $\widetilde W\to Y$, and it is a sequence of blowups in closed points \cite[Tag~\stackstag{0C5R}]{Stacks}: $\widetilde W = Z_0\to Z_1\to\dots\to Z_n = Y$.
+Suppose that $Z_i$ is geometrically regular at every point of its closed fibre, and let $Z_i\to Z_{i+1}$ be the blowup of the closed point $z$, with exceptional curve $E\cong\PP^1_{\kappa(z)}$ and $q = [\kappa(z):k]$.
+Then $(E^2)_k = -q$.
+Let $k'\supseteq\kappa(z)$ be a finite purely inseparable extension of $k$.
+The surface $(Z_i)_{k'}$ is regular along $E_{k'}$, and $E_{k'} = qE'$ as Cartier divisors, where $E' = (E_{k'})_{\rm red}$, because $\kappa(z)\otimes_kk'$ is local of length $q$ with residue field $k'$.
+Intersection numbers are preserved by the flat base change to $k'$, and $R\otimes_kk'$ is a discrete valuation ring because $P$ is $k$-rational; so $-q = (E^2)_k = ((E_{k'})^2)_{k'} = q^2(E'^2)_{k'}$ with $(E'^2)_{k'}\in\ZZ$.
+Hence $q = 1$ and $\kappa(z) = k$.
+Since $\kappa(z) = k$, the surface $Z_{i+1}$ is geometrically regular at $z$ \cite[Tag~\stackstag{031E}]{Stacks}, and it is so at the other points of its closed fibre because $Z_{i+1}\setminus\{z\}\cong Z_i\setminus E$.
+By induction, $Y = X_{(P)}$ is geometrically regular along its closed fibre, that is, $X$ is smooth over $k$ along $X_P$.
+\end{proof}
+
+\subsection{Conclusion}
+
+\begin{proposition}\label{prop:additive}
+Assume $p\geq 13$, and let $P\in B$ be a closed point at which $J_K$ has additive reduction.
+Then $P$ is $k$-rational and $X$ is smooth over $k$ at every point of $X_P$.
+\end{proposition}
+
+\begin{proof}
+The point $P$ is $k$-rational by Lemma~\ref{lem:bad-points}, and $b_P\leq 1$ by Lemma~\ref{lem:comparison}.
+The multiplicities of $X_P$ have greatest common divisor one by Lemma~\ref{lem:base}\,(5), and hence so do those of $Y_d$ for every $d$ prime to $p$, by Lemma~\ref{lem:gcd-tame}.
+
+Suppose that we are in case \textup{(1)} of Lemma~\ref{lem:weierstrass}, and take $d = 12/\gcd(12,\delta)$.
+The Jacobian has good reduction at $P_d$.
+By Lemma~\ref{lem:hodge-bound} and Lemma~\ref{lem:weierstrass}\,\textup{(1)},
+\[
+  0\leq b(Y_d) = d\,b_P-w_X+w_J\leq d+(d-1)\leq 11<p-1.
+\]
+The closed fibre of $Y_d$ has greatest common divisor one, so Corollary~\ref{lem:congruence} gives $b(Y_d) = 0$ and smoothness over $R_d$.
+Since $B_d$ is smooth over $k$, $Y_d$ is smooth over $k$ along its closed fibre, and Lemma~\ref{lem:descent} applies.
+
+Suppose that we are in case \textup{(2)}, and take $d = 2$.
+The Jacobian has split multiplicative reduction of type $\mathrm I_{2n}$ at $P_2$, so $a(Y_2) = b(Y_2)$ by Lemma~\ref{lem:ab-properties}(4).
+By Lemma~\ref{lem:hodge-bound} and Lemma~\ref{lem:weierstrass}(2), $b(Y_2) = 2b_P-w_X+1\leq 3$.
+By Lemma~\ref{lem:ab-properties}\,(3), the minimal regular model $Y_2\otimes_{R_2}\widehat R_2$ has the same closed fibre as $Y_2$, whose multiplicities have greatest common divisor one by the first paragraph, and $a(Y_2\otimes_{R_2}\widehat R_2) = a(Y_2)\leq 3<p-1$.
+Since the residue field $k$ of $\widehat R_2$ is separably closed, Lemma~\ref{lem:trivial-torsor}\,(2) shows that the closed fibre of $Y_2$ is a cycle of $2n$ reduced copies of $\PP^1_k$ meeting transversally in $k$-rational points.
+Every point of this fibre is either a smooth point of the fibre or a $k$-rational point, so $Y_2$ is smooth over $k$ along its closed fibre \cite[Tag~\stackstag{031E}]{Stacks}.
+Lemma~\ref{lem:descent} applies again.
+\end{proof}
+
+\begin{proposition}\label{prop:genus-one}
+Under Assumption~\ref{ass:genus-one}, assume $p\geq 13$.
+Then $X$ is geometrically normal.
+More precisely, $X$ is smooth over $k$ except at the singular points of fibres $X_P$ over closed points $P$ which are not $k$-rational and at which $J_K$ has multiplicative reduction; such points exist only if $p\leq 23$, and at them $X_{\bar k}$ has singularities of type $A_{p-1}$.
+\end{proposition}
+
+\begin{proof}
+Every closed point $P\in B$ is of good, multiplicative or additive reduction for $J_K$.
+The three cases are treated by Lemma~\ref{lem:good}, Lemma~\ref{lem:multiplicative} together with Lemma~\ref{lem:bad-points}, and Proposition~\ref{prop:additive}.
+Since $X_{\bar k}$ is normal along every fibre, it is normal.
+\end{proof}

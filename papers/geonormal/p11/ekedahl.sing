@@ -1,0 +1,24 @@
+// Verification of the regularity criterion in Lemma lem:p11-regular (counterexample.tex).
+// Run:  Singular -q ekedahl.sing
+// Q is regarded as a polynomial in c, a, b over F_11 via u = b^2 - a^3.
+// Claim: if h = gcd(Q_c, Q_a, Q_b), then Q_c/h, Q_a/h, Q_b/h generate the unit ideal.
+ring r = 11,(c,a,b),dp;
+poly u = b^2-a^3;
+poly Q = -c^10 + c^9*a^4*b + 5*c^9*u*a*b - 2*c^8*u^2*a^5 - 3*c^8*u^3*a^2 + 3*c^7*u^4*a^3*b
+       + 2*c^7*u^5*b - 4*c^6*u^6*a^4 + 4*c^6*u^7*a + 5*c^5*u^8*a^2*b + 5*c^4*u^10*a^3
+       + 2*c^4*u^11 - 4*c^3*u^12*a*b + 3*c^2*u^14*a^2 - 2*c*u^16*b + u^18*a;
+poly Qc = diff(Q,c); poly Qa = diff(Q,a); poly Qb = diff(Q,b);
+poly h = gcd(gcd(Qc,Qa),Qb);
+poly qc = division(Qc,h)[1][1,1];
+poly qa = division(Qa,h)[1][1,1];
+poly qb = division(Qb,h)[1][1,1];
+// exact division
+if ((Qc-qc*h != 0) || (Qa-qa*h != 0) || (Qb-qb*h != 0)) { ERROR("division not exact"); }
+print("degree of h: " + string(deg(h)));
+// unit ideal, with an explicit certificate  1 = f1*qc + f2*qa + f3*qb
+ideal I = qc, qa, qb;
+matrix M = lift(I, ideal(1));
+poly check = M[1,1]*qc + M[2,1]*qa + M[3,1]*qb;
+if (check != 1) { ERROR("certificate failed"); }
+print("Q_c/h, Q_a/h, Q_b/h generate the unit ideal (certificate verified)");
+quit;

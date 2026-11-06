@@ -1,0 +1,45 @@
+# Lean dependencies and build artifacts
+**/.lake/
+
+# Python and editor caches
+**/__pycache__/
+*.py[cod]
+.*.swp
+*~
+.DS_Store
+
+# LaTeX intermediates in the manuscript directories
+/papers/**/*.aux
+/papers/**/*.log
+/papers/**/*.bbl
+/papers/**/*.blg
+/papers/**/*.bcf
+/papers/**/*.run.xml
+/papers/**/*.toc
+/papers/**/*.lof
+/papers/**/*.lot
+/papers/**/*.synctex.gz
+/papers/**/*.fdb_latexmk
+/papers/**/*.fls
+/papers/**/*.xdv
+/papers/**/*.dvi
+/papers/**/*.nav
+/papers/**/*.snm
+/papers/**/*.vrb
+/papers/**/*.idx
+/papers/**/*.ind
+/papers/**/*.ilg
+/papers/**/*.glo
+/papers/**/*.gls
+/papers/**/*.glg
+/papers/**/*.acn
+/papers/**/*.acr
+/papers/**/*.alg
+/papers/**/*.ist
+
+# Hyperref outputs beside TeX sources; keep supporting computations' .out files
+/papers/red/*.out
+/papers/eff/*.out
+/papers/geonormal/*.out
+
+# Manuscript PDFs are included in the repository.

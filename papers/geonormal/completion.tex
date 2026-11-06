@@ -1,0 +1,29 @@
+\subsection{Geometric normality}\label{sec:completion}
+
+\begin{theorem}\label{thm:geometric-normality}
+Let $k$ be a field of characteristic $p\geq 13$, and let $X$ be a regular projective surface over $k$ with $H^0(X,\O_X) = k$ and $K_X\equiv 0$.
+Then $X$ is geometrically normal over $k$.
+\end{theorem}
+
+\begin{proof}
+We may assume that $k$ is $F$-finite and separably closed.
+Suppose that $X$ is not geometrically normal.
+Since $p\geq 13$, the surface $X$ is geometrically integral by \cite[Theorem~1.2]{WZ26}, so Assumption~\ref{ass:nonnormal} holds.
+By Proposition~\ref{prop:dichotomy}, either there is a fibration $f\from X\to B$ onto a regular projective curve whose generic fibre is a smooth curve of genus one, or $\rho(X) = 2$ and the intersection form on $N^1(X)_\QQ$ is anisotropic.
+
+In the first case, Assumption~\ref{ass:genus-one} holds by Proposition~\ref{prop:cohomology}, and Proposition~\ref{prop:genus-one} shows that $X$ is geometrically normal, a contradiction.
+In the second case, Corollary~\ref{cor:rank-two} gives a negative curve $\Gamma\subset X$ whose contraction is not geometrically normal, so the situation of Section~\ref{sec:rank-one} occurs; this contradicts Proposition~\ref{prop:rank-one}.
+Hence $X$ is geometrically normal.
+\end{proof}
+
+\begin{remark}\label{rem:small-primes}
+The hypothesis $p\geq 13$ is used in Proposition~\ref{prop:genus-one} and Lemma~\ref{lem:ruling}, and the rank-two case does not occur when $p\equiv 3\pmod 4$ (Proposition~\ref{prop:dichotomy}(2)).
+For the primes $p\leq 11$ the argument gives the following information.
+\begin{enumerate}
+\item For $p = 5$ and $p = 7$ the conclusion of Theorem~\ref{thm:main} fails: \cite[Example~6.2 and Remark~1.5(2)]{WZ26} constructs, over the function field of a curve over an algebraically closed field, regular projective geometrically integral surfaces $X$ with $\omega_X\cong\O_X$ and $H^0(X,\O_X)$ equal to the base field which are not geometrically normal.
+\item Let $p = 11$.
+  Since $11\equiv 3\pmod 4$, a counterexample would admit a genus-one fibration as in Assumption~\ref{ass:genus-one}.
+  The arguments of Section~\ref{sec:genus-one} then apply, except at the following closed points $P\in B$ of additive reduction for $J_K$: \textup{(a)} points with $[k(P):k] = 11$, where necessarily $v_P(\Delta_P) = 2$ and the reduction is of type $\mathrm{II}$; \textup{(b)} $k$-rational points in case \textup{(1)} of Lemma~\ref{lem:weierstrass} with $b(Y_d) = 10$, which forces $\delta = 10$ (type $\mathrm{II}^*$), $d = 6$, $b_P = 1$ and $w_X = 1$ in Lemma~\ref{lem:hodge-bound}.
+\end{enumerate}
+Configuration~\textup{(b)} occurs, by the example of Section~\ref{sec:p11} (see Remark~\ref{rem:p11}); we do not know whether configuration~\textup{(a)} occurs.
+\end{remark}

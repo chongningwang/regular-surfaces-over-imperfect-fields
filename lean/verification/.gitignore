@@ -1,0 +1,2 @@
+# Preserve the historical and future audit logs.
+!*.log

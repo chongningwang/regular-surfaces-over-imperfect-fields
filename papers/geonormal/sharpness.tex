@@ -1,0 +1,207 @@
+\section{Examples and a lift to characteristic zero}\label{sec:sharpness}
+The bound $p\geq 23$ in Theorem~\ref{thm:smooth} is optimal, both over fields and for regular models in mixed characteristic.
+
+\begin{example}[Non-smoothness in characteristic $5\leq p\leq 19$]\label{ex:small-primes}\label{ex:p19}
+Let $5\leq p\leq 19$ be a prime, and let $k = \FF_p(c)$, where $c$ is transcendental over $\FF_p$.
+There is a regular projective surface $X$ over $k$ with $H^0(X,\O_X) = k$ and $\omega_X\cong\O_X$ such that $X_{\bar k}$ has exactly one singular point, of type $\mathrm A_{p-1}$.
+It admits an elliptic fibration over $\PP^1_k$ whose generic fibre has equation
+\begin{equation}\label{eq:small-primes}
+  y^2 = x^3+c^2t^mx+t^n,
+\end{equation}
+where $(m,n)$ is given by
+\[
+\begin{array}{c|cccccc}
+p & 5 & 7 & 11 & 13 & 17 & 19\\ \hline
+m & 5 & 5 & 5 & 5 & 7 & 7\\
+n & 5 & 4 & 2 & 1 & 2 & 1
+\end{array}
+\]
+\end{example}
+
+\begin{proof}
+The table gives $3m-2n = p$, $m\in\{5,7\}$ and $n\in\{1,2,4,5\}$.
+The equations for $p = 13,17,19$ are twists of those in \cite[Example~9.6 and Table~9]{Mat23}.
+For every $p$ in the table, the substitution
+\[
+  (x_0,y_0,t_0) = (\beta^{2n}x,\beta^{3n}y,\beta^6t),
+  \qquad \beta^p = c,
+\]
+identifies $y^2 = x^3+c^2t^mx+t^n$ with $y_0^2 = x_0^3+t_0^mx_0+t_0^n$ over $k(\beta)$.
+
+Let $B = \PP^1_k$, let $L = \O_B(2)$ and let $g\from W\to B$ be the projective Weierstrass model of \eqref{eq:small-primes}.
+The coefficients $c^2t^m$ and $t^n$ are sections of $L^{\otimes 4}$ and $L^{\otimes 6}$, respectively, and adjunction gives $\omega_W\cong g^*(\omega_B\otimes L)\cong\O_W$.
+The zero section lies in the smooth locus of $g$.
+
+We check regularity over $k$ by treating $c$ as a variable over $\FF_p$.
+The affine equation is $f = y^2-x^3-c^2t^mx-t^n$.
+On $t\neq 0$, the simultaneous vanishing of $f_c = -2ct^mx$ and $f_x = -3x^2-c^2t^m$ is impossible.
+On $t = 0$, the equations $f_x = f_y = 0$ force $x = y = 0$, and this point is smooth if $n = 1$ because $f_t = -1$.
+Localizing the coordinate ring over $\FF_p$ at the nonzero polynomials in $c$ therefore shows that the affine chart of $W$ is regular over $k$ outside the $k$-rational point $P_0 = (t,x,y) = (0,0,0)$.
+
+We resolve the points over $t = 0$ and $t = \infty$ over $k$.
+Put $\eta = 1+c^2t^{m-n}x$, which is a unit at $P_0$.
+Since $2$ and $3$ are invertible, the formal change $x' = x\eta^{-1/3}$, $y' = y\eta^{-1/2}$ changes the equation to
+\[
+  y'^2 = x'^3+t^n.
+\]
+For $n = 1$ this is smooth, and for $n = 2,4,5$ it is a split rational double point of type $\mathrm A_2$, $\mathrm E_6$ or $\mathrm E_8$, respectively \cite{Art77}.
+The standard resolutions are obtained by blowups at $k$-rational double points and are smooth over $k$ near their exceptional curves; this also holds for $n = p = 5$.
+
+At infinity put $s = t^{-1}$, $u = s^4x$ and $v = s^6y$.
+The equation is
+\[
+  v^2 = u^3+c^2s^{8-m}u+s^{12-n}.
+\]
+If $m = 7$, its only singular point on $s = 0$ is the ordinary double point $P_\infty = (s,u,v) = (0,0,0)$, with quadratic part $v^2-c^2su$.
+One blowup resolves it and gives a surface smooth over $k$ near the exceptional curve.
+If $m = 5$, put $q = 12-n\geq 7$.
+The first blowup has one singular point, with equation $V^2 = sU^3+c^2s^2U+s^{q-2}$.
+The next blowup has one ordinary double point and, in the chart $s = US$, $V = UJ$, the point with equation
+\[
+  J^2 = c^2US^2+U^2S+U^{q-4}S^{q-2}.
+\]
+Its cubic part factors as $US(c^2S+U)$, and its blowup has three ordinary double points, in the directions $S/U = 0,-c^{-2}$ and $U/S = 0$.
+All these points are $k$-rational, and their quadratic parts are nondegenerate.
+Blowing them up gives a resolution by seven point blowups, smooth over $k$ near the exceptional fibre.
+
+The chart equations and the nondegeneracy assertions in these characteristics are checked by \texttt{smooth/small\_primes\_checks.py} in Appendix~\ref{app:scripts-examples}.
+
+Let $\pi\from X\to W$ be these resolutions over $0$ and $\infty$.
+Every centre is a double point, so $\pi$ is crepant; hence $X$ is regular and projective over $k$ with $\omega_X\cong\pi^*\omega_W\cong\O_X$.
+The discriminant is
+\[
+  \Delta = -16t^{2n}(4c^6t^p+27),
+\]
+which is nonzero, so the generic fibre is a smooth elliptic curve.
+Stein factorization gives $(g\circ\pi)_*\O_X = \O_B$, and consequently $H^0(X,\O_X) = k$.
+
+Let $a\in\overline k$ be the unique root of $4c^6t^p+27$.
+It is nonzero, and $\Delta$ has order $p$ there.
+Put $r = -3/(2c^2a^{m-n})$.
+Then $3r^2+c^2a^m = 0$ and $2r^3 = a^n$, and at $(t,x,y) = (a,r,0)$ we have $f = f_x = f_y = 0$ and $f_t = (p/2)a^{n-1} = 0$.
+Since $c_4 = -48c^2t^m$ is nonzero at $a$, this is the unique node of the fibre.
+For $z = t-a$, choose $\rho\in\overline k[[z]]$ with $\rho(0) = r$ and $3\rho^2+c^2t^m = 0$.
+Writing $x = \rho+\xi$ gives
+\[
+  y^2 = \xi^2(3\rho+\xi)+h(z),\qquad h(z) = t^n-2\rho^3,
+\]
+and
+\[
+  \Delta = -432(t^n-2\rho^3)(t^n+2\rho^3).
+\]
+The second factor is a unit at $z = 0$, so $h$ has order $p$.
+Taking a square root of the unit $3\rho+\xi$ and absorbing the unit factor of $h$ gives the completed local equation $UV = z^p$.
+Thus the point is of type $\mathrm A_{p-1}$ in every case.
+All other fibres away from $0,a,\infty$ are smooth, and $X$ is smooth over $k$ near the fibres over $0$ and $\infty$; hence this is the only singular point of $X_{\bar k}$.
+\end{proof}
+
+The characteristic-$19$ surface of Example~\ref{ex:small-primes} lifts to characteristic zero.
+
+\begin{proposition}\label{prop:small-primes-lift}\label{prop:p19-lift}
+Let $R = \ZZ[c]_{(19)}$, with residue field $k = \FF_{19}(c)$ and fraction field $\QQ(c)$.
+There is a regular scheme $\mathcal X$, flat and projective over $R$, with $\omega_{\mathcal X/R}\cong\O_{\mathcal X}$, such that $\mathcal X\otimes_Rk$ is the surface $X$ of Example~\ref{ex:small-primes} for $p = 19$ and $\mathcal X\otimes_R\QQ(c)$ is a K3 surface over $\QQ(c)$.
+In particular $\mathcal X$ is not smooth over $R$, although its special fibre is regular.
+\end{proposition}
+
+\begin{proof}
+Let $g\from\mathcal W\to\mathcal B = \PP^1_R$ be the projective Weierstrass model of $y^2 = x^3+c^2t^7x+t$, with fundamental line bundle $\mathcal L = \O_{\mathcal B}(2)$.
+Its equation remains a nonzerodivisor on the special fibre of the ambient $\PP^2$-bundle, so $\mathcal W$ is flat over $R$.
+At infinity, the coordinates $s = t^{-1}$, $u = s^4x$ and $v = s^6y$ give the equation
+\[
+  v^2-u^3-c^2su-s^{11} = 0.
+\]
+Blow up the section $s = u = v = 0$ in the smooth ambient scheme, and let $\mathcal X$ be the strict transform.
+The $s$- and $u$-charts cover the exceptional conic and have equations
+\[
+  v^2-c^2u-su^3-s^9 = 0,\qquad
+  v^2-c^2s-u-u^9s^{11} = 0,
+\]
+respectively.
+Both are monic in $v$ and hence flat over $R$, and their derivatives in $u$ and $s$, respectively, restrict to the unit $-c^2$ along the exceptional fibre.
+Thus $\mathcal X$ is flat and projective over $R$, and its special fibre is exactly the one-blowup resolution $X$ of Example~\ref{ex:small-primes}.
+Since $X$ is regular, flatness and properness imply that $\mathcal X$ is regular \cite[Tags~\stackstag{00NU} and~\stackstag{00OE}]{Stacks}.
+Adjunction gives $\omega_{\mathcal W/R}\cong g^*(\omega_{\mathcal B/R}\otimes\mathcal L)\cong\O_{\mathcal W}$.
+The centre has codimension three in the smooth ambient scheme, and $\mathcal W$ has multiplicity two along it, so the blowup is crepant and $\omega_{\mathcal X/R}\cong\O_{\mathcal X}$.
+
+Proposition~\ref{prop:small-primes-sing} gives a K3 minimal resolution of $X_{\bar k}$, so rationality of its singularity gives $H^1(X,\O_X) = 0$.
+The generic fibre $\mathcal X_{\QQ(c)}$ is regular, hence smooth over $\QQ(c)$, and its canonical sheaf is trivial.
+By semicontinuity, $h^0(\O_{\mathcal X_{\QQ(c)}}) = 1$ and $h^1(\O_{\mathcal X_{\QQ(c)}}) = 0$, so $\mathcal X_{\QQ(c)}$ is a K3 surface.
+\end{proof}
+
+Over $\QQ(c)$, the polynomial $4c^6t^{19}+27$ has nineteen distinct roots, at which the elliptic fibration of $\mathcal X_{\QQ(c)}$ has fibres of type $\mathrm I_1$.
+Modulo $19$ these roots collide, and the nineteen nodes come together at the singular point of type $\mathrm A_{18}$ of $X_{\bar k}$.
+
+\begin{corollary}[Smoothness over a discrete valuation ring]\label{cor:mixed-smooth}\label{rem:mixed-smooth}
+Let $R$ be a discrete valuation ring whose residue field $k$ has characteristic $p\geq 23$, and let $\mathcal X\to\Spec R$ be a projective flat morphism whose special fibre $X_0$ is a regular surface with $H^0(X_0,\O_{X_0}) = k$ and $K_{X_0}\equiv 0$.
+Then $\mathcal X$ is smooth over $R$.
+The bound $p\geq 23$ is optimal in mixed characteristic, even for regular models with K3 generic fibre and trivial relative canonical sheaf.
+\end{corollary}
+
+\begin{proof}
+Theorem~\ref{thm:smooth} makes $X_0$ smooth over $k$.
+Since $\mathcal X\to\Spec R$ is flat and of finite presentation, it is smooth along $X_0$ \cite[Definition~4.3.35]{Liu02}.
+Its non-smooth locus is closed, and its image in $\Spec R$ is closed by properness.
+This image avoids the closed point of $\Spec R$, so it is empty.
+Proposition~\ref{prop:small-primes-lift} proves optimality with the stated additional properties.
+\end{proof}
+
+Geometric normality does not exclude non-rational singularities in smaller characteristic.
+
+\begin{example}[Non-rational geometric singularities in characteristics $7$ and $11$]\label{ex:nonrational-small-primes}
+Let $p\in\{7,11\}$ and let $k = \FF_p(c)$, where $c$ is transcendental over $\FF_p$.
+There is a regular projective surface $X$ over $k$ with $H^0(X,\O_X) = k$ and $\omega_X\cong\O_X$ such that $X_{\bar k}$ is normal and has exactly one singular point, which is non-rational.
+It admits an elliptic fibration over $\PP^1_k$ whose generic fibre has equation
+\begin{equation}\label{eq:nonrational-small-primes}
+  y^2 = x^3+t^p+c.
+\end{equation}
+The completed local ring at the singular point of $X_{\bar k}$ is
+\[
+  \overline k[[x,y,z]]/(y^2-x^3-z^p).
+\]
+\end{example}
+
+\begin{proof}
+Let $B = \PP^1_k$, let $L = \O_B(2)$ and let $g\from W\to B$ be the projective Weierstrass model of \eqref{eq:nonrational-small-primes}.
+The coefficient $t^p+c$ is a section of $L^{\otimes 6}$, and adjunction gives $\omega_W\cong g^*(\omega_B\otimes L)\cong\O_W$.
+The zero section lies in the smooth locus of $g$.
+The affine chart over $\AA^1_k\subset B$ is regular: eliminating $c$ identifies
+\[
+  \FF_p[c,t,x,y]/(y^2-x^3-t^p-c)\cong\FF_p[t,x,y],
+\]
+and its coordinate ring over $k$ is a localization of this polynomial ring.
+
+At infinity put $s = t^{-1}$, $u = s^4x$ and $v = s^6y$.
+The equation becomes
+\[
+  v^2 = u^3+s^{12-p}+cs^{12}.
+\]
+Its only possible singular point on $s = 0$ is $(s,u,v) = (0,0,0)$.
+For $p = 11$ this point is smooth, because the derivative in $s$ is $-1$ there.
+For $p = 7$, put $\eta = 1+cs^7$.
+The formal change $u' = u\eta^{-1/3}$, $v' = v\eta^{-1/2}$ gives $v'^2 = u'^3+s^5$, a split rational double point of type $\mathrm E_8$ \cite{Art77}.
+As in the proof of Example~\ref{ex:small-primes}, its resolution is a sequence of blowups at $k$-rational double points and is smooth over $k$ near the exceptional fibre.
+Let $\pi\from X\to W$ be this resolution for $p = 7$, and the identity for $p = 11$.
+It is crepant, so $X$ is regular and projective over $k$ with $\omega_X\cong\O_X$.
+The discriminant $\Delta = -432(t^p+c)^2$ is nonzero, so the generic fibre is a smooth elliptic curve.
+Stein factorization gives $(g\circ\pi)_*\O_X = \O_B$, hence $H^0(X,\O_X) = k$.
+
+Choose $a\in\overline k$ with $a^p = -c$.
+The partial derivatives of the affine equation over $\overline k$ vanish precisely at $(t,x,y) = (a,0,0)$.
+The surface $X_{\bar k}$ is integral and is smooth elsewhere, including near the resolved fibre at infinity; hence it is normal.
+Putting $z = t-a$ gives the asserted completed local ring.
+
+Consider the weighted blowup of this local hypersurface with weights $(2,3,1)$ on $(x,y,z)$.
+Its $z$-chart has coordinates $x = z^2u$, $y = z^3v$ and equation
+\[
+  v^2 = u^3+z^{p-6}.
+\]
+The exceptional curve $E = \{z = 0\}$ is reduced and the chart is smooth at its generic point, where $u$ and $v$ are nonzero.
+A generator of the original dualizing sheaf pulls back as
+\[
+  \frac{dx\wedge dz}{2y}
+  = z^{-1}\frac{du\wedge dz}{2v}.
+\]
+Since the second factor is a local canonical generator at the generic point of $E$, this divisor has discrepancy $-1$.
+Thus the singularity is not canonical, so it is not a rational double point.
+A rational Gorenstein surface singularity is a rational double point \cite[Tag~\stackstag{0BGB}]{Stacks}; hence this singularity is non-rational.
+\end{proof}

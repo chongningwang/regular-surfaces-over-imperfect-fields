@@ -1,0 +1,300 @@
+\section{Local genus-one models}\label{sec:local-genus-one}
+We recall the comparison of relative differentials from \cite{LLR04} and prove a congruence used in the genus-one case of the main theorem.
+%We call regular genus-one models over discrete valuation rings \emph{surfaces}.
+
+\subsection{Local models and relative differentials}\label{subsec:genus-one-setting}
+Let $R$ be a discrete valuation ring with uniformizer $\pi$, residue field $k = R/\pi R$, and fraction field $K$.
+Let $Y$ be a smooth projective curve of genus one over $K$ with $H^0(Y,\O_Y) = K$.
+Let $J$ be its Jacobian.
+Let $\mathcal Y$ and $\mathcal J$ be the {\em minimal regular models} of $Y$ and $J$ over $R$, respectively; see for example \cite[Section~9.3]{Liu02}.
+We say that $J$ has \emph{good reduction} over $R$ if it extends to an elliptic scheme over $R$, equivalently if $\mathcal J$ is smooth over $R$.
+There is a canonical cohomology isomorphism \cite[1.4]{LLR04}
+\begin{equation}\label{eq:tau}
+  \tau_Y\from H^1(Y,\O_Y)\xrightarrow{\sim}H^1(J,\O_J).
+\end{equation}
+This isomorphism is compatible with field extension and, when $Y(K)\neq\varnothing$, is induced by a choice of $K$-point identifying $J$ with $Y$ \cite[1.4 and Corollary~1.5]{LLR04}.
+The comparison theorem \cite[Theorem~3.8]{LLR04} shows that $\tau_Y$ extends to an $R$-linear homomorphism
+\[
+  \tau_{\mathcal Y}\from H^1(\mathcal Y,\O_{\mathcal Y})\to H^1(\mathcal J,\O_{\mathcal J}).
+\]
+
+The target is a free $R$-module of rank one \cite[Corollary~5.8]{LLR04}.
+Since $\tau_{\mathcal Y}$ becomes an isomorphism over $K$, its kernel is exactly the $R$-torsion submodule $H^1(\mathcal Y,\O_{\mathcal Y})_{\rm tors}$ of $H^1(\mathcal Y,\O_{\mathcal Y})$, and its cokernel is also torsion.
+Both have finite $R$-length because the cohomology groups are finitely generated over $R$.
+
+\begin{definition}\label{def:hodge}
+We define
+\[
+  a(\mathcal Y) = \length_R\ker(\tau_{\mathcal Y}),\qquad b(\mathcal Y) = \length_R\coker(\tau_{\mathcal Y}).
+\]
+\end{definition}
+
+By relative Serre duality, $H^0(\mathcal Y,\omega_{\mathcal Y/R})$ is the $R$-dual of $H^1(\mathcal Y,\O_{\mathcal Y})$, and similarly for $\mathcal J$; these modules are free of rank one.
+Let $\eta_{\mathcal Y}$ and $\eta_J$ be generators of $H^0(\mathcal Y,\omega_{\mathcal Y/R})$ and $H^0(\mathcal J,\omega_{\mathcal J/R})$, respectively, and identify $H^0(Y,\omega)$ with $H^0(J,\omega)$ by the dual of $\tau_Y$.
+Write $\mathcal Y_s$ for the closed fibre of $\mathcal Y$.
+
+\begin{lemma}\label{lem:ab-properties}
+\begin{enumerate}
+\item $a(\mathcal Y) = 0$ if and only if $H^0(\mathcal Y_s,\O_{\mathcal Y_s}) = k$.
+\item If $\mathcal Y$ is smooth over $R$, then $a(\mathcal Y) = b(\mathcal Y) = 0$.
+\item $\mathcal Y\otimes_R\widehat R$ and $\mathcal J\otimes_R\widehat R$ are the minimal regular models over the completion $\widehat R$, and $a(\mathcal Y\otimes_R\widehat R) = a(\mathcal Y)$, $b(\mathcal Y\otimes_R\widehat R) = b(\mathcal Y)$.
+\item If $k$ is perfect, or $J$ has split multiplicative reduction, then $a(\mathcal Y) = b(\mathcal Y)$.
+%If $k$ is imperfect, the equality $a(\mathcal Y) = b(\mathcal Y)$ can fail \cite[Theorem~5.9 and Proposition~9.2]{LLR04}.
+\item \textup{(Comparison of relative differentials)}
+  The inclusion $H^0(\mathcal J,\omega_{\mathcal J/R})\embed H^0(\mathcal Y,\omega_{\mathcal Y/R})$ has cokernel of $R$-length $b(\mathcal Y)$.
+  In particular,
+  \begin{equation}\label{eq:hodge}
+    \eta_J = \pi^{b(\mathcal Y)}\eta_{\mathcal Y}\quad\text{up to a unit of } R.
+  \end{equation}
+  This identity persists in $H^0(Y_{K'},\omega)$ after any flat base change $R\to R'$ of discrete valuation rings, where $K' = \Frac(R')$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(1) Since $\mathcal Y$ is integral and dominates $\Spec R$, multiplication by $\pi$ is injective on $\O_{\mathcal Y}$.
+The ring $H^0(\mathcal Y,\O_{\mathcal Y})$ is a finite $R$-subalgebra of $H^0(Y,\O_Y) = K$, so it equals $R$ because $R$ is normal.
+The exact sequence $0\to\O_{\mathcal Y}\xrightarrow{\pi}\O_{\mathcal Y}\to\O_{\mathcal Y_s}\to 0$ therefore gives
+\[
+  0\to k\to H^0(\mathcal Y_s,\O_{\mathcal Y_s})\to H^1(\mathcal Y,\O_{\mathcal Y})[\pi]\to 0.
+\]
+A finitely generated $R$-module is torsion free if and only if its $\pi$-torsion vanishes.
+
+(2) After a faithfully flat unramified base change, the smooth model $\mathcal Y$ has a section and is therefore isomorphic to $\mathcal J$.
+By flat base change and the description of $\tau_Y$ above, $\tau_{\mathcal Y}$ becomes an isomorphism; faithful flatness then gives $a(\mathcal Y) = b(\mathcal Y) = 0$.
+
+(3) The scheme $\mathcal Y\otimes_R\widehat R$ is regular \cite[Tag~\stackstag{0BG6}]{Stacks} and has the same closed fibre as $\mathcal Y$, so it is the minimal regular model over $\widehat R$, and similarly for $\mathcal J$.
+Flat base change identifies $\tau_{\mathcal Y\otimes_R\widehat R}$ with $\tau_{\mathcal Y}\otimes_R\widehat R$, whose kernel and cokernel have the same lengths over $\widehat R$ as those of $\tau_{\mathcal Y}$ over $R$.
+
+(4) The perfect-residue-field case is \cite[Theorem~3.8]{LLR04}.
+By (3), the split multiplicative case reduces to \cite[Remark~8.13]{LLR04} over $\widehat R$.
+
+(5) The map induced by $\tau_{\mathcal Y}$ on $H^1(\mathcal Y,\O_{\mathcal Y})/{\rm tors}$ is injective, with cokernel of length $b(\mathcal Y)$.
+Dualizing gives an inclusion of the Jacobian differential lattice $H^0(\mathcal J,\omega_{\mathcal J/R})$ into $H^0(\mathcal Y,\omega_{\mathcal Y/R})$ with the same cokernel length, which is \eqref{eq:hodge} for the chosen generators.
+Since $\tau_Y$ is compatible with base change \cite[1.4]{LLR04}, the identity persists after flat base change.
+\end{proof}
+
+\subsection{Good Jacobian reduction}\label{subsec:good-jacobian-reduction}
+Assume further that $R$ is excellent of equal characteristic $p>0$ and that $J$ has good reduction.
+The curve $Y$ is a torsor under $J$.
+By \cite[Proposition~8.1 and Remark~8.2]{LLR04}, this action extends to $\mathcal J\times_R\mathcal Y\to\mathcal Y$ and is transitive on the geometric points of the closed fibre.
+In particular, the closed fibre $\mathcal Y_s$ is geometrically irreducible.
+As an effective Cartier divisor, it has the form
+\[
+  \mathcal Y_s=rV,
+\]
+where $r\geq1$ is an integer and $V$ is integral.
+By \cite[Proposition~8.1]{LLR04}, $V$ is smooth of genus one over $k_0=H^0(V,\O_V)$, and $k_0/k$ is finite and purely inseparable.
+
+Let $\eta_{\mathcal Y}$ be a generator of $H^0(\mathcal Y,\omega_{\mathcal Y/R})$ as before.
+Its restriction to the smooth generic curve has no zeros, so its zero divisor is $qV$ for a unique integer $q\geq0$.
+If $q\geq r$, then $(1/\pi)\eta_{\mathcal Y}$ has divisor $(q-r)V\geq0$ and hence is a global regular section, contradicting $H^0(\mathcal Y,\omega_{\mathcal Y/R})=R\eta_{\mathcal Y}$.
+Thus
+\begin{equation}\label{eq:local-canonical-order}
+  0\leq q<r,
+  \qquad \div(\eta_{\mathcal Y})=qV.
+\end{equation}
+
+Via the identification of $H^0(Y,\omega)$ with $H^0(J,\omega)$ in Subsection~\ref{subsec:genus-one-setting} and Lemma~\ref{lem:ab-properties}(5), we regard the Jacobian differential $\eta_J$ as a global section of $\omega_{\mathcal Y/R}$.
+By \eqref{eq:hodge}, $\eta_J = \pi^{b(\mathcal Y)}\eta_{\mathcal Y}$ up to a unit; since $\div(\pi) = rV$, \eqref{eq:local-canonical-order} gives $\div(\eta_J) = \chi V$, where
+\[
+  \chi = r\,b(\mathcal Y)+q.
+\]
+Since $0\leq q<r$, the integer $\chi$ determines both $b(\mathcal Y) = \lfloor\chi/r\rfloor$ and $q$.
+The integer $q$ plays the same role as the coefficient $a$ in the canonical bundle formula \cite[Theorem~2]{BM77}.
+When the residue field is algebraically closed, $\chi$ is computed by the following result of Raynaud, whose proof is written out in \cite{BT14}.
+
+\begin{proposition}[{\cite[Proposition~3.17]{BT14}}]\label{prop:raynaud-chi}
+Assume that $R$ is complete and $k$ is algebraically closed, and let $\nu$ be the order of $\O_{\mathcal Y}(V)|_V$ in $\Pic(V)$.
+Then $r = \nu p^s$ for an integer $s\geq0$, and there are positive integers $k_0,\dots,k_{s-1}$ such that
+\begin{equation}\label{eq:raynaud-chi}
+  \chi = (r-1)+\sum_{i=0}^{s-1}k_i\,(r-\nu p^i).
+\end{equation}
+\end{proposition}
+
+Here $s$ and the $k_i$ record how the order of $\O_{\mathcal Y}(-V)|_{nV}$ in $\Pic(nV)$ grows from $\nu$ to $r$ along the thickenings $nV\subset\mathcal Y$ defined by $\O_{\mathcal Y}(-nV)$ \cite[Lemma~3.12]{BT14}.
+In the tame case $s = 0$ we get $\chi = r-1$, so $b(\mathcal Y) = 0$ and $q = r-1$; if $s\geq1$, then $\chi\geq r$ and $b(\mathcal Y)\geq1$.
+Since $r-\nu p^i = \nu p^i(p^{s-i}-1)$ is divisible by $p-1$, \eqref{eq:raynaud-chi} gives $\chi\equiv r-1\pmod{p-1}$.
+After passing to the completion of the strict henselization of $R$, this implies Theorem~\ref{thm:local-hodge-congruence} below when $k$ is perfect; the rest of the section treats imperfect $k$ by reduction to this case.
+
+\begin{theorem}\label{thm:local-hodge-congruence}
+In this setting,
+\begin{equation}\label{eq:local-hodge-congruence}
+  r\,b(\mathcal Y)+q\equiv r-1\pmod{p-1}.
+\end{equation}
+\end{theorem}
+
+\begin{corollary}\label{lem:congruence}
+Assume that $r = 1$, so that $\mathcal Y_s = V$ is reduced.
+Then $b(\mathcal Y)$ is divisible by $p-1$.
+Moreover, $\mathcal Y$ is smooth over $R$ if and only if $b(\mathcal Y) = 0$.
+\end{corollary}
+
+If $\mathcal Y_s$ is reduced and $\mathcal Y/R$ is not smooth, then the image of $\eta_J$ in $H^0(\mathcal Y,\omega_{\mathcal Y/R})$ vanishes to order at least $p-1$ along $\mathcal Y_s$ by \eqref{eq:hodge}.
+
+\subsection{Normalization under extension of constants}
+To prove Theorem~\ref{thm:local-hodge-congruence}, we will compare $\mathcal Y$ with a regular model over a discrete valuation ring with algebraically closed residue field.
+Extending the coefficient field can destroy regularity, so we must normalize after base change.
+We first treat finite extensions and compute the changes in $r$, $q$, and $b$; these relations will then allow us to construct a finite regular normalization after extension to $\bar k$.
+
+\begin{lemma}\label{lem:local-normalization}
+Let $\mathcal Y/R$ be as in Subsection~\ref{subsec:good-jacobian-reduction}, and assume moreover that $R$ is henselian with a separably closed coefficient field $k$.
+Let $\ell/k$ be a finite purely inseparable extension and put $R_{\ell} = R\otimes_k \ell$.
+\begin{enumerate}
+\item The normalization $\mathcal Y_{\ell}$ of $\mathcal Y\times_R\Spec R_{\ell}$ is its minimal regular model.
+\item Let $\ell'/\ell$ be a further finite purely inseparable extension.
+Write $r_{\ell},V_{\ell},q_{\ell}$ for $r,V,q$ of Subsection~\ref{subsec:good-jacobian-reduction} applied to $\mathcal Y_{\ell}$, and similarly for $\ell'$.
+There are nonnegative integers $e = e(\ell'/\ell)$, $N = N(\ell'/\ell)$ and $n = n(\ell'/\ell)$, with $(p-1)\mid N$, such that
+\begin{align}
+  r_{\ell'}&=p^e r_{\ell},\label{eq:local-multiplicity-change}\\
+  n r_{\ell'}&=N+q_{\ell'}-p^e q_{\ell},\label{eq:local-canonical-change}\\
+  b(\mathcal Y_{\ell})&=n+b(\mathcal Y_{\ell'}).\label{eq:local-hodge-change}
+\end{align}
+Here $p^e$ is the ramification index along $V_{\ell'}$ over $V_{\ell}$, and the divisorial conductor of $\mathcal Y_{\ell'}\to(\mathcal Y_{\ell})_{R_{\ell'}}$ is $NV_{\ell'}$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(1) Since $R_{\ell}$ is finite free over $R$ and $R_{\ell}/\pi R_{\ell}\cong\ell$, it is a one-dimensional Noetherian local ring with maximal ideal $\pi R_{\ell}$, hence a discrete valuation ring with uniformizer $\pi$.
+The ring $R_{\ell}$ is excellent because it is finite over $R$, so normalization is finite.
+Since the generic curve is geometrically integral, the base change is integral.
+The composite $\mathcal Y_{\ell}\to\mathcal Y$ is finite and purely inseparable with normal target, hence a universal homeomorphism; so is the normalization map.
+
+The action of $\mathcal J_{R_{\ell}}$ on $\mathcal Y\times_R\Spec R_{\ell}$ lifts to $\mathcal Y_{\ell}$.
+The product $\mathcal J_{R_{\ell}}\times_{R_{\ell}}\mathcal Y_{\ell}$ is normal because it is smooth over the normal scheme $\mathcal Y_{\ell}$.
+Hence the induced morphism to $\mathcal Y\times_R\Spec R_{\ell}$ factors through its normalization $\mathcal Y_{\ell}$.
+The identity and associativity axioms hold on the generic fibre and hence everywhere.
+The action on geometric points of the closed fibre is transitive because the normalization map is a universal homeomorphism.
+
+Let $S$ be the singular locus of the normal excellent surface $\mathcal Y_{\ell}$; it is finite, lies in the closed fibre, and is invariant under translations by $\mathcal J(R_{\ell})$.
+Every $\ell$-point of $\mathcal J_s$ lifts to an $R_{\ell}$-point because $R_{\ell}$ is henselian and $\mathcal J$ is smooth.
+Since $\ell$ is separably closed, the group $G=\mathcal J_s(\ell)$ is infinite.
+
+Fix a closed point $x\in(\mathcal Y_{\ell})_s$ and a geometric point $\bar x$ over it.
+By transitivity, the geometric orbit map $g\mapsto g\cdot\bar x$ is a nonconstant morphism from an elliptic curve, so its fibres are finite.
+Hence the subgroup $H=\{g\in G\mid g\cdot\bar x=\bar x\}$ is finite, and the orbit $G\cdot\bar x\cong G/H$ is infinite.
+Since $\ell$ is separably closed, each closed point has a unique geometric point over it, so these orbit points lie over infinitely many distinct closed points.
+The lifting statement above places all these closed points in the $\mathcal J(R_{\ell})$-orbit of $x$.
+If $x$ were singular, its entire orbit would lie in the finite set $S$, a contradiction.
+Thus $S$ is empty and $\mathcal Y_{\ell}$ is regular.
+The reduced closed fibre is a homogeneous curve under an elliptic curve.
+The argument of \cite[Proposition~8.1]{LLR04} shows that it is smooth of genus one over its purely inseparable constant field.
+It contains no $(-1)$-curve, so $\mathcal Y_{\ell}$ is minimal.
+
+(2) Put $\mathcal X=\mathcal Y_{\ell}\times_{R_{\ell}}\Spec R_{\ell'}$.
+\[
+  \begin{tikzcd}
+    \mathcal Y_{\ell'} \arrow[r,"\nu"] & \mathcal X \arrow[r] \arrow[d] & \mathcal Y_{\ell} \arrow[d]\\
+    & \Spec R_{\ell'} \arrow[r] & \Spec R_{\ell}.
+  \end{tikzcd}
+\]
+The right square is Cartesian, and $\nu$ is the normalization map.
+The composite $\mathcal Y_{\ell'}\to\mathcal Y_{\ell}$ is finite and purely inseparable, so its ramification index along $V_{\ell'}$ is $p^e$ for some integer $e\geq0$.
+Since $\pi$ is a uniformizer of both $R_{\ell}$ and $R_{\ell'}$, the fibre multiplicities satisfy
+\[
+  r_{\ell'} = \operatorname{ord}_{V_{\ell'}}(\pi)
+  = p^e\operatorname{ord}_{V_{\ell}}(\pi) = p^e r_{\ell},
+\]
+which proves \eqref{eq:local-multiplicity-change}.
+The generic fibre is smooth, so the divisorial conductor is $NV_{\ell'}$ for an integer $N\geq0$.
+The regular model $\mathcal Y_{\ell}/R_{\ell}$ is Gorenstein.
+For every finite extension $\ell''/\ell$, the scheme $\mathcal Y_{\ell}\times_{\ell}\Spec\ell'' = \mathcal Y_{\ell}\times_{R_{\ell}}\Spec R_{\ell''}$ is integral because it is flat over the discrete valuation ring $R_{\ell''}$ with generic fibre a base change of the geometrically integral curve $Y$.
+Since $\ell$ is separably closed, $\mathcal Y_{\ell}$ is therefore geometrically integral over $\ell$ \cite[Tags~\stackstag{035X} and~\stackstag{038K}]{Stacks}.
+Applying Lemma~\ref{lem:canonical-base-change} with $(k,A,X,k') = (\ell,R_{\ell},\mathcal Y_{\ell},\ell')$ gives
+\[
+  \omega_{\mathcal Y_{\ell'}/R_{\ell'}}
+  \cong\nu^*\omega_{\mathcal X/R_{\ell'}}\otimes\O_{\mathcal Y_{\ell'}}(-NV_{\ell'}).
+\]
+In particular, $(p-1)\mid N$.
+
+Let $\eta_{\mathcal Y_{\ell}}$ and $\eta_{\mathcal Y_{\ell'}}$ be the generators of Subsection~\ref{subsec:good-jacobian-reduction} for $\mathcal Y_{\ell}$ and $\mathcal Y_{\ell'}$, and write $\eta_{\mathcal Y_{\ell}}=\pi^{-n}\eta_{\mathcal Y_{\ell'}}$ up to a unit.
+By \eqref{eq:local-canonical-order} applied to $\mathcal Y_{\ell}$, we have $\div(\eta_{\mathcal Y_{\ell}}) = q_{\ell}V_{\ell}$.
+Since $\omega_{\mathcal X/R_{\ell'}}$ is the pullback of $\omega_{\mathcal Y_{\ell}/R_{\ell}}$ and $V_{\ell}$ pulls back to $p^eV_{\ell'}$ on $\mathcal Y_{\ell'}$, the pullback of $\eta_{\mathcal Y_{\ell}}$ is a section of $\nu^*\omega_{\mathcal X/R_{\ell'}}$ with divisor $p^e q_{\ell}V_{\ell'}$.
+Via the isomorphism above, it is a rational section of $\omega_{\mathcal Y_{\ell'}/R_{\ell'}}$ with divisor $p^e q_{\ell}V_{\ell'}-NV_{\ell'}$.
+Taking divisors gives \eqref{eq:local-canonical-change}.
+Since $p^e q_{\ell}<p^e r_{\ell}=r_{\ell'}$, the right-hand side of \eqref{eq:local-canonical-change} is greater than $-r_{\ell'}$.
+The integer $n$ is therefore nonnegative.
+The Jacobian differential extends unchanged through constant extension because the Jacobian has good reduction.
+Equation \eqref{eq:hodge} then gives \eqref{eq:local-hodge-change}.
+\end{proof}
+
+\begin{proposition}\label{prop:local-normalization-stabilization}
+Let $\mathcal Y/R$ be as in Lemma~\ref{lem:local-normalization}.
+% the imperfection degree of $k$ is arbitrary.
+For a field extension $\ell/k$, let $\nu_{\ell}\colon \mathcal Y_{\ell} \to \mathcal Y\times_R\Spec(R\otimes_k\ell)$ be the normalization.
+Then there exists a finite extension $\ell/k$ such that $\nu_{\ell}$ is finite, $\mathcal Y_{\ell}$ is geometrically regular over $\ell$, and $V_{\ell}$ is geometrically reduced over $\ell$.
+\end{proposition}
+
+\begin{proof}
+Fix a closed point $P$ of degree $d$ of the generic curve $Y$ over $K$.
+For a finite extension $\ell/k$, let $K_{\ell}$ be the fraction field of $R_{\ell}$, and let $P_{\ell}$ be the unique point of $Y_{K_{\ell}}$ over $P$; its degree $d_{\ell}$ over $K_{\ell}$ is at most $d$.
+Let $H_{\ell}$ be the closure of $P_{\ell}$ in the regular proper model $\mathcal Y_{\ell}$.
+Then $H_{\ell}$ is a horizontal Cartier divisor, finite and flat of degree $d_{\ell}$ over $R_{\ell}$.
+Intersecting it with the closed fibre gives
+\[
+  d_{\ell} = (H_{\ell}\cdot(r_{\ell}V_{\ell}))_{\ell} = r_{\ell}(H_{\ell}\cdot V_{\ell})_{\ell}.
+\]
+The final intersection is a positive integer, so $r_{\ell}\leq d$.
+
+Choose $\ell_1$ for which $r_{\ell_1}$ is maximal among all finite purely inseparable constant extensions.
+For every finite extension $\ell'/\ell_1$, maximality and \eqref{eq:local-multiplicity-change} give $r_{\ell'} = r_{\ell_1}$; hence $e(\ell''/\ell') = 0$ whenever $\ell_1\subseteq\ell'\subseteq\ell''$.
+Choose $\ell_2\supseteq \ell_1$ for which $b(\mathcal Y_{\ell_2})$ is minimal among such extensions, which is possible because \eqref{eq:local-hodge-change} makes these nonnegative integers nonincreasing.
+Hence $n(\ell''/\ell') = 0$ whenever $\ell_2\subseteq\ell'\subseteq\ell''$.
+Finally choose $\ell_3\supseteq \ell_2$ for which $q_{\ell_3}$ is minimal.
+For every $\ell'\supseteq \ell_3$, equation \eqref{eq:local-canonical-change} now gives
+\[
+  N(\ell'/\ell_3)=q_{\ell_3}-q_{\ell'}=0.
+\]
+The scheme $(\mathcal Y_{\ell_3}) \times_{R_{\ell_3}} \Spec R_{\ell'}$ is $S_2$ and regular in codimension one since $N(\ell'/\ell_3) = 0$, thus it is normal by Serre's criterion.
+It consequently equals its normalization $\mathcal Y_{\ell'}$ and is regular by Lemma~\ref{lem:local-normalization}\,(1).
+Since $(\mathcal Y_{\ell_3})_{R_{\ell'}} = \mathcal Y_{\ell_3}\times_{\ell_3}\Spec\ell'$ and every finite extension of $\ell_3$ is purely inseparable, $\mathcal Y_{\ell_3}$ is geometrically regular over $\ell_3$.
+Since $e(\ell'/\ell_3) = 0$ for every finite extension $\ell'/\ell_3$, the pullback of $V_{\ell_3}$ to $\mathcal Y_{\ell_3}\times_{\ell_3}\Spec\ell' = \mathcal Y_{\ell'}$ is the reduced divisor $V_{\ell'}$; hence $V_{\ell_3}$ is geometrically reduced over $\ell_3$ \cite[Tag~\stackstag{035X}]{Stacks}.
+Finally, $\nu_{\ell_3}$ is finite because $R_{\ell_3}$ is excellent.
+\end{proof}
+
+\subsection{Proof of Theorem~\ref{thm:local-hodge-congruence} and Corollary~\ref{lem:congruence}}\label{subsec:local-conductor-torsion}
+\begin{proof}
+We may replace $R$ by the completion of its strict henselization, which is isomorphic to $k^{\mathrm s}[[\pi]]$.
+Indeed, this base change preserves the minimal regular model, its closed fibre, and generators of $H^0(\mathcal Y,\omega_{\mathcal Y/R})$, hence $r$, $q$, and $b$: for the strict henselization because it is ind-\'etale over $R$, and for the completion by Lemma~\ref{lem:ab-properties}(3).
+After renaming $k^{\mathrm s}$ as $k$, Lemma~\ref{lem:local-normalization} and Proposition~\ref{prop:local-normalization-stabilization} apply.
+
+Put $R_\infty=R\otimes_k\bar k$.
+It is the union of the discrete valuation rings $R_{\ell'}$, for finite extensions $\ell'/k$, with uniformizer $\pi$, so every nonzero element of $R_\infty$ is a unit times a power of $\pi$.
+Thus $R_\infty$ is a Noetherian discrete valuation ring.
+By Proposition~\ref{prop:local-normalization-stabilization}, there is a finite extension $\ell/k$ such that $\nu_{\ell}$ is finite, $\mathcal Y_{\ell}$ is geometrically regular over $\ell$, and $V_{\ell}$ is geometrically reduced over $\ell$.
+
+Fix such an $\ell$.
+Then $\mathcal Z = \mathcal Y_{\ell}\times_{\ell}\Spec\bar k = \mathcal Y_{\ell}\times_{R_{\ell}}\Spec R_\infty$ is finite and birational over $\mathcal Y_{R_\infty}$; in particular, $\mathcal Z$ is Noetherian, since $\mathcal Y_{R_\infty}$ is of finite type over the Noetherian ring $R_\infty$.
+Since $\mathcal Y_{\ell}$ is geometrically regular over $\ell$ and $\mathcal Z$ is Noetherian, $\mathcal Z$ is regular \cite[Proposition~5.13.7]{EGA}.
+Being regular, finite and birational over $\mathcal Y_{R_\infty}$, the scheme $\mathcal Z$ is the normalization of $\mathcal Y_{R_\infty}$.
+
+Since $V_{\ell}$ is geometrically reduced over $\ell$, the closed fibre of $\mathcal Z$ is $mE$, where $m = r_{\ell}$ and $E = V_{\ell}\times_{\ell}\Spec\bar k$ is a smooth elliptic curve.
+By \eqref{eq:local-multiplicity-change}, $m = p^e r$ with $e = e(\ell/k)$.
+Let $NE$ denote the divisorial conductor of $\mathcal Z\to \mathcal Y_{R_\infty}$.
+It is the base change of the divisorial conductor $N(\ell/k)V_{\ell}$ of $\nu_{\ell}$, so $N = N(\ell/k)\geq0$ and $(p-1)\mid N$ by Lemma~\ref{lem:local-normalization}\,(2).
+Let $\bar q$ be the integer in \eqref{eq:local-canonical-order} for $\mathcal Z$, and put $\bar a=a(\mathcal Z) = b(\mathcal Z)$, where the last equality holds by Lemma~\ref{lem:ab-properties}(4) since $\bar k$ is perfect.
+The relations of Lemma~\ref{lem:local-normalization}\,(2) give
+\begin{equation}\label{eq:local-conductor-comparison}
+  nm=N+\bar q-p^e q,
+  \qquad b(\mathcal Y)=n+\bar a.
+\end{equation}
+
+From now on, work over the completion $\bar k[[\pi]]$ of $R_\infty$.
+The closed fibre $mE$ contains no $(-1)$-curve, so $\mathcal Z$ is the minimal regular model of its generic fibre; by Lemma~\ref{lem:ab-properties}(3) and flat base change, its base change to $\bar k[[\pi]]$ is again the minimal regular model, with the same closed fibre $mE$ and the same integers $\bar q$ and $\bar a$.
+We replace $\mathcal Z$ by this base change.
+By Proposition~\ref{prop:raynaud-chi} for $\mathcal Z$, whose integer $\chi$ is $m\bar a+\bar q$, we have $m\bar a+\bar q\equiv m-1\pmod{p-1}$.
+Combining this with \eqref{eq:local-conductor-comparison} gives
+\[
+  m b(\mathcal Y)+p^e q
+  =N+\bar q+m\bar a
+  \equiv m-1\pmod{p-1}.
+\]
+Since $m=p^e r$ and $p^e\equiv1\pmod{p-1}$, this is \eqref{eq:local-hodge-congruence}.
+
+Suppose that $r=1$.
+Then $q=0$, so $(p-1)\mid b(\mathcal Y)$.
+If $b(\mathcal Y)=0$, equation \eqref{eq:local-conductor-comparison} forces $n=\bar a=N=\bar q=0$.
+The conductor vanishes, so $\mathcal Z=\mathcal Y\otimes_R\bar k[[\pi]]$.
+Moreover, the integer $\chi = m\bar a+\bar q$ of $\mathcal Z$ vanishes; since every summand in \eqref{eq:raynaud-chi} for $\mathcal Z$ is nonnegative and the first one is $m-1$, we get $m=1$.
+The closed fibre is smooth, and the generic fibre is smooth, so $\mathcal Z$ is smooth over $\bar k[[\pi]]$, and hence $\mathcal Y$ is smooth over $R$ by faithfully flat descent.
+Conversely, if $\mathcal Y$ is smooth, then $b(\mathcal Y)=0$ by Lemma~\ref{lem:ab-properties}(2).
+\end{proof}

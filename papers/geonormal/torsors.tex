@@ -1,0 +1,163 @@
+\section{First properties}\label{sec:torsors}
+\begin{assumption}\label{ass:nonnormal}
+In this section, $k$ is an $F$-finite separably closed field of characteristic $p\geq 7$, and $X$ is a regular projective geometrically integral surface over $k$ with $H^0(X,\O_X) = k$ and $K_X\equiv 0$ which is not geometrically normal.
+We write $\nu\from S\to X_{\bar k}$ for the normalization and $\phi\from S\to X$ for its composite with the projection.
+\end{assumption}
+
+\begin{proposition}\label{prop:cohomology}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+\item every numerically trivial line bundle on $X$ is trivial; in particular $\omega_X\cong\O_X$;
+\item $K_S\sim -(p-1)D$ for some nonzero effective $\ZZ$-divisor $D$ on $S$ supported over the non-normal locus of $X_{\bar k}$;
+\item $S$ is a rational surface with rational singularities;
+\item $H^1(X,\O_X) = 0$;
+\item $\chi(\O_X) = 2$;
+\item the group $N := \Pic(X)$ injects into $N^1(X)_\QQ$ and, with the intersection form, is an even lattice of signature $(1,\rho(X)-1)$;
+\item $\det N = (-1)^{\rho(X)-1}p^a$ for some $a\geq 0$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(1) This is \cite[Corollary~6.2]{CWZ26}.
+
+(2) 
+By Equation~\eqref{eq:canonical-base-change}, we have $K_S \sim -(p-1)D + \phi^*K_X$, where $D>0$ is support on the non-normal locus of $X_{\bar k}$.
+Then the conclusion follows from (1).
+
+(3) The surface $S$ is rational by \cite[Proposition~5.21]{BF25}; in particular $H^1(S,\O_S) = 0$.
+Since $D > 0$, we have $H^0(S,\omega_S) = 0$, which implies $H^2(S,\O_S) = 0$ by Serre duality.
+Let $\mu\from T\to S$ be a resolution; since $S$ is rational, $T$ is a smooth projective rational surface, so $H^1(T,\O_T) = 0$.
+The Leray spectral sequence and $H^1(T,\O_T) = 0$ give an injection $H^0(S,R^1\mu_*\O_T)\embed H^2(S,\O_S) = 0$.
+As $R^1\mu_*\O_T$ has finite support, it vanishes; that is, $S$ has rational singularities.
+
+(4) Suppose that $H^1(X,\O_X)\neq 0$.
+By \cite[Remark~5.2]{Tan21}, choose $e\geq 1$ such that, for $\ell = k^{1/p^e}$, the normalization $S_0 = (X_\ell)^\nu$ is geometrically normal.
+Then $(S_0)_{\bar k}\cong S$, so flat base change and \textup{(3)} give $H^1(S_0,\O_{S_0}) = 0$.
+Lemma~\ref{lem:generic-alpha-p-torsor} then gives an $\alpha_p$-torsor $\pi\from V\to X_K$, where $K = k(a)$, such that $V$ is a regular projective surface over $K$ with $H^0(V,\O_V) = K$ which is not geometrically reduced.
+The identity $\omega_V\cong\pi^*\omega_{X_K}$ gives $K_V\equiv 0$.
+This contradicts \cite[Theorem~1.2]{WZ26}, which asserts that $V$ is geometrically integral because $p\geq 7$.
+
+(5) By Serre duality, $h^2(\O_X) = h^0(\omega_X) = 1$; with \textup{(4)} we get $\chi(\O_X) = 2$.
+
+(6) By \textup{(1)}, $N$ injects into $N^1(X)_\QQ$; in particular it is torsion free.
+For every divisor $G$ on $X$, Riemann--Roch and \textup{(5)} give $G^2 = 2\chi(\O_X(G))-4$, so $N$ is even.
+Its signature is $(1,\rho(X)-1)$ by the Hodge index theorem.
+
+(7) Let $\mu\from T\to S$ be the minimal resolution.
+By \textup{(3)}, $T$ is a smooth projective rational surface, so $\Lambda = \Pic(T)$ is a unimodular lattice.
+Let $E\subset\Lambda$ be the sublattice spanned by the exceptional curves of~$\mu$.
+It is the orthogonal sum of the exceptional lattices of the singular points of $S$, and each of these has determinant $\pm$ a power of $p$ by Corollary~\ref{lem:pi1-lattice}\,(1), because $X$ is regular.
+Let 
+\[
+  E^{\rm sat} := (E\otimes_{\ZZ}\QQ)\cap\Lambda
+  = \{x\in\Lambda : mx\in E\text{ for some integer }m\geq 1\}
+\]
+be the saturation of $E$ in $\Lambda$.
+Since $\lvert\det E\rvert = [E^{\rm sat}:E]^2\,\lvert\det E^{\rm sat}\rvert$, the determinant of $E^{\rm sat}$ is $\pm$ a power of~$p$.
+Let $Q = (E^{\rm sat})^\perp$.
+Since $\Lambda$ is unimodular and $E^{\rm sat}$ is primitive, $E^{\rm sat}$ and $Q$ have isomorphic discriminant groups, so $\lvert\det Q\rvert$ is a power of $p$.
+
+For divisors $A$ and $B$ on $X$, we have $\bigl(\mu^*\phi^*A\cdot \mu^*\phi^*B\bigr)_{\bar k} = (A\cdot B)_k$, where degrees are taken over $\bar k$ on $T$ and over $k$ on $X$.
+Thus the homomorphism $\mu^*\phi^*\from N\to\Lambda$ preserves the intersection pairing.
+Its image lies in $Q$, since pullbacks from $S$ have zero intersection with every $\mu$-exceptional curve.
+Let $v\in Q$ be represented by a divisor $D_T$ on $T$.
+Descending $S$ and $\mu_*D_T$ to a finite purely inseparable extension of $k$ and clearing the ramification indices, which are powers of $p$, gives $e\geq 0$ and a divisor $G$ on $X$ with $p^e\mu_*D_T = \phi^*G$.
+Put $\Delta = \mu^*\phi^*G-p^eD_T$.
+The divisor $\Delta$ is $\mu$-exceptional, so its class lies in $E$.
+Its class also lies in $Q = (E^{\rm sat})^\perp$, so $\Delta^2 = 0$.
+Negative definiteness of $E$ therefore gives $\Delta = 0$.
+Hence $Q/\mu^*\phi^*N$ is a finite $p$-group, and
+\[
+  \lvert\det N\rvert = [Q:\mu^*\phi^*N]^2\,\lvert\det Q\rvert
+\]
+is a power of $p$.
+The sign of $\det N$ is determined by the signature in \textup{(6)}.
+\end{proof}
+
+Let $Y$ be the normalization of $X_{k^{1/p}}$, which is finite over $X$ because $k$ is $F$-finite, and let $C_1 = C_{k^{1/p}}$ be the effective $\ZZ$-divisor on $Y$ in \eqref{eq:canonical-base-change}, with $k' = k^{1/p}$.
+Since $\omega_X\cong\O_X$ by Proposition~\ref{prop:cohomology}(1), we have
+\[
+  K_Y\sim-(p-1)C_1,
+\]
+and $C_1\neq 0$, since \cite[Proposition~2.10(3)]{Tan21} shows that $X_{k^{1/p}}$ is not normal.
+The ramification indices of the height-one morphism $Y\to X$ divide $p$.
+Hence $pC_1$ descends to an effective nonzero Weil divisor $D_1$ on $X$, which is Cartier because $X$ is regular.
+Intersection numbers on $X$, $Y$ and $S$ are computed over $k$, $k^{1/p}$ and $\bar k$, respectively.
+Pullback from $X$ to $Y$ preserves these intersection numbers of Cartier divisors, since $Y\to X_{k^{1/p}}$ is finite and birational.
+We say that $C_1$ is ample if $D_1$ is ample; equivalently, $pC_1$ is ample on $Y$.
+
+\begin{proposition}\label{prop:ample-conductor}
+The divisor $C_1$ is not ample.
+\end{proposition}
+
+\begin{proof}
+Suppose that $D_1$ is ample.
+Let $\mu\from T\to S$ be the minimal resolution, and let $H$ be the pullback of $D_1$ to $T$ under $T\to S\to X$.
+Then $H$ is nef, and
+\[
+  (H^2)_{\bar k} = (D_1^2)_k = ((pC_1)^2)_{k^{1/p}} = p\,\bigl((pC_1)\cdot C_1\bigr)_{k^{1/p}}\geq p,
+\]
+because $\bigl((pC_1)\cdot C_1\bigr)_{k^{1/p}}$ is the degree over $k^{1/p}$ of the line bundle $\O_Y(pC_1)$ on the nonzero effective divisor $C_1$, hence a positive integer.
+Since $(D_1^2)_k$ is even by Proposition~\ref{prop:cohomology}(6) and $p$ is odd, we have $H^2\geq 2p$.
+The curves contracted by $T\to X_{\bar k}$ are exactly the $\mu$-exceptional curves, since $S\to X_{\bar k}$ is finite; so $H$ is positive on every curve which is not $\mu$-exceptional.
+
+By Proposition~\ref{prop:cohomology}(2), $-K_S\sim(p-1)D$, where $(p-1)D$ is the divisorial conductor of $S\to X_{\bar k}$.
+Let $\mu_1\from S\to Y$ be the natural morphism.
+The conductor of $S\to X_{\bar k}$ is contained in the extension to $S$ of the conductor of $Y\to X_{k^{1/p}}$, so $D\geq\mu_1^*C_1$.
+Hence $-K_S = \tfrac{p-1}{p}H_S+(p-1)(D-\mu_1^*C_1)$, where $H_S$ is the pullback of $D_1$ to $S$ and the second summand is effective.
+By \cite[Theorem~10.5 and Claim~10.3.5]{Kol13}, $K_T = \mu^*K_S-Z$ with $Z\geq 0$ exceptional.
+Therefore $-K_T = \tfrac{p-1}{p}H+Z'$ with $Z'$ effective, and, $H$ being nef,
+\[
+  K_T\cdot H\leq-\tfrac{p-1}{p}H^2.
+\]
+The surface $T$ is a smooth projective rational surface, so $K_T^2\leq 9$.
+If $K_T+H$ were nef, then
+\[
+  0\leq(K_T+H)^2 = K_T^2+2K_T\cdot H+H^2\leq 9-\tfrac{p-2}{p}H^2\leq 9-2(p-2) = 13-2p<0,
+\]
+a contradiction.
+So there is a $(K_T+H)$-negative extremal ray $R$ of $\overline{\NE}(T)$, and $K_T\cdot R<0$ because $H$ is nef.
+If $R$ were spanned by a $(-1)$-curve $E$, then $E$ would not be $\mu$-exceptional, since $\mu$ is minimal, so $H\cdot E\geq 1$ and $(K_T+H)\cdot E\geq 0$, which is impossible.
+By the cone theorem for smooth projective surfaces, $T\cong\PP^2$ or $T$ is a geometrically ruled surface over a curve, which is $\PP^1$ because $T$ is rational; so $T\cong\PP^2$ or $T\cong\mathbb F_n$ for some $n\geq 0$.
+
+On $\PP^2$ there is no curve of negative self-intersection, and on $\mathbb F_n$ the only one is the negative section, which has self-intersection $-n$.
+Hence $S$ is $\PP^2$, a surface $\mathbb F_n$, or the surface $\PP(1,1,n)$ obtained by contracting the negative section of $\mathbb F_n$ with $n\geq 2$.
+In the last case, the vertex of $\PP(1,1,n)$ lies over a regular point of $X$, and its exceptional curve has self-intersection $-n$; so $n$ is a power of $p$ by Corollary~\ref{lem:pi1-lattice}(1).
+Since $-K_S\sim(p-1)D$ and $D$ is a $\ZZ$-divisor, the class of $K_S$ in $\Cl(S)$ is divisible by $p-1$.
+For $S = \PP^2$ this gives $(p-1)\mid 3$.
+For $S = \mathbb F_n$, with $\Cl(S)$ freely generated by the negative section $\sigma$ and a fibre $F$ and $K_S = -2\sigma-(n+2)F$, it gives $(p-1)\mid 2$.
+For $S = \PP(1,1,n)$, with $\Cl(S)\cong\ZZ$ generated by the image $\bar F$ of a fibre and $K_S = -(n+2)\bar F$, it gives $(p-1)\mid(p^e+2)$ with $n = p^e$, hence $(p-1)\mid 3$.
+All three conclusions contradict $p\geq 7$.
+\end{proof}
+
+\begin{proposition}\label{prop:dichotomy}
+One of the following holds:
+\begin{enumerate}
+\item there is a fibration $f\from X\to B$ onto a regular projective curve whose generic fibre is a smooth curve of genus one;
+\item $\rho(X) = 2$, the intersection form on $N^1(X)_\QQ$ is anisotropic, $\det\Pic(X) = -p^{2a+1}$ for some $a\geq 0$, and $p\equiv 1\pmod 4$.
+Moreover, $X$ contains a negative curve.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+By Proposition~\ref{prop:cohomology}, the lattice $N := \Pic(X)$ satisfies the hypotheses of Lemma~\ref{lem:lattice-dichotomy}, and $X$ satisfies those of Lemma~\ref{lem:fibration}.
+Suppose that $N\otimes\QQ$ is anisotropic.
+The numerical assertions in \textup{(2)} follow from Lemma~\ref{lem:lattice-dichotomy}.
+Suppose that $X$ contains no negative curve.
+The divisor $D_1$ is effective and nonzero, and each of its components has nonnegative self-intersection; hence $D_1$ is nef and $D_1^2\geq 0$.
+Anisotropy gives $D_1^2>0$.
+If a curve $\Gamma$ satisfied $D_1\cdot\Gamma = 0$, the Hodge index theorem and anisotropy would give $\Gamma^2<0$.
+Hence $D_1$ is positive on every curve, and it is ample by the Nakai--Moishezon criterion.
+This contradicts Proposition~\ref{prop:ample-conductor}, proving \textup{(2)}.
+
+Now suppose that $N\otimes\QQ$ is isotropic.
+Lemma~\ref{lem:fibration} gives a fibration $f\from X\to B$ onto a regular projective curve.
+The generic fibre $X_\eta$ is a regular proper curve over $K = k(B)$ with $H^0(X_\eta,\O) = K$.
+Since $f$ is flat and $\omega_{X_\eta}$ is the restriction of $\omega_X$, we have $[k(P):k]\deg_K\omega_{X_\eta} = (K_X\cdot X_P)_k = 0$ for every closed point $P\in B$, where $X_P$ is the fibre.
+Hence $\chi(\O_{X_\eta}) = 0$ and $h^0(\omega_{X_\eta}) = h^1(\O_{X_\eta}) = 1$; a degree-zero line bundle with a nonzero section on an integral curve is trivial, so $\omega_{X_\eta}\cong\O_{X_\eta}$.
+By \cite[Theorem~2.3(i)]{Sch22} and $p>3$, the curve $X_\eta$ is geometrically regular, that is, smooth, so \textup{(1)} holds.
+\end{proof}
+
+In case~\textup{(1)} of Proposition~\ref{prop:dichotomy}, the genus-one fibration allows us to study geometric normality fibre by fibre using the reduction theory of its Jacobian (Section~\ref{sec:genus-one}).
+In case~\textup{(2)}, treated in Section~\ref{sec:anisotropic}, let $f\from X\to X'$ be the contraction of the negative curve.
+Then $\rho(X') = \rho(X)-1 = 1$.
+If $X'$ remains geometrically non-normal, the condition $\rho(X') = 1$ makes the conductor divisor on its geometric normalization ample, providing the positivity used in Section~\ref{sec:rank-one}.
