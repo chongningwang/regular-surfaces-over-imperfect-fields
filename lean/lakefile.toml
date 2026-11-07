@@ -1,6 +1,6 @@
 name = "red61"
 version = "0.1.0"
-defaultTargets = ["Red61"]
+defaultTargets = ["Red61", "SurfaceLib", "Eff"]
 
 [leanOptions]
 autoImplicit = false
@@ -12,3 +12,9 @@ rev = "d13f23b723b8a846827a245b89c10fc7d3f11612"
 
 [[lean_lib]]
 name = "Red61"
+
+[[lean_lib]]
+name = "SurfaceLib"
+
+[[lean_lib]]
+name = "Eff"
