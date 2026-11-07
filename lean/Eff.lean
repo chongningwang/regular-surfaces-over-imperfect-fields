@@ -4,5 +4,7 @@ import Eff.Canonical
 import Eff.ChartObstructions
 import Eff.ContractedWeights
 import Eff.GeometricObstruction
+import Eff.FreenessCertificates
 import Eff.InvariantCoordinates
 import Eff.Quotient
+import Eff.Torsor

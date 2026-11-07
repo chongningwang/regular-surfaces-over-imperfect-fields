@@ -1,5 +1,8 @@
 import SurfaceLib.Canonical.ClassicalAdjunction
 import SurfaceLib.Canonical.TopDuality
 import SurfaceLib.Derivation.Slice
+import SurfaceLib.Derivation.FrobeniusCover
 import SurfaceLib.Derivation.StableSubalgebra
 import SurfaceLib.Derivation.WeightFive
+import SurfaceLib.GroupScheme.DiagonalizableQuotient
+import SurfaceLib.GroupScheme.MuFive
