@@ -70,8 +70,8 @@ def main():
               f"Statement fingerprint matches the pinned value ({STATEMENT_FINGERPRINT}).\n"
               "Main result: exists_theorem61_omega_rationalBase (Red61/Theorem61.lean), VERIFIED unconditionally. Over the prescribed k = FractionRing (MvPolynomial (Fin 2) (ZMod 5)) it gives a proper, integral, Noetherian, regular surface of dimension two with the prescribed global constants, not geometrically reduced.\n"
               "The sheaf omega is defined as Hom(f* (exterior square of absolute base differentials), exterior fourth power of absolute surface differentials). It is isomorphic to the structure sheaf and has Euler degree zero on every proper integral curve. The absolute differential sheaf is locally free of rank four (IsLocallyFreeOfRank).\n"
-              "The default build contains exactly the import closure of Red61.Theorem61.\n"
-              "Identification of omega with the Serre dualizing sheaf and comparison with divisor classes are NOT verified in this project.\n")
+              "The Red61 target contains exactly the import closure of Red61.Theorem61.\n"
+              "Canonical identification and divisor-class comparison are NOT verified unconditionally by Red61. The separate Eff canonical bridge uses an explicit classical parameter; run verify_eff.py to audit it.\n")
     (REPORT / "status.txt").write_text(result)
     print(result, end="")
 
