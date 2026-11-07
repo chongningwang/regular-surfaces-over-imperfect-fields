@@ -9,3 +9,4 @@ import Eff.InvariantCoordinates
 import Eff.Quotient
 import Eff.Torsor
 import Eff.YCanonical
+import Eff.YNonnormal
