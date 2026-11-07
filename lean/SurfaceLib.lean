@@ -7,3 +7,4 @@ import SurfaceLib.Derivation.WeightFive
 import SurfaceLib.GroupScheme.DiagonalizableQuotient
 import SurfaceLib.GroupScheme.MuFive
 import SurfaceLib.LineBundle.RationalLine
+import SurfaceLib.Abelian.Rigidity
