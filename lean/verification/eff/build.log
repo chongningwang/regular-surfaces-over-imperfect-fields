@@ -1,0 +1,1337 @@
+⚠ [4039/4065] Replayed Eff.YAlbanese
+warning: Eff/YAlbanese.lean:88:0: Definition `Eff.yScalarIso` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+warning: Eff/YAlbanese.lean:88:0: Definition `yScalarIso` is a proposition; use `theorem` instead of `def`
+
+Note: This linter can be disabled with `set_option linter.defProp false`
+⚠ [4042/4065] Replayed Eff.YBases
+warning: Eff/YBases.lean:437:26: This simp argument is unused:
+  smul_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [smul_eq_mul, sub_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YBases.lean:437:37: This simp argument is unused:
+  sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [smul_eq_mul, smul_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4046/4065] Replayed Eff.YJacobians
+warning: Eff/YJacobians.lean:105:8: This simp argument is unused:
+  Derivation.leibniz_inv
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb, h5, h1, h2, h3, h4,
+    h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:105:36: This simp argument is unused:
+  h1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h2, h3, h4, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:105:40: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h3, h4, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:105:44: This simp argument is unused:
+  h3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h2, h4, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:105:48: This simp argument is unused:
+  h4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h2, h3, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:105:52: This simp argument is unused:
+  h10
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h2, h3, h4]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:106:82: This simp argument is unused:
+  map_sub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_neg, Derivation.leibniz,
+    Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul, Fin.isValue,
+    zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:108:61: This simp argument is unused:
+  zero_ne_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:109:38: This simp argument is unused:
+  reduceCtorEq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:110:43: This simp argument is unused:
+  one_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1,
+    hN2, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:111:4: This simp argument is unused:
+  h1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h2, h3, h4,
+    hN1, hN2, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:111:8: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h3, h4,
+    hN1, hN2, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:111:12: This simp argument is unused:
+  h3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h4,
+    hN1, hN2, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:111:16: This simp argument is unused:
+  h4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    hN1, hN2, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:111:35: This simp argument is unused:
+  hW1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN1, hN2, hN3, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:111:40: This simp argument is unused:
+  hW2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN1, hN2, hN3, hW1, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:111:45: This simp argument is unused:
+  hW3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN1, hN2, hN3, hW1, hW2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:116:54: Variable name `hW0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hW0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Eff/YJacobians.lean:145:8: This simp argument is unused:
+  Derivation.leibniz_inv
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb, h5, h1, h2, h3, h4,
+    h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:145:40: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h3, h4, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:145:44: This simp argument is unused:
+  h3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h2, h4, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:145:48: This simp argument is unused:
+  h4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h2, h3, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:145:52: This simp argument is unused:
+  h10
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h2, h3, h4]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:146:82: This simp argument is unused:
+  map_sub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_neg, Derivation.leibniz,
+    Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul, Fin.isValue,
+    zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:148:61: This simp argument is unused:
+  zero_ne_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:149:38: This simp argument is unused:
+  reduceCtorEq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:150:43: This simp argument is unused:
+  one_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1,
+    hN2, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:151:8: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h3, h4,
+    hN1, hN2, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:151:12: This simp argument is unused:
+  h3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h4,
+    hN1, hN2, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:151:16: This simp argument is unused:
+  h4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    hN1, hN2, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:151:35: This simp argument is unused:
+  hW1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN1, hN2, hN3, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:151:40: This simp argument is unused:
+  hW2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN1, hN2, hN3, hW1, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:151:45: This simp argument is unused:
+  hW3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN1, hN2, hN3, hW1, hW2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:156:54: Variable name `hW0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hW0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Eff/YJacobians.lean:184:12: This simp argument is unused:
+  Derivation.leibniz_div
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb, Derivation.leibniz_inv, h5, h1, h2, h3, h4,
+    h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:185:36: This simp argument is unused:
+  h1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h2, h3, h4, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:185:40: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h3, h4, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:185:44: This simp argument is unused:
+  h3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h2, h4, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:185:48: This simp argument is unused:
+  h4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h2, h3, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:185:52: This simp argument is unused:
+  h10
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h2, h3, h4]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:186:82: This simp argument is unused:
+  map_sub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_neg, Derivation.leibniz,
+    Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul, Fin.isValue,
+    zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:188:61: This simp argument is unused:
+  zero_ne_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:189:38: This simp argument is unused:
+  reduceCtorEq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:191:8: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h3, h4,
+    hN1, hN2, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:191:12: This simp argument is unused:
+  h3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h4,
+    hN1, hN2, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:191:16: This simp argument is unused:
+  h4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    hN1, hN2, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:191:35: This simp argument is unused:
+  hW1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN1, hN2, hN3, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:191:40: This simp argument is unused:
+  hW2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN1, hN2, hN3, hW1, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:191:45: This simp argument is unused:
+  hW3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN1, hN2, hN3, hW1, hW2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:225:8: This simp argument is unused:
+  Derivation.leibniz_inv
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb, h5, h1, h2, h3, h4,
+    h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:225:36: This simp argument is unused:
+  h1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h2, h3, h4, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:225:40: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h3, h4, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:225:44: This simp argument is unused:
+  h3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h2, h4, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:225:48: This simp argument is unused:
+  h4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h2, h3, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:225:52: This simp argument is unused:
+  h10
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h2, h3, h4]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:226:82: This simp argument is unused:
+  map_sub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_neg, Derivation.leibniz,
+    Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul, Fin.isValue,
+    zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:226:91: This simp argument is unused:
+  map_neg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, Derivation.leibniz,
+    Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul, Fin.isValue,
+    zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:228:61: This simp argument is unused:
+  zero_ne_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:229:38: This simp argument is unused:
+  reduceCtorEq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:230:43: This simp argument is unused:
+  one_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1,
+    hN2, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:231:4: This simp argument is unused:
+  h1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h2, h3, h4,
+    hN1, hN2, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:231:35: This simp argument is unused:
+  hW1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN1, hN2, hN3, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:231:40: This simp argument is unused:
+  hW2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN1, hN2, hN3, hW1, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:231:45: This simp argument is unused:
+  hW3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN1, hN2, hN3, hW1, hW2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:266:8: This simp argument is unused:
+  Derivation.leibniz_inv
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb, h5, h1, h2, h3, h4,
+    h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:266:36: This simp argument is unused:
+  h1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h2, h3, h4, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:266:40: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h3, h4, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:266:44: This simp argument is unused:
+  h3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h2, h4, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:267:82: This simp argument is unused:
+  map_sub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_neg, Derivation.leibniz,
+    Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul, Fin.isValue,
+    zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:267:91: This simp argument is unused:
+  map_neg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, Derivation.leibniz,
+    Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul, Fin.isValue,
+    zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:270:38: This simp argument is unused:
+  reduceCtorEq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:271:43: This simp argument is unused:
+  one_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1,
+    hN2, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:272:4: This simp argument is unused:
+  h1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h2, h3, h4,
+    hN1, hN2, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:272:8: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h3, h4,
+    hN1, hN2, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:272:35: This simp argument is unused:
+  hW1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN1, hN2, hN3, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:272:40: This simp argument is unused:
+  hW2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN1, hN2, hN3, hW1, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:272:45: This simp argument is unused:
+  hW3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN1, hN2, hN3, hW1, hW2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:307:8: This simp argument is unused:
+  Derivation.leibniz_inv
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb, h5, h1, h2, h3, h4,
+    h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:307:36: This simp argument is unused:
+  h1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h2, h3, h4, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:307:40: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h3, h4, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:307:44: This simp argument is unused:
+  h3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h2, h4, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:307:48: This simp argument is unused:
+  h4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h2, h3, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:307:52: This simp argument is unused:
+  h10
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h2, h3, h4]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:308:82: This simp argument is unused:
+  map_sub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_neg, Derivation.leibniz,
+    Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul, Fin.isValue,
+    zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:310:61: This simp argument is unused:
+  zero_ne_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:311:38: This simp argument is unused:
+  reduceCtorEq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:312:43: This simp argument is unused:
+  one_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1,
+    hN2, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:313:4: This simp argument is unused:
+  h1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h2, h3, h4,
+    hN1, hN2, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:313:16: This simp argument is unused:
+  h4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    hN1, hN2, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:313:35: This simp argument is unused:
+  hW1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN1, hN2, hN3, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:313:40: This simp argument is unused:
+  hW2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN1, hN2, hN3, hW1, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:313:45: This simp argument is unused:
+  hW3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN1, hN2, hN3, hW1, hW2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:347:12: This simp argument is unused:
+  Derivation.leibniz_div
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb, Derivation.leibniz_inv, h5, h1, h2, h3, h4,
+    h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:348:36: This simp argument is unused:
+  h1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h2, h3, h4, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:348:40: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h3, h4, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:348:44: This simp argument is unused:
+  h3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h2, h4, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:348:48: This simp argument is unused:
+  h4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h2, h3, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:348:52: This simp argument is unused:
+  h10
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h2, h3, h4]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:349:82: This simp argument is unused:
+  map_sub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_neg, Derivation.leibniz,
+    Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul, Fin.isValue,
+    zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:351:61: This simp argument is unused:
+  zero_ne_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:352:38: This simp argument is unused:
+  reduceCtorEq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:353:14: This simp argument is unused:
+  sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1,
+    hN2, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:354:16: This simp argument is unused:
+  h4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    hN1, hN2, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:354:35: This simp argument is unused:
+  hW1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN1, hN2, hN3, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:354:40: This simp argument is unused:
+  hW2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN1, hN2, hN3, hW1, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:354:45: This simp argument is unused:
+  hW3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN1, hN2, hN3, hW1, hW2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:385:12: This simp argument is unused:
+  Derivation.leibniz_div
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb, Derivation.leibniz_inv, h5, h1, h2, h3, h4,
+    h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:386:8: This simp argument is unused:
+  Derivation.leibniz_inv
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb, h5, h1, h2, h3, h4,
+    h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:386:36: This simp argument is unused:
+  h1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h2, h3, h4, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:386:40: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h3, h4, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:386:44: This simp argument is unused:
+  h3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h2, h4, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:386:48: This simp argument is unused:
+  h4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h2, h3, h10]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:386:52: This simp argument is unused:
+  h10
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Derivation.leibniz_div, Derivation.leibniz, Derivation.leibniz_pow, pd_coord b r hb,
+    Derivation.leibniz_inv, h5, h1, h2, h3, h4]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:387:73: This simp argument is unused:
+  map_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_sub, map_neg, Derivation.leibniz,
+    Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul, Fin.isValue,
+    zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:387:82: This simp argument is unused:
+  map_sub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_neg, Derivation.leibniz,
+    Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul, Fin.isValue,
+    zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:387:91: This simp argument is unused:
+  map_neg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, Derivation.leibniz,
+    Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul, Fin.isValue,
+    zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:389:61: This simp argument is unused:
+  zero_ne_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:390:38: This simp argument is unused:
+  reduceCtorEq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, Fin.reduceEq, mul_zero, zero_mul, add_zero, zero_add,
+    sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3, h4, hN1, hN2, hN3,
+    hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:392:8: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h3, h4,
+    hN1, hN2, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:392:12: This simp argument is unused:
+  h3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h4,
+    hN1, hN2, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:392:16: This simp argument is unused:
+  h4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    hN1, hN2, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:392:20: This simp argument is unused:
+  hN1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN2, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:392:25: This simp argument is unused:
+  hN2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN1, hN3, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:392:30: This simp argument is unused:
+  hN3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN1, hN2, hW1, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:392:35: This simp argument is unused:
+  hW1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN1, hN2, hN3, hW2, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:392:40: This simp argument is unused:
+  hW2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN1, hN2, hN3, hW1, hW3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Eff/YJacobians.lean:392:45: This simp argument is unused:
+  hW3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, map_add, map_sub, map_neg,
+    Derivation.leibniz, Derivation.leibniz_div, Derivation.leibniz_pow, pd_coord b r hb, smul_eq_mul, nsmul_eq_mul,
+    Fin.isValue, zero_ne_one, one_ne_zero, ite_true, ite_false, reduceCtorEq, Fin.reduceEq, mul_zero, zero_mul,
+    add_zero, zero_add, sub_zero, zero_sub, mul_one, one_mul, Nat.reduceSub, Nat.cast_ofNat, pow_one, h5, h1, h2, h3,
+    h4, hN1, hN2, hN3, hW1, hW2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4047/4065] Replayed Eff.YTuples
+warning: Eff/YTuples.lean:72:0: automatically included section variable(s) unused in theorem `Eff.YTuples.s1_eq`:
+  hu
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit hu in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [4053/4065] Replayed SurfaceLib.LineBundle.RationalLine
+warning: SurfaceLib/LineBundle/RationalLine.lean:55:0: automatically included section variable(s) unused in theorem `SurfaceLib.LineBundle.RationalLine.germ_smul'`:
+  [AlgebraicGeometry.IsIntegral Y]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [AlgebraicGeometry.IsIntegral Y] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: SurfaceLib/LineBundle/RationalLine.lean:61:0: automatically included section variable(s) unused in theorem `SurfaceLib.LineBundle.RationalLine.germ_res'`:
+  [AlgebraicGeometry.IsIntegral Y]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [AlgebraicGeometry.IsIntegral Y] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: SurfaceLib/LineBundle/RationalLine.lean:93:20: `TensorProduct.induction_on` has been deprecated: Use `TensorProduction.inductionOn` instead
+warning: SurfaceLib/LineBundle/RationalLine.lean:138:22: `TensorProduct.induction_on` has been deprecated: Use `TensorProduction.inductionOn` instead
+warning: SurfaceLib/LineBundle/RationalLine.lean:149:22: `TensorProduct.induction_on` has been deprecated: Use `TensorProduction.inductionOn` instead
+warning: SurfaceLib/LineBundle/RationalLine.lean:155:0: automatically included section variable(s) unused in theorem `SurfaceLib.LineBundle.RationalLine.map_map`:
+  [AlgebraicGeometry.IsIntegral Y]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [AlgebraicGeometry.IsIntegral Y] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: SurfaceLib/LineBundle/RationalLine.lean:214:22: `TensorProduct.induction_on` has been deprecated: Use `TensorProduction.inductionOn` instead
+warning: SurfaceLib/LineBundle/RationalLine.lean:395:0: automatically included section variable(s) unused in theorem `SurfaceLib.LineBundle.unitStalk_smul`:
+  [AlgebraicGeometry.IsIntegral Y]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [AlgebraicGeometry.IsIntegral Y] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: SurfaceLib/LineBundle/RationalLine.lean:401:0: automatically included section variable(s) unused in theorem `SurfaceLib.LineBundle.unitStalk_germ`:
+  [AlgebraicGeometry.IsIntegral Y]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [AlgebraicGeometry.IsIntegral Y] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [4054/4065] Replayed Eff.YOrder
+warning: Eff/YOrder.lean:244:12: This simp argument is unused:
+  Subalgebra.one_mem
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4056/4065] Replayed Eff.YNonnormal
+warning: Eff/YNonnormal.lean:194:58: Variable name `hne` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hne
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [4057/4065] Replayed SurfaceLib.Projective.AtlasModel
+warning: SurfaceLib/Projective/AtlasModel.lean:30:0: automatically included section variable(s) unused in theorem `SurfaceLib.Projective.mem_gradedPart`:
+  [GradedAlgebra 𝒜]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [GradedAlgebra 𝒜] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: SurfaceLib/Projective/AtlasModel.lean:72:57: `AddSubmonoidClass.coe_finset_sum` has been deprecated: Use `AddSubmonoidClass.coe_finsetSum` instead
+Build completed successfully (4065 jobs).

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build and audit the implemented Eff modules; never certify the unfinished example."""
+"""Build and audit the Eff modules and the final example, reporting its classical inputs."""
 from pathlib import Path
 import hashlib
 import json
@@ -14,7 +14,19 @@ STATEMENT_FINGERPRINT = "97 constants, 12985887948955488478"
 CANONICAL_STATEMENT_FINGERPRINT = "113 constants, 7640908887198818297"
 FREENESS_STATEMENT_FINGERPRINT = "60 constants, 5363109288789624739"
 TORSOR_STATEMENT_FINGERPRINT = "109 constants, 11022967480670452798"
+# The order-five example: each statement, in the label used by EffAudit.lean.
+EXAMPLE_FINGERPRINTS = {
+    "Regularity": "78 constants, 16958915980947374023",
+    "Order": "114 constants, 5764549006072577869",
+    "CanonicalOrder": "121 constants, 5023760894144107675",
+    "Nonnormal": "82 constants, 15494484949319092419",
+    "Projective": "83 constants, 8179171503934481086",
+    "Albanese": "86 constants, 10845012968927165029",
+    "Example": "118 constants, 8774172229539891270",
+    "Final": "126 constants, 3333105092890281862",
+}
 CLASSICAL_INTERFACE_DECLARATIONS = {
+    "SurfaceLib.Abelian.ClassicalRationalRigidity.constant",
     "SurfaceLib.Canonical.ClassicalAdjunction.normalizedDuality",
     "SurfaceLib.Canonical.TopDuality.finitePresentation",
     "SurfaceLib.Canonical.TopDuality.trace",
@@ -135,18 +147,45 @@ def main():
     if (TORSOR_STATEMENT_FINGERPRINT is None or
             torsor_fingerprints != [TORSOR_STATEMENT_FINGERPRINT]):
         raise RuntimeError(f"Unpinned or changed torsor statement: {torsor_fingerprints}")
+    example_fingerprints = {}
+    for label, pinned in EXAMPLE_FINGERPRINTS.items():
+        found = re.findall(rf"^{label} statement fingerprint: ([^\n]+)\.$", audit, re.M)
+        if found != [pinned]:
+            raise RuntimeError(f"Unpinned or changed {label} statement: {found}")
+        example_fingerprints[label] = found[0]
     classical_interface = checked_classical_interface(audit)
     manifest = {
-        "verification": "PASS", "full_example_complete": False,
-        "scope": "Explicit derivations, weights, chart calculations, affine units, "
-                 "a proper integral Noetherian quotient surface with prescribed constants, "
-                 "four-chart compatibility and nonvanishing, a conditional canonical-sheaf "
-                 "comparison for the input surface, and a conditional rank-five mu-five torsor",
+        "verification": "PASS", "full_example_complete": True,
+        "final_theorem": "Eff.case_C_p5",
+        "final_theorem_classical_inputs": ["SurfaceLib.Canonical.ClassicalAdjunction",
+                                           "SurfaceLib.Abelian.ClassicalRationalRigidity"],
+        "unconditional_example_theorem": "Eff.y_example",
+        "scope": "The example ex:case-C-p5. Unconditional: Y is a projective integral regular "
+                 "surface over ell = F_5(s_1,s_2) with constants ell, geometrically non-normal, "
+                 "whose differential line has exact order five. Conditional on the two listed "
+                 "general theorems: every canonical sheaf of Y has exact order five, and the "
+                 "Albanese morphism of Y is the structure morphism to Spec ell. Separately: "
+                 "explicit derivations and weights, four-chart nonvanishing, a conditional "
+                 "canonical-sheaf comparison for the input surface, and a conditional "
+                 "rank-five mu-five torsor, none of which the final theorem uses",
         "classical_inputs": [{
+            "interface": "SurfaceLib.Abelian.ClassicalRationalRigidity",
+            "parameter": "rigidity",
+            "consumers": ["Eff.y_albanese_trivial", "Eff.y_albanese_is_base", "Eff.case_C_p5"],
+            "ingredients": ["maps from an affine plane to an abelian variety are constant "
+                            "(Milne, Abelian Varieties v2.00, I.3.9 and I.3.10)",
+                            "reduction to an algebraically closed field by fpqc descent "
+                            "of morphisms"],
+            "documentation": "SurfaceLib/Abelian/README.md",
+            "checked_types": [entry for entry in classical_interface
+                              if entry["declaration"].startswith("SurfaceLib.Abelian.")],
+        }, {
             "interface": "SurfaceLib.Canonical.ClassicalAdjunction",
             "parameter": "adjunction",
             "consumers": ["Eff.Canonical.canonicalSheaf_trivial",
-                          "Eff.Canonical.exists_trivial_canonicalSheaf"],
+                          "Eff.Canonical.exists_trivial_canonicalSheaf",
+                          "Eff.canonicalSheaf_tensorPower_trivial_iff",
+                          "Eff.canonicalSheaf_order_five", "Eff.case_C_p5"],
             "ingredients": ["functorial lci adjunction and presentation-independent gluing",
                             "normalized determinant comparison",
                             "top-degree Serre duality expressed in Ext cohomology"],
@@ -174,12 +213,18 @@ def main():
         "canonical_statement_fingerprint": canonical_fingerprints[0],
         "freeness_statement_fingerprint": freeness_fingerprints[0],
         "torsor_statement_fingerprint": torsor_fingerprints[0],
+        "example_statement_fingerprints": example_fingerprints,
         "declarations_audited": int(counts[0]), "statement_fingerprint": fingerprints[0],
         "sources": {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
                     for p in sorted(files)},
-        "remaining": ["formal proof of the general classical quotient theorem and gluing",
-                      "regularity and projectivity", "equivariant canonical comparison and order five",
-                      "geometric nonnormality", "Albanese triviality"],
+        "remaining": ["formal proofs of the classical inputs",
+                      "K_Y numerically trivial is not stated separately: numerical equivalence "
+                      "is not formalized, and it is immediate from the torsion of K_Y",
+                      "IsProjectiveOver is Proj of a finitely generated graded algebra with "
+                      "degree-zero part the field; generation in degree one is not proved",
+                      "invariant coordinate presentation of the chart ring, unused by the "
+                      "final theorem",
+                      "mu-five action on Y's canonical comparison, unused by the final theorem"],
     }
     (REPORT / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     status = (f"PASS: {len(files)} source files; {counts[0]} project declarations audited.\n"
@@ -187,11 +232,17 @@ def main():
               "The implemented quotient-properties theorem is unconditional.\n"
               "The input-surface canonical trivialization is conditional on ClassicalAdjunction.\n"
               "The rank-five mu-five torsor is conditional on ClassicalDiagonalizableQuotient.\n"
-              "Both classical interfaces and independent data fields are exported in manifest.json.\n"
+              "The classical interfaces and independent data fields are exported in manifest.json.\n"
               f"Canonical statement fingerprint: {canonical_fingerprints[0]}.\n"
               f"Freeness statement fingerprint: {freeness_fingerprints[0]}.\n"
               f"Torsor statement fingerprint: {torsor_fingerprints[0]}.\n"
-              "The complete final example in eff is NOT yet formalized.\n")
+              f"Final statement fingerprint: {example_fingerprints['Final']}.\n"
+              "Eff.y_example is unconditional: Y is a regular projective integral surface over\n"
+              "ell with constants ell, geometrically non-normal, with differential line of\n"
+              "exact order five.\n"
+              "Eff.case_C_p5 adds the canonical sheaf and the Albanese morphism, conditional on\n"
+              "ClassicalAdjunction and ClassicalRationalRigidity, and on nothing else.\n"
+              "It does not use ClassicalDiagonalizableQuotient.\n")
     (REPORT / "status.txt").write_text(status)
     print(status, end="")
 

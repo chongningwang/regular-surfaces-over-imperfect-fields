@@ -1,0 +1,262 @@
+{
+  "verification": "PASS",
+  "full_example_complete": true,
+  "final_theorem": "Eff.case_C_p5",
+  "final_theorem_classical_inputs": [
+    "SurfaceLib.Canonical.ClassicalAdjunction",
+    "SurfaceLib.Abelian.ClassicalRationalRigidity"
+  ],
+  "unconditional_example_theorem": "Eff.y_example",
+  "scope": "The example ex:case-C-p5. Unconditional: Y is a projective integral regular surface over ell = F_5(s_1,s_2) with constants ell, geometrically non-normal, whose differential line has exact order five. Conditional on the two listed general theorems: every canonical sheaf of Y has exact order five, and the Albanese morphism of Y is the structure morphism to Spec ell. Separately: explicit derivations and weights, four-chart nonvanishing, a conditional canonical-sheaf comparison for the input surface, and a conditional rank-five mu-five torsor, none of which the final theorem uses",
+  "classical_inputs": [
+    {
+      "interface": "SurfaceLib.Abelian.ClassicalRationalRigidity",
+      "parameter": "rigidity",
+      "consumers": [
+        "Eff.y_albanese_trivial",
+        "Eff.y_albanese_is_base",
+        "Eff.case_C_p5"
+      ],
+      "ingredients": [
+        "maps from an affine plane to an abelian variety are constant (Milne, Abelian Varieties v2.00, I.3.9 and I.3.10)",
+        "reduction to an algebraically closed field by fpqc descent of morphisms"
+      ],
+      "documentation": "SurfaceLib/Abelian/README.md",
+      "checked_types": [
+        {
+          "declaration": "SurfaceLib.Abelian.ClassicalRationalRigidity.constant",
+          "type": "SurfaceLib.Abelian.ClassicalRationalRigidity \u2192\n  \u2200 (F : Type) [inst : Field F] {P : AlgebraicGeometry.Scheme} (\u03c0 : P \u27f6 AlgebraicGeometry.Spec \u21a7F),\n    SurfaceLib.Abelian.IsParaAbelianVariety F \u03c0 \u2192\n      \u2200 (E : Type) [inst_1 : Field E] [inst_2 : Algebra F E] (\u03c6 : AlgebraicGeometry.Spec \u21a7(MvPolynomial (Fin 2) E) \u27f6 P),\n        CategoryTheory.CategoryStruct.comp \u03c6 \u03c0 =\n            AlgebraicGeometry.Spec.map (CommRingCat.ofHom (algebraMap F (MvPolynomial (Fin 2) E))) \u2192\n          \u2203 p, \u03c6 = CategoryTheory.CategoryStruct.comp (AlgebraicGeometry.Spec.map (CommRingCat.ofHom MvPolynomial.C)) p"
+        }
+      ]
+    },
+    {
+      "interface": "SurfaceLib.Canonical.ClassicalAdjunction",
+      "parameter": "adjunction",
+      "consumers": [
+        "Eff.Canonical.canonicalSheaf_trivial",
+        "Eff.Canonical.exists_trivial_canonicalSheaf",
+        "Eff.canonicalSheaf_tensorPower_trivial_iff",
+        "Eff.canonicalSheaf_order_five",
+        "Eff.case_C_p5"
+      ],
+      "ingredients": [
+        "functorial lci adjunction and presentation-independent gluing",
+        "normalized determinant comparison",
+        "top-degree Serre duality expressed in Ext cohomology"
+      ],
+      "documentation": "SurfaceLib/Canonical/README.md",
+      "checked_types": [
+        {
+          "declaration": "SurfaceLib.Canonical.ClassicalAdjunction.normalizedDuality",
+          "type": "SurfaceLib.Canonical.ClassicalAdjunction \u2192\n  \u2200 (F : Type) [inst : Field F] [CharP F 5] [inst_2 : Algebra \u2124 F] [inst_3 : Algebra (ZMod 5) F]\n    [Algebra.EssFiniteType (ZMod 5) F] {X : AlgebraicGeometry.Scheme} (f : X \u27f6 AlgebraicGeometry.Spec \u21a7F)\n    [AlgebraicGeometry.IsProper f] [AlgebraicGeometry.IsIntegral X] [AlgebraicGeometry.IsNoetherian X]\n    (bF : Module.Basis (Fin 2) F \u03a9[F\u2044\u2124]),\n    topologicalKrullDim \u21a5X = 2 \u2192\n      (\u2200 (x : \u21a5X), IsRegularLocalRing \u2191(X.presheaf.stalk x)) \u2192\n        Red61.IsLocallyFreeOfRank 4 (Red61.nativeAbsoluteDifferentialModule X) \u2192\n          Nonempty (SurfaceLib.Canonical.TopDuality F f 2 (Red61.omega F f bF))"
+        },
+        {
+          "declaration": "SurfaceLib.Canonical.TopDuality.finitePresentation",
+          "type": "\u2200 {X : AlgebraicGeometry.Scheme} {F : Type} [inst : Field F] {f : X \u27f6 AlgebraicGeometry.Spec \u21a7F} {n : \u2115} {K : X.Modules}\n  (self : SurfaceLib.Canonical.TopDuality F f n K), SheafOfModules.IsFinitePresentation K"
+        },
+        {
+          "declaration": "SurfaceLib.Canonical.TopDuality.trace",
+          "type": "{X : AlgebraicGeometry.Scheme} \u2192\n  {F : Type} \u2192\n    [inst : Field F] \u2192\n      {f : X \u27f6 AlgebraicGeometry.Spec \u21a7F} \u2192\n        {n : \u2115} \u2192\n          {K : X.Modules} \u2192 SurfaceLib.Canonical.TopDuality F f n K \u2192 SurfaceLib.Canonical.Cohomology F f K n \u2192\u2097[F] F"
+        },
+        {
+          "declaration": "SurfaceLib.Canonical.TopDuality.perfect",
+          "type": "\u2200 {X : AlgebraicGeometry.Scheme} {F : Type} [inst : Field F] {f : X \u27f6 AlgebraicGeometry.Spec \u21a7F} {n : \u2115} {K : X.Modules}\n  (self : SurfaceLib.Canonical.TopDuality F f n K) (M : X.Modules),\n  SheafOfModules.IsFinitePresentation M \u2192 Function.Bijective (SurfaceLib.Canonical.tracePairing F f n self.trace M)"
+        },
+        {
+          "declaration": "SurfaceLib.Canonical.tracePairing",
+          "type": "{X : AlgebraicGeometry.Scheme} \u2192\n  (F : Type) \u2192\n    [inst : Field F] \u2192\n      (f : X \u27f6 AlgebraicGeometry.Spec \u21a7F) \u2192\n        {K : X.Modules} \u2192\n          (n : \u2115) \u2192\n            (SurfaceLib.Canonical.Cohomology F f K n \u2192\u2097[F] F) \u2192\n              (M : X.Modules) \u2192 (M \u27f6 K) \u2192 Module.Dual F (SurfaceLib.Canonical.Cohomology F f M n)"
+        },
+        {
+          "declaration": "SurfaceLib.Canonical.Cohomology",
+          "type": "(F : Type) \u2192 [inst : Field F] \u2192 {X : AlgebraicGeometry.Scheme} \u2192 (X \u27f6 AlgebraicGeometry.Spec \u21a7F) \u2192 X.Modules \u2192 \u2115 \u2192 Type"
+        }
+      ]
+    },
+    {
+      "interface": "SurfaceLib.MuFive.ClassicalDiagonalizableQuotient",
+      "parameter": "descent",
+      "consumers": [
+        "Eff.rho_has_gradedTorsor",
+        "Eff.rho_is_muFiveTorsor",
+        "Eff.rho_action_weights",
+        "Eff.rho_flat",
+        "Eff.rho_rankFive"
+      ],
+      "ingredients": [
+        "geometric realization of the characteristic-five grading",
+        "SGA 3 VIII 4.1, 4.6 and 5.1 graded-algebra torsor theorem",
+        "invariant principal-localization compatibility and gluing",
+        "finite flat rank-five descent"
+      ],
+      "documentation": "SurfaceLib/GroupScheme/README.md",
+      "checked_types": [
+        {
+          "declaration": "SurfaceLib.MuFive.ClassicalDiagonalizableQuotient.torsor",
+          "type": "SurfaceLib.MuFive.ClassicalDiagonalizableQuotient \u2192\n  \u2200 (F L : Type) [inst : Field F] [inst_1 : Field L] [inst_2 : Algebra F L] [inst_3 : CharP L 5]\n    (P : Red61.AffineGluing.PrincipalAtlas F L) (E : Derivation F L L) (M : Subfield L) [inst_4 : Algebra F \u21a5M]\n    [inst_5 : IsScalarTower F (\u21a5M) L],\n    (\u2200 (x : L), x \u2208 M \u2194 E x = 0) \u2192\n      \u2200 (hp : \u2200 (x : L), x ^ 5 \u2208 M),\n        Red61.fifthDerivation E = E \u2192\n          (\u2200 (i : P.Index) (x : \u21a5(P.ring i)), E \u2191x \u2208 P.ring i) \u2192\n            (\u2200 (i : P.Index), Nonempty (SurfaceLib.MuFive.HomogeneousCover E (P.ring i))) \u2192\n              Nonempty (SurfaceLib.MuFive.GradedTorsor P E M hp)"
+        },
+        {
+          "declaration": "SurfaceLib.MuFive.HomogeneousCover.size",
+          "type": "{F L : Type} \u2192\n  [inst : Field F] \u2192\n    [inst_1 : Field L] \u2192\n      [inst_2 : Algebra F L] \u2192\n        {E : Derivation F L L} \u2192 {A : Subalgebra F L} \u2192 SurfaceLib.MuFive.HomogeneousCover E A \u2192 \u2115"
+        },
+        {
+          "declaration": "SurfaceLib.MuFive.HomogeneousCover.value",
+          "type": "{F L : Type} \u2192\n  [inst : Field F] \u2192\n    [inst_1 : Field L] \u2192\n      [inst_2 : Algebra F L] \u2192\n        {E : Derivation F L L} \u2192\n          {A : Subalgebra F L} \u2192 (self : SurfaceLib.MuFive.HomogeneousCover E A) \u2192 Fin self.size \u2192 \u21a5A"
+        },
+        {
+          "declaration": "SurfaceLib.MuFive.HomogeneousCover.weight",
+          "type": "{F L : Type} \u2192\n  [inst : Field F] \u2192\n    [inst_1 : Field L] \u2192\n      [inst_2 : Algebra F L] \u2192\n        {E : Derivation F L L} \u2192\n          {A : Subalgebra F L} \u2192 (self : SurfaceLib.MuFive.HomogeneousCover E A) \u2192 Fin self.size \u2192 \u2124"
+        },
+        {
+          "declaration": "SurfaceLib.MuFive.HomogeneousCover.eigen",
+          "type": "\u2200 {F L : Type} [inst : Field F] [inst_1 : Field L] [inst_2 : Algebra F L] {E : Derivation F L L} {A : Subalgebra F L}\n  (self : SurfaceLib.MuFive.HomogeneousCover E A) (j : Fin self.size),\n  E \u2191(self.value j) = \u2191(self.weight j) * \u2191(self.value j)"
+        },
+        {
+          "declaration": "SurfaceLib.MuFive.HomogeneousCover.nonzero",
+          "type": "\u2200 {F L : Type} [inst : Field F] [inst_1 : Field L] [inst_2 : Algebra F L] {E : Derivation F L L} {A : Subalgebra F L}\n  (self : SurfaceLib.MuFive.HomogeneousCover E A) (j : Fin self.size), \u2191(self.weight j) \u2260 0"
+        },
+        {
+          "declaration": "SurfaceLib.MuFive.HomogeneousCover.spans",
+          "type": "\u2200 {F L : Type} [inst : Field F] [inst_1 : Field L] [inst_2 : Algebra F L] {E : Derivation F L L} {A : Subalgebra F L}\n  (self : SurfaceLib.MuFive.HomogeneousCover E A), Ideal.span (Set.range self.value) = \u22a4"
+        },
+        {
+          "declaration": "SurfaceLib.MuFive.group",
+          "type": "(T : AlgebraicGeometry.Scheme) \u2192 Subgroup (\u2191(T.presheaf.obj (Opposite.op \u22a4)))\u02e3"
+        },
+        {
+          "declaration": "SurfaceLib.MuFive.pullGroup",
+          "type": "{T U : AlgebraicGeometry.Scheme} \u2192 (U \u27f6 T) \u2192 \u21a5(SurfaceLib.MuFive.group T) \u2192* \u21a5(SurfaceLib.MuFive.group U)"
+        },
+        {
+          "declaration": "SurfaceLib.MuFive.PointOver",
+          "type": "{S Y : AlgebraicGeometry.Scheme} \u2192 (S \u27f6 Y) \u2192 {T : AlgebraicGeometry.Scheme} \u2192 (T \u27f6 Y) \u2192 Type u_1"
+        },
+        {
+          "declaration": "SurfaceLib.MuFive.pullPoint",
+          "type": "{S Y : AlgebraicGeometry.Scheme} \u2192\n  (\u03c1 : S \u27f6 Y) \u2192\n    {T U : AlgebraicGeometry.Scheme} \u2192\n      (h : U \u27f6 T) \u2192\n        (g : T \u27f6 Y) \u2192\n          SurfaceLib.MuFive.PointOver \u03c1 g \u2192 SurfaceLib.MuFive.PointOver \u03c1 (CategoryTheory.CategoryStruct.comp h g)"
+        },
+        {
+          "declaration": "SurfaceLib.MuFive.Torsor.finite",
+          "type": "\u2200 {S Y : AlgebraicGeometry.Scheme} {\u03c1 : S \u27f6 Y} (self : SurfaceLib.MuFive.Torsor \u03c1), AlgebraicGeometry.IsFinite \u03c1"
+        },
+        {
+          "declaration": "SurfaceLib.MuFive.Torsor.flat",
+          "type": "\u2200 {S Y : AlgebraicGeometry.Scheme} {\u03c1 : S \u27f6 Y} (self : SurfaceLib.MuFive.Torsor \u03c1), AlgebraicGeometry.Flat \u03c1"
+        },
+        {
+          "declaration": "SurfaceLib.MuFive.Torsor.surjective",
+          "type": "\u2200 {S Y : AlgebraicGeometry.Scheme} {\u03c1 : S \u27f6 Y} (self : SurfaceLib.MuFive.Torsor \u03c1), AlgebraicGeometry.Surjective \u03c1"
+        },
+        {
+          "declaration": "SurfaceLib.MuFive.Torsor.act",
+          "type": "{S Y : AlgebraicGeometry.Scheme} \u2192\n  {\u03c1 : S \u27f6 Y} \u2192\n    SurfaceLib.MuFive.Torsor \u03c1 \u2192\n      (T : AlgebraicGeometry.Scheme) \u2192\n        (g : T \u27f6 Y) \u2192 \u21a5(SurfaceLib.MuFive.group T) \u2192 SurfaceLib.MuFive.PointOver \u03c1 g \u2192 SurfaceLib.MuFive.PointOver \u03c1 g"
+        },
+        {
+          "declaration": "SurfaceLib.MuFive.Torsor.one_act",
+          "type": "\u2200 {S Y : AlgebraicGeometry.Scheme} {\u03c1 : S \u27f6 Y} (self : SurfaceLib.MuFive.Torsor \u03c1) (T : AlgebraicGeometry.Scheme)\n  (g : T \u27f6 Y) (s : SurfaceLib.MuFive.PointOver \u03c1 g), self.act T g 1 s = s"
+        },
+        {
+          "declaration": "SurfaceLib.MuFive.Torsor.mul_act",
+          "type": "\u2200 {S Y : AlgebraicGeometry.Scheme} {\u03c1 : S \u27f6 Y} (self : SurfaceLib.MuFive.Torsor \u03c1) (T : AlgebraicGeometry.Scheme)\n  (g : T \u27f6 Y) (a b : \u21a5(SurfaceLib.MuFive.group T)) (s : SurfaceLib.MuFive.PointOver \u03c1 g),\n  self.act T g (a * b) s = self.act T g a (self.act T g b s)"
+        },
+        {
+          "declaration": "SurfaceLib.MuFive.Torsor.natural",
+          "type": "\u2200 {S Y : AlgebraicGeometry.Scheme} {\u03c1 : S \u27f6 Y} (self : SurfaceLib.MuFive.Torsor \u03c1) {T U : AlgebraicGeometry.Scheme}\n  (h : U \u27f6 T) (g : T \u27f6 Y) (a : \u21a5(SurfaceLib.MuFive.group T)) (s : SurfaceLib.MuFive.PointOver \u03c1 g),\n  SurfaceLib.MuFive.pullPoint \u03c1 h g (self.act T g a s) =\n    self.act U (CategoryTheory.CategoryStruct.comp h g) ((SurfaceLib.MuFive.pullGroup h) a)\n      (SurfaceLib.MuFive.pullPoint \u03c1 h g s)"
+        },
+        {
+          "declaration": "SurfaceLib.MuFive.Torsor.principal",
+          "type": "\u2200 {S Y : AlgebraicGeometry.Scheme} {\u03c1 : S \u27f6 Y} (self : SurfaceLib.MuFive.Torsor \u03c1) (T : AlgebraicGeometry.Scheme)\n  (g : T \u27f6 Y) (s t : SurfaceLib.MuFive.PointOver \u03c1 g), \u2203! a, self.act T g a s = t"
+        },
+        {
+          "declaration": "SurfaceLib.MuFive.Torsor.rankFive",
+          "type": "\u2200 {S Y : AlgebraicGeometry.Scheme} {\u03c1 : S \u27f6 Y} (self : SurfaceLib.MuFive.Torsor \u03c1) (y : \u21a5Y),\n  Module.finrank \u2191(Y.residueField y) \u2191((AlgebraicGeometry.Scheme.Hom.fiber \u03c1 y).presheaf.obj (Opposite.op \u22a4)) = 5"
+        },
+        {
+          "declaration": "SurfaceLib.MuFive.chartSection",
+          "type": "{F L : Type} \u2192\n  [inst : Field F] \u2192\n    [inst_1 : Field L] \u2192\n      [inst_2 : Algebra F L] \u2192\n        (P : Red61.AffineGluing.PrincipalAtlas F L) \u2192\n          (i : P.Index) \u2192 \u21a5(P.ring i) \u2192 \u2191((P.chart i).presheaf.obj (Opposite.op \u22a4))"
+        },
+        {
+          "declaration": "SurfaceLib.MuFive.GradedTorsor.toTorsor",
+          "type": "{F L : Type} \u2192\n  [inst : Field F] \u2192\n    [inst_1 : Field L] \u2192\n      [inst_2 : Algebra F L] \u2192\n        [inst_3 : CharP L 5] \u2192\n          {P : Red61.AffineGluing.PrincipalAtlas F L} \u2192\n            {E : Derivation F L L} \u2192\n              {M : Subfield L} \u2192\n                [inst_4 : Algebra F \u21a5M] \u2192\n                  [inst_5 : IsScalarTower F (\u21a5M) L] \u2192\n                    {hp : \u2200 (x : L), x ^ 5 \u2208 M} \u2192\n                      SurfaceLib.MuFive.GradedTorsor P E M hp \u2192\n                        SurfaceLib.MuFive.Torsor (Red61.AtlasDescent.quotientMap P M 5 hp)"
+        },
+        {
+          "declaration": "SurfaceLib.MuFive.GradedTorsor.weights",
+          "type": "\u2200 {F L : Type} [inst : Field F] [inst_1 : Field L] [inst_2 : Algebra F L] [inst_3 : CharP L 5]\n  {P : Red61.AffineGluing.PrincipalAtlas F L} {E : Derivation F L L} {M : Subfield L} [inst_4 : Algebra F \u21a5M]\n  [inst_5 : IsScalarTower F (\u21a5M) L] {hp : \u2200 (x : L), x ^ 5 \u2208 M} (self : SurfaceLib.MuFive.GradedTorsor P E M hp)\n  (i : P.Index) (T : AlgebraicGeometry.Scheme) (a : \u21a5(SurfaceLib.MuFive.group T)) (s : T \u27f6 P.chart i),\n  \u2203 t,\n    CategoryTheory.CategoryStruct.comp t (P.chartInclusion i) =\n        \u2191(self.toTorsor.act T\n            (CategoryTheory.CategoryStruct.comp (CategoryTheory.CategoryStruct.comp s (P.chartInclusion i))\n              (Red61.AtlasDescent.quotientMap P M 5 hp))\n            a \u27e8CategoryTheory.CategoryStruct.comp s (P.chartInclusion i), \u22ef\u27e9) \u2227\n      \u2200 (x : \u21a5(P.ring i)) (n : \u2124),\n        E \u2191x = \u2191n * \u2191x \u2192\n          (CommRingCat.Hom.hom (AlgebraicGeometry.Scheme.Hom.appTop t)) (SurfaceLib.MuFive.chartSection P i x) =\n            \u2191(\u2191a ^ n) *\n              (CommRingCat.Hom.hom (AlgebraicGeometry.Scheme.Hom.appTop s)) (SurfaceLib.MuFive.chartSection P i x)"
+        }
+      ]
+    }
+  ],
+  "unconditional_geometric_theorem": "Eff.quotient_properties",
+  "unconditional_nonvanishing_theorem": "Eff.sChartEuler_nowhereVanishing",
+  "conditional_torsor_theorem": "Eff.rho_is_muFiveTorsor",
+  "conditional_action_weight_theorem": "Eff.rho_action_weights",
+  "logical_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "canonical_statement_fingerprint": "113 constants, 7640908887198818297",
+  "freeness_statement_fingerprint": "60 constants, 5363109288789624739",
+  "torsor_statement_fingerprint": "109 constants, 11022967480670452798",
+  "example_statement_fingerprints": {
+    "Regularity": "78 constants, 16958915980947374023",
+    "Order": "114 constants, 5764549006072577869",
+    "CanonicalOrder": "121 constants, 5023760894144107675",
+    "Nonnormal": "82 constants, 15494484949319092419",
+    "Projective": "83 constants, 8179171503934481086",
+    "Albanese": "86 constants, 10845012968927165029",
+    "Example": "118 constants, 8774172229539891270",
+    "Final": "126 constants, 3333105092890281862"
+  },
+  "declarations_audited": 6385,
+  "statement_fingerprint": "97 constants, 12985887948955488478",
+  "sources": {
+    "Eff/AffineUnits.lean": "2517886585a013578febb888a9afce19d607f401ac615be52d8ff53693df9930",
+    "Eff/AtlasEuler.lean": "974a1696cf8af6d5c0400a50090790b8fc5e908dacc5f53680c584ee2e2e248e",
+    "Eff/Canonical.lean": "298c9c8ad60ea6e47366b581af8dd0270d57bbcffb9958dec8d3da557bb735e9",
+    "Eff/ChartObstructions.lean": "da2f1207c7453054dbb98a34c79c1f1526c706c1a1cbdb979872ab93eafb3f14",
+    "Eff/ChartWeights.lean": "2553868e990d98a4246bb82a97d8c80db71390b42f544556b3f19ab2a808673a",
+    "Eff/ContractedWeights.lean": "ddf26b651f861b55faa795bd04e51eb15c815b7cb50d502b70883673843e9047",
+    "Eff/Euler.lean": "365497db3161a4aa6938f45fe46cd57a915c30d06ec0c13fe85cc2f4fbe36846",
+    "Eff/FreenessCertificates.lean": "dd8ed313c838e658cb66b2e848aa1cf2a206cc118bad5c31d97a3f3fad292b2e",
+    "Eff/GeometricObstruction.lean": "cb6823e670c434ee110575468d502b432b9eda6dc4e23a001670b9d1a487f5e9",
+    "Eff/InvariantCoordinates.lean": "2ba370128c3414fa22535c7377f15bb85f34853292c65904ade621709d832932",
+    "Eff/Quotient.lean": "1a4fd7641813e56e24284c89d6996724b3fff7f000b19b15df4e03e7e23a3b36",
+    "Eff/Torsor.lean": "4f0c947d0b064c4b37d7ab7fe98034098721fc3917c8bcdc7b29428d8cf61e4d",
+    "Eff/YAlbanese.lean": "7e30c12bc152b907a24db72314555416313d7bd8238508b70b5882fd9b6ad5c3",
+    "Eff/YBases.lean": "c7eb0ef5db873f4c60e7493d4519d5f47c5e8ef0d8abfb6f3d4dcc8e5eec3bba",
+    "Eff/YCanonical.lean": "0f27031f87340cbdd5ac0eab304f9a61693a13167fd25d08a5b77cae04fcb450",
+    "Eff/YCharts.lean": "b5e9d71a8c8f94803cc3c9a8d165c4395f95c401ce8c835b4527ce1fdb4d1ebb",
+    "Eff/YCover.lean": "726157ef84f671d9ad5a22efad2be416e2b1097ec0b88a30dd4242eff563f7db",
+    "Eff/YDifferentials.lean": "bc7857127de75b9cff1c96cb939b9975623a0733628a19ce611ec677b9b4352b",
+    "Eff/YExample.lean": "cf9ba0bb0dab10375e5437bb522633d81b4448bb3f188308793675ad6b09e588",
+    "Eff/YJacobians.lean": "5d6ccb84904a4635ac3bad578a2c7653cfb2f9a89785e0f1ddd22776504361be",
+    "Eff/YNonnormal.lean": "c6229f9c73036e2d76790b1f65ea7da43da721c2e49ccd6a986a58e8c3fa42a9",
+    "Eff/YOrder.lean": "c9f67ee750459957de493c7c74efd9d1aad49e422f2bf71c0a7a31e1cfa0dec8",
+    "Eff/YProjective.lean": "7bda020fd74e3a5c243c94018f22b9efcb9a88e67e7c44c028fc6dab0a21a8f9",
+    "Eff/YStalks.lean": "82ab80c5f4f7d7850f59a9ef7f9483df9e0c144e4595966225d08f5f7cabaa00",
+    "Eff/YStraightening.lean": "db6d4c8041aa8239aae74c9a8c319a61764a7903cd35e99f3344d145e8521722",
+    "Eff/YTuples.lean": "02d1941cdd7a151724b4967745f340b8dc2d795aadaeb309115fcfcde1f9f1e4",
+    "Eff/YVolume.lean": "ae85b992bcc94d1bd4c3bd1525cc251c0f70d64f9bb619bd94b019c35bdb7e65",
+    "Eff.lean": "39440d1096fac007ac7d740824691e70f8c2fef0a378be0f2d6715cd233688ff",
+    "EffAudit.lean": "434de9fbeba06937a298bceab91d67a9311f6eb30d83da67066f99e2e35f6892",
+    "SurfaceLib/Abelian/Rigidity.lean": "e2da0de35de1a5f24b3b49ba990de167fb8d1fc54e5fb7ecae5fb96803c922b2",
+    "SurfaceLib/Canonical/ClassicalAdjunction.lean": "22d1d2c3b786d397e0d0d61eb0b0088b33cc84c099e60b3e7267a418d957d1f5",
+    "SurfaceLib/Canonical/TopDuality.lean": "f62f4795375be9c73ef916c6c13dc31d8aa26f022b729e3220f3ac735e19eaf3",
+    "SurfaceLib/Derivation/FrobeniusCover.lean": "ae4173b95bad5743235a579f7690f2da165a4fcadbae7541cc4309dd84225c7a",
+    "SurfaceLib/Derivation/Slice.lean": "0e7a3420945cf6ccaaba1d2cee3e217d29df30dae4edff2001dee952ae5c90f4",
+    "SurfaceLib/Derivation/StableSubalgebra.lean": "d4d26350702877618ff582379f5f0dc1db154ab3f62fbaeac4f939f902e79712",
+    "SurfaceLib/Derivation/WeightFive.lean": "fb0a6d9ba8a8b0e41b8fb0ce970923aa1f4b3661fa2e06090fe1cf4a8872593b",
+    "SurfaceLib/GroupScheme/DiagonalizableQuotient.lean": "f2b324bfe7e8b45a087d9294928334078a265b6a72d1d653003cbd970d2885b3",
+    "SurfaceLib/GroupScheme/MuFive.lean": "6142c0464cc1aba3af5e07d28f67b8aebd77ca38de93c4d9c6b1b89154cc310a",
+    "SurfaceLib/LineBundle/RationalLine.lean": "8f3eb5b49de42c774515304f587f232b95febc82fbcab96b4d0d6da1cfc8067c",
+    "SurfaceLib/Projective/AtlasModel.lean": "1e970c2d4325899840c71db553a0a359e5fb9b8dfc290e09a6bd93e400050aec",
+    "SurfaceLib.lean": "f7460d7b1eb75a032c0cdf9e76273656644a61f99e18660b057baede081c63f3"
+  },
+  "remaining": [
+    "formal proofs of the classical inputs",
+    "K_Y numerically trivial is not stated separately: numerical equivalence is not formalized, and it is immediate from the torsion of K_Y",
+    "IsProjectiveOver is Proj of a finitely generated graded algebra with degree-zero part the field; generation in degree one is not proved",
+    "invariant coordinate presentation of the chart ring, unused by the final theorem",
+    "mu-five action on Y's canonical comparison, unused by the final theorem"
+  ]
+}

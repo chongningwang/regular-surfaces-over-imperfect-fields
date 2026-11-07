@@ -8,7 +8,4 @@ import Eff.FreenessCertificates
 import Eff.InvariantCoordinates
 import Eff.Quotient
 import Eff.Torsor
-import Eff.YCanonical
-import Eff.YNonnormal
-import Eff.YAlbanese
-import Eff.YProjective
+import Eff.YExample

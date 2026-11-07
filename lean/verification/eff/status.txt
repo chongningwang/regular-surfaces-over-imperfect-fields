@@ -1,0 +1,16 @@
+PASS: 41 source files; 6385 project declarations audited.
+Statement fingerprint: 97 constants, 12985887948955488478.
+The implemented quotient-properties theorem is unconditional.
+The input-surface canonical trivialization is conditional on ClassicalAdjunction.
+The rank-five mu-five torsor is conditional on ClassicalDiagonalizableQuotient.
+The classical interfaces and independent data fields are exported in manifest.json.
+Canonical statement fingerprint: 113 constants, 7640908887198818297.
+Freeness statement fingerprint: 60 constants, 5363109288789624739.
+Torsor statement fingerprint: 109 constants, 11022967480670452798.
+Final statement fingerprint: 126 constants, 3333105092890281862.
+Eff.y_example is unconditional: Y is a regular projective integral surface over
+ell with constants ell, geometrically non-normal, with differential line of
+exact order five.
+Eff.case_C_p5 adds the canonical sheaf and the Albanese morphism, conditional on
+ClassicalAdjunction and ClassicalRationalRigidity, and on nothing else.
+It does not use ClassicalDiagonalizableQuotient.

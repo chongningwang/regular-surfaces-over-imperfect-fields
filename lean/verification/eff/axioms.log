@@ -1,0 +1,150 @@
+'Eff.quotient_properties' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.Canonical.canonicalSheaf_trivial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.Canonical.exists_trivial_canonicalSheaf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SurfaceLib.Canonical.comparisonIso' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SurfaceLib.Canonical.comparisonHom_trans' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.invariant_chart_unit_constant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.euler_fifth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.euler_bracket_delta' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SurfaceLib.WeightFive.exists_weight_decomposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SurfaceLib.WeightFive.weight_decomposition_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.GeometricObstruction.parametrization_equation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.GeometricObstruction.parametrization_zPartial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SurfaceLib.span_top_of_fifth_power_lifts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.sChartEuler_overlap_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.sChartEuler_overlap_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.certificate_span_top' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.sChartEuler_nowhereVanishing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.rho_is_muFiveTorsor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.rho_has_gradedTorsor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.rho_action_weights' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.rho_flat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.rho_rankFive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.y_stalk_regular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.yAbsoluteDifferentials_isLocallyFreeOfRank' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.y_lattice' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SurfaceLib.LineBundle.generators_of_trivial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SurfaceLib.LineBundle.trivial_of_generators' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.tensorPower_trivial_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.omega_tensorPower_trivial_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.canonicalSheaf_tensorPower_trivial_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.canonicalSheaf_order_five' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.y_not_geometrically_normal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SurfaceLib.Projective.AtlasModel.iso' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.y_projective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SurfaceLib.Abelian.isParaAbelianVariety_id' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.y_albanese_is_base' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.y_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Eff.case_C_p5' depends on axioms: [propext, Classical.choice, Quot.sound]
+Eff.quotient_properties :
+  AlgebraicGeometry.IsProper Eff.yToBase ∧
+    AlgebraicGeometry.IsIntegral Eff.Y ∧
+      AlgebraicGeometry.IsNoetherian Eff.Y ∧
+        topologicalKrullDim ↥Eff.Y = 2 ∧
+          AlgebraicGeometry.IsFinite Eff.rho ∧
+            AlgebraicGeometry.Surjective Eff.rho ∧
+              CategoryTheory.CategoryStruct.comp Eff.rho Eff.yToBase = Red61.Contraction.sToBase ∧
+                Function.Bijective ⇑(Red61.globalScalarMap (↥Red61.Fields.ell) Eff.yToBase)
+Eff.Canonical.canonicalSheaf_trivial (adjunction : SurfaceLib.Canonical.ClassicalAdjunction)
+  (K : Red61.Contraction.S.Modules)
+  (DK : SurfaceLib.Canonical.TopDuality (↥Red61.Fields.ell) Red61.Contraction.sToBase 2 K) :
+  Nonempty (K ≅ Red61.structureSheafModule Red61.Contraction.S)
+Eff.Canonical.exists_trivial_canonicalSheaf : SurfaceLib.Canonical.ClassicalAdjunction →
+  ∃ K,
+    Nonempty (SurfaceLib.Canonical.TopDuality (↥Red61.Fields.ell) Red61.Contraction.sToBase 2 K) ∧
+      Nonempty (K ≅ Red61.structureSheafModule Red61.Contraction.S)
+Eff.sChartEuler_nowhereVanishing (i : Fin 4) (p : PrimeSpectrum ↥(Red61.Contraction.quotientAtlas.ring i)) :
+  ∃ a, (Eff.sChartEuler i) a ∉ p.asIdeal
+Eff.rho_is_muFiveTorsor (descent : SurfaceLib.MuFive.ClassicalDiagonalizableQuotient) :
+  Nonempty (SurfaceLib.MuFive.Torsor Eff.rho)
+Eff.y_stalk_regular (y : ↥Eff.Y) : IsRegularLocalRing ↑(Eff.Y.presheaf.stalk y)
+Eff.omega_tensorPower_trivial_iff (n : ℕ) :
+  Nonempty (SurfaceLib.LineBundle.tensorPower Eff.yOmega n ≅ Red61.structureSheafModule Eff.Y) ↔ 5 ∣ n
+Eff.canonicalSheaf_tensorPower_trivial_iff : SurfaceLib.Canonical.ClassicalAdjunction →
+  ∀ (K : Eff.Y.Modules) (DK : SurfaceLib.Canonical.TopDuality (↥Red61.Fields.ell) Eff.yToBase 2 K) (n : ℕ),
+    Nonempty (SurfaceLib.LineBundle.tensorPower K n ≅ Red61.structureSheafModule Eff.Y) ↔ 5 ∣ n
+Eff.canonicalSheaf_order_five : SurfaceLib.Canonical.ClassicalAdjunction →
+  ∀ (K : Eff.Y.Modules) (DK : SurfaceLib.Canonical.TopDuality (↥Red61.Fields.ell) Eff.yToBase 2 K),
+    Nonempty (SurfaceLib.LineBundle.tensorPower K 5 ≅ Red61.structureSheafModule Eff.Y) ∧
+      ∀ (n : ℕ), 0 < n → n < 5 → IsEmpty (SurfaceLib.LineBundle.tensorPower K n ≅ Red61.structureSheafModule Eff.Y)
+Eff.y_not_geometrically_normal : ¬AlgebraicGeometry.geometrically Eff.IsNormalScheme Eff.yToBase
+Eff.y_projective : SurfaceLib.Projective.IsProjectiveOver (↥Red61.Fields.ell) Eff.yToBase
+Eff.y_albanese_is_base : SurfaceLib.Abelian.ClassicalRationalRigidity →
+  SurfaceLib.Abelian.IsAlbaneseMorphism Eff.yToBase
+    (CategoryTheory.CategoryStruct.id (AlgebraicGeometry.Spec ↧↥Red61.Fields.ell)) Eff.yToBase
+Eff.y_example :
+  Nonempty (FractionRing (MvPolynomial (Fin 2) (ZMod 5)) ≃+* ↥Red61.Fields.ell) ∧
+    SurfaceLib.Projective.IsProjectiveOver (↥Red61.Fields.ell) Eff.yToBase ∧
+      AlgebraicGeometry.IsProper Eff.yToBase ∧
+        AlgebraicGeometry.IsIntegral Eff.Y ∧
+          topologicalKrullDim ↥Eff.Y = 2 ∧
+            (∀ (y : ↥Eff.Y), IsRegularLocalRing ↑(Eff.Y.presheaf.stalk y)) ∧
+              Function.Bijective ⇑(Red61.globalScalarMap (↥Red61.Fields.ell) Eff.yToBase) ∧
+                (∀ (n : ℕ),
+                    Nonempty (SurfaceLib.LineBundle.tensorPower Eff.yOmega n ≅ Red61.structureSheafModule Eff.Y) ↔
+                      5 ∣ n) ∧
+                  ¬AlgebraicGeometry.geometrically Eff.IsNormalScheme Eff.yToBase
+Eff.case_C_p5 : SurfaceLib.Canonical.ClassicalAdjunction →
+  SurfaceLib.Abelian.ClassicalRationalRigidity →
+    (∃ K, Nonempty (SurfaceLib.Canonical.TopDuality (↥Red61.Fields.ell) Eff.yToBase 2 K)) ∧
+      (∀ (K : Eff.Y.Modules) (x : SurfaceLib.Canonical.TopDuality (↥Red61.Fields.ell) Eff.yToBase 2 K) (n : ℕ),
+          Nonempty (SurfaceLib.LineBundle.tensorPower K n ≅ Red61.structureSheafModule Eff.Y) ↔ 5 ∣ n) ∧
+        SurfaceLib.Abelian.IsAlbaneseMorphism Eff.yToBase
+          (CategoryTheory.CategoryStruct.id (AlgebraicGeometry.Spec ↧↥Red61.Fields.ell)) Eff.yToBase
+def Eff.IsNormalScheme.{u_1} : CategoryTheory.ObjectProperty AlgebraicGeometry.Scheme :=
+fun X => ∀ (x : ↥X), IsDomain ↑(X.presheaf.stalk x) ∧ IsIntegrallyClosed ↑(X.presheaf.stalk x)
+def SurfaceLib.Projective.IsProjectiveOver : (R : Type) →
+  [inst : Field R] → {X : AlgebraicGeometry.Scheme} → (X ⟶ AlgebraicGeometry.Spec ↧R) → Prop :=
+fun R [Field R] {X} f =>
+  ∃ A x x_1 𝒜 x_2 e,
+    Algebra.FiniteType R A ∧
+      Function.Bijective ⇑(algebraMap R ↥(𝒜 0)) ∧
+        CategoryTheory.CategoryStruct.comp e.hom (SurfaceLib.Projective.projBase 𝒜) = f
+def SurfaceLib.Abelian.IsParaAbelianVariety : (F : Type) →
+  [inst : Field F] → {P : AlgebraicGeometry.Scheme} → (P ⟶ AlgebraicGeometry.Spec ↧F) → Prop :=
+fun F [Field F] {P} π =>
+  AlgebraicGeometry.IsProper π ∧
+    ∃ G x fst,
+      AlgebraicGeometry.IsProper G.hom ∧
+        AlgebraicGeometry.GeometricallyIntegral G.hom ∧
+          CategoryTheory.IsPullback fst G.hom π
+            (AlgebraicGeometry.Spec.map (CommRingCat.ofHom (algebraMap F (AlgebraicClosure F))))
+structure SurfaceLib.Abelian.IsAlbaneseMorphism {F : Type} [Field F] {X P : AlgebraicGeometry.Scheme}
+  (f : X ⟶ AlgebraicGeometry.Spec ↧F) (π : P ⟶ AlgebraicGeometry.Spec ↧F) (a : X ⟶ P) : Prop
+number of parameters: 7
+fields:
+  SurfaceLib.Abelian.IsAlbaneseMorphism.target : SurfaceLib.Abelian.IsParaAbelianVariety F π
+  SurfaceLib.Abelian.IsAlbaneseMorphism.overBase : CategoryTheory.CategoryStruct.comp a π = f
+  SurfaceLib.Abelian.IsAlbaneseMorphism.universal : ∀ {Q : AlgebraicGeometry.Scheme}
+      (ρ : Q ⟶ AlgebraicGeometry.Spec ↧F),
+      SurfaceLib.Abelian.IsParaAbelianVariety F ρ →
+        ∀ (g : X ⟶ Q),
+          CategoryTheory.CategoryStruct.comp g ρ = f →
+            ∃! φ, CategoryTheory.CategoryStruct.comp φ ρ = π ∧ CategoryTheory.CategoryStruct.comp a φ = g
+constructor:
+  SurfaceLib.Abelian.IsAlbaneseMorphism.mk {F : Type} [Field F] {X P : AlgebraicGeometry.Scheme}
+    {f : X ⟶ AlgebraicGeometry.Spec ↧F} {π : P ⟶ AlgebraicGeometry.Spec ↧F} {a : X ⟶ P}
+    (target : SurfaceLib.Abelian.IsParaAbelianVariety F π) (overBase : CategoryTheory.CategoryStruct.comp a π = f)
+    (universal :
+      ∀ {Q : AlgebraicGeometry.Scheme} (ρ : Q ⟶ AlgebraicGeometry.Spec ↧F),
+        SurfaceLib.Abelian.IsParaAbelianVariety F ρ →
+          ∀ (g : X ⟶ Q),
+            CategoryTheory.CategoryStruct.comp g ρ = f →
+              ∃! φ, CategoryTheory.CategoryStruct.comp φ ρ = π ∧ CategoryTheory.CategoryStruct.comp a φ = g) :
+    SurfaceLib.Abelian.IsAlbaneseMorphism f π a
+def SurfaceLib.LineBundle.tensorPower : {Y : AlgebraicGeometry.Scheme} → Y.Modules → ℕ → Y.Modules :=
+fun {Y} 𝓛 x => Nat.brecOn x (SurfaceLib.LineBundle.tensorPower._f 𝓛)
+Classical input interface: [{"declaration":"SurfaceLib.Abelian.ClassicalRationalRigidity.constant","type":"SurfaceLib.Abelian.ClassicalRationalRigidity →\n  ∀ (F : Type) [inst : Field F] {P : AlgebraicGeometry.Scheme} (π : P ⟶ AlgebraicGeometry.Spec ↧F),\n    SurfaceLib.Abelian.IsParaAbelianVariety F π →\n      ∀ (E : Type) [inst_1 : Field E] [inst_2 : Algebra F E] (φ : AlgebraicGeometry.Spec ↧(MvPolynomial (Fin 2) E) ⟶ P),\n        CategoryTheory.CategoryStruct.comp φ π =\n            AlgebraicGeometry.Spec.map (CommRingCat.ofHom (algebraMap F (MvPolynomial (Fin 2) E))) →\n          ∃ p, φ = CategoryTheory.CategoryStruct.comp (AlgebraicGeometry.Spec.map (CommRingCat.ofHom MvPolynomial.C)) p"},{"declaration":"SurfaceLib.Canonical.ClassicalAdjunction.normalizedDuality","type":"SurfaceLib.Canonical.ClassicalAdjunction →\n  ∀ (F : Type) [inst : Field F] [CharP F 5] [inst_2 : Algebra ℤ F] [inst_3 : Algebra (ZMod 5) F]\n    [Algebra.EssFiniteType (ZMod 5) F] {X : AlgebraicGeometry.Scheme} (f : X ⟶ AlgebraicGeometry.Spec ↧F)\n    [AlgebraicGeometry.IsProper f] [AlgebraicGeometry.IsIntegral X] [AlgebraicGeometry.IsNoetherian X]\n    (bF : Module.Basis (Fin 2) F Ω[F⁄ℤ]),\n    topologicalKrullDim ↥X = 2 →\n      (∀ (x : ↥X), IsRegularLocalRing ↑(X.presheaf.stalk x)) →\n        Red61.IsLocallyFreeOfRank 4 (Red61.nativeAbsoluteDifferentialModule X) →\n          Nonempty (SurfaceLib.Canonical.TopDuality F f 2 (Red61.omega F f bF))"},{"declaration":"SurfaceLib.Canonical.TopDuality.finitePresentation","type":"∀ {X : AlgebraicGeometry.Scheme} {F : Type} [inst : Field F] {f : X ⟶ AlgebraicGeometry.Spec ↧F} {n : ℕ} {K : X.Modules}\n  (self : SurfaceLib.Canonical.TopDuality F f n K), SheafOfModules.IsFinitePresentation K"},{"declaration":"SurfaceLib.Canonical.TopDuality.trace","type":"{X : AlgebraicGeometry.Scheme} →\n  {F : Type} →\n    [inst : Field F] →\n      {f : X ⟶ AlgebraicGeometry.Spec ↧F} →\n        {n : ℕ} →\n          {K : X.Modules} → SurfaceLib.Canonical.TopDuality F f n K → SurfaceLib.Canonical.Cohomology F f K n →ₗ[F] F"},{"declaration":"SurfaceLib.Canonical.TopDuality.perfect","type":"∀ {X : AlgebraicGeometry.Scheme} {F : Type} [inst : Field F] {f : X ⟶ AlgebraicGeometry.Spec ↧F} {n : ℕ} {K : X.Modules}\n  (self : SurfaceLib.Canonical.TopDuality F f n K) (M : X.Modules),\n  SheafOfModules.IsFinitePresentation M → Function.Bijective (SurfaceLib.Canonical.tracePairing F f n self.trace M)"},{"declaration":"SurfaceLib.Canonical.tracePairing","type":"{X : AlgebraicGeometry.Scheme} →\n  (F : Type) →\n    [inst : Field F] →\n      (f : X ⟶ AlgebraicGeometry.Spec ↧F) →\n        {K : X.Modules} →\n          (n : ℕ) →\n            (SurfaceLib.Canonical.Cohomology F f K n →ₗ[F] F) →\n              (M : X.Modules) → (M ⟶ K) → Module.Dual F (SurfaceLib.Canonical.Cohomology F f M n)"},{"declaration":"SurfaceLib.Canonical.Cohomology","type":"(F : Type) → [inst : Field F] → {X : AlgebraicGeometry.Scheme} → (X ⟶ AlgebraicGeometry.Spec ↧F) → X.Modules → ℕ → Type"},{"declaration":"SurfaceLib.MuFive.ClassicalDiagonalizableQuotient.torsor","type":"SurfaceLib.MuFive.ClassicalDiagonalizableQuotient →\n  ∀ (F L : Type) [inst : Field F] [inst_1 : Field L] [inst_2 : Algebra F L] [inst_3 : CharP L 5]\n    (P : Red61.AffineGluing.PrincipalAtlas F L) (E : Derivation F L L) (M : Subfield L) [inst_4 : Algebra F ↥M]\n    [inst_5 : IsScalarTower F (↥M) L],\n    (∀ (x : L), x ∈ M ↔ E x = 0) →\n      ∀ (hp : ∀ (x : L), x ^ 5 ∈ M),\n        Red61.fifthDerivation E = E →\n          (∀ (i : P.Index) (x : ↥(P.ring i)), E ↑x ∈ P.ring i) →\n            (∀ (i : P.Index), Nonempty (SurfaceLib.MuFive.HomogeneousCover E (P.ring i))) →\n              Nonempty (SurfaceLib.MuFive.GradedTorsor P E M hp)"},{"declaration":"SurfaceLib.MuFive.HomogeneousCover.size","type":"{F L : Type} →\n  [inst : Field F] →\n    [inst_1 : Field L] →\n      [inst_2 : Algebra F L] →\n        {E : Derivation F L L} → {A : Subalgebra F L} → SurfaceLib.MuFive.HomogeneousCover E A → ℕ"},{"declaration":"SurfaceLib.MuFive.HomogeneousCover.value","type":"{F L : Type} →\n  [inst : Field F] →\n    [inst_1 : Field L] →\n      [inst_2 : Algebra F L] →\n        {E : Derivation F L L} →\n          {A : Subalgebra F L} → (self : SurfaceLib.MuFive.HomogeneousCover E A) → Fin self.size → ↥A"},{"declaration":"SurfaceLib.MuFive.HomogeneousCover.weight","type":"{F L : Type} →\n  [inst : Field F] →\n    [inst_1 : Field L] →\n      [inst_2 : Algebra F L] →\n        {E : Derivation F L L} →\n          {A : Subalgebra F L} → (self : SurfaceLib.MuFive.HomogeneousCover E A) → Fin self.size → ℤ"},{"declaration":"SurfaceLib.MuFive.HomogeneousCover.eigen","type":"∀ {F L : Type} [inst : Field F] [inst_1 : Field L] [inst_2 : Algebra F L] {E : Derivation F L L} {A : Subalgebra F L}\n  (self : SurfaceLib.MuFive.HomogeneousCover E A) (j : Fin self.size),\n  E ↑(self.value j) = ↑(self.weight j) * ↑(self.value j)"},{"declaration":"SurfaceLib.MuFive.HomogeneousCover.nonzero","type":"∀ {F L : Type} [inst : Field F] [inst_1 : Field L] [inst_2 : Algebra F L] {E : Derivation F L L} {A : Subalgebra F L}\n  (self : SurfaceLib.MuFive.HomogeneousCover E A) (j : Fin self.size), ↑(self.weight j) ≠ 0"},{"declaration":"SurfaceLib.MuFive.HomogeneousCover.spans","type":"∀ {F L : Type} [inst : Field F] [inst_1 : Field L] [inst_2 : Algebra F L] {E : Derivation F L L} {A : Subalgebra F L}\n  (self : SurfaceLib.MuFive.HomogeneousCover E A), Ideal.span (Set.range self.value) = ⊤"},{"declaration":"SurfaceLib.MuFive.group","type":"(T : AlgebraicGeometry.Scheme) → Subgroup (↑(T.presheaf.obj (Opposite.op ⊤)))ˣ"},{"declaration":"SurfaceLib.MuFive.pullGroup","type":"{T U : AlgebraicGeometry.Scheme} → (U ⟶ T) → ↥(SurfaceLib.MuFive.group T) →* ↥(SurfaceLib.MuFive.group U)"},{"declaration":"SurfaceLib.MuFive.PointOver","type":"{S Y : AlgebraicGeometry.Scheme} → (S ⟶ Y) → {T : AlgebraicGeometry.Scheme} → (T ⟶ Y) → Type u_1"},{"declaration":"SurfaceLib.MuFive.pullPoint","type":"{S Y : AlgebraicGeometry.Scheme} →\n  (ρ : S ⟶ Y) →\n    {T U : AlgebraicGeometry.Scheme} →\n      (h : U ⟶ T) →\n        (g : T ⟶ Y) →\n          SurfaceLib.MuFive.PointOver ρ g → SurfaceLib.MuFive.PointOver ρ (CategoryTheory.CategoryStruct.comp h g)"},{"declaration":"SurfaceLib.MuFive.Torsor.finite","type":"∀ {S Y : AlgebraicGeometry.Scheme} {ρ : S ⟶ Y} (self : SurfaceLib.MuFive.Torsor ρ), AlgebraicGeometry.IsFinite ρ"},{"declaration":"SurfaceLib.MuFive.Torsor.flat","type":"∀ {S Y : AlgebraicGeometry.Scheme} {ρ : S ⟶ Y} (self : SurfaceLib.MuFive.Torsor ρ), AlgebraicGeometry.Flat ρ"},{"declaration":"SurfaceLib.MuFive.Torsor.surjective","type":"∀ {S Y : AlgebraicGeometry.Scheme} {ρ : S ⟶ Y} (self : SurfaceLib.MuFive.Torsor ρ), AlgebraicGeometry.Surjective ρ"},{"declaration":"SurfaceLib.MuFive.Torsor.act","type":"{S Y : AlgebraicGeometry.Scheme} →\n  {ρ : S ⟶ Y} →\n    SurfaceLib.MuFive.Torsor ρ →\n      (T : AlgebraicGeometry.Scheme) →\n        (g : T ⟶ Y) → ↥(SurfaceLib.MuFive.group T) → SurfaceLib.MuFive.PointOver ρ g → SurfaceLib.MuFive.PointOver ρ g"},{"declaration":"SurfaceLib.MuFive.Torsor.one_act","type":"∀ {S Y : AlgebraicGeometry.Scheme} {ρ : S ⟶ Y} (self : SurfaceLib.MuFive.Torsor ρ) (T : AlgebraicGeometry.Scheme)\n  (g : T ⟶ Y) (s : SurfaceLib.MuFive.PointOver ρ g), self.act T g 1 s = s"},{"declaration":"SurfaceLib.MuFive.Torsor.mul_act","type":"∀ {S Y : AlgebraicGeometry.Scheme} {ρ : S ⟶ Y} (self : SurfaceLib.MuFive.Torsor ρ) (T : AlgebraicGeometry.Scheme)\n  (g : T ⟶ Y) (a b : ↥(SurfaceLib.MuFive.group T)) (s : SurfaceLib.MuFive.PointOver ρ g),\n  self.act T g (a * b) s = self.act T g a (self.act T g b s)"},{"declaration":"SurfaceLib.MuFive.Torsor.natural","type":"∀ {S Y : AlgebraicGeometry.Scheme} {ρ : S ⟶ Y} (self : SurfaceLib.MuFive.Torsor ρ) {T U : AlgebraicGeometry.Scheme}\n  (h : U ⟶ T) (g : T ⟶ Y) (a : ↥(SurfaceLib.MuFive.group T)) (s : SurfaceLib.MuFive.PointOver ρ g),\n  SurfaceLib.MuFive.pullPoint ρ h g (self.act T g a s) =\n    self.act U (CategoryTheory.CategoryStruct.comp h g) ((SurfaceLib.MuFive.pullGroup h) a)\n      (SurfaceLib.MuFive.pullPoint ρ h g s)"},{"declaration":"SurfaceLib.MuFive.Torsor.principal","type":"∀ {S Y : AlgebraicGeometry.Scheme} {ρ : S ⟶ Y} (self : SurfaceLib.MuFive.Torsor ρ) (T : AlgebraicGeometry.Scheme)\n  (g : T ⟶ Y) (s t : SurfaceLib.MuFive.PointOver ρ g), ∃! a, self.act T g a s = t"},{"declaration":"SurfaceLib.MuFive.Torsor.rankFive","type":"∀ {S Y : AlgebraicGeometry.Scheme} {ρ : S ⟶ Y} (self : SurfaceLib.MuFive.Torsor ρ) (y : ↥Y),\n  Module.finrank ↑(Y.residueField y) ↑((AlgebraicGeometry.Scheme.Hom.fiber ρ y).presheaf.obj (Opposite.op ⊤)) = 5"},{"declaration":"SurfaceLib.MuFive.chartSection","type":"{F L : Type} →\n  [inst : Field F] →\n    [inst_1 : Field L] →\n      [inst_2 : Algebra F L] →\n        (P : Red61.AffineGluing.PrincipalAtlas F L) →\n          (i : P.Index) → ↥(P.ring i) → ↑((P.chart i).presheaf.obj (Opposite.op ⊤))"},{"declaration":"SurfaceLib.MuFive.GradedTorsor.toTorsor","type":"{F L : Type} →\n  [inst : Field F] →\n    [inst_1 : Field L] →\n      [inst_2 : Algebra F L] →\n        [inst_3 : CharP L 5] →\n          {P : Red61.AffineGluing.PrincipalAtlas F L} →\n            {E : Derivation F L L} →\n              {M : Subfield L} →\n                [inst_4 : Algebra F ↥M] →\n                  [inst_5 : IsScalarTower F (↥M) L] →\n                    {hp : ∀ (x : L), x ^ 5 ∈ M} →\n                      SurfaceLib.MuFive.GradedTorsor P E M hp →\n                        SurfaceLib.MuFive.Torsor (Red61.AtlasDescent.quotientMap P M 5 hp)"},{"declaration":"SurfaceLib.MuFive.GradedTorsor.weights","type":"∀ {F L : Type} [inst : Field F] [inst_1 : Field L] [inst_2 : Algebra F L] [inst_3 : CharP L 5]\n  {P : Red61.AffineGluing.PrincipalAtlas F L} {E : Derivation F L L} {M : Subfield L} [inst_4 : Algebra F ↥M]\n  [inst_5 : IsScalarTower F (↥M) L] {hp : ∀ (x : L), x ^ 5 ∈ M} (self : SurfaceLib.MuFive.GradedTorsor P E M hp)\n  (i : P.Index) (T : AlgebraicGeometry.Scheme) (a : ↥(SurfaceLib.MuFive.group T)) (s : T ⟶ P.chart i),\n  ∃ t,\n    CategoryTheory.CategoryStruct.comp t (P.chartInclusion i) =\n        ↑(self.toTorsor.act T\n            (CategoryTheory.CategoryStruct.comp (CategoryTheory.CategoryStruct.comp s (P.chartInclusion i))\n              (Red61.AtlasDescent.quotientMap P M 5 hp))\n            a ⟨CategoryTheory.CategoryStruct.comp s (P.chartInclusion i), ⋯⟩) ∧\n      ∀ (x : ↥(P.ring i)) (n : ℤ),\n        E ↑x = ↑n * ↑x →\n          (CommRingCat.Hom.hom (AlgebraicGeometry.Scheme.Hom.appTop t)) (SurfaceLib.MuFive.chartSection P i x) =\n            ↑(↑a ^ n) *\n              (CommRingCat.Hom.hom (AlgebraicGeometry.Scheme.Hom.appTop s)) (SurfaceLib.MuFive.chartSection P i x)"}]
+All project declarations audited: 6385.
+Eff statement fingerprint: 97 constants, 12985887948955488478.
+Canonical statement fingerprint: 113 constants, 7640908887198818297.
+Freeness statement fingerprint: 60 constants, 5363109288789624739.
+Torsor statement fingerprint: 109 constants, 11022967480670452798.
+Regularity statement fingerprint: 78 constants, 16958915980947374023.
+Order statement fingerprint: 114 constants, 5764549006072577869.
+CanonicalOrder statement fingerprint: 121 constants, 5023760894144107675.
+Nonnormal statement fingerprint: 82 constants, 15494484949319092419.
+Projective statement fingerprint: 83 constants, 8179171503934481086.
+Albanese statement fingerprint: 86 constants, 10845012968927165029.
+Example statement fingerprint: 118 constants, 8774172229539891270.
+Final statement fingerprint: 126 constants, 3333105092890281862.

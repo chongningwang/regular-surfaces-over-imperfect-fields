@@ -24,17 +24,50 @@ import Lean.Util.CollectAxioms
 #print axioms Eff.rho_action_weights
 #print axioms Eff.rho_flat
 #print axioms Eff.rho_rankFive
+#print axioms Eff.y_stalk_regular
+#print axioms Eff.yAbsoluteDifferentials_isLocallyFreeOfRank
+#print axioms Eff.y_lattice
+#print axioms SurfaceLib.LineBundle.generators_of_trivial
+#print axioms SurfaceLib.LineBundle.trivial_of_generators
+#print axioms Eff.tensorPower_trivial_iff
+#print axioms Eff.omega_tensorPower_trivial_iff
+#print axioms Eff.canonicalSheaf_tensorPower_trivial_iff
+#print axioms Eff.canonicalSheaf_order_five
+#print axioms Eff.y_not_geometrically_normal
+#print axioms SurfaceLib.Projective.AtlasModel.iso
+#print axioms Eff.y_projective
+#print axioms SurfaceLib.Abelian.isParaAbelianVariety_id
+#print axioms Eff.y_albanese_is_base
+#print axioms Eff.y_example
+#print axioms Eff.case_C_p5
 
 #check Eff.quotient_properties
 #check Eff.Canonical.canonicalSheaf_trivial
 #check @Eff.Canonical.exists_trivial_canonicalSheaf
 #check Eff.sChartEuler_nowhereVanishing
 #check Eff.rho_is_muFiveTorsor
+#check Eff.y_stalk_regular
+#check Eff.omega_tensorPower_trivial_iff
+#check @Eff.canonicalSheaf_tensorPower_trivial_iff
+#check @Eff.canonicalSheaf_order_five
+#check Eff.y_not_geometrically_normal
+#check Eff.y_projective
+#check @Eff.y_albanese_is_base
+#check Eff.y_example
+#check @Eff.case_C_p5
+
+-- The definitions these statements rely on, printed in full.
+#print Eff.IsNormalScheme
+#print SurfaceLib.Projective.IsProjectiveOver
+#print SurfaceLib.Abelian.IsParaAbelianVariety
+#print SurfaceLib.Abelian.IsAlbaneseMorphism
+#print SurfaceLib.LineBundle.tensorPower
 
 -- Parameters do not appear in logical dependency reports: export their actual checked types.
 open Lean Elab Command in
 run_elab do
-  let fields := #[`SurfaceLib.Canonical.ClassicalAdjunction.normalizedDuality,
+  let fields := #[`SurfaceLib.Abelian.ClassicalRationalRigidity.constant,
+    `SurfaceLib.Canonical.ClassicalAdjunction.normalizedDuality,
     `SurfaceLib.Canonical.TopDuality.finitePresentation,
     `SurfaceLib.Canonical.TopDuality.trace, `SurfaceLib.Canonical.TopDuality.perfect,
     `SurfaceLib.Canonical.tracePairing, `SurfaceLib.Canonical.Cohomology,
@@ -153,5 +186,13 @@ run_elab do
   auditStatement `Eff.Canonical.canonicalSheaf_trivial "Canonical"
   auditStatement `Eff.sChartEuler_nowhereVanishing "Freeness"
   auditStatement `Eff.rho_is_muFiveTorsor "Torsor"
+  auditStatement `Eff.y_stalk_regular "Regularity"
+  auditStatement `Eff.omega_tensorPower_trivial_iff "Order"
+  auditStatement `Eff.canonicalSheaf_order_five "CanonicalOrder"
+  auditStatement `Eff.y_not_geometrically_normal "Nonnormal"
+  auditStatement `Eff.y_projective "Projective"
+  auditStatement `Eff.y_albanese_is_base "Albanese"
+  auditStatement `Eff.y_example "Example"
+  auditStatement `Eff.case_C_p5 "Final"
 
 end EffAudit
