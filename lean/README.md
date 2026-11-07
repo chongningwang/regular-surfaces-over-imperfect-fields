@@ -56,23 +56,29 @@ Compared with Theorem 6.1:
 
 - **Projectivity.** Lean proves that $f$ is proper, not that $Y$ is projective.
 - **The canonical class.** Lean's $\omega$ is defined from absolute differentials. Its
-  identification with the canonical sheaf $\omega_{Y/k}=\det L_{Y/k}$ of the local
-  complete intersection $Y/k$, whose divisor class is $K_Y$, is standard but not
-  formalized. Since $Y$ is regular of finite type over $k$, it is a local complete
-  intersection. The transitivity triangle
+  identification with the canonical sheaf $\omega_{Y/k}=\det L_{Y/k}$ is not part
+  of the unconditional `Red61` theorem. A separate
+  [conditional canonical comparison](SurfaceLib/Canonical/README.md), implemented
+  in `Eff/Canonical.lean`, now supplies a genuine canonical-sheaf trivialization
+  from an explicitly stated general classical adjunction/duality input.
+  The mathematical comparison uses the local complete intersection property and
+  essential smoothness over the perfect prime field. The transitivity triangle
   $f^*L_{k/\mathbb F_5}\to L_{Y/\mathbb F_5}\to L_{Y/k}$, with
-  $L_{k/\mathbb F_5}\simeq\Omega_{k/\mathbb F_5}[0]$ free of rank 2, and item 6 give
-  $L_{Y/\mathbb F_5}\simeq\Omega_{Y/\mathbb F_5}[0]$ and
+  $L_{k/\mathbb F_5}\simeq\Omega_{k/\mathbb F_5}[0]$ free of rank 2, and essential
+  smoothness giving $L_{Y/\mathbb F_5}\simeq\Omega_{Y/\mathbb F_5}[0]$, yield
   $\omega_{Y/k}\cong\bigwedge^4\Omega_{Y/\mathbb F_5}\otimes f^*(\bigwedge^2\Omega_{k/\mathbb F_5})^\vee\cong\omega$.
   With item 7 this gives $\omega_{Y/k}\cong\mathcal O_Y$, so $K_Y\sim0$, and in
   particular $K_Y\equiv0$.
+  Ordinary differentials over $\mathbb Z$ and $\mathbb F_5$ agree here; this does
+  not identify their cotangent complexes. The final Eff example does not use
+  equivariance of this comparison for the new action.
 - **Cohomology.** In item 8, cohomology is defined as $\mathrm{Ext}^n(\mathcal O_Y,-)$
   in sheaves of $\mathcal O_Y$-modules, and the Lean code does not compare it with other
   definitions. Item 8 also follows directly from item 7.
 
 ## Structure
 
-The active library contains 42 modules, exactly the import closure of
+The `Red61` library contains 42 modules, exactly the import closure of
 `Red61.Theorem61`, in four layers:
 
 - `LinearAlgebra/`, `RingTheory/`, `Foliation.lean` and `AlgebraicGeometry/`: general
@@ -105,6 +111,13 @@ The active proof has the following components:
 
 The environment uses Lean **4.34.1** and mathlib commit
 `d13f23b723b8a846827a245b89c10fc7d3f11612`, pinned in the project files.
+The default build also checks the separate [Eff](Eff/README.md) and
+[SurfaceLib](SurfaceLib/README.md) targets. These do not change the `Red61` theorem
+or its strict audit. The final Eff example is formalized in `Eff.y_example`
+(unconditional) and `Eff.case_C_p5` (conditional on two general classical inputs).
+The four-chart Euler compatibility and nonvanishing are proved. Its rank-five
+mu-five torsor conclusion uses an explicit general classical quotient parameter;
+see [the exact boundary](SurfaceLib/GroupScheme/README.md).
 Run verification from this directory:
 
 ```bash

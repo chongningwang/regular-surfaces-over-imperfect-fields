@@ -62,12 +62,19 @@ provide formal verification of all three papers.
 
 ## Lean proof
 
-The only example currently treated in Lean is **Example 1**, the geometrically
+The established Lean development treats **Example 1**, the geometrically
 non-reduced surface in characteristic $5$, associated with Theorem 6.1 of the
 [red paper](papers/red/main.tex). Its base field is $k=\mathbb F_5(s_1,s_2)$.
 The main formal statement is
 `Red61.Contraction.exists_theorem61_omega_rationalBase` in
 [Red61/Theorem61.lean](lean/Red61/Theorem61.lean).
+
+The [Eff formalization](lean/Eff/README.md) treats the final characteristic-five
+example in the second paper. Without classical input, `Eff.y_example` proves that
+the surface is regular, projective and geometrically non-normal over
+$\mathbb F_5(s_1,s_2)$, with the prescribed global constants, and that its differential
+line has exact order five. `Eff.case_C_p5` transfers the order to the canonical sheaf
+and identifies the Albanese morphism, using two explicit general classical theorems.
 
 
 ## Licensing
