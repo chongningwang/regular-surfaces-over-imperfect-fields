@@ -43,3 +43,6 @@
 /papers/geonormal/*.out
 
 # Manuscript PDFs are included in the repository.
+
+# Local conversation archives
+/conversation-archives/
