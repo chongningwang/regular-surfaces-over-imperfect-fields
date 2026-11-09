@@ -1,0 +1,15 @@
+PASS: 43 source files; 6001 project declarations audited.
+Example statement fingerprint: 80 constants, 3625693950619963257.
+Final statement fingerprint: 87 constants, 11530437725810536051.
+P11Example statement fingerprint: 95 constants, 13758302471214068481.
+P11Final statement fingerprint: 101 constants, 17000114579343157727.
+Geonormal.p19_example is unconditional: X is a regular projective integral
+surface over k = F_19(c) with H^0(X, O_X) = k, not smooth over k, with locally
+free absolute differentials of rank three and trivial differential line.
+Geonormal.p19_canonical adds the canonical sheaf, conditional on
+GeneralClassicalAdjunction and on nothing else.
+Geonormal.P11.p11_example is unconditional: X is a regular projective integral
+surface over k = F_11(c) with H^0(X, O_X) = k, not geometrically normal, with
+locally free absolute differentials of rank three and trivial differential line.
+Geonormal.P11.p11_canonical adds the canonical sheaf, conditional on
+GeneralClassicalAdjunction and on nothing else.

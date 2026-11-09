@@ -1,7 +1,7 @@
 import Eff.YAlbanese
 import Eff.YCanonical
 import Eff.YNonnormal
-import Eff.YProjective
+import Eff.Projective
 
 /-! # The order-five example
 

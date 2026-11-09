@@ -13,6 +13,12 @@ base, has `n`-th tensor power trivial exactly when `5 ∣ n`.
 sheaf has exact order five, and that the Albanese morphism of `Y` is the structure
 morphism to `Spec ell`.
 
+The same library completes Theorem 6.1 of the [red paper](../../papers/red/main.tex) for
+the surface `S`. `Eff.s_example` uses no classical input. It proves that `S`, over `ell`,
+is projective, integral, regular and two-dimensional, has global constants `ell`, and is
+not geometrically reduced. `Eff.theorem_6_1` uses `ClassicalAdjunction` only. It proves that
+`S` has a canonical sheaf and that every canonical sheaf is trivial.
+
 All checked logical dependencies are `propext`, `Classical.choice`, and `Quot.sound`;
 the separate audit also reports the mathematical parameters, which those lists do not
 detect.
@@ -55,9 +61,10 @@ The supporting modules prove:
 | `YDifferentials`, `YStalks`, `YJacobians`, `YTuples`, `YVolume` | Local freeness of the absolute differentials and an explicit generator of the top-form lattice on each open; `y_lattice` |
 | `YOrder`, `YCanonical` | Exact order five, through genuine sheaf tensor powers; the transfer to any canonical sheaf is conditional on `ClassicalAdjunction` |
 | `YNonnormal` | `y_not_geometrically_normal`: the base change to `k` contains an open whose ring is not integrally closed |
-| `YProjective` | `y_projective`: `Y` is the `Proj` of the homogeneous elements of the coordinate ring of `X` with values in `M` |
+| `Projective` | `y_projective`, `s_projective`: `Y` and `S` are each the `Proj` of the homogeneous elements of the coordinate ring of `X` with values in their function field |
 | `YAlbanese` | `y_albanese_is_base`, conditional on `ClassicalRationalRigidity` |
-| `YExample` | The two final statements |
+| `YExample` | The two final statements for `Y` |
+| `SExample` | The two statements completing Theorem 6.1 for `S` |
 
 `SurfaceLib` proves the residue-field slice comparison and the existence and
 uniqueness of the five weight components without finite-dimensionality assumptions.

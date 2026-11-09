@@ -1,17 +1,17 @@
 \section{Counterexample in characteristic $11$}\label{sec:p11}
 In this section we show that Theorem~\ref{thm:main} fails for $p = 11$.
-Let $k = \FF_{11}(c)$ with $c$ transcendental over $\FF_{11}$; it is $F$-finite with $p$-basis $\{c\}$.
-Let $\gamma$ be the $11$th root of $c$ in an algebraic closure, and $k' = k(\gamma)$, a purely inseparable extension of degree $11$.
-Let $B = \PP^1_k$ with affine coordinate $u$, and put $K = k(u)$ and $K' = k'(u)$.
 
 \begin{proposition}\label{prop:p11}
-There are a regular projective surface $X$ over $k$ and a morphism $f\from X\to B$ whose generic fibre is a smooth curve of genus one, such that $H^0(X,\O_X) = k$ and $\omega_X\cong\O_X$, but $X_{k'}$ is not normal.
-In particular $X$ is not geometrically normal.
-The same holds with $k$ replaced by a separable closure $k^{\rm s}$ of $k$ and $k'$ by $k^{\rm s}(\gamma)$.
+Let $k = \FF_{11}(c)$ with $c$ transcendental over $\FF_{11}$.
+Then there is a regular projective surface $X$ over $k$ such that $H^0(X,\O_X) = k$ and $\omega_X\cong\O_X$ but $X$ is not geometrically normal.
 \end{proposition}
 
 Thus the bound $p\geq 13$ in Theorem~\ref{thm:main} is optimal.
 Verification scripts for the polynomial identities are described in Appendix~\ref{app:scripts-p11}.
+
+Let $k$ be as in Proposition~\ref{prop:p11}; it is $F$-finite with $p$-basis $\{c\}$.
+Let $\gamma$ be the $11$th root of $c$ in an algebraic closure, and $k' = k(\gamma)$, a purely inseparable extension of degree $11$.
+Put $K = k(u)$ and $K' = k'(u)$, where $u$ is transcendental over $k'$.
 
 \subsection{The curve}
 
@@ -164,6 +164,7 @@ in the residue field $k(s)$.
 
 \subsection{The fibre over $u = 0$}
 
+Let $B = \PP^1_k$ with affine coordinate $u$, so that $K$ is the function field of $B$.
 Let $R = \O_{B,0}$, and let $\mathcal W$ be the closure of $b^2 = a^3+u$ in $\PP^2_R$.
 Its affine part $\Spec R[a,b]/(b^2-a^3-u)$ is a localization of the plane $\Spec A$, where $A = k[a,b]$.
 Near the point $O$ at infinity of the special fibre, the functions $\xi = a/b$ and $\zeta = 1/b$ satisfy $\zeta = \xi^3+u\zeta^3$.
@@ -291,9 +292,6 @@ By Lemmas~\ref{lem:p11-omega-zero} and~\ref{lem:p11-other-fibres}, the rational 
 Hence $\omega_{X/B}\cong f^*\O_B(2)$, and $\omega_X\cong\omega_{X/B}\otimes f^*\omega_B\cong\O_X$ \cite[Theorem~6.4.9]{Liu02}.
 Since $X$ is normal and $X_K$ is geometrically integral, $f_*\O_X = \O_B$, so $H^0(X,\O_X) = k$.
 By Lemma~\ref{lem:p11-nonnormal}, $X_{k'}$ is not normal at the point over $z_0$, and $X$ is not geometrically normal \cite[Tag~\stackstag{038O}]{Stacks}.
-
-The separable closure $k^{\rm s}$ also has $p$-basis $\{c\}$, and $c^9\notin(k^{\rm s})^{11}$.
-These are the only properties of $k$ used above, so the same construction and proofs apply over $k^{\rm s}$.
 \end{proof}
 
 \begin{remark}\label{rem:p11}

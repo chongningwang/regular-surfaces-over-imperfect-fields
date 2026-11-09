@@ -1,4 +1,6 @@
+import SurfaceLib.AlgebraicGeometry.GeometricNormality
 import SurfaceLib.Canonical.ClassicalAdjunction
+import SurfaceLib.Canonical.GeneralAdjunction
 import SurfaceLib.Canonical.TopDuality
 import SurfaceLib.Derivation.Slice
 import SurfaceLib.Derivation.FrobeniusCover
@@ -9,3 +11,4 @@ import SurfaceLib.GroupScheme.MuFive
 import SurfaceLib.LineBundle.RationalLine
 import SurfaceLib.Abelian.Rigidity
 import SurfaceLib.Projective.AtlasModel
+import SurfaceLib.RingTheory.Hypersurface

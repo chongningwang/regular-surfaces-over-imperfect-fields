@@ -40,6 +40,9 @@ import Lean.Util.CollectAxioms
 #print axioms Eff.y_albanese_is_base
 #print axioms Eff.y_example
 #print axioms Eff.case_C_p5
+#print axioms Eff.s_projective
+#print axioms Eff.s_example
+#print axioms Eff.theorem_6_1
 
 #check Eff.quotient_properties
 #check Eff.Canonical.canonicalSheaf_trivial
@@ -55,6 +58,8 @@ import Lean.Util.CollectAxioms
 #check @Eff.y_albanese_is_base
 #check Eff.y_example
 #check @Eff.case_C_p5
+#check Eff.s_example
+#check @Eff.theorem_6_1
 
 -- The definitions these statements rely on, printed in full.
 #print Eff.IsNormalScheme
@@ -194,5 +199,7 @@ run_elab do
   auditStatement `Eff.y_albanese_is_base "Albanese"
   auditStatement `Eff.y_example "Example"
   auditStatement `Eff.case_C_p5 "Final"
+  auditStatement `Eff.s_example "SExample"
+  auditStatement `Eff.theorem_6_1 "Theorem61"
 
 end EffAudit

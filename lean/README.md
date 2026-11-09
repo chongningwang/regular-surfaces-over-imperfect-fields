@@ -1,147 +1,69 @@
-# Lean formalization of Theorem 6.1 of arXiv:2604.05293
+# Lean formalization
 
-This repository is a Lean 4 formalization, built on mathlib, of Theorem 6.1 of
+This directory is a Lean 4 project, built on mathlib, for the papers in
+[`papers/`](../papers). Each library has its own README:
 
-> [Chongning Wang (王崇宁)](https://chongningwang.github.io) and Lei Zhang, *Geometric singularities of regular surfaces with nef
-> anti-canonical divisors over imperfect fields*,
-> [arXiv:2604.05293v3](https://arxiv.org/abs/2604.05293v3).
+- [`Red61`](Red61/README.md): Theorem 6.1 of the red paper.
+- [`Eff`](Eff/README.md): Example `ex:case-C-p5` of the eff paper, and the parts of
+  Theorem 6.1 that `Red61` leaves out.
+- [`SurfaceLib`](SurfaceLib/README.md): general mathematics developed for `Eff`, for reuse.
+- [`Geonormal`](Geonormal/README.md): Example `ex:p19` of the geonormal paper, at `p = 19`, and
+  Proposition `prop:p11`, at `p = 11`.
 
-> **Theorem 6.1.** Let $\ell=\mathbb F_5(s_1,s_2)$. Then there exists a projective regular
-> surface $S$ over $\ell$ with $H^0(S,\mathcal O_S)=\ell$ and $K_S\equiv0$ such that
-> $S$ is geometrically non-reduced over $\ell$.
+## Results
 
-## What Lean proves
+| Paper | Statement | Content | Classical inputs |
+| --- | --- | --- | --- |
+| red, Theorem 6.1 | [<code>Red61.Contraction.<wbr>exists_theorem61_<wbr>omega_rationalBase</code>](Red61/README.md#what-lean-proves) | A proper, integral, regular surface $S$ over $\mathbb F_5(s_1,s_2)$ with constants the base field, not geometrically reduced, whose sheaf $\omega$ built from absolute differentials is trivial | none |
+| red, Theorem 6.1 | [`Eff.s_example`](Red61/README.md#completing-theorem-61) | $S$ is projective | none |
+| red, Theorem 6.1 | [`Eff.theorem_6_1`](Red61/README.md#completing-theorem-61) | Every canonical sheaf of $S$ is trivial | `ClassicalAdjunction` |
+| eff, Example `ex:case-C-p5` | [`Eff.y_example`](Eff/README.md) | A projective, integral, regular surface $Y$ over $\mathbb F_5(s_1,s_2)$ with constants the base field, not geometrically normal, whose determinant of differentials, normalized by the base, has exact order 5 | none |
+| eff, Example `ex:case-C-p5` | [`Eff.case_C_p5`](Eff/README.md) | Every canonical sheaf of $Y$ has exact order 5, and the Albanese morphism of $Y$ is its structure morphism | `ClassicalAdjunction`, `ClassicalRationalRigidity` |
+| geonormal, Example `ex:p19`, $p=19$ | [`Geonormal.p19_example`](Geonormal/README.md) | A projective, integral, regular surface $X$ over $\mathbb F_{19}(c)$ with constants the base field, not smooth over it, whose absolute differentials are locally free of rank 3 and whose determinant of differentials, normalized by the base, is trivial | none |
+| geonormal, Example `ex:p19`, $p=19$ | [`Geonormal.p19_canonical`](Geonormal/README.md) | Every canonical sheaf of $X$ is trivial | `GeneralClassicalAdjunction` |
+| geonormal, Proposition `prop:p11`, $p=11$ | [<code>Geonormal.P11.<wbr>p11_example</code>](Geonormal/README.md#proposition-propp11-at-p--11) | A projective, integral, regular surface $X$ over $\mathbb F_{11}(c)$ with constants the base field, not geometrically normal, whose absolute differentials are locally free of rank 3 and whose determinant of differentials, normalized by the base, is trivial | none |
+| geonormal, Proposition `prop:p11`, $p=11$ | [<code>Geonormal.P11.<wbr>p11_canonical</code>](Geonormal/README.md#proposition-propp11-at-p--11) | Every canonical sheaf of $X$ is trivial | `GeneralClassicalAdjunction` |
 
-The main theorem is `Red61.Contraction.exists_theorem61_omega_rationalBase` in
-[`Red61/Theorem61.lean`](Red61/Theorem61.lean):
+The only axioms are `propext`, `Classical.choice` and `Quot.sound`. A classical input
+is a general theorem that is hard to formalize. It is passed to the statement as an
+explicit hypothesis, never installed as an axiom; see the
+[policy for classical inputs](Eff/README.md#policy-for-classical-inputs).
+`GeneralClassicalAdjunction` is `ClassicalAdjunction` for every prime characteristic and
+every rank of the base differentials; `ClassicalAdjunction` is one of its cases.
 
-```lean
-theorem exists_theorem61_omega_rationalBase :
-    ∃ (Y : Scheme) (f : Y ⟶ Spec (CommRingCat.of k)),
-      IsProper f ∧ IsIntegral Y ∧ IsNoetherian Y ∧ topologicalKrullDim Y = 2 ∧
-      (∀ y : Y, IsRegularLocalRing (Y.presheaf.stalk y)) ∧
-      Function.Bijective (globalScalarMap k f) ∧ ¬ GeometricallyReduced f ∧
-      IsLocallyFreeOfRank 4 (nativeAbsoluteDifferentialModule Y) ∧
-      let ω := omega k f rationalBaseAbsoluteDifferentialBasis
-      Nonempty (ω ≅ structureSheafModule Y) ∧ IsCurveNumericallyTrivial k f ω
-```
+## Size
 
-Here `k` is `FractionRing (MvPolynomial (Fin 2) (ZMod 5))`, that is
-$k=\mathbb F_5(s_1,s_2)$. In words: there are a scheme $Y$ and a morphism
-$f\colon Y\to\mathrm{Spec}\,k$ such that
+Lean source files, excluding mathlib and the build output in `.lake/`:
 
-1. $f$ is proper;
-2. $Y$ is integral, noetherian and of dimension 2;
-3. every local ring of $Y$ is regular;
-4. the map $k\to H^0(Y,\mathcal O_Y)$ is bijective;
-5. $Y$ is not geometrically reduced over $k$;
-6. the sheaf of absolute differentials $\Omega_{Y/\mathbb Z}$, which equals
-   $\Omega_{Y/\mathbb F_5}$, is locally free of rank 4
-   ([`IsLocallyFreeOfRank`](Red61/AlgebraicGeometry/Modules.lean));
-7. the sheaf
-   $\omega=\mathcal{H}om_{\mathcal O_Y}\bigl(f^*\bigwedge^2\Omega_{k/\mathbb Z},\,\bigwedge^4\Omega_{Y/\mathbb Z}\bigr)$,
-   defined in [`Red61/Omega.lean`](Red61/Omega.lean), is isomorphic to $\mathcal O_Y$;
-8. $\omega$ has degree 0 on every proper integral curve $g\colon C\to Y$: here the degree
-   is $\chi(g^*\omega)-\chi(\mathcal O_C)$ with $\chi=\dim H^0-\dim H^1$
-   ([`Red61/CurveNumericalTriviality.lean`](Red61/CurveNumericalTriviality.lean)).
+| Library | Files | Lines |
+| --- | ---: | ---: |
+| `Red61` | 42 | 21,420 |
+| `Eff` | 28 | 6,168 |
+| `SurfaceLib` | 14 | 2,011 |
+| `Geonormal` | 26 | 9,132 |
+| Top-level files (`Red61.lean`, `Eff.lean`, `SurfaceLib.lean`, `Geonormal.lean`, `Audit.lean`, `EffAudit.lean`, `GeonormalAudit.lean`) | 7 | 568 |
+| **Total** | **117** | **39,299** |
 
-The notions in items 1–5 are mathlib's. The scheme $Y$ is the surface `S` constructed
-explicitly in `Red61/Surface/` from affine charts, an invariant quotient and a contraction.
-The proof assumes no geometric hypotheses, and its only axioms are `propext`,
-`Classical.choice` and `Quot.sound`.
+## Building and verifying
 
-## What is not formalized
-
-Compared with Theorem 6.1:
-
-- **Projectivity.** Lean proves that $f$ is proper, not that $Y$ is projective.
-- **The canonical class.** Lean's $\omega$ is defined from absolute differentials. Its
-  identification with the canonical sheaf $\omega_{Y/k}=\det L_{Y/k}$ is not part
-  of the unconditional `Red61` theorem. A separate
-  [conditional canonical comparison](SurfaceLib/Canonical/README.md), implemented
-  in `Eff/Canonical.lean`, now supplies a genuine canonical-sheaf trivialization
-  from an explicitly stated general classical adjunction/duality input.
-  The mathematical comparison uses the local complete intersection property and
-  essential smoothness over the perfect prime field. The transitivity triangle
-  $f^*L_{k/\mathbb F_5}\to L_{Y/\mathbb F_5}\to L_{Y/k}$, with
-  $L_{k/\mathbb F_5}\simeq\Omega_{k/\mathbb F_5}[0]$ free of rank 2, and essential
-  smoothness giving $L_{Y/\mathbb F_5}\simeq\Omega_{Y/\mathbb F_5}[0]$, yield
-  $\omega_{Y/k}\cong\bigwedge^4\Omega_{Y/\mathbb F_5}\otimes f^*(\bigwedge^2\Omega_{k/\mathbb F_5})^\vee\cong\omega$.
-  With item 7 this gives $\omega_{Y/k}\cong\mathcal O_Y$, so $K_Y\sim0$, and in
-  particular $K_Y\equiv0$.
-  Ordinary differentials over $\mathbb Z$ and $\mathbb F_5$ agree here; this does
-  not identify their cotangent complexes. The final Eff example does not use
-  equivariance of this comparison for the new action.
-- **Cohomology.** In item 8, cohomology is defined as $\mathrm{Ext}^n(\mathcal O_Y,-)$
-  in sheaves of $\mathcal O_Y$-modules, and the Lean code does not compare it with other
-  definitions. Item 8 also follows directly from item 7.
-
-## Structure
-
-The `Red61` library contains 42 modules, exactly the import closure of
-`Red61.Theorem61`, in four layers:
-
-- `LinearAlgebra/`, `RingTheory/`, `Foliation.lean` and `AlgebraicGeometry/`: general
-  mathematics, independent of the paper's base field (exterior powers, localization,
-  regularity, Kähler differentials, p-closed derivations, sheaves of modules, differential
-  and exterior-power sheaves, rational forms, principal atlases);
-- `Surface/`: the construction of the surface and its properties;
-- `Canonical/`: local differential bases, the invariant volume and the proof that
-  $\omega\cong\mathcal O_Y$;
-- `Theorem61.lean`, `Omega.lean`, `CurveNumericalTriviality.lean`: the statement.
-
-Each merged file lists the former modules it contains.
-
-[`proper_regular_surface_rationalBase_properties`](Red61/Surface/Properties.lean)
-proves, for the constructed surface `S`, properness, integrality, Noetherianity, dimension two,
-regularity of every stalk, the prescribed global constants, and geometric
-nonreducedness without geometric inputs.
-
-The active proof has the following components:
-
-| Component | Files |
-|---|---|
-| Base field, derivations, invariant field and constants | [Surface/Field](Red61/Surface/Field.lean), [Foliation](Red61/Foliation.lean), [Surface/SixChartModel](Red61/Surface/SixChartModel.lean) |
-| Coordinate charts and quotient construction | [Surface/Charts](Red61/Surface/Charts.lean), [Surface/Quotient](Red61/Surface/Quotient.lean) |
-| Properness, regularity, dimension, constants and geometric nonreducedness | [Surface/Projective](Red61/Surface/Projective.lean), [Surface/GeometricNonreduced](Red61/Surface/GeometricNonreduced.lean), [Surface/Properties](Red61/Surface/Properties.lean) |
-| Absolute differential bases on affine neighborhoods and stalks | [Canonical/CINeighborhoods](Red61/Canonical/CINeighborhoods.lean), [Canonical/Volume](Red61/Canonical/Volume.lean) |
-| Differential, exterior and framed Hom sheaves | [AlgebraicGeometry/Differentials/Basic](Red61/AlgebraicGeometry/Differentials/Basic.lean), [AlgebraicGeometry/ExteriorPower](Red61/AlgebraicGeometry/ExteriorPower.lean), [AlgebraicGeometry/Modules](Red61/AlgebraicGeometry/Modules.lean) |
-| Explicit omega and its trivialization by the invariant volume | [Omega](Red61/Omega.lean), [Canonical/OmegaTrivialization](Red61/Canonical/OmegaTrivialization.lean), [Canonical/Volume](Red61/Canonical/Volume.lean) |
-| Curve Euler degree and the main theorem | [CurveNumericalTriviality](Red61/CurveNumericalTriviality.lean), [Theorem61](Red61/Theorem61.lean) |
-
-The environment uses Lean **4.34.1** and mathlib commit
-`d13f23b723b8a846827a245b89c10fc7d3f11612`, pinned in the project files.
-The default build also checks the separate [Eff](Eff/README.md) and
-[SurfaceLib](SurfaceLib/README.md) targets. These do not change the `Red61` theorem
-or its strict audit. The final Eff example is formalized in `Eff.y_example`
-(unconditional) and `Eff.case_C_p5` (conditional on two general classical inputs).
-The four-chart Euler compatibility and nonvanishing are proved. Its rank-five
-mu-five torsor conclusion uses an explicit general classical quotient parameter;
-see [the exact boundary](SurfaceLib/GroupScheme/README.md).
-Run verification from this directory:
+The project uses Lean **4.34.1** and mathlib commit
+`d13f23b723b8a846827a245b89c10fc7d3f11612`, pinned in the project files. The default
+build contains `Red61`, `SurfaceLib`, `Eff` and `Geonormal`. From this directory:
 
 ```bash
-lake exe cache get   # download prebuilt mathlib; without it mathlib compiles from source
+lake exe cache get           # download prebuilt mathlib; without it mathlib compiles from source
 lake build
-python3 verify.py
+python3 verify.py            # Red61
+python3 verify_eff.py        # Eff and SurfaceLib
+python3 verify_geonormal.py  # Geonormal and SurfaceLib
 ```
 
-`verify.py` checks that every source module is imported by the default build,
-rejects proof placeholders and prohibited declarations, builds the project,
-and checks `#print axioms` for the main theorem and every owned project
-declaration, including private auxiliaries. The allowed logical axioms are only
-`Classical.choice`, `Quot.sound`, and `propext`. It also compares a fingerprint
-of the main statement with the value pinned in `verify.py`. The fingerprint hashes,
-by content, the elaborated types and definition bodies of all project constants the
-statement depends on: proofs are ignored, and private, auxiliary and instance
-constants are hashed by their own content, not their names, so moving declarations
-between files does not change it. Any change to the statement or to those
-definitions makes the check fail until the pinned value is updated on purpose.
-
-The latest completed full verification is recorded in
-[`verification/status.txt`](verification/status.txt), with the detailed
-[`build log`](verification/build.log) and [`axiom log`](verification/axioms.log).
-The audit itself is [Audit.lean](Audit.lean).
+Each script rejects proof placeholders and prohibited declarations, checks
+`#print axioms` for every project declaration, and compares fingerprints of the main
+statements with pinned values. `Eff`, `Geonormal` and `SurfaceLib` do not change `Red61` or
+its audit. The latest results are in [`verification/`](verification/status.txt) for
+`Red61`, [`verification/eff/`](verification/eff/status.txt) for `Eff`, and
+[`verification/geonormal/`](verification/geonormal/status.txt) for `Geonormal`.
 
 ## License
 

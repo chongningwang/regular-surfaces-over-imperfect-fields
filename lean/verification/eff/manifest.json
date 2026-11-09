@@ -7,7 +7,12 @@
     "SurfaceLib.Abelian.ClassicalRationalRigidity"
   ],
   "unconditional_example_theorem": "Eff.y_example",
-  "scope": "The example ex:case-C-p5. Unconditional: Y is a projective integral regular surface over ell = F_5(s_1,s_2) with constants ell, geometrically non-normal, whose differential line has exact order five. Conditional on the two listed general theorems: every canonical sheaf of Y has exact order five, and the Albanese morphism of Y is the structure morphism to Spec ell. Separately: explicit derivations and weights, four-chart nonvanishing, a conditional canonical-sheaf comparison for the input surface, and a conditional rank-five mu-five torsor, none of which the final theorem uses",
+  "red_theorem": "Eff.theorem_6_1",
+  "red_theorem_classical_inputs": [
+    "SurfaceLib.Canonical.ClassicalAdjunction"
+  ],
+  "unconditional_red_theorem": "Eff.s_example",
+  "scope": "The example ex:case-C-p5. Unconditional: Y is a projective integral regular surface over ell = F_5(s_1,s_2) with constants ell, geometrically non-normal, whose differential line has exact order five. Conditional on the two listed general theorems: every canonical sheaf of Y has exact order five, and the Albanese morphism of Y is the structure morphism to Spec ell. Separately: explicit derivations and weights, four-chart nonvanishing, a conditional canonical-sheaf comparison for the input surface, and a conditional rank-five mu-five torsor, none of which the final theorem uses. Also Theorem 6.1 of the red paper for S: unconditionally a projective integral regular surface over ell with constants ell, geometrically non-reduced; conditional on ClassicalAdjunction, every canonical sheaf of S is trivial",
   "classical_inputs": [
     {
       "interface": "SurfaceLib.Abelian.ClassicalRationalRigidity",
@@ -37,7 +42,8 @@
         "Eff.Canonical.exists_trivial_canonicalSheaf",
         "Eff.canonicalSheaf_tensorPower_trivial_iff",
         "Eff.canonicalSheaf_order_five",
-        "Eff.case_C_p5"
+        "Eff.case_C_p5",
+        "Eff.theorem_6_1"
       ],
       "ingredients": [
         "functorial lci adjunction and presentation-independent gluing",
@@ -205,9 +211,11 @@
     "Projective": "83 constants, 8179171503934481086",
     "Albanese": "86 constants, 10845012968927165029",
     "Example": "118 constants, 8774172229539891270",
-    "Final": "126 constants, 3333105092890281862"
+    "Final": "126 constants, 3333105092890281862",
+    "SExample": "77 constants, 7565224949137939455",
+    "Theorem61": "116 constants, 17533248822007315361"
   },
-  "declarations_audited": 6385,
+  "declarations_audited": 6408,
   "statement_fingerprint": "97 constants, 12985887948955488478",
   "sources": {
     "Eff/AffineUnits.lean": "2517886585a013578febb888a9afce19d607f401ac615be52d8ff53693df9930",
@@ -220,7 +228,9 @@
     "Eff/FreenessCertificates.lean": "dd8ed313c838e658cb66b2e848aa1cf2a206cc118bad5c31d97a3f3fad292b2e",
     "Eff/GeometricObstruction.lean": "cb6823e670c434ee110575468d502b432b9eda6dc4e23a001670b9d1a487f5e9",
     "Eff/InvariantCoordinates.lean": "2ba370128c3414fa22535c7377f15bb85f34853292c65904ade621709d832932",
+    "Eff/Projective.lean": "e9933788602bf3ec295937d857826463b901860265437efdb047fe674084abd3",
     "Eff/Quotient.lean": "1a4fd7641813e56e24284c89d6996724b3fff7f000b19b15df4e03e7e23a3b36",
+    "Eff/SExample.lean": "1747bf8bee0f1db1220d386bbec1bf936127be53cb1c770a07ff9399bb3515ad",
     "Eff/Torsor.lean": "4f0c947d0b064c4b37d7ab7fe98034098721fc3917c8bcdc7b29428d8cf61e4d",
     "Eff/YAlbanese.lean": "7e30c12bc152b907a24db72314555416313d7bd8238508b70b5882fd9b6ad5c3",
     "Eff/YBases.lean": "c7eb0ef5db873f4c60e7493d4519d5f47c5e8ef0d8abfb6f3d4dcc8e5eec3bba",
@@ -228,19 +238,20 @@
     "Eff/YCharts.lean": "b5e9d71a8c8f94803cc3c9a8d165c4395f95c401ce8c835b4527ce1fdb4d1ebb",
     "Eff/YCover.lean": "726157ef84f671d9ad5a22efad2be416e2b1097ec0b88a30dd4242eff563f7db",
     "Eff/YDifferentials.lean": "bc7857127de75b9cff1c96cb939b9975623a0733628a19ce611ec677b9b4352b",
-    "Eff/YExample.lean": "cf9ba0bb0dab10375e5437bb522633d81b4448bb3f188308793675ad6b09e588",
+    "Eff/YExample.lean": "1b420fe5fe4e3333d0e1e8bc0fcc65f8b03d19ff9a968f90bd0c9fa41e2ff5c4",
     "Eff/YJacobians.lean": "5d6ccb84904a4635ac3bad578a2c7653cfb2f9a89785e0f1ddd22776504361be",
     "Eff/YNonnormal.lean": "c6229f9c73036e2d76790b1f65ea7da43da721c2e49ccd6a986a58e8c3fa42a9",
     "Eff/YOrder.lean": "c9f67ee750459957de493c7c74efd9d1aad49e422f2bf71c0a7a31e1cfa0dec8",
-    "Eff/YProjective.lean": "7bda020fd74e3a5c243c94018f22b9efcb9a88e67e7c44c028fc6dab0a21a8f9",
     "Eff/YStalks.lean": "82ab80c5f4f7d7850f59a9ef7f9483df9e0c144e4595966225d08f5f7cabaa00",
     "Eff/YStraightening.lean": "db6d4c8041aa8239aae74c9a8c319a61764a7903cd35e99f3344d145e8521722",
     "Eff/YTuples.lean": "02d1941cdd7a151724b4967745f340b8dc2d795aadaeb309115fcfcde1f9f1e4",
     "Eff/YVolume.lean": "ae85b992bcc94d1bd4c3bd1525cc251c0f70d64f9bb619bd94b019c35bdb7e65",
-    "Eff.lean": "39440d1096fac007ac7d740824691e70f8c2fef0a378be0f2d6715cd233688ff",
-    "EffAudit.lean": "434de9fbeba06937a298bceab91d67a9311f6eb30d83da67066f99e2e35f6892",
+    "Eff.lean": "0ce3fd123df905d0a6f2a8fc7246bf91205cce514acbf09e0721c0d6a8178e1e",
+    "EffAudit.lean": "d6d02aaca563ddd5f344a2e3282f704a854b8edbef4f4d5ac1313cbb77548cc8",
     "SurfaceLib/Abelian/Rigidity.lean": "e2da0de35de1a5f24b3b49ba990de167fb8d1fc54e5fb7ecae5fb96803c922b2",
+    "SurfaceLib/AlgebraicGeometry/GeometricNormality.lean": "08b8d44ea24e60f45d108b476330819edba19443a2ed43a1bf9e61f99108133a",
     "SurfaceLib/Canonical/ClassicalAdjunction.lean": "22d1d2c3b786d397e0d0d61eb0b0088b33cc84c099e60b3e7267a418d957d1f5",
+    "SurfaceLib/Canonical/GeneralAdjunction.lean": "beff48047f877c568ae7ecfe44515eaf58eaea8a147ba298e2084b562a0cabb1",
     "SurfaceLib/Canonical/TopDuality.lean": "f62f4795375be9c73ef916c6c13dc31d8aa26f022b729e3220f3ac735e19eaf3",
     "SurfaceLib/Derivation/FrobeniusCover.lean": "ae4173b95bad5743235a579f7690f2da165a4fcadbae7541cc4309dd84225c7a",
     "SurfaceLib/Derivation/Slice.lean": "0e7a3420945cf6ccaaba1d2cee3e217d29df30dae4edff2001dee952ae5c90f4",
@@ -249,8 +260,9 @@
     "SurfaceLib/GroupScheme/DiagonalizableQuotient.lean": "f2b324bfe7e8b45a087d9294928334078a265b6a72d1d653003cbd970d2885b3",
     "SurfaceLib/GroupScheme/MuFive.lean": "6142c0464cc1aba3af5e07d28f67b8aebd77ca38de93c4d9c6b1b89154cc310a",
     "SurfaceLib/LineBundle/RationalLine.lean": "8f3eb5b49de42c774515304f587f232b95febc82fbcab96b4d0d6da1cfc8067c",
-    "SurfaceLib/Projective/AtlasModel.lean": "1e970c2d4325899840c71db553a0a359e5fb9b8dfc290e09a6bd93e400050aec",
-    "SurfaceLib.lean": "f7460d7b1eb75a032c0cdf9e76273656644a61f99e18660b057baede081c63f3"
+    "SurfaceLib/Projective/AtlasModel.lean": "0c923c19041149226d5ec76cf7d787dfe3a535d7a49989de7b63679d066d6f88",
+    "SurfaceLib/RingTheory/Hypersurface.lean": "ce9c0e620c308982262e60ef9b911928a76a2621a429c3fef195788019a4c421",
+    "SurfaceLib.lean": "e2acf643b33f9c3222b6ebb43391cf54d205ac70af1ce7d1c62aeed376d0e5b4"
   },
   "remaining": [
     "formal proofs of the classical inputs",

@@ -1,0 +1,148 @@
+'Geonormal.x_projective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Geonormal.x_proper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Geonormal.x_globalScalarMap_bijective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Geonormal.x_stalk_regular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Geonormal.x_dimension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Geonormal.x_not_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Geonormal.x_differentials_locallyFree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Geonormal.xRationalVolume_generates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Geonormal.xVolumeIso' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Geonormal.xOmegaIsoStructureSheaf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Geonormal.canonicalSheaf_trivial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SurfaceLib.Canonical.GeneralClassicalAdjunction.toClassicalAdjunction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Geonormal.p19_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Geonormal.p19_canonical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Geonormal.P11.x_projective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Geonormal.P11.x_proper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Geonormal.P11.x_globalScalarMap_bijective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Geonormal.P11.x_stalk_regular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Geonormal.P11.x_dimension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Geonormal.P11.x_not_geometrically_normal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Geonormal.P11.x_differentials_locallyFree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Geonormal.P11.xRationalVolume_generates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Geonormal.P11.xVolumeIso' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Geonormal.P11.xOmegaIsoStructureSheaf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Geonormal.P11.canonicalSheaf_trivial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Geonormal.P11.p11_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Geonormal.P11.p11_canonical' depends on axioms: [propext, Classical.choice, Quot.sound]
+Geonormal.p19_example :
+  SurfaceLib.Projective.IsProjectiveOver Geonormal.k Geonormal.xToBase ∧
+    AlgebraicGeometry.IsProper Geonormal.xToBase ∧
+      AlgebraicGeometry.IsIntegral Geonormal.X19 ∧
+        topologicalKrullDim ↥Geonormal.X19 = 2 ∧
+          (∀ (x : ↥Geonormal.X19), IsRegularLocalRing ↑(Geonormal.X19.presheaf.stalk x)) ∧
+            Function.Bijective ⇑(Red61.globalScalarMap Geonormal.k Geonormal.xToBase) ∧
+              ¬AlgebraicGeometry.Smooth Geonormal.xToBase ∧
+                Red61.IsLocallyFreeOfRank 3 (Red61.nativeAbsoluteDifferentialModule Geonormal.X19) ∧
+                  Nonempty (Geonormal.xOmega ≅ Red61.structureSheafModule Geonormal.X19)
+Geonormal.p19_canonical : SurfaceLib.Canonical.GeneralClassicalAdjunction →
+  (∃ K, Nonempty (SurfaceLib.Canonical.TopDuality Geonormal.k Geonormal.xToBase 2 K)) ∧
+    ∀ (K : Geonormal.X19.Modules) (a : SurfaceLib.Canonical.TopDuality Geonormal.k Geonormal.xToBase 2 K),
+      Nonempty (K ≅ Red61.structureSheafModule Geonormal.X19)
+SurfaceLib.Canonical.GeneralClassicalAdjunction.toClassicalAdjunction : SurfaceLib.Canonical.GeneralClassicalAdjunction →
+  SurfaceLib.Canonical.ClassicalAdjunction
+Geonormal.P11.p11_example :
+  SurfaceLib.Projective.IsProjectiveOver Geonormal.P11.k Geonormal.P11.xToBase ∧
+    AlgebraicGeometry.IsProper Geonormal.P11.xToBase ∧
+      AlgebraicGeometry.IsIntegral Geonormal.P11.X11 ∧
+        topologicalKrullDim ↥Geonormal.P11.X11 = 2 ∧
+          (∀ (x : ↥Geonormal.P11.X11), IsRegularLocalRing ↑(Geonormal.P11.X11.presheaf.stalk x)) ∧
+            Function.Bijective ⇑(Red61.globalScalarMap Geonormal.P11.k Geonormal.P11.xToBase) ∧
+              ¬AlgebraicGeometry.geometrically SurfaceLib.IsNormalScheme Geonormal.P11.xToBase ∧
+                Red61.IsLocallyFreeOfRank 3 (Red61.nativeAbsoluteDifferentialModule Geonormal.P11.X11) ∧
+                  Nonempty (Geonormal.P11.xOmega ≅ Red61.structureSheafModule Geonormal.P11.X11)
+Geonormal.P11.p11_canonical : SurfaceLib.Canonical.GeneralClassicalAdjunction →
+  (∃ K, Nonempty (SurfaceLib.Canonical.TopDuality Geonormal.P11.k Geonormal.P11.xToBase 2 K)) ∧
+    ∀ (K : Geonormal.P11.X11.Modules) (a : SurfaceLib.Canonical.TopDuality Geonormal.P11.k Geonormal.P11.xToBase 2 K),
+      Nonempty (K ≅ Red61.structureSheafModule Geonormal.P11.X11)
+@[reducible] def Geonormal.k : Type :=
+FractionRing Geonormal.P₁
+def Geonormal.c : Geonormal.k :=
+(algebraMap Geonormal.P₁ Geonormal.k) (MvPolynomial.X 0)
+def Geonormal.gPoly : Geonormal.R₂ :=
+MvPolynomial.X 0 ^ 3 + MvPolynomial.C (Geonormal.c ^ 2) * MvPolynomial.X 1 ^ 7 * MvPolynomial.X 0 + MvPolynomial.X 1
+def Geonormal.quad : Polynomial Geonormal.E :=
+Polynomial.X ^ 2 - Polynomial.C Geonormal.gE
+@[reducible] def Geonormal.F : Type :=
+AdjoinRoot Geonormal.quad
+def Geonormal.monoF : Geonormal.Lattice → Geonormal.F :=
+fun v => (algebraMap Geonormal.E Geonormal.F) (Geonormal.monoE v)
+def Geonormal.first : Fin 5 → Geonormal.Lattice :=
+![(1, 0), (1, 0), (-1, 0), (3, -1), (-1, 0)]
+def Geonormal.second : Fin 5 → Geonormal.Lattice :=
+![(0, 1), (0, -1), (-3, 1), (-4, 1), (4, -1)]
+def Geonormal.yScale : Fin 5 → Geonormal.Lattice :=
+![(0, 0), (0, -2), (-5, 0), (-2, -1), (2, -2)]
+def Geonormal.yc : Fin 5 → Geonormal.F :=
+fun i => Geonormal.y * Geonormal.monoF (Geonormal.yScale i)
+def Geonormal.chartRing : Fin 5 → Subalgebra Geonormal.k Geonormal.F :=
+fun i => Geonormal.k[Geonormal.monoF (Geonormal.first i), Geonormal.monoF (Geonormal.second i), Geonormal.yc i]
+def Geonormal.atlas : Red61.AffineGluing.PrincipalAtlas Geonormal.k Geonormal.F :=
+{ Index := Fin 5, ring := Geonormal.chartRing, localization := Geonormal.atlas._proof_3 }
+@[reducible] def Geonormal.X19 : AlgebraicGeometry.Scheme :=
+Geonormal.atlas.glued
+@[reducible] def Geonormal.xToBase : Geonormal.X19 ⟶ AlgebraicGeometry.Spec ↧Geonormal.k :=
+Geonormal.atlas.toBase
+@[reducible] def Geonormal.xOmega : Geonormal.X19.Modules :=
+SurfaceLib.Canonical.omegaR Geonormal.k Geonormal.xToBase 1 Geonormal.baseDifferentialBasis
+def SurfaceLib.Canonical.omegaR : (F : Type) →
+  [inst : Field F] →
+    [inst_1 : Algebra ℤ F] →
+      {Y : AlgebraicGeometry.Scheme} →
+        (Y ⟶ AlgebraicGeometry.Spec ↧F) → (r : ℕ) → Module.Basis (Fin r) F Ω[F⁄ℤ] → Y.Modules :=
+fun F [Field F] [Algebra ℤ F] {Y} b r bF =>
+  Red61.nativeFramedLineHom Y (SurfaceLib.Canonical.omegaBaseVolumeR F b r bF)
+    (Red61.nativeExteriorModule Y (Red61.nativeAbsoluteDifferentialModule Y) (r + 2))
+def SurfaceLib.Projective.IsProjectiveOver : (R : Type) →
+  [inst : Field R] → {X : AlgebraicGeometry.Scheme} → (X ⟶ AlgebraicGeometry.Spec ↧R) → Prop :=
+fun R [Field R] {X} f =>
+  ∃ A x x_1 𝒜 x_2 e,
+    Algebra.FiniteType R A ∧
+      Function.Bijective ⇑(algebraMap R ↥(𝒜 0)) ∧
+        CategoryTheory.CategoryStruct.comp e.hom (SurfaceLib.Projective.projBase 𝒜) = f
+@[reducible] def Geonormal.P11.k : Type :=
+FractionRing Geonormal.P11.P₁
+def Geonormal.P11.c : Geonormal.P11.k :=
+(algebraMap Geonormal.P11.P₁ Geonormal.P11.k) (MvPolynomial.X 0)
+@[reducible] def Geonormal.P11.L : Type :=
+FractionRing Geonormal.P11.P₃
+def Geonormal.P11.cL : Geonormal.P11.L :=
+6 * (Geonormal.P11.aL * Geonormal.P11.bL ^ 3 - 3 * Geonormal.P11.aL ^ 4 * Geonormal.P11.bL - Geonormal.P11.σL ^ 11)
+@[instance_reducible] def Geonormal.P11.algebraKL : Algebra Geonormal.P11.k Geonormal.P11.L :=
+(IsFractionRing.lift Geonormal.P11.cHom_injective).toAlgebra
+def Geonormal.P11.θE.{u_1} : {R : Type u_1} → [CommRing R] → Fin 11 → R → R → R → R :=
+fun {R} [CommRing R] n a b s =>
+  ![Geonormal.P11.θ0 a b s, Geonormal.P11.θ1 a b s, Geonormal.P11.θ2 a b s, Geonormal.P11.θ3 a b s,
+      Geonormal.P11.θ4 a b s, Geonormal.P11.θ5 a b s, Geonormal.P11.θ6 a b s, Geonormal.P11.θ7 a b s,
+      Geonormal.P11.θ8 a b s, Geonormal.P11.θ9 a b s, Geonormal.P11.θ10 a b s]
+    n
+def Geonormal.P11.ξ : Fin 11 → Geonormal.P11.L :=
+fun n => Geonormal.P11.θE n Geonormal.P11.aL Geonormal.P11.bL Geonormal.P11.σL * Geonormal.P11.wL ^ 2
+def Geonormal.P11.chartA : Subalgebra Geonormal.P11.k Geonormal.P11.L :=
+Geonormal.P11.k[Geonormal.P11.aL, Geonormal.P11.bL, Geonormal.P11.σL]
+def Geonormal.P11.chartB : Subalgebra Geonormal.P11.k Geonormal.P11.L :=
+Geonormal.P11.k[Geonormal.P11.uL, Geonormal.P11.αL, Geonormal.P11.βL, Geonormal.P11.ρL]
+def Geonormal.P11.chartD : Subalgebra Geonormal.P11.k Geonormal.P11.L :=
+Geonormal.P11.k[Geonormal.P11.wL, Geonormal.P11.αD, Geonormal.P11.βD, Geonormal.P11.ρL]
+def Geonormal.P11.chartP : Subalgebra Geonormal.P11.k Geonormal.P11.L :=
+Algebra.adjoin Geonormal.P11.k (Set.range Geonormal.P11.ξ)
+def Geonormal.P11.chartRing : Fin 4 → Subalgebra Geonormal.P11.k Geonormal.P11.L :=
+![Geonormal.P11.chartA, Geonormal.P11.chartB, Geonormal.P11.chartD, Geonormal.P11.chartP]
+def Geonormal.P11.atlas : Red61.AffineGluing.PrincipalAtlas Geonormal.P11.k Geonormal.P11.L :=
+{ Index := Fin 4, ring := Geonormal.P11.chartRing, localization := Geonormal.P11.atlas._proof_4 }
+@[reducible] def Geonormal.P11.X11 : AlgebraicGeometry.Scheme :=
+Geonormal.P11.atlas.glued
+@[reducible] def Geonormal.P11.xToBase : Geonormal.P11.X11 ⟶ AlgebraicGeometry.Spec ↧Geonormal.P11.k :=
+Geonormal.P11.atlas.toBase
+@[reducible] def Geonormal.P11.xOmega : Geonormal.P11.X11.Modules :=
+SurfaceLib.Canonical.omegaR Geonormal.P11.k Geonormal.P11.xToBase 1 Geonormal.P11.baseDifferentialBasis
+def SurfaceLib.IsNormalScheme.{u_1} : CategoryTheory.ObjectProperty AlgebraicGeometry.Scheme :=
+fun X => ∀ (x : ↥X), IsDomain ↑(X.presheaf.stalk x) ∧ IsIntegrallyClosed ↑(X.presheaf.stalk x)
+Classical input interface: [{"declaration":"SurfaceLib.Canonical.GeneralClassicalAdjunction.normalizedDuality","type":"SurfaceLib.Canonical.GeneralClassicalAdjunction →\n  ∀ (p r : ℕ) [inst : Fact (Nat.Prime p)] (F : Type) [inst_1 : Field F] [CharP F p] [inst_3 : Algebra ℤ F]\n    [inst : Algebra (ZMod p) F] [Algebra.EssFiniteType (ZMod p) F] {X : AlgebraicGeometry.Scheme}\n    (f : X ⟶ AlgebraicGeometry.Spec ↧F) [AlgebraicGeometry.IsProper f] [AlgebraicGeometry.IsIntegral X]\n    [AlgebraicGeometry.IsNoetherian X] (bF : Module.Basis (Fin r) F Ω[F⁄ℤ]),\n    topologicalKrullDim ↥X = 2 →\n      (∀ (x : ↥X), IsRegularLocalRing ↑(X.presheaf.stalk x)) →\n        Red61.IsLocallyFreeOfRank (r + 2) (Red61.nativeAbsoluteDifferentialModule X) →\n          Nonempty (SurfaceLib.Canonical.TopDuality F f 2 (SurfaceLib.Canonical.omegaR F f r bF))"},{"declaration":"SurfaceLib.Canonical.TopDuality.finitePresentation","type":"∀ {X : AlgebraicGeometry.Scheme} {F : Type} [inst : Field F] {f : X ⟶ AlgebraicGeometry.Spec ↧F} {n : ℕ} {K : X.Modules}\n  (self : SurfaceLib.Canonical.TopDuality F f n K), SheafOfModules.IsFinitePresentation K"},{"declaration":"SurfaceLib.Canonical.TopDuality.trace","type":"{X : AlgebraicGeometry.Scheme} →\n  {F : Type} →\n    [inst : Field F] →\n      {f : X ⟶ AlgebraicGeometry.Spec ↧F} →\n        {n : ℕ} →\n          {K : X.Modules} → SurfaceLib.Canonical.TopDuality F f n K → SurfaceLib.Canonical.Cohomology F f K n →ₗ[F] F"},{"declaration":"SurfaceLib.Canonical.TopDuality.perfect","type":"∀ {X : AlgebraicGeometry.Scheme} {F : Type} [inst : Field F] {f : X ⟶ AlgebraicGeometry.Spec ↧F} {n : ℕ} {K : X.Modules}\n  (self : SurfaceLib.Canonical.TopDuality F f n K) (M : X.Modules),\n  SheafOfModules.IsFinitePresentation M → Function.Bijective (SurfaceLib.Canonical.tracePairing F f n self.trace M)"},{"declaration":"SurfaceLib.Canonical.tracePairing","type":"{X : AlgebraicGeometry.Scheme} →\n  (F : Type) →\n    [inst : Field F] →\n      (f : X ⟶ AlgebraicGeometry.Spec ↧F) →\n        {K : X.Modules} →\n          (n : ℕ) →\n            (SurfaceLib.Canonical.Cohomology F f K n →ₗ[F] F) →\n              (M : X.Modules) → (M ⟶ K) → Module.Dual F (SurfaceLib.Canonical.Cohomology F f M n)"},{"declaration":"SurfaceLib.Canonical.Cohomology","type":"(F : Type) → [inst : Field F] → {X : AlgebraicGeometry.Scheme} → (X ⟶ AlgebraicGeometry.Spec ↧F) → X.Modules → ℕ → Type"}]
+All project declarations audited: 6001.
+Example statement fingerprint: 80 constants, 3625693950619963257.
+Final statement fingerprint: 87 constants, 11530437725810536051.
+P11Example statement fingerprint: 95 constants, 13758302471214068481.
+P11Final statement fingerprint: 101 constants, 17000114579343157727.

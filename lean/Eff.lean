@@ -7,5 +7,6 @@ import Eff.GeometricObstruction
 import Eff.FreenessCertificates
 import Eff.InvariantCoordinates
 import Eff.Quotient
+import Eff.SExample
 import Eff.Torsor
 import Eff.YExample

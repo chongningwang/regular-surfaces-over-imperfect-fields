@@ -1,4 +1,4 @@
-PASS: 41 source files; 6385 project declarations audited.
+PASS: 45 source files; 6408 project declarations audited.
 Statement fingerprint: 97 constants, 12985887948955488478.
 The implemented quotient-properties theorem is unconditional.
 The input-surface canonical trivialization is conditional on ClassicalAdjunction.
@@ -14,3 +14,8 @@ exact order five.
 Eff.case_C_p5 adds the canonical sheaf and the Albanese morphism, conditional on
 ClassicalAdjunction and ClassicalRationalRigidity, and on nothing else.
 It does not use ClassicalDiagonalizableQuotient.
+Theorem 6.1 statement fingerprint: 116 constants, 17533248822007315361.
+Eff.s_example is unconditional: S is a regular projective integral surface over
+ell with constants ell, geometrically non-reduced.
+Eff.theorem_6_1 adds the canonical sheaf of S, conditional on ClassicalAdjunction
+and on nothing else.

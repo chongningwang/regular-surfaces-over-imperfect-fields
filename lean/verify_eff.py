@@ -24,6 +24,8 @@ EXAMPLE_FINGERPRINTS = {
     "Albanese": "86 constants, 10845012968927165029",
     "Example": "118 constants, 8774172229539891270",
     "Final": "126 constants, 3333105092890281862",
+    "SExample": "77 constants, 7565224949137939455",
+    "Theorem61": "116 constants, 17533248822007315361",
 }
 CLASSICAL_INTERFACE_DECLARATIONS = {
     "SurfaceLib.Abelian.ClassicalRationalRigidity.constant",
@@ -160,6 +162,9 @@ def main():
         "final_theorem_classical_inputs": ["SurfaceLib.Canonical.ClassicalAdjunction",
                                            "SurfaceLib.Abelian.ClassicalRationalRigidity"],
         "unconditional_example_theorem": "Eff.y_example",
+        "red_theorem": "Eff.theorem_6_1",
+        "red_theorem_classical_inputs": ["SurfaceLib.Canonical.ClassicalAdjunction"],
+        "unconditional_red_theorem": "Eff.s_example",
         "scope": "The example ex:case-C-p5. Unconditional: Y is a projective integral regular "
                  "surface over ell = F_5(s_1,s_2) with constants ell, geometrically non-normal, "
                  "whose differential line has exact order five. Conditional on the two listed "
@@ -167,7 +172,10 @@ def main():
                  "Albanese morphism of Y is the structure morphism to Spec ell. Separately: "
                  "explicit derivations and weights, four-chart nonvanishing, a conditional "
                  "canonical-sheaf comparison for the input surface, and a conditional "
-                 "rank-five mu-five torsor, none of which the final theorem uses",
+                 "rank-five mu-five torsor, none of which the final theorem uses. Also "
+                 "Theorem 6.1 of the red paper for S: unconditionally a projective integral "
+                 "regular surface over ell with constants ell, geometrically non-reduced; "
+                 "conditional on ClassicalAdjunction, every canonical sheaf of S is trivial",
         "classical_inputs": [{
             "interface": "SurfaceLib.Abelian.ClassicalRationalRigidity",
             "parameter": "rigidity",
@@ -185,7 +193,8 @@ def main():
             "consumers": ["Eff.Canonical.canonicalSheaf_trivial",
                           "Eff.Canonical.exists_trivial_canonicalSheaf",
                           "Eff.canonicalSheaf_tensorPower_trivial_iff",
-                          "Eff.canonicalSheaf_order_five", "Eff.case_C_p5"],
+                          "Eff.canonicalSheaf_order_five", "Eff.case_C_p5",
+                          "Eff.theorem_6_1"],
             "ingredients": ["functorial lci adjunction and presentation-independent gluing",
                             "normalized determinant comparison",
                             "top-degree Serre duality expressed in Ext cohomology"],
@@ -242,7 +251,12 @@ def main():
               "exact order five.\n"
               "Eff.case_C_p5 adds the canonical sheaf and the Albanese morphism, conditional on\n"
               "ClassicalAdjunction and ClassicalRationalRigidity, and on nothing else.\n"
-              "It does not use ClassicalDiagonalizableQuotient.\n")
+              "It does not use ClassicalDiagonalizableQuotient.\n"
+              f"Theorem 6.1 statement fingerprint: {example_fingerprints['Theorem61']}.\n"
+              "Eff.s_example is unconditional: S is a regular projective integral surface over\n"
+              "ell with constants ell, geometrically non-reduced.\n"
+              "Eff.theorem_6_1 adds the canonical sheaf of S, conditional on ClassicalAdjunction\n"
+              "and on nothing else.\n")
     (REPORT / "status.txt").write_text(status)
     print(status, end="")
 

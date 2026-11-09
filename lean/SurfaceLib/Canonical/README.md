@@ -45,6 +45,16 @@ particular surface `S`. Its hypotheses are verified in `Eff/Canonical.lean`:
 essential finite generation of `ell` is proved there, and the surface properties
 come from the unchanged `Red61` development.
 
+`GeneralClassicalAdjunction` (in `GeneralAdjunction.lean`) has the same single field for
+every prime `p` and every `r`: `F` has characteristic `p` and is essentially of finite type
+over `𝔽_p`, `bF` is an `r`-element basis of `Ω_{F/ℤ}` (a `p`-basis of size `r`), the absolute
+differential sheaf of `X` is locally free of rank `r + 2`, and the conclusion concerns
+`omegaR F f r bF = Hom(f^* ⋀^r Ω_{F/ℤ}, ⋀^{r+2} Ω_{X/ℤ})`. By definition `omegaR F f 2 bF` is
+`Red61.omega F f bF`, and `GeneralClassicalAdjunction.toClassicalAdjunction` derives
+`ClassicalAdjunction` as the case `p = 5`, `r = 2`. The argument below is the same over the
+perfect field `𝔽_p`. `Geonormal.p19_canonical` uses the case `p = 19`, `r = 1`, and
+`Geonormal.P11.p11_canonical` the case `p = 11`, `r = 1`.
+
 This is **one packaged interface containing several classical ingredients**, not
 a claim that just one cited lemma supplies its entire statement:
 

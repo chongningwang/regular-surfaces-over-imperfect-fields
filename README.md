@@ -34,12 +34,12 @@ Thus its order in $\mathrm{Pic}(X)$ divides $60$; see the
 Each example below satisfies the same hypotheses on $X$, over a suitable
 imperfect field $k$ of the indicated characteristic.
 
-| Example | Characteristic | Property | Construction |
-| --- | --- | --- | --- |
-| 1 | $p=5$ | $X$ is geometrically non-reduced. | [red](papers/red/main.tex#L1089) |
-| 2 | $p=5$ | $\mathrm{ord}(K_X)=5$. | [eff](papers/eff/main.tex#L2704) |
-| 3 | $p=11$ | $X$ is geometrically non-normal. | [geonormal](papers/geonormal/counterexample.tex) |
-| 4 | $p=19$ | $X$ is not smooth over $k$. | [geonormal](papers/geonormal/sharpness.tex) |
+| Example | Characteristic | Property | Construction | Lean |
+| --- | --- | --- | --- | --- |
+| 1 | $p=5$ | $X$ is geometrically non-reduced. | [red](papers/red/main.tex#L1089) | [Yes](lean/Red61/README.md#completing-theorem-61), assuming one classical theorem |
+| 2 | $p=5$ | $\mathrm{ord}(K_X)=5$. | [eff](papers/eff/main.tex#L2704) | [Yes](lean/Eff/README.md), assuming two classical theorems |
+| 3 | $p=11$ | $X$ is geometrically non-normal. | [geonormal](papers/geonormal/counterexample.tex) | [Yes](lean/Geonormal/README.md#proposition-propp11-at-p--11), assuming one classical theorem |
+| 4 | $p=19$ | $X$ is not smooth over $k$. | [geonormal](papers/geonormal/sharpness.tex) | [Yes](lean/Geonormal/README.md), assuming one classical theorem |
 
 Here $\mathrm{ord}(K_X)$ is the order of $\mathcal O_X(K_X)$ in
 $\mathrm{Pic}(X)$. Examples 1, 3, and 4 show that the respective characteristic
@@ -50,7 +50,7 @@ uniform canonical bound.
 
 | Directory | Paper | Authors | Read | Supporting material |
 | --- | --- | --- | --- | --- |
-| [red](papers/red/main.tex) | Geometric singularities of regular surfaces with nef anti-canonical divisors over imperfect fields | Chongning Wang and Lei Zhang | [arXiv:2604.05293](https://arxiv.org/abs/2604.05293), [PDF](papers/red/main.pdf) | [Lean construction associated with Theorem 6.1](lean/README.md) |
+| [red](papers/red/main.tex) | Geometric singularities of regular surfaces with nef anti-canonical divisors over imperfect fields | Chongning Wang and Lei Zhang | [arXiv:2604.05293](https://arxiv.org/abs/2604.05293), [PDF](papers/red/main.pdf) | [Lean construction associated with Theorem 6.1](lean/Red61/README.md) |
 | [eff](papers/eff/main.tex) | Effective nonvanishing of K-trivial regular surfaces over imperfect fields | Jingshan Chen, Chongning Wang, and Lei Zhang | [arXiv:2610.09542](https://arxiv.org/abs/2610.09542), [PDF](papers/eff/main.pdf) | Manuscript and bibliography |
 | [geonormal](papers/geonormal/main.tex) | Geometric singularities of K-trivial regular surfaces | Chongning Wang | [PDF](papers/geonormal/main.pdf) | [Verification appendix](papers/geonormal/verification-scripts.tex), [smoothness computations](papers/geonormal/smooth/README.md), and [characteristic 11 computations](papers/geonormal/p11/README.md) |
 
@@ -67,7 +67,9 @@ non-reduced surface in characteristic $5$, associated with Theorem 6.1 of the
 [red paper](papers/red/main.tex). Its base field is $k=\mathbb F_5(s_1,s_2)$.
 The main formal statement is
 `Red61.Contraction.exists_theorem61_omega_rationalBase` in
-[Red61/Theorem61.lean](lean/Red61/Theorem61.lean).
+[Red61/Theorem61.lean](lean/Red61/Theorem61.lean). `Eff.s_example` and
+`Eff.theorem_6_1` [complete it](lean/Red61/README.md#completing-theorem-61): projectivity takes
+no classical input, and the canonical sheaf uses one explicit general classical theorem.
 
 The [Eff formalization](lean/Eff/README.md) treats the final characteristic-five
 example in the second paper. Without classical input, `Eff.y_example` proves that
@@ -75,6 +77,19 @@ the surface is regular, projective and geometrically non-normal over
 $\mathbb F_5(s_1,s_2)$, with the prescribed global constants, and that its differential
 line has exact order five. `Eff.case_C_p5` transfers the order to the canonical sheaf
 and identifies the Albanese morphism, using two explicit general classical theorems.
+
+The [Geonormal formalization](lean/Geonormal/README.md) treats **Example 4** at $p=19$.
+Without classical input, `Geonormal.p19_example` proves that the surface is regular,
+projective and not smooth over $\mathbb F_{19}(c)$, with the prescribed global constants,
+and that its differential line is trivial. `Geonormal.p19_canonical` transfers this to the
+canonical sheaf, using one explicit general classical theorem.
+It also treats **Example 3**, Proposition `prop:p11` at $p=11$. Without classical input,
+`Geonormal.P11.p11_example` proves that the surface is regular, projective and geometrically
+non-normal over $\mathbb F_{11}(c)$, with the prescribed global constants, and that its
+differential line is trivial. `Geonormal.P11.p11_canonical` transfers this to the canonical
+sheaf, using the same classical theorem.
+[lean/README.md](lean/README.md) lists all Lean statements and explains how to build and
+verify them.
 
 
 ## Licensing

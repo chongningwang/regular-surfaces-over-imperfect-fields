@@ -504,3 +504,22 @@ theorem iso_over_base : Q.iso.hom ≫ projBase 𝒜 = D.toBase := by
 end AtlasModel
 end
 end SurfaceLib.Projective
+
+namespace SurfaceLib.Projective
+
+open AlgebraicGeometry CategoryTheory
+
+/-- A projective scheme over a field is proper. -/
+theorem IsProjectiveOver.isProper {R : Type} [Field R] {X : Scheme.{0}}
+    {f : X ⟶ Spec (CommRingCat.of R)} (h : IsProjectiveOver R f) : IsProper f := by
+  obtain ⟨A, _, _, 𝒜, _, e, hft, hbij, he⟩ := h
+  have : IsScalarTower R (𝒜 0) A := ⟨fun r z a ↦ by
+    change ((r • z : 𝒜 0) : A) * a = r • ((z : A) * a)
+    rw [Submodule.coe_smul, smul_mul_assoc]⟩
+  have : Algebra.FiniteType (𝒜 0) A := Algebra.FiniteType.of_restrictScalars_finiteType R (𝒜 0) A
+  have : IsIso (CommRingCat.ofHom (algebraMap R (𝒜 0))) :=
+    (ConcreteCategory.isIso_iff_bijective _).mpr hbij
+  rw [← he, projBase]
+  infer_instance
+
+end SurfaceLib.Projective
