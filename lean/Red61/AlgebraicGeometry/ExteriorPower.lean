@@ -76,7 +76,7 @@ theorem moduleExteriorMap_comp_apply {U V W : Cᵒᵖ} (i : U ⟶ V) (j : V ⟶ 
         exact (congrArg gj (gi.map_smul' r v)).trans
           ((gj.map_smul' _ _).trans (congrArg (fun a ↦ a • gj (gi v)) hr)) }
   have hf : gij = f := by
-    apply exteriorSemilinearMap_ext (R.map (i ≫ j)).hom n
+    refine exteriorSemilinearMap_ext (R.map (i ≫ j)).hom n (f := gij) (g := f) ?_
     intro a
     have ha : (fun k ↦ M.map (i ≫ j) (a k)) =
         (fun k ↦ M.map j (M.map i (a k))) :=
@@ -93,7 +93,7 @@ theorem moduleExteriorMap_comp_apply {U V W : Cᵒᵖ} (i : U ⟶ V) (j : V ⟶ 
 
 def moduleExteriorAbPresheaf : Cᵒᵖ ⥤ Ab where
   obj U := AddCommGrpCat.of (⋀[(R.obj U)]^n (M.obj U))
-  map i := AddCommGrpCat.ofHom (semilinearExteriorMap (R.map i).hom n (M.restrictₛₗ i)).toAddHom
+  map i := AddCommGrpCat.ofHom (semilinearExteriorMap (R.map i).hom n (M.restrictₛₗ i)).toAddMonoidHom
   map_id U := by
     apply AddCommGrpCat.hom_ext
     apply AddMonoidHom.ext

@@ -713,7 +713,7 @@ theorem cone_frobenius_hull (a : ConeRing.A) :
       add_mem' := by
         intro x y hx hy
         change f (x + y) ∈ coneHull
-        rw [map_add]
+        rw [RingHom.map_add]
         exact coneHull.add_mem hx hy
       mul_mem' := by
         intro x y hx hy

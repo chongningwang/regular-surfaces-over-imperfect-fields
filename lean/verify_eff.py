@@ -11,21 +11,21 @@ REPORT = ROOT / "verification" / "eff"
 ALLOWED_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 # Pin the implemented geometric statement and its reachable project definitions.
 STATEMENT_FINGERPRINT = "97 constants, 12985887948955488478"
-CANONICAL_STATEMENT_FINGERPRINT = "113 constants, 7640908887198818297"
+CANONICAL_STATEMENT_FINGERPRINT = "113 constants, 7212504326843204941"
 FREENESS_STATEMENT_FINGERPRINT = "60 constants, 5363109288789624739"
 TORSOR_STATEMENT_FINGERPRINT = "109 constants, 11022967480670452798"
 # The order-five example: each statement, in the label used by EffAudit.lean.
 EXAMPLE_FINGERPRINTS = {
     "Regularity": "78 constants, 16958915980947374023",
-    "Order": "114 constants, 5764549006072577869",
-    "CanonicalOrder": "121 constants, 5023760894144107675",
+    "Order": "114 constants, 2893106200410142397",
+    "CanonicalOrder": "121 constants, 12701923466999679015",
     "Nonnormal": "82 constants, 15494484949319092419",
     "Projective": "83 constants, 8179171503934481086",
     "Albanese": "86 constants, 10845012968927165029",
-    "Example": "118 constants, 8774172229539891270",
-    "Final": "126 constants, 3333105092890281862",
+    "Example": "118 constants, 14108045990805017578",
+    "Final": "126 constants, 11348882832583105274",
     "SExample": "77 constants, 7565224949137939455",
-    "Theorem61": "116 constants, 17533248822007315361",
+    "Theorem61": "116 constants, 9019804128975175813",
 }
 CLASSICAL_INTERFACE_DECLARATIONS = {
     "SurfaceLib.Abelian.ClassicalRationalRigidity.constant",

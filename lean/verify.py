@@ -9,7 +9,7 @@ REPORT = ROOT / "verification"
 ALLOWED_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 # Fingerprint of the main statement printed by Audit.lean. Update it only when the
 # statement of exists_theorem61_omega_rationalBase or a definition it uses is meant to change.
-STATEMENT_FINGERPRINT = "43 constants, 2700237008541851014"
+STATEMENT_FINGERPRINT = "43 constants, 2140213904624907966"
 
 
 def run_logged(args, filename):

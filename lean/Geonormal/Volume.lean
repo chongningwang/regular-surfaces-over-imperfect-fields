@@ -129,7 +129,7 @@ theorem det_zero_kept (i : Fin 5) (m : Fin 3) :
     (fieldBasisZ 0).det (fun l ↦ KaehlerDifferential.D ℤ F (chartVals i (kept m l))) =
       -(chartSign i * keptSign m) * (2 * y)⁻¹ * partialVal i m.succ := by
   conv_lhs => rw [AlternatingMap.eq_smul_basis_det (fieldBasisZ i) (fieldBasisZ 0).det]
-  rw [AlternatingMap.smul_apply, smul_eq_mul, det_chart, det_kept, yc]
+  rw [smul_apply, smul_eq_mul, det_chart, det_kept, yc]
   have hm := monoF_ne_zero (yScale i)
   have hy := y_ne_zero
   have h2 := two_ne_zero_F
@@ -353,7 +353,7 @@ theorem generates_at_chart (i : Fin 5) (p : PrimeSpectrum (AR i)) :
   refine generates_of_coordinates _ (fun l ↦ f (zloc i m (kept m l))) b hb
     (Units.map f.toMonoidHom (Units.mkOfMulEqOne u₀ v₀ huv)) ?_
   simp only [Units.coe_map, Units.val_mkOfMulEqOne, RingHom.toMonoidHom_eq_coe,
-    MonoidHom.coe_coe, hf]
+    MonoidHom.coe_ofClass, hf]
   change (ε * (partialVal i m.succ)⁻¹ : F) * (fieldBasisZ 0).det
     (fun l ↦ KaehlerDifferential.D ℤ F (chartVals i (kept m l))) = (2 * y)⁻¹
   rw [det_zero_kept]

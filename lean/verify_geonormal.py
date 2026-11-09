@@ -13,10 +13,10 @@ ALLOWED_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 # Pin each final statement and the project definitions it reaches, as printed by
 # GeonormalAudit.lean. Update a value only when that statement is meant to change.
 FINGERPRINTS = {
-    "Example": "80 constants, 3625693950619963257",
-    "Final": "87 constants, 11530437725810536051",
-    "P11Example": "95 constants, 13758302471214068481",
-    "P11Final": "101 constants, 17000114579343157727",
+    "Example": "80 constants, 17510596471059313213",
+    "Final": "87 constants, 3506630080531362575",
+    "P11Example": "95 constants, 1979517444288427197",
+    "P11Final": "101 constants, 8835163795215819243",
 }
 CLASSICAL_INTERFACE_DECLARATIONS = {
     "SurfaceLib.Canonical.GeneralClassicalAdjunction.normalizedDuality",

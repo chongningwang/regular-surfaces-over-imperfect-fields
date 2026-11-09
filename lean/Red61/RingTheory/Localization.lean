@@ -248,7 +248,7 @@ def principalOpenInverse : Localization.Away e ≃ₐ[F] Localization.Away (f e)
     IsLocalization.Away.liftAlgHom (A := F) (f := h) (f e) hu
   let j := Localization.awayMapₐ f e
   apply AlgEquiv.ofAlgHom j k
-  · apply AlgHom.coe_ringHom_injective
+  · apply AlgHom.toRingHom_injective
     apply IsLocalization.ringHom_ext (Submonoid.powers (f e))
     ext r
     change j (k (algebraMap R (Localization.Away (f e)) r)) =
@@ -256,7 +256,7 @@ def principalOpenInverse : Localization.Away e ≃ₐ[F] Localization.Away (f e)
     rw [show k (algebraMap R (Localization.Away (f e)) r) = h r from
       IsLocalization.Away.lift_eq (f e) hu r]
     exact AlgHom.congr_fun hj r
-  · apply AlgHom.coe_ringHom_injective
+  · apply AlgHom.toRingHom_injective
     apply IsLocalization.ringHom_ext (Submonoid.powers e)
     ext q
     change k (j (algebraMap Q (Localization.Away e) q)) =
@@ -296,7 +296,7 @@ def commonPrincipalOpenEquiv : Localization.Away e ≃ₐ[F] Localization.Away (
   have hβ : Function.Injective β := awayLiftAlgHom_injective v (f e) hv hiv
   let j := Localization.awayMapₐ f e
   have hβα : β.comp j = α := by
-    apply AlgHom.coe_ringHom_injective
+    apply AlgHom.toRingHom_injective
     apply IsLocalization.ringHom_ext (Submonoid.powers e)
     ext q
     change β (j (algebraMap Q (Localization.Away e) q)) =
@@ -358,7 +358,7 @@ theorem exists_common_principal_open
   have hu : IsUnit (u (e : Q)) := IsLocalization.map_units A e
   have hα : (IsLocalization.Away.liftAlgHom (A := F) (f := u) (e : Q) hu :
       Localization.Away (e : Q) →ₐ[F] A) = awayLocalizationBaseMap (A := A) F T e := by
-    apply AlgHom.coe_ringHom_injective
+    apply AlgHom.toRingHom_injective
     apply IsLocalization.ringHom_ext (Submonoid.powers (e : Q))
     ext q
     change (IsLocalization.Away.lift (e : Q) hu) (algebraMap Q _ q) =

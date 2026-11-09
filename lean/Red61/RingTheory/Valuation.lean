@@ -55,8 +55,8 @@ variable {R : Type*} [CommRing R] [IsDomain R] [WfDvdMonoid R] {p : R}
 
 /-- Integer-valued order at a prime element, with infinity at zero. -/
 def primeOrder (hp : Prime p) : AddValuation R (WithTop ℤ) :=
-  (multiplicity_addValuation hp).map (Nat.castAddMonoidHom ℤ).ENatMap
-    rfl ENat.map_natCast_strictMono.monotone
+  (multiplicity_addValuation hp).map
+    { (Nat.castAddMonoidHom ℤ).ENatMap with monotone' := ENat.map_natCast_strictMono.monotone } rfl
 
 omit [WfDvdMonoid R] in
 @[simp] theorem primeOrder_apply (hp : Prime p) (x : R) :

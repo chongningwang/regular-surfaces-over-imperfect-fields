@@ -1006,6 +1006,7 @@ theorem topSectionRestriction_natural (Y : Scheme) {U V : Y.Opens}
   rw [← Y.presheaf.map_comp]
   rfl
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 def globalSectionModuleScalar (M : Y.Modules) (a : Γ(Y, ⊤)) : M ⟶ M where
   val :=
     { app := fun U ↦ ModuleCat.ofHom (LinearMap.lsmul Γ(Y, U.unop) Γ(M, U.unop)

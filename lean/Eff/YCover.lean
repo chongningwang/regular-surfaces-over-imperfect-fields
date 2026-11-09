@@ -65,6 +65,7 @@ def yOpen : (a : YIdx) → YOpen (chartOf a)
 /-- The fifth powers of the certificates generate the unit ideal of each chart of `Y`. -/
 def certY (i : Fin 4) (j : Fin 3) : yAtlas.ring i := yFrob i ⟨certificateValue i j, certificate_mem i j⟩
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 theorem certY_cover (i : Fin 4) (p : PrimeSpectrum (yAtlas.ring i)) :
     ∃ j, certY i j ∉ p.asIdeal := by
   by_contra! h
@@ -233,6 +234,7 @@ def s₁' : contractedAtlas.ring (1 : Fin 4) :=
 
 theorem hh_identity : hh₁ - s₁' * η₁ = 1 := Subtype.ext h₀_identity
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 theorem middle_or_eta (p : PrimeSpectrum (yAtlas.ring (1 : Fin 4))) :
     middleD ∉ p.asIdeal ∨ yFrob 1 η₁ ∉ p.asIdeal := by
   by_contra! hc

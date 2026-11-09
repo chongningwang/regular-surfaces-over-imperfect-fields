@@ -53,7 +53,7 @@ def homAdd : AddSubmonoid HRing where
   carrier := {a | ∀ m, evH (DirectSum.decompose 𝒢 a m : HRing) ∈ fieldImage ι}
   zero_mem' m := by simp
   add_mem' {a b} ha hb m := by
-    simp only [DirectSum.decompose_add, DirectSum.add_apply, Submodule.coe_add, map_add]
+    simp only [DirectSum.decompose_add, DirectSum.add_apply, Submodule.coe_add, map_add evH]
     exact add_mem (ha m) (hb m)
 
 theorem homog_mem {m : ℕ} {a : HRing} (ha : a ∈ 𝒢 m) (he : evH a ∈ fieldImage ι) :

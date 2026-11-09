@@ -1,3 +1,3 @@
 'Red61.Contraction.exists_theorem61_omega_rationalBase' depends on axioms: [propext, Classical.choice, Quot.sound]
-All project declarations audited: 4231.
-Statement fingerprint: 43 constants, 2700237008541851014.
+All project declarations audited: 4228.
+Statement fingerprint: 43 constants, 2140213904624907966.

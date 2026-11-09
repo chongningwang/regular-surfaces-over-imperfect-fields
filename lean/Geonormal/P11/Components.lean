@@ -239,6 +239,7 @@ theorem evalP_C (f : chartP) : evalP (Polynomial.C f) = ι f := Polynomial.eval�
 
 theorem evalP_X : evalP Polynomial.X = γK := Polynomial.eval₂_X _ _
 
+set_option synthInstance.maxHeartbeats 200000 in
 theorem sum_mem_range (ρ : Fin 11 → chartP) :
     ∑ i, ι (ρ i) * γK ^ (i : ℕ) ∈ evalP.rangeS :=
   ⟨∑ i, Polynomial.C (ρ i) * Polynomial.X ^ (i : ℕ), by simp [evalP_C, evalP_X]⟩
@@ -332,7 +333,7 @@ theorem decomp_exists (s : S₂) :
   refine ⟨fun i ↦ (p %ₘ qT).coeff i, ?_⟩
   have hmod : evalP p = evalP (p %ₘ qT) := by
     conv_lhs => rw [← Polynomial.modByMonic_add_div p qT]
-    rw [map_add, map_mul, evalP_qT, zero_mul, add_zero]
+    rw [RingHom.map_add, RingHom.map_mul, evalP_qT, zero_mul, add_zero]
   rw [← hp, hmod, evalP, Polynomial.coe_eval₂RingHom,
     Polynomial.eval₂_eq_sum_range' _ hdeg]
   rw [Finset.sum_range (fun i ↦ ιP ((p %ₘ qT).coeff i) * γK ^ i)]

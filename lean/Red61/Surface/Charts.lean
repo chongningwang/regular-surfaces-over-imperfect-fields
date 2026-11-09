@@ -661,11 +661,12 @@ theorem exceptional_parameter_derivative (j : Fin 4) :
       secondCoefficient, monomial] using (derivative_table 4).2.2.2
 
 theorem exceptional_ideal_invariant (j : Fin 4) :
-    ∀ z ∈ Ideal.span ({chartParameter (exceptionalCoordinate j).1
-        (exceptionalCoordinate j).2} : Set (chartRing (exceptionalCoordinate j).1)),
+    ∀ z ∈ Ideal.span
+        ({chartParameter (exceptionalCoordinate j).1 (exceptionalCoordinate j).2} :
+          Set (chartRing (exceptionalCoordinate j).1)),
       chartDerivation (exceptionalCoordinate j).1 z ∈
-        Ideal.span ({chartParameter (exceptionalCoordinate j).1
-          (exceptionalCoordinate j).2} : Set (chartRing (exceptionalCoordinate j).1)) := by
+        Ideal.span ({chartParameter (exceptionalCoordinate j).1 (exceptionalCoordinate j).2} :
+          Set (chartRing (exceptionalCoordinate j).1)) := by
   apply QuotientDerivation.span_singleton_stable
   rw [exceptional_parameter_derivative]
   exact Ideal.mul_mem_left _ _ (Ideal.subset_span (by simp))

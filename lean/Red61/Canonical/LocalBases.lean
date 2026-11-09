@@ -472,7 +472,7 @@ theorem coneFrobenius_mem_hull (a : A) :
       add_mem' := by
         intro x y hx hy
         change f (x + y) ∈ invariantCoordinateHull
-        rw [map_add]
+        rw [RingHom.map_add]
         exact invariantCoordinateHull.add_mem hx hy
       mul_mem' := by
         intro x y hx hy

@@ -90,8 +90,7 @@ theorem tensorSectionEv_restrict (x : Y) {U V : Y.Opens} (i : V ⟶ U) (hx : x �
     (τ : (tensorObj M N).obj (op U)) :
     tensorSectionEv F G x V hx ((tensorObj M N).map i.op τ) =
       tensorSectionEv F G x U (i.le hx) τ := by
-  induction τ using TensorProduct.induction_on with
-  | zero => simp
+  induction τ using TensorProduct.inductionOn with
   | tmul t s =>
     rw [show (tensorObj M N).map i.op (t ⊗ₜ[Y.presheaf.obj (op U)] s) =
       (M.map i.op t) ⊗ₜ[Y.presheaf.obj (op V)] (N.map i.op s) from rfl,
@@ -135,8 +134,7 @@ def tensor : RationalLine (tensorObj M N) where
       algebraMap _ _ (Y.presheaf.germ U x hU r) * tensorEv F G x (germOf (tensorObj M N) V x hV τ)
     rw [hr, ← germ_smul', tensorEv_germ, tensorEv_germ]
     generalize Y.presheaf.map (homOfLE hVU).op r = r'
-    induction τ using TensorProduct.induction_on with
-    | zero => simp
+    induction τ using TensorProduct.inductionOn with
     | tmul t s =>
       rw [TensorProduct.smul_tmul', tensorSectionEv_tmul, tensorSectionEv_tmul, germ_smul',
         F.ev_smul]
@@ -146,8 +144,7 @@ def tensor : RationalLine (tensorObj M N) where
       ring
   ev_germ U x z hx hz τ := by
     rw [tensorEv_germ, tensorEv_germ]
-    induction τ using TensorProduct.induction_on with
-    | zero => simp
+    induction τ using TensorProduct.inductionOn with
     | tmul t s =>
       rw [tensorSectionEv_tmul, tensorSectionEv_tmul, F.ev_germ U x z hx hz, G.ev_germ U x z hx hz]
     | add p q hp hq => rw [map_add, map_add, hp, hq]
@@ -211,8 +208,7 @@ theorem tensor_isGenerator {x : Y} {c c' : Y.functionField} (hF : F.IsGenerator 
     exact congrArg₂ _ hg hg'
   · intro ξ
     obtain ⟨V, hV, τ, rfl⟩ := (modulePresheafAbPresheaf Y (tensorObj M N)).exists_germ_eq ξ
-    induction τ using TensorProduct.induction_on with
-    | zero => exact ⟨0, by simp [germOf]⟩
+    induction τ using TensorProduct.inductionOn with
     | tmul t s =>
       obtain ⟨a, ha⟩ := cg (germOf M V x hV t)
       obtain ⟨b, hb⟩ := cg' (germOf N V x hV s)
@@ -456,6 +452,7 @@ section Trivial
 
 variable {𝓛 : Y.Modules}
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 /-- The stalk map of a morphism from the structure sheaf multiplies by its global value. -/
 theorem unitHom_stalk (f : structureSheafModule Y ⟶ 𝓛) (x : Y)
     (ξ : (modulePresheafAbPresheaf Y (structureSheafModule Y).val).stalk x) :

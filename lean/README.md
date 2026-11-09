@@ -46,8 +46,8 @@ Lean source files, excluding mathlib and the build output in `.lake/`:
 
 ## Building and verifying
 
-The project uses Lean **4.34.1** and mathlib commit
-`d13f23b723b8a846827a245b89c10fc7d3f11612`, pinned in the project files. The default
+The project uses Lean **4.35.0** and mathlib commit
+`56a005855ea17e0b0958f73ec801ae140b0a1679`, pinned in the project files. The default
 build contains `Red61`, `SurfaceLib`, `Eff` and `Geonormal`. From this directory:
 
 ```bash

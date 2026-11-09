@@ -69,7 +69,7 @@ theorem isInternal_gradedPart : DirectSum.IsInternal (gradedPart 𝒜 B) := by
           ⟨⟨DirectSum.decompose 𝒜 (a : A) n, hB a a.property n⟩,
             (DirectSum.decompose 𝒜 (a : A) n).property⟩
     refine ⟨z, Subtype.ext ?_⟩
-    simp only [z, map_sum, DirectSum.coeAddMonoidHom_of, AddSubmonoidClass.coe_finset_sum]
+    simp only [z, map_sum, DirectSum.coeAddMonoidHom_of, AddSubmonoidClass.coe_finsetSum]
     exact DirectSum.sum_support_decompose 𝒜 (a : A)
 
 /-- A homogeneous subalgebra of a graded algebra is graded. -/

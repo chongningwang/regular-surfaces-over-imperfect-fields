@@ -105,8 +105,7 @@ theorem muA_tmul (x : chartA) (z : k') : muA (x ⊗ₜ z) = ι x * algebraMap k'
 
 theorem tensor_decomp (t : chartA ⊗[k] k') :
     ∃ x : Fin 11 → chartA, t = ∑ i, x i ⊗ₜ[k] (γ ^ (i : ℕ)) := by
-  induction t using TensorProduct.induction_on with
-  | zero => exact ⟨0, by simp⟩
+  induction t using TensorProduct.inductionOn with
   | tmul a μ =>
     obtain ⟨f, rfl⟩ := k'_decomp_k μ
     refine ⟨fun i ↦ f i • a, ?_⟩

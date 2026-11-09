@@ -282,7 +282,7 @@ theorem generates_ABD (i : Fin 3) (p : PrimeSpectrum (atlas.ring (ix i.castSucc)
   refine generates_of_coordinates _ (fun l ↦ f (zloc i m (kept m l))) b hb
     (Units.map f.toMonoidHom (Units.mkOfMulEqOne u₀ v₀ huv)) ?_
   simp only [Units.coe_map, Units.val_mkOfMulEqOne, RingHom.toMonoidHom_eq_coe,
-    MonoidHom.coe_coe, hf]
+    MonoidHom.coe_ofClass, hf]
   change (keptSign i m * (partialVal i m)⁻¹ : L) * fieldBasisZ.det
     (fun l ↦ KaehlerDifferential.D ℤ L (chartVals i (kept m l))) = 1
   rw [fieldBasisZ_det, det_kept i m ha]
@@ -312,7 +312,7 @@ theorem generates_P (p : PrimeSpectrum (atlas.ring (ix 3))) (hp : (eP : atlas.ri
   refine generates_of_coordinates _ (fun l ↦ f (zP l)) b hb
     (Units.map f.toMonoidHom (Units.mkOfMulEqOne u₀ v₀ huv)) ?_
   simp only [Units.coe_map, Units.val_mkOfMulEqOne, RingHom.toMonoidHom_eq_coe,
-    MonoidHom.coe_coe, hf]
+    MonoidHom.coe_ofClass, hf]
   change δP⁻¹ * fieldBasisZ.det (fun l ↦ KaehlerDifferential.D ℤ L ((zP l : PChartP) : L)) = 1
   rw [fieldBasisZ_det, det_zP]
   exact inv_mul_cancel₀ δP_ne_zero

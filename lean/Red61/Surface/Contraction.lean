@@ -27,7 +27,7 @@ theorem P_isClosed : IsClosed ({P} : Set X) := by
   have hv : IsClosed ({ConeRing.vertex} : Set ConeRing.coneSpec) :=
     (PrimeSpectrum.isClosed_singleton_iff_isMaximal ConeRing.vertex).mpr
       (show ConeRing.maximal.IsMaximal from inferInstance)
-  exact coneOpen.closePoints_subset_preimage_closedPoints hv
+  exact coneOpen.closedPoints_subset_preimage_closedPoints hv
 
 theorem s₀_isClosed : IsClosed ({s₀} : Set S) := by
   simpa only [Set.image_singleton, special_point_image] using

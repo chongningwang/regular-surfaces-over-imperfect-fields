@@ -1,40 +1,255 @@
-⚠ [3917/3977] Replayed SurfaceLib.Projective.AtlasModel
+⚠ [1946/2015] Replayed Geonormal.Field
+warning: Geonormal/Field.lean: imports `Mathlib.Algebra.Field.ZMod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Geonormal/Field.lean: imports `Mathlib.Algebra.MvPolynomial.Equiv` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Geonormal/Field.lean: imports `Mathlib.Algebra.Polynomial.SpecificDegree` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Geonormal/Field.lean: imports `Mathlib.RingTheory.AdjoinRoot` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Geonormal/Field.lean: imports `Mathlib.RingTheory.Localization.FractionRing` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Geonormal/Field.lean: imports `Mathlib.Tactic.ComputeDegree` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Geonormal/Field.lean: imports `Mathlib.Tactic.NormNum.Prime` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2077/2138] Replayed Geonormal.Charts
+warning: Geonormal/Charts.lean: imports `Mathlib.FieldTheory.IntermediateField.Adjoin.Algebra` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Geonormal/Charts.lean: imports `Mathlib.RingTheory.AlgebraicIndependent.AlgebraicClosure` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Geonormal/Charts.lean: imports `Mathlib.RingTheory.AlgebraicIndependent.Transcendental` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Geonormal/Charts.lean: imports `Mathlib.RingTheory.AlgebraicIndependent.TranscendenceBasis` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3923/3994] Replayed Red61.LinearAlgebra.ExteriorPower
+warning: Red61/LinearAlgebra/ExteriorPower.lean: imports `Mathlib.Algebra.Module.FinitePresentation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/LinearAlgebra/ExteriorPower.lean: imports `Mathlib.LinearAlgebra.Basis.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/LinearAlgebra/ExteriorPower.lean: imports `Mathlib.LinearAlgebra.Dimension.Torsion.Finite` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/LinearAlgebra/ExteriorPower.lean: imports `Mathlib.LinearAlgebra.ExteriorPower.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/LinearAlgebra/ExteriorPower.lean: imports `Mathlib.LinearAlgebra.ExteriorPower.Basis` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/LinearAlgebra/ExteriorPower.lean: imports `Mathlib.LinearAlgebra.FreeModule.Finite.Quotient` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/LinearAlgebra/ExteriorPower.lean: imports `Mathlib.LinearAlgebra.LinearPMap` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/LinearAlgebra/ExteriorPower.lean: imports `Mathlib.RingTheory.OrderOfVanishing.Noetherian` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3932/3994] Replayed Red61.RingTheory.FieldSubalgebra
+warning: Red61/RingTheory/FieldSubalgebra.lean: imports `Mathlib.AlgebraicGeometry.Pullbacks` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/FieldSubalgebra.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3933/3994] Replayed Red61.RingTheory.Localization
+warning: Red61/RingTheory/Localization.lean: imports `Mathlib.RingTheory.FiniteType` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Localization.lean: imports `Mathlib.RingTheory.Finiteness.Ideal` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Localization.lean: imports `Mathlib.RingTheory.Localization.Algebra` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Localization.lean: imports `Mathlib.RingTheory.Localization.AtPrime.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Localization.lean: imports `Mathlib.RingTheory.Localization.Away.AdjoinRoot` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Localization.lean: imports `Mathlib.RingTheory.Localization.Away.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Localization.lean: imports `Mathlib.RingTheory.Localization.Ideal` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Localization.lean: imports `Mathlib.RingTheory.Localization.LocalizationLocalization` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3934/3994] Replayed Red61.RingTheory.Regular
+warning: Red61/RingTheory/Regular.lean: imports `Mathlib.Algebra.MvPolynomial.CommRing` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Regular.lean: imports `Mathlib.RingTheory.Flat.Localization` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Regular.lean: imports `Mathlib.RingTheory.Ideal.Cotangent` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Regular.lean: imports `Mathlib.RingTheory.Ideal.Maps` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Regular.lean: imports `Mathlib.RingTheory.Localization.Away.AdjoinRoot` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Regular.lean: imports `Mathlib.RingTheory.Localization.BaseChange` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Regular.lean: imports `Mathlib.RingTheory.Localization.Ideal` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Regular.lean: imports `Mathlib.RingTheory.Polynomial.Quotient` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Regular.lean: imports `Mathlib.RingTheory.Regular.IsSMulRegular` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Regular.lean: imports `Mathlib.RingTheory.Regular.RegularSequence` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Regular.lean: imports `Mathlib.RingTheory.RegularLocalRing.Polynomial` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Regular.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Regular.lean: imports `Mathlib.Tactic.LinearCombination` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3935/3994] Replayed Red61.RingTheory.Kaehler
+warning: Red61/RingTheory/Kaehler.lean: imports `Mathlib.Algebra.Category.ModuleCat.Differentials.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Kaehler.lean: imports `Mathlib.Algebra.Module.FinitePresentation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Kaehler.lean: imports `Mathlib.AlgebraicGeometry.AlgebraicCycle.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Kaehler.lean: imports `Mathlib.AlgebraicGeometry.OrderOfVanishing` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Kaehler.lean: imports `Mathlib.AlgebraicGeometry.Restrict` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Kaehler.lean: imports `Mathlib.LinearAlgebra.Dimension.Torsion.Finite` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Kaehler.lean: imports `Mathlib.RingTheory.Etale.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Kaehler.lean: imports `Mathlib.RingTheory.Etale.Kaehler` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Kaehler.lean: imports `Mathlib.RingTheory.Extension.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Kaehler.lean: imports `Mathlib.RingTheory.Kaehler.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Kaehler.lean: imports `Mathlib.RingTheory.Kaehler.JacobiZariski` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Kaehler.lean: imports `Mathlib.RingTheory.Length` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Kaehler.lean: imports `Mathlib.RingTheory.LocalRing.RingHom.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Kaehler.lean: imports `Mathlib.RingTheory.Localization.FractionRing` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Kaehler.lean: imports `Mathlib.RingTheory.Localization.Free` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Kaehler.lean: imports `Mathlib.RingTheory.Smooth.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3936/3994] Replayed Red61.AlgebraicGeometry.Differentials.Basic
+warning: Red61/AlgebraicGeometry/Differentials/Basic.lean: imports `Mathlib.Algebra.Category.ModuleCat.Differentials.Presheaf` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Differentials/Basic.lean: imports `Mathlib.AlgebraicGeometry.Modules.Sheaf` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3937/3994] Replayed Red61.AlgebraicGeometry.Modules
+warning: Red61/AlgebraicGeometry/Modules.lean: imports `Mathlib.Algebra.Category.ModuleCat.Presheaf.OfCommRing` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Modules.lean: imports `Mathlib.Algebra.Category.ModuleCat.Sheaf` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Modules.lean: imports `Mathlib.Algebra.Category.ModuleCat.Sheaf.Free` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Modules.lean: imports `Mathlib.Algebra.Category.ModuleCat.Stalk` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Modules.lean: imports `Mathlib.Algebra.Homology.DerivedCategory.Ext.EnoughInjectives` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Modules.lean: imports `Mathlib.AlgebraicGeometry.FunctionField` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Modules.lean: imports `Mathlib.AlgebraicGeometry.Modules.Sheaf` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Modules.lean: imports `Mathlib.AlgebraicGeometry.Modules.Tilde` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Modules.lean: imports `Mathlib.AlgebraicGeometry.Morphisms.Proper` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Modules.lean: imports `Mathlib.CategoryTheory.Abelian.GrothendieckCategory.EnoughInjectives` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Modules.lean: imports `Mathlib.Topology.Sheaves.Sheafify` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3939/3994] Replayed Red61.Foliation
+warning: Red61/Foliation.lean: imports `Mathlib.Algebra.MvPolynomial.Derivation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/Foliation.lean: imports `Mathlib.Algebra.MvPolynomial.Expand` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/Foliation.lean: imports `Mathlib.Algebra.MvPolynomial.Nilpotent` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/Foliation.lean: imports `Mathlib.Algebra.MvPolynomial.PDeriv` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/Foliation.lean: imports `Mathlib.Algebra.TrivSqZeroExt.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/Foliation.lean: imports `Mathlib.RingTheory.Derivation.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/Foliation.lean: imports `Mathlib.RingTheory.Ideal.Quotient.Operations` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/Foliation.lean: imports `Mathlib.RingTheory.Polynomial.RationalRoot` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/Foliation.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3940/3994] Replayed Red61.RingTheory.Valuation
+warning: Red61/RingTheory/Valuation.lean: imports `Mathlib.RingTheory.Localization.AtPrime.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Valuation.lean: imports `Mathlib.RingTheory.Localization.FractionRing` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Valuation.lean: imports `Mathlib.RingTheory.UniqueFactorizationDomain.Multiplicity` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Valuation.lean: imports `Mathlib.RingTheory.Valuation.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Valuation.lean: imports `Mathlib.RingTheory.Valuation.ExtendToLocalization` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Valuation.lean: imports `Mathlib.RingTheory.Valuation.PrimeMultiplicity` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Valuation.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/RingTheory/Valuation.lean: imports `Mathlib.Tactic.FieldSimp` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3941/3994] Replayed Red61.AlgebraicGeometry.Atlas
+warning: Red61/AlgebraicGeometry/Atlas.lean: imports `Mathlib.AlgebraicGeometry.AlgebraicCycle.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Atlas.lean: imports `Mathlib.AlgebraicGeometry.FunctionField` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Atlas.lean: imports `Mathlib.AlgebraicGeometry.Morphisms.ClosedImmersion` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Atlas.lean: imports `Mathlib.AlgebraicGeometry.Morphisms.OpenImmersion` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Atlas.lean: imports `Mathlib.AlgebraicGeometry.Morphisms.Proper` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Atlas.lean: imports `Mathlib.AlgebraicGeometry.Morphisms.Separated` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Atlas.lean: imports `Mathlib.AlgebraicGeometry.Morphisms.Smooth` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Atlas.lean: imports `Mathlib.AlgebraicGeometry.OpenImmersion` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Atlas.lean: imports `Mathlib.AlgebraicGeometry.OrderOfVanishing` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Atlas.lean: imports `Mathlib.AlgebraicGeometry.Properties` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Atlas.lean: imports `Mathlib.AlgebraicGeometry.Restrict` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Atlas.lean: imports `Mathlib.RingTheory.Ideal.Height` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Atlas.lean: imports `Mathlib.RingTheory.RamificationInertia.Ramification` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Atlas.lean: imports `Mathlib.RingTheory.Regular.RegularSequence` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Atlas.lean: imports `Mathlib.RingTheory.Smooth.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Atlas.lean: imports `Mathlib.RingTheory.Spectrum.Prime.Homeomorph` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Atlas.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3961/3994] Replayed SurfaceLib.Projective.AtlasModel
+warning: SurfaceLib/Projective/AtlasModel.lean: imports `Mathlib.AlgebraicGeometry.ProjectiveSpectrum.Proper` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: SurfaceLib/Projective/AtlasModel.lean:30:0: automatically included section variable(s) unused in theorem `SurfaceLib.Projective.mem_gradedPart`:
   [GradedAlgebra 𝒜]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
   omit [GradedAlgebra 𝒜] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: SurfaceLib/Projective/AtlasModel.lean:72:57: `AddSubmonoidClass.coe_finset_sum` has been deprecated: Use `AddSubmonoidClass.coe_finsetSum` instead
-⚠ [3919/3977] Replayed Geonormal.Projective
+⚠ [3963/3994] Replayed Geonormal.Projective
+warning: Geonormal/Projective.lean: imports `Mathlib.Algebra.MonoidAlgebra.Grading` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Geonormal/Projective.lean:176:6: Variable name `a` is not explicitly referenced.
 
 Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
   [apply] _a
 
 Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [3928/3977] Replayed Geonormal.Regular
-warning: Geonormal/Regular.lean:99:86: Unused tactic linter: `ring` does nothing
+⚠ [3964/3994] Replayed Geonormal.Constants
+warning: Geonormal/Constants.lean: imports `Mathlib.RingTheory.Polynomial.RationalRoot` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Geonormal/Constants.lean: imports `Mathlib.RingTheory.Polynomial.UniqueFactorization` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3971/3994] Replayed SurfaceLib.RingTheory.Hypersurface
+warning: SurfaceLib/RingTheory/Hypersurface.lean: imports `Mathlib.RingTheory.RegularLocalRing.Defs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SurfaceLib/RingTheory/Hypersurface.lean: imports `Mathlib.RingTheory.KrullDimension.Regular` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SurfaceLib/RingTheory/Hypersurface.lean: imports `Mathlib.RingTheory.Ideal.Cotangent` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SurfaceLib/RingTheory/Hypersurface.lean: imports `Mathlib.RingTheory.Derivation.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SurfaceLib/RingTheory/Hypersurface.lean: imports `Mathlib.RingTheory.Localization.AtPrime.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SurfaceLib/RingTheory/Hypersurface.lean: imports `Mathlib.Algebra.MvPolynomial.PDeriv` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3972/3994] Replayed Geonormal.Regular
+warning: Geonormal/Regular.lean: imports `Mathlib.Algebra.MvPolynomial.PDeriv` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Geonormal/Regular.lean: imports `Mathlib.RingTheory.MvPolynomial.Tower` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Geonormal/Regular.lean: imports `Mathlib.RingTheory.RegularLocalRing.Polynomial` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Geonormal/Regular.lean:99:82: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Geonormal/Regular.lean:99:86: Unused tactic linter: `ring` does nothing.
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
 warning: Geonormal/Regular.lean:99:86: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-⚠ [3932/3977] Replayed Geonormal.Differentials
-warning: Geonormal/Differentials.lean:378:45: Unused tactic linter: `ring` does nothing
+⚠ [3973/3994] Replayed Geonormal.Dimension
+warning: Geonormal/Dimension.lean: imports `Mathlib.RingTheory.Ideal.GoingUp` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Geonormal/Dimension.lean: imports `Mathlib.RingTheory.KrullDimension.Polynomial` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Geonormal/Dimension.lean: imports `Mathlib.RingTheory.AlgebraicIndependent.AlgebraicClosure` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3974/3994] Replayed Geonormal.NotSmooth
+warning: Geonormal/NotSmooth.lean: imports `Mathlib.AlgebraicGeometry.Morphisms.Smooth` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Geonormal/NotSmooth.lean: imports `Mathlib.RingTheory.RingHom.Smooth` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3975/3994] Replayed Red61.AlgebraicGeometry.Differentials.Stalks
+warning: Red61/AlgebraicGeometry/Differentials/Stalks.lean: imports `Mathlib.AlgebraicGeometry.Modules.Tilde` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/Differentials/Stalks.lean: imports `Mathlib.RingTheory.Etale.Kaehler` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3976/3994] Replayed Geonormal.Differentials
+warning: Geonormal/Differentials.lean: imports `Mathlib.RingTheory.Etale.Field` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Geonormal/Differentials.lean: imports `Mathlib.FieldTheory.SeparableDegree` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Geonormal/Differentials.lean: imports `Mathlib.LinearAlgebra.Dimension.OrzechProperty` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Geonormal/Differentials.lean:378:41: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Geonormal/Differentials.lean:378:45: Unused tactic linter: `ring` does nothing.
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
 warning: Geonormal/Differentials.lean:378:45: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-⚠ [3960/3977] Replayed Geonormal.Volume
-warning: Geonormal/Volume.lean:125:60: Unused tactic linter: `ring` does nothing
+⚠ [3979/3994] Replayed Red61.AlgebraicGeometry.RationalForms.Lattices
+warning: Red61/AlgebraicGeometry/RationalForms/Lattices.lean: imports `Mathlib.AlgebraicGeometry.FunctionField` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/RationalForms/Lattices.lean: imports `Mathlib.AlgebraicGeometry.OrderOfVanishing` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/RationalForms/Lattices.lean: imports `Mathlib.Topology.LocallyConstant.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/AlgebraicGeometry/RationalForms/Lattices.lean: imports `Mathlib.Topology.Sheaves.LocallySurjective` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3980/3994] Replayed Red61.Surface.Field
+warning: Red61/Surface/Field.lean: imports `Mathlib.Algebra.MvPolynomial.PDeriv` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/Surface/Field.lean: imports `Mathlib.RingTheory.Kaehler.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3981/3994] Replayed Red61.Surface.Charts
+warning: Red61/Surface/Charts.lean: imports `Mathlib.Algebra.MvPolynomial.Division` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/Surface/Charts.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3982/3994] Replayed Red61.Surface.Cone
+warning: Red61/Surface/Cone.lean: imports `Mathlib.RingTheory.Derivation.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/Surface/Cone.lean: imports `Mathlib.RingTheory.RegularLocalRing.Defs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/Surface/Cone.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3988/3994] Replayed Red61.Surface.GeometricNonreduced
+warning: Red61/Surface/GeometricNonreduced.lean: imports `Mathlib.AlgebraicGeometry.Geometrically.Reduced` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3992/3994] Replayed Red61.Surface.SixChartModel
+warning: Red61/Surface/SixChartModel.lean: imports `Mathlib.Algebra.MvPolynomial.Division` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/Surface/SixChartModel.lean: imports `Mathlib.AlgebraicGeometry.Noetherian` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/Surface/SixChartModel.lean: imports `Mathlib.RingTheory.RegularLocalRing.Polynomial` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3993/4138] Replayed Red61.Surface.ContractionCharts
+warning: Red61/Surface/ContractionCharts.lean: imports `Mathlib.RingTheory.MvPolynomial.Ideal` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3994/4138] Replayed Red61.Surface.Quotient
+warning: Red61/Surface/Quotient.lean: imports `Mathlib.AlgebraicGeometry.AlgebraicCycle.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/Surface/Quotient.lean: imports `Mathlib.RingTheory.Spectrum.Prime.Homeomorph` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3995/4138] Replayed Red61.Surface.Projective
+warning: Red61/Surface/Projective.lean: imports `Mathlib.Algebra.MonoidAlgebra.Grading` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/Surface/Projective.lean: imports `Mathlib.AlgebraicGeometry.ProjectiveSpectrum.Proper` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3999/4138] Replayed Red61.Canonical.InvariantCoordinates
+warning: Red61/Canonical/InvariantCoordinates.lean: imports `Mathlib.RingTheory.Kaehler.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [4004/4138] Replayed Geonormal.Volume
+warning: Geonormal/Volume.lean:125:56: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Geonormal/Volume.lean:125:60: Unused tactic linter: `ring` does nothing.
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
 warning: Geonormal/Volume.lean:125:60: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-⚠ [8977/8998] Replayed SurfaceLib.LineBundle.RationalLine
+⚠ [4015/4138] Replayed Red61.CurveNumericalTriviality
+warning: Red61/CurveNumericalTriviality.lean: imports `Mathlib.Algebra.Category.ModuleCat.Sheaf.PullbackFree` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Red61/CurveNumericalTriviality.lean: imports `Mathlib.Algebra.Homology.DerivedCategory.Ext.Linear` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [4017/4138] Replayed SurfaceLib.Canonical.TopDuality
+warning: SurfaceLib/Canonical/TopDuality.lean: imports `Mathlib.Algebra.Category.ModuleCat.Sheaf.Quasicoherent` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SurfaceLib/Canonical/TopDuality.lean: imports `Mathlib.LinearAlgebra.Dual.Defs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [4018/4138] Replayed SurfaceLib.Canonical.ClassicalAdjunction
+warning: SurfaceLib/Canonical/ClassicalAdjunction.lean: imports `Mathlib.RingTheory.EssentialFiniteness` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SurfaceLib/Canonical/ClassicalAdjunction.lean: imports `Mathlib.RingTheory.RegularLocalRing.Defs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [9093/9121] Replayed SurfaceLib.AlgebraicGeometry.GeometricNormality
+warning: SurfaceLib/AlgebraicGeometry/GeometricNormality.lean: imports `Mathlib.AlgebraicGeometry.Geometrically.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SurfaceLib/AlgebraicGeometry/GeometricNormality.lean: imports `Mathlib.AlgebraicGeometry.Pullbacks` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SurfaceLib/AlgebraicGeometry/GeometricNormality.lean: imports `Mathlib.Algebra.Category.Ring.Constructions` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SurfaceLib/AlgebraicGeometry/GeometricNormality.lean: imports `Mathlib.RingTheory.LocalProperties.IntegrallyClosed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [9094/9121] Replayed SurfaceLib.Derivation.Slice
+warning: SurfaceLib/Derivation/Slice.lean: imports `Mathlib.RingTheory.Derivation.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SurfaceLib/Derivation/Slice.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [9095/9121] Replayed SurfaceLib.Derivation.FrobeniusCover
+warning: SurfaceLib/Derivation/FrobeniusCover.lean: imports `Mathlib.Algebra.CharP.Lemmas` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SurfaceLib/Derivation/FrobeniusCover.lean: imports `Mathlib.RingTheory.Ideal.Span` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SurfaceLib/Derivation/FrobeniusCover.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [9096/9121] Replayed SurfaceLib.Derivation.StableSubalgebra
+warning: SurfaceLib/Derivation/StableSubalgebra.lean: imports `Mathlib.RingTheory.Derivation.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [9097/9121] Replayed SurfaceLib.Derivation.WeightFive
+warning: SurfaceLib/Derivation/WeightFive.lean: imports `Mathlib.RingTheory.Derivation.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SurfaceLib/Derivation/WeightFive.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [9098/9121] Replayed SurfaceLib.GroupScheme.MuFive
+warning: SurfaceLib/GroupScheme/MuFive.lean: imports `Mathlib.AlgebraicGeometry.Fiber` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SurfaceLib/GroupScheme/MuFive.lean: imports `Mathlib.AlgebraicGeometry.Morphisms.Flat` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SurfaceLib/GroupScheme/MuFive.lean: imports `Mathlib.Algebra.Group.Units.Hom` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [9100/9121] Replayed SurfaceLib.LineBundle.RationalLine
+warning: SurfaceLib/LineBundle/RationalLine.lean: imports `Mathlib.Algebra.Category.ModuleCat.Presheaf.Monoidal` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: SurfaceLib/LineBundle/RationalLine.lean:55:0: automatically included section variable(s) unused in theorem `SurfaceLib.LineBundle.RationalLine.germ_smul'`:
   [AlgebraicGeometry.IsIntegral Y]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
@@ -47,36 +262,43 @@ consider restructuring your `variable` declarations so that the variables are no
   omit [AlgebraicGeometry.IsIntegral Y] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: SurfaceLib/LineBundle/RationalLine.lean:93:20: `TensorProduct.induction_on` has been deprecated: Use `TensorProduction.inductionOn` instead
-warning: SurfaceLib/LineBundle/RationalLine.lean:138:22: `TensorProduct.induction_on` has been deprecated: Use `TensorProduction.inductionOn` instead
-warning: SurfaceLib/LineBundle/RationalLine.lean:149:22: `TensorProduct.induction_on` has been deprecated: Use `TensorProduction.inductionOn` instead
-warning: SurfaceLib/LineBundle/RationalLine.lean:155:0: automatically included section variable(s) unused in theorem `SurfaceLib.LineBundle.RationalLine.map_map`:
+warning: SurfaceLib/LineBundle/RationalLine.lean:152:0: automatically included section variable(s) unused in theorem `SurfaceLib.LineBundle.RationalLine.map_map`:
   [AlgebraicGeometry.IsIntegral Y]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
   omit [AlgebraicGeometry.IsIntegral Y] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: SurfaceLib/LineBundle/RationalLine.lean:214:22: `TensorProduct.induction_on` has been deprecated: Use `TensorProduction.inductionOn` instead
-warning: SurfaceLib/LineBundle/RationalLine.lean:395:0: automatically included section variable(s) unused in theorem `SurfaceLib.LineBundle.unitStalk_smul`:
+warning: SurfaceLib/LineBundle/RationalLine.lean:391:0: automatically included section variable(s) unused in theorem `SurfaceLib.LineBundle.unitStalk_smul`:
   [AlgebraicGeometry.IsIntegral Y]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
   omit [AlgebraicGeometry.IsIntegral Y] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: SurfaceLib/LineBundle/RationalLine.lean:401:0: automatically included section variable(s) unused in theorem `SurfaceLib.LineBundle.unitStalk_germ`:
+warning: SurfaceLib/LineBundle/RationalLine.lean:397:0: automatically included section variable(s) unused in theorem `SurfaceLib.LineBundle.unitStalk_germ`:
   [AlgebraicGeometry.IsIntegral Y]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
   omit [AlgebraicGeometry.IsIntegral Y] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [8982/8998] Replayed Geonormal.P11.Field
-warning: Geonormal/P11/Field.lean:391:33: try 'simp' instead of 'simpa'
+⚠ [9101/9121] Replayed SurfaceLib.Abelian.Rigidity
+warning: SurfaceLib/Abelian/Rigidity.lean: imports `Mathlib.AlgebraicGeometry.Group.Abelian` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SurfaceLib/Abelian/Rigidity.lean: imports `Mathlib.FieldTheory.IsAlgClosed.AlgebraicClosure` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SurfaceLib/Abelian/Rigidity.lean: imports `Mathlib.RingTheory.MvPolynomial.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [9105/9121] Replayed Geonormal.P11.Field
+warning: Geonormal/P11/Field.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Geonormal/P11/Field.lean:391:33: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp
 
 Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
-warning: Geonormal/P11/Field.lean:392:33: try 'simp' instead of 'simpa'
+warning: Geonormal/P11/Field.lean:392:33: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp
 
 Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
-⚠ [8984/8998] Replayed Geonormal.P11.Components
+⚠ [9107/9121] Replayed Geonormal.P11.Components
 warning: Geonormal/P11/Components.lean:164:14: This simp argument is unused:
   zero_smul
 
@@ -93,8 +315,11 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [8986/8998] Replayed Geonormal.P11.Atlas
-warning: Geonormal/P11/Atlas.lean:138:2: try 'simp' instead of 'simpa'
+⚠ [9109/9121] Replayed Geonormal.P11.Atlas
+warning: Geonormal/P11/Atlas.lean:138:2: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp
 
 Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
 warning: Geonormal/P11/Atlas.lean:194:73: this tactic is never executed
@@ -103,25 +328,44 @@ Note: This linter can be disabled with `set_option linter.unreachableTactic fals
 warning: Geonormal/P11/Atlas.lean:195:84: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: Geonormal/P11/Atlas.lean:194:73: Unused tactic linter: `ring` does nothing
+warning: Geonormal/P11/Atlas.lean:194:69: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: Geonormal/P11/Atlas.lean:195:84: Unused tactic linter: `ring` does nothing
+warning: Geonormal/P11/Atlas.lean:194:73: Unused tactic linter: `ring` does nothing.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Geonormal/P11/Atlas.lean:195:80: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Geonormal/P11/Atlas.lean:195:84: Unused tactic linter: `ring` does nothing.
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
 warning: Geonormal/P11/Atlas.lean:224:75: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
 
 Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Geonormal/P11/Atlas.lean:224:75: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
 warning: Geonormal/P11/Atlas.lean:266:69: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
 
 Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Geonormal/P11/Atlas.lean:266:69: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
 warning: Geonormal/P11/Atlas.lean:295:82: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
 
 Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
-⚠ [8988/8998] Replayed Geonormal.P11.Projective
+warning: Geonormal/P11/Atlas.lean:295:82: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9111/9121] Replayed Geonormal.P11.Projective
+warning: Geonormal/P11/Projective.lean: imports `Mathlib.Algebra.MonoidAlgebra.Grading` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Geonormal/P11/Projective.lean:84:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
 
 Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Geonormal/P11/Projective.lean:84:58: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
 warning: Geonormal/P11/Projective.lean:104:72: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
@@ -137,10 +381,25 @@ Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus fa
 warning: Geonormal/P11/Projective.lean:100:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
 
 Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
-warning: Geonormal/P11/Projective.lean:104:72: Unused tactic linter: `field_simp` does nothing
+warning: Geonormal/P11/Projective.lean:95:64: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: Geonormal/P11/Projective.lean:106:72: Unused tactic linter: `field_simp` does nothing
+warning: Geonormal/P11/Projective.lean:98:64: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Geonormal/P11/Projective.lean:100:64: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Geonormal/P11/Projective.lean:104:68: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Geonormal/P11/Projective.lean:104:72: Unused tactic linter: `field_simp` does nothing.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Geonormal/P11/Projective.lean:106:68: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Geonormal/P11/Projective.lean:106:72: Unused tactic linter: `field_simp` does nothing.
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
 info: Geonormal/P11/Projective.lean:225:93: Try this:
@@ -173,13 +432,34 @@ Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus fa
 warning: Geonormal/P11/Projective.lean:470:72: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
 
 Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
-warning: Geonormal/P11/Projective.lean:476:19: Unused tactic linter: `ring` does nothing
+warning: Geonormal/P11/Projective.lean:461:75: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Geonormal/P11/Projective.lean:462:72: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Geonormal/P11/Projective.lean:468:74: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Geonormal/P11/Projective.lean:469:75: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Geonormal/P11/Projective.lean:470:72: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Geonormal/P11/Projective.lean:476:15: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Geonormal/P11/Projective.lean:476:19: Unused tactic linter: `ring` does nothing.
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
 warning: Geonormal/P11/Projective.lean:637:45: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: Geonormal/P11/Projective.lean:637:45: Unused tactic linter: `ring` does nothing
+warning: Geonormal/P11/Projective.lean:637:41: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Geonormal/P11/Projective.lean:637:45: Unused tactic linter: `ring` does nothing.
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
 warning: Geonormal/P11/Projective.lean:659:80: this tactic is never executed
@@ -188,10 +468,16 @@ Note: This linter can be disabled with `set_option linter.unreachableTactic fals
 warning: Geonormal/P11/Projective.lean:660:80: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: Geonormal/P11/Projective.lean:659:80: Unused tactic linter: `ring` does nothing
+warning: Geonormal/P11/Projective.lean:659:76: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: Geonormal/P11/Projective.lean:660:80: Unused tactic linter: `ring` does nothing
+warning: Geonormal/P11/Projective.lean:659:80: Unused tactic linter: `ring` does nothing.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Geonormal/P11/Projective.lean:660:76: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Geonormal/P11/Projective.lean:660:80: Unused tactic linter: `ring` does nothing.
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
 warning: Geonormal/P11/Projective.lean:729:37: This simp argument is unused:
@@ -525,20 +811,38 @@ Hint: Omit it from the simp argument list.
     Matrix.tail_cons, gv3, gv8, gv19, gvθ, sec_eq_t, algebraMap_k_Amb, algebraMap_c_L]
 
 Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-⚠ [8990/8998] Replayed Geonormal.P11.Dimension
+⚠ [9112/9121] Replayed Geonormal.P11.Constants
+warning: Geonormal/P11/Constants.lean: imports `Mathlib.RingTheory.Polynomial.RationalRoot` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Geonormal/P11/Constants.lean: imports `Mathlib.RingTheory.Polynomial.UniqueFactorization` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [9113/9121] Replayed Geonormal.P11.Dimension
+warning: Geonormal/P11/Dimension.lean: imports `Mathlib.RingTheory.Ideal.GoingUp` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Geonormal/P11/Dimension.lean: imports `Mathlib.RingTheory.KrullDimension.Polynomial` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Geonormal/P11/Dimension.lean: imports `Mathlib.RingTheory.AlgebraicIndependent.TranscendenceBasis` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Geonormal/P11/Dimension.lean:47:17: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: Geonormal/P11/Dimension.lean:47:17: Unused tactic linter: `ring` does nothing
+warning: Geonormal/P11/Dimension.lean:47:13: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [8991/8998] Replayed Geonormal.P11.Regular
+warning: Geonormal/P11/Dimension.lean:47:17: Unused tactic linter: `ring` does nothing.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9114/9121] Replayed Geonormal.P11.Regular
+warning: Geonormal/P11/Regular.lean: imports `Mathlib.Algebra.MvPolynomial.PDeriv` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Geonormal/P11/Regular.lean: imports `Mathlib.RingTheory.MvPolynomial.Tower` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Geonormal/P11/Regular.lean: imports `Mathlib.RingTheory.RegularLocalRing.Polynomial` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Geonormal/P11/Regular.lean:115:72: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
 
 Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Geonormal/P11/Regular.lean:115:72: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
 warning: Geonormal/P11/Regular.lean:140:70: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
 
 Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Geonormal/P11/Regular.lean:140:70: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
 warning: Geonormal/P11/Regular.lean:212:6: This simp argument is unused:
   finSuccEquiv_X_three
 
@@ -561,7 +865,7 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [8993/8998] Replayed Geonormal.P11.PointP0
+⚠ [9116/9121] Replayed Geonormal.P11.PointP0
 warning: Geonormal/P11/PointP0.lean:113:55: This simp argument is unused:
   coe_ofNat_P
 
@@ -703,6 +1007,4 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [8995/8998] Replayed Geonormal.P11.Nonnormal
-warning: Geonormal/P11/Nonnormal.lean:108:20: `TensorProduct.induction_on` has been deprecated: Use `TensorProduction.inductionOn` instead
-Build completed successfully (8998 jobs).
+Build completed successfully (9121 jobs).

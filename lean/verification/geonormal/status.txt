@@ -1,8 +1,8 @@
-PASS: 43 source files; 6001 project declarations audited.
-Example statement fingerprint: 80 constants, 3625693950619963257.
-Final statement fingerprint: 87 constants, 11530437725810536051.
-P11Example statement fingerprint: 95 constants, 13758302471214068481.
-P11Final statement fingerprint: 101 constants, 17000114579343157727.
+PASS: 43 source files; 5997 project declarations audited.
+Example statement fingerprint: 80 constants, 17510596471059313213.
+Final statement fingerprint: 87 constants, 3506630080531362575.
+P11Example statement fingerprint: 95 constants, 1979517444288427197.
+P11Final statement fingerprint: 101 constants, 8835163795215819243.
 Geonormal.p19_example is unconditional: X is a regular projective integral
 surface over k = F_19(c) with H^0(X, O_X) = k, not smooth over k, with locally
 free absolute differentials of rank three and trivial differential line.
